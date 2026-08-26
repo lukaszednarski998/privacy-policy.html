@@ -50,7 +50,7 @@ This Privacy Policy may be updated if the functionality or data practices of Chi
 
 For privacy-related questions, contact:
 
-**Email:** obdactiveexhaust@gmail.com
+**Email:** lukaszbednarski998@interia.pl
 
 ---
 
@@ -106,4 +106,4 @@ Polityka prywatności może zostać zaktualizowana, jeśli zmienią się funkcje
 
 W sprawach dotyczących prywatności można skontaktować się pod adresem:
 
-**E-mail:** obdactiveexhaust@gmail.com
+**E-mail:** lukaszbednarski998@interia.pl
