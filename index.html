@@ -65,7 +65,7 @@
 </header>
 <main id="top">
   <div class="wrap hero">
-    <div class="hero-card"><img src="assets/hero-no-ads.webp?v=20260827fix" alt="No Ads No Subscription" decoding="async" fetchpriority="high"></div>
+    <div class="hero-card"><img id="heroBanner" alt="No Ads No Subscription" decoding="async" fetchpriority="high"></div>
     <div class="hero-copy">
       <div class="eyebrow">ARVION Android Software</div>
       <h1>No ads. No subscriptions.</h1>
@@ -91,6 +91,22 @@
 </main>
 <footer><div class="wrap"><strong>ARVION</strong><br><br>Android apps, games and smartwatch software.</div></footer>
 <script>
+(async()=>{
+  try{
+    const parts=await Promise.all(
+      Array.from({length:6},(_,i)=>
+        fetch(`assets/banner-data/p${i}.txt?v=20260827real`,{cache:'no-store'}).then(r=>{
+          if(!r.ok) throw new Error(`banner part ${i}`);
+          return r.text();
+        })
+      )
+    );
+    document.getElementById('heroBanner').src='data:image/avif;base64,'+parts.join('');
+  }catch(e){
+    console.error('Hero banner load failed',e);
+  }
+})();
+
 const products=[
  {name:'OBD Active Exhaust Pro',type:'app',tag:'Android App',img:'assets/obd.webp',desc:'Automotive tools and active exhaust control.'},
  {name:'Drive Recorder',type:'app',tag:'Android App',img:'assets/drive-recorder.webp',desc:'A practical driving recorder for Android.'},
