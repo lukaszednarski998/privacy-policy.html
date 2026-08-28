@@ -1,309 +1,41 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#050505">
-  <title>ARVION | Android Apps & Games</title>
-  <meta name="description" content="ARVION Android apps and games. No ads. No subscriptions. Free lifetime updates.">
-  <style>
-    :root{--bg:#050505;--panel:#0b0b0b;--panel2:#111;--gold:#d8aa43;--gold2:#f1d17a;--text:#f5f5f5;--muted:#aaa;--line:rgba(216,170,67,.28)}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:radial-gradient(circle at 50% -10%,#222 0,#090909 38%,#050505 68%);color:var(--text);font-family:Arial,Helvetica,sans-serif}
-    body.modal-open{overflow:hidden}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit}
-    .wrap{width:min(1220px,calc(100% - 32px));margin:auto}
-    header{position:sticky;top:0;z-index:10;background:rgba(5,5,5,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .top{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.16em}
-    .brand img{width:52px;height:52px;object-fit:cover;border-radius:50%;border:1px solid var(--line)}
-    .brand span{font-size:18px}
-    .header-actions{display:flex;align-items:center;gap:20px}
-    nav{display:flex;gap:24px;color:#d7d7d7;font-size:14px}
-    nav a:hover{color:var(--gold2)}
-    .support-link{border:1px solid rgba(216,170,67,.55);background:linear-gradient(180deg,#171208,#0c0a06);color:var(--gold2);border-radius:999px;padding:10px 16px;cursor:pointer;font-weight:800;letter-spacing:.05em}
-    .support-link:hover{border-color:var(--gold2);background:#1b1407}
-    .hero{padding:38px 0 22px}
-    .hero-card{aspect-ratio:16/9;overflow:hidden;border-radius:24px;border:1px solid var(--line);background:#000;box-shadow:0 26px 80px rgba(0,0,0,.55)}
-    .hero-card img{display:block;width:100%;height:100%;object-fit:cover;background:#000}
-    .hero-copy{text-align:center;padding:30px 18px 8px}
-    .eyebrow{color:var(--gold2);font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:700}
-    h1{font-size:clamp(34px,5vw,68px);line-height:.98;margin:12px 0 16px;letter-spacing:-.035em}
-    .hero-copy p{margin:0 auto;max-width:760px;color:#c7c7c7;font-size:17px;line-height:1.7}
-    .promise{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px 0 4px}
-    .pill{padding:10px 15px;border:1px solid var(--line);border-radius:999px;background:rgba(216,170,67,.06);color:#f1ddb0;font-size:13px;font-weight:700}
-    section{padding:42px 0 66px}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px}
-    h2{margin:0;font-size:clamp(28px,4vw,44px);letter-spacing:-.025em}
-    .section-head p{margin:0;color:var(--muted);max-width:520px;line-height:1.6}
-    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px}
-    .filter{border:1px solid #303030;background:#0c0c0c;color:#ddd;border-radius:999px;padding:9px 14px;cursor:pointer;font-size:13px}
-    .filter.active,.filter:hover{border-color:var(--gold);color:var(--gold2)}
-    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
-    .card{background:linear-gradient(180deg,#111,#090909);border:1px solid #252525;border-radius:20px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.28);transition:.25s ease}
-    .card.details{cursor:pointer}
-    .card:hover{transform:translateY(-5px);border-color:rgba(216,170,67,.62);box-shadow:0 22px 54px rgba(0,0,0,.45)}
-    .card:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
-    .pic{height:255px;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid #222;position:relative}
-    .pic img{display:block;width:100%;height:100%;object-fit:contain;background:#000}
-    .details-badge{position:absolute;right:10px;bottom:10px;background:rgba(5,5,5,.9);border:1px solid var(--gold);color:var(--gold2);padding:7px 10px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-    .body{padding:17px 17px 19px}
-    .tag{display:inline-block;color:var(--gold2);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:9px}
-    .body h3{font-size:18px;margin:0 0 8px}
-    .body p{font-size:13px;line-height:1.55;color:#9f9f9f;margin:0}
-    .quality{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(216,170,67,.04),rgba(216,170,67,.11),rgba(216,170,67,.04))}
-    .quality .wrap{padding:30px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:center}
-    .quality strong{display:block;color:var(--gold2);font-size:17px;margin-bottom:6px}
-    .quality span{color:#aaa;font-size:13px}
-    footer{padding:38px 0 52px;text-align:center;color:#777;font-size:12px}
-    footer strong{color:#c7a65a;letter-spacing:.15em}
-    .modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.82);backdrop-filter:blur(10px)}
-    .modal.open{display:flex}
-    .modal-card{width:min(1080px,100%);max-height:90vh;overflow:auto;background:linear-gradient(180deg,#121212,#080808);border:1px solid rgba(216,170,67,.52);border-radius:24px;box-shadow:0 30px 100px rgba(0,0,0,.7);position:relative}
-    .modal-close{position:sticky;top:12px;float:right;margin:12px 12px 0 0;z-index:4;width:44px;height:44px;border-radius:50%;border:1px solid #3a3a3a;background:#0b0b0b;color:#fff;cursor:pointer;font-size:24px;line-height:1}
-    .modal-close:hover{border-color:var(--gold);color:var(--gold2)}
-    .product-modal-inner{padding:34px}
-    .product-head{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center;margin-bottom:26px}
-    .product-icon{width:150px;height:150px;border-radius:24px;border:1px solid var(--line);background:#000;object-fit:contain}
-    .product-head h2{font-size:clamp(30px,4vw,50px);margin:4px 0 10px}
-    .product-sub{color:#b8b8b8;line-height:1.6;margin:0}
-    .lang-switch{display:flex;gap:10px;margin:10px 0 24px;flex-wrap:wrap}
-    .lang-btn{border:1px solid #343434;background:#0d0d0d;color:#ccc;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:700}
-    .lang-btn.active{border-color:var(--gold);color:var(--gold2);background:rgba(216,170,67,.08)}
-    .product-layout{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(300px,.82fr);gap:28px}
-    .gallery-main{border:1px solid #2a2a2a;border-radius:18px;background:#000;overflow:hidden;min-height:420px;display:flex;align-items:center;justify-content:center}
-    .gallery-main img{display:block;width:100%;max-height:620px;object-fit:contain;background:#000}
-    .gallery-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin-top:10px}
-    .gallery-thumb{border:1px solid #2c2c2c;background:#050505;border-radius:10px;padding:0;cursor:pointer;overflow:hidden;aspect-ratio:1/1}
-    .gallery-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-    .gallery-thumb.active{border-color:var(--gold2);box-shadow:0 0 0 1px var(--gold2) inset}
-    .product-copy{min-width:0}
-    .product-copy h3{font-size:22px;margin:0 0 12px;color:#fff}
-    .product-copy p{color:#c7c7c7;line-height:1.75;margin:0 0 16px}
-    .feature-list{margin:18px 0 24px;padding:0;list-style:none;display:grid;gap:10px}
-    .feature-list li{position:relative;padding-left:24px;color:#d2d2d2;line-height:1.5}
-    .feature-list li:before{content:'◆';position:absolute;left:0;top:1px;color:var(--gold);font-size:11px}
-    .store-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:14px;border:1px solid var(--gold);background:linear-gradient(180deg,#e2b84e,#a56f12);color:#080808;font-weight:900;letter-spacing:.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}
-    .store-button:hover{filter:brightness(1.08)}
-    .store-note{display:block;color:#777;font-size:11px;margin-top:9px;line-height:1.4}
-    .support-inner{padding:38px;max-width:850px;margin:auto}
-    .support-inner h2{margin:6px 0 18px}
-    .support-inner p{color:#c8c8c8;line-height:1.8;font-size:16px}
-    .support-highlight{margin:24px 0;padding:20px;border:1px solid var(--line);border-radius:18px;background:rgba(216,170,67,.055)}
-    .support-values{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
-    .support-value{border:1px solid #2c2c2c;background:#080808;border-radius:14px;padding:16px}
-    .support-value span{display:block;color:#888;font-size:11px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:7px}
-    .support-value strong{display:block;color:var(--gold2);font-size:16px;overflow-wrap:anywhere}
-    .privacy-note{color:#777!important;font-size:12px!important;margin-top:16px!important}
-    @media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.product-layout{grid-template-columns:1fr}.gallery-main{min-height:340px}}
-    @media(max-width:760px){nav{display:none}.top{min-height:72px}.grid{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{margin-top:10px}.pic{height:240px}.quality .wrap{grid-template-columns:1fr}.hero{padding-top:22px}.product-modal-inner,.support-inner{padding:24px}.product-head{grid-template-columns:90px 1fr;gap:16px}.product-icon{width:90px;height:90px;border-radius:18px}.gallery-strip{grid-template-columns:repeat(3,1fr)}.modal{padding:10px}.modal-card{max-height:94vh;border-radius:18px}.support-values{grid-template-columns:1fr}}
-    @media(max-width:500px){.wrap{width:min(100% - 20px,1220px)}.grid{grid-template-columns:1fr}.pic{height:300px}.hero-card{border-radius:16px}.brand span{font-size:15px}.support-link{padding:9px 12px;font-size:12px}.header-actions{gap:8px}.gallery-main{min-height:260px}.product-head{display:block}.product-icon{margin-bottom:14px}.product-modal-inner,.support-inner{padding:18px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505">
+<title>ARVION | Android Apps & Games</title>
+<meta name="description" content="ARVION Android apps and games. No ads. No subscriptions. Free lifetime updates.">
+<style>
+:root{--bg:#050505;--panel:#0b0b0b;--gold:#d8aa43;--gold2:#f1d17a;--text:#f5f5f5;--muted:#aaa;--line:rgba(216,170,67,.3)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#222 0,#090909 38%,#050505 68%);color:var(--text);font-family:Arial,Helvetica,sans-serif}body.modal-open{overflow:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1220px,calc(100% - 32px));margin:auto}header{position:sticky;top:0;z-index:10;background:rgba(5,5,5,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.top{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.16em}.brand img{width:52px;height:52px;object-fit:cover;border-radius:50%;border:1px solid var(--line)}.brand span{font-size:18px}.header-actions{display:flex;align-items:center;gap:20px}nav{display:flex;gap:24px;color:#d7d7d7;font-size:14px}nav a:hover{color:var(--gold2)}.support-link{border:1px solid rgba(216,170,67,.55);background:linear-gradient(180deg,#171208,#0c0a06);color:var(--gold2);border-radius:999px;padding:10px 16px;cursor:pointer;font-weight:800}.support-link:hover{border-color:var(--gold2)}.hero{padding:38px 0 22px}.hero-card{aspect-ratio:16/9;overflow:hidden;border-radius:24px;border:1px solid var(--line);background:#000}.hero-card img{display:block;width:100%;height:100%;object-fit:cover}.hero-copy{text-align:center;padding:30px 18px 8px}.eyebrow{color:var(--gold2);font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700}h1{font-size:clamp(34px,5vw,68px);line-height:.98;margin:12px 0 16px}.hero-copy p{margin:0 auto;max-width:760px;color:#c7c7c7;font-size:17px;line-height:1.7}.promise{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px 0 4px}.pill{padding:10px 15px;border:1px solid var(--line);border-radius:999px;background:rgba(216,170,67,.06);color:#f1ddb0;font-size:13px;font-weight:700}section{padding:42px 0 66px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:24px}h2{margin:0;font-size:clamp(28px,4vw,44px)}.section-head p{margin:0;color:var(--muted);max-width:520px;line-height:1.6}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px}.filter{border:1px solid #303030;background:#0c0c0c;color:#ddd;border-radius:999px;padding:9px 14px;cursor:pointer;font-size:13px}.filter.active,.filter:hover{border-color:var(--gold);color:var(--gold2)}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.card{background:linear-gradient(180deg,#111,#090909);border:1px solid #252525;border-radius:20px;overflow:hidden;transition:.25s ease}.card.details{cursor:pointer}.card:hover{transform:translateY(-5px);border-color:rgba(216,170,67,.62)}.pic{height:255px;background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid #222;position:relative}.pic img{display:block;width:100%;height:100%;object-fit:contain}.details-badge{position:absolute;right:10px;bottom:10px;background:rgba(5,5,5,.9);border:1px solid var(--gold);color:var(--gold2);padding:7px 10px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase}.body{padding:17px}.tag{display:inline-block;color:var(--gold2);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:9px}.body h3{font-size:18px;margin:0 0 8px}.body p{font-size:13px;line-height:1.55;color:#9f9f9f;margin:0}.quality{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(216,170,67,.04),rgba(216,170,67,.11),rgba(216,170,67,.04))}.quality .wrap{padding:30px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:center}.quality strong{display:block;color:var(--gold2);font-size:17px;margin-bottom:6px}.quality span{color:#aaa;font-size:13px}footer{padding:38px 0 52px;text-align:center;color:#777;font-size:12px}footer strong{color:#c7a65a;letter-spacing:.15em}.modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.84);backdrop-filter:blur(10px)}.modal.open{display:flex}.modal-card{width:min(1080px,100%);max-height:92vh;overflow:auto;background:linear-gradient(180deg,#121212,#080808);border:1px solid rgba(216,170,67,.52);border-radius:24px;position:relative}.modal-close{position:sticky;top:12px;float:right;margin:12px 12px 0 0;z-index:4;width:44px;height:44px;border-radius:50%;border:1px solid #3a3a3a;background:#0b0b0b;color:#fff;cursor:pointer;font-size:24px}.modal-close:hover{border-color:var(--gold);color:var(--gold2)}.product-modal-inner,.support-inner{padding:34px}.product-head{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center;margin-bottom:24px}.product-icon{width:150px;height:150px;border-radius:24px;border:1px solid var(--line);background:#000;object-fit:contain}.product-head h2{margin:4px 0 10px}.product-sub{color:#b8b8b8;line-height:1.6;margin:0}.lang-switch{display:flex;gap:10px;margin:10px 0 24px}.lang-btn{border:1px solid #343434;background:#0d0d0d;color:#ccc;padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:700}.lang-btn.active{border-color:var(--gold);color:var(--gold2);background:rgba(216,170,67,.08)}.product-layout{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(300px,.82fr);gap:28px}.gallery-main{border:1px solid #2a2a2a;border-radius:18px;background:#000;overflow:hidden;min-height:420px;display:flex;align-items:center;justify-content:center}.gallery-main img{display:block;width:100%;max-height:620px;object-fit:contain;background:#000}.gallery-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;margin-top:10px}.gallery-thumb{border:1px solid #2c2c2c;background:#050505;border-radius:10px;padding:0;cursor:pointer;overflow:hidden;aspect-ratio:1/1}.gallery-thumb img{width:100%;height:100%;object-fit:cover;display:block}.gallery-thumb.active{border-color:var(--gold2)}.product-copy h3{font-size:22px;margin:0 0 12px}.product-copy p,.support-copy p{color:#c7c7c7;line-height:1.75}.feature-list{margin:18px 0 24px;padding:0;list-style:none;display:grid;gap:10px}.feature-list li{position:relative;padding-left:24px;color:#d2d2d2;line-height:1.5}.feature-list li:before{content:'◆';position:absolute;left:0;color:var(--gold);font-size:11px}.store-button,.reveal-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 20px;border-radius:14px;border:1px solid var(--gold);background:linear-gradient(180deg,#e2b84e,#a56f12);color:#080808;font-weight:900;cursor:pointer}.support-inner{max-width:850px;margin:auto}.support-highlight{margin:24px 0;padding:20px;border:1px solid var(--line);border-radius:18px;background:rgba(216,170,67,.055)}.support-values{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.support-value{border:1px solid #2c2c2c;background:#080808;border-radius:14px;padding:16px}.support-value span{display:block;color:#888;font-size:11px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:7px}.support-value strong{display:block;color:var(--gold2);font-size:16px;overflow-wrap:anywhere}.privacy-note{color:#777!important;font-size:12px!important}.support-lang{margin-bottom:18px}.qr-card{display:flex;gap:18px;align-items:center;margin-top:24px;padding:18px;border:1px solid var(--line);border-radius:18px}.qr-card img{width:150px;height:150px;background:#fff;padding:8px;border-radius:12px}.qr-card p{margin:0}.hidden-data{filter:blur(6px);user-select:none;transition:.2s}.hidden-data.revealed{filter:none;user-select:text}@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.product-layout{grid-template-columns:1fr}}@media(max-width:760px){nav{display:none}.grid{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.quality .wrap{grid-template-columns:1fr}.product-head{grid-template-columns:90px 1fr}.product-icon{width:90px;height:90px}.support-values{grid-template-columns:1fr}.gallery-strip{grid-template-columns:repeat(3,1fr)}}@media(max-width:500px){.wrap{width:min(100% - 20px,1220px)}.grid{grid-template-columns:1fr}.pic{height:300px}.modal{padding:8px}.product-modal-inner,.support-inner{padding:18px}.product-head{display:block}.product-icon{margin-bottom:14px}.qr-card{display:block}.qr-card img{margin-bottom:12px}}
+</style>
 </head>
 <body>
-<header>
-  <div class="wrap top">
-    <a class="brand" href="#top"><img src="assets/brand-badge.webp" alt="ARVION logo"><span>ARVION</span></a>
-    <div class="header-actions">
-      <nav><a href="#apps">Apps & Games</a><a href="#promise">Our promise</a></nav>
-      <button class="support-link" id="supportOpen" type="button">Support</button>
-    </div>
-  </div>
-</header>
+<header><div class="wrap top"><a class="brand" href="#top"><img src="assets/brand-badge.webp" alt="ARVION logo"><span>ARVION</span></a><div class="header-actions"><nav><a href="#apps">Apps & Games</a><a href="#promise">Our promise</a></nav><button class="support-link" id="supportOpen" type="button">Support</button></div></div></header>
 <main id="top">
-  <div class="wrap hero">
-    <div class="hero-card"><img id="heroBanner" alt="No Ads No Subscription" decoding="async" fetchpriority="high"></div>
-    <div class="hero-copy">
-      <div class="eyebrow">ARVION Android Software</div>
-      <h1>No ads. No subscriptions.</h1>
-      <p>Buy once and use it without advertising or recurring fees. Every ARVION purchase includes free lifetime updates.</p>
-      <div class="promise"><span class="pill">NO ADS</span><span class="pill">NO SUBSCRIPTION</span><span class="pill">FREE LIFETIME UPDATES</span></div>
-    </div>
-  </div>
-  <section id="apps">
-    <div class="wrap">
-      <div class="section-head"><div><div class="eyebrow">Our software</div><h2>Apps & Games</h2></div><p>Choose an ARVION product. Detailed product pages with screenshots and Google Play access are being added one by one.</p></div>
-      <div class="filters">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="app">Apps</button>
-        <button class="filter" data-filter="game">Games</button>
-        <button class="filter" data-filter="watch">Watch</button>
-      </div>
-      <div class="grid" id="grid"></div>
-    </div>
-  </section>
-  <div class="quality" id="promise"><div class="wrap"><div><strong>NO ADS</strong><span>No advertising inside our apps and games.</span></div><div><strong>NO SUBSCRIPTIONS</strong><span>No monthly or yearly recurring payments.</span></div><div><strong>LIFETIME UPDATES</strong><span>Future updates are included with your purchase.</span></div></div></div>
+<div class="wrap hero"><div class="hero-card"><img id="heroBanner" alt="No Ads No Subscription"></div><div class="hero-copy"><div class="eyebrow">ARVION Android Software</div><h1>No ads. No subscriptions.</h1><p>Buy once and use it without advertising or recurring fees. Every ARVION purchase includes free lifetime updates.</p><div class="promise"><span class="pill">NO ADS</span><span class="pill">NO SUBSCRIPTION</span><span class="pill">FREE LIFETIME UPDATES</span></div></div></div>
+<section id="apps"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Our software</div><h2>Apps & Games</h2></div><p>Click OBD Active Exhaust Pro to open its full product presentation.</p></div><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="app">Apps</button><button class="filter" data-filter="game">Games</button><button class="filter" data-filter="watch">Watch</button></div><div class="grid" id="grid"></div></div></section>
+<div class="quality" id="promise"><div class="wrap"><div><strong>NO ADS</strong><span>No advertising inside our apps and games.</span></div><div><strong>NO SUBSCRIPTIONS</strong><span>No monthly or yearly recurring payments.</span></div><div><strong>LIFETIME UPDATES</strong><span>Future updates are included with your purchase.</span></div></div></div>
 </main>
 <footer><div class="wrap"><strong>ARVION</strong><br><br>Android apps, games and smartwatch software.</div></footer>
-<div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productTitle">
-  <div class="modal-card">
-    <button class="modal-close" id="productClose" type="button" aria-label="Close product details">×</button>
-    <div class="product-modal-inner">
-      <div class="product-head">
-        <img class="product-icon" id="productIcon" src="assets/obd.webp" alt="OBD Active Exhaust Pro">
-        <div>
-          <div class="eyebrow">ARVION Android App</div>
-          <h2 id="productTitle">OBD Active Exhaust Pro</h2>
-          <p class="product-sub" id="productSubtitle">A multi-tool automotive companion combining active exhaust control, diagnostics, live data, media and everyday utilities in one premium Android app.</p>
-        </div>
-      </div>
-      <div class="lang-switch" aria-label="Description language">
-        <button class="lang-btn active" type="button" data-lang="en">English</button>
-        <button class="lang-btn" type="button" data-lang="pl">Polski</button>
-      </div>
-      <div class="product-layout">
-        <div>
-          <div class="gallery-main"><img id="galleryMain" src="assets/obd.webp" alt="OBD Active Exhaust Pro screenshot"></div>
-          <div class="gallery-strip" id="galleryStrip" aria-label="OBD Active Exhaust Pro gallery"></div>
-        </div>
-        <div class="product-copy" id="productCopy"></div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal" id="supportModal" role="dialog" aria-modal="true" aria-labelledby="supportTitle">
-  <div class="modal-card">
-    <button class="modal-close" id="supportClose" type="button" aria-label="Close support window">×</button>
-    <div class="support-inner">
-      <div class="eyebrow">Support independent development</div>
-      <h2 id="supportTitle">Support ARVION</h2>
-      <p>I am the independent developer behind ARVION. I design and build Android applications and games for smartphones and smartwatches, including Wear OS devices. My goal is simple: useful, polished software without advertising and without subscriptions.</p>
-      <p>ARVION products use a straightforward model — one purchase, no recurring fees, and free lifetime updates. I continue to develop new applications, games and smartwatch projects, test them on real devices and improve existing releases.</p>
-      <div class="support-highlight">
-        <p><strong>Want to help the next projects happen?</strong><br>Financial support is always appreciated. Contributions help cover development tools, testing hardware, design work and the continued development of future ARVION projects.</p>
-        <div class="support-values">
-          <div class="support-value"><span>BLIK / phone</span><strong>+48 797 *** 984</strong></div>
-          <div class="support-value"><span>Bank account</span><strong>91 1050 **** **** **** 0803 3007</strong></div>
-        </div>
-        <p class="privacy-note">Payment details are intentionally partially masked on the public website.</p>
-      </div>
-      <p>Thank you for supporting independent Android development and helping ARVION grow.</p>
-    </div>
-  </div>
-</div>
+<div class="modal" id="productModal"><div class="modal-card"><button class="modal-close" id="productClose">×</button><div class="product-modal-inner"><div class="product-head"><img class="product-icon" src="assets/obd.webp" alt="OBD Active Exhaust Pro"><div><div class="eyebrow">ARVION Android App</div><h2>OBD Active Exhaust Pro</h2><p class="product-sub">A complete automotive companion combining active exhaust control, diagnostics, live data, AI assistance, media and useful everyday tools.</p></div></div><div class="lang-switch"><button class="lang-btn active" data-lang="en">English</button><button class="lang-btn" data-lang="pl">Polski</button></div><div class="product-layout"><div><div class="gallery-main"><img id="galleryMain" src="assets/obd.webp" alt="OBD Active Exhaust Pro"></div><div class="gallery-strip" id="galleryStrip"></div></div><div class="product-copy" id="productCopy"></div></div></div></div></div>
+<div class="modal" id="supportModal"><div class="modal-card"><button class="modal-close" id="supportClose">×</button><div class="support-inner"><div class="lang-switch support-lang"><button class="lang-btn support-lang-btn active" data-support-lang="en">English</button><button class="lang-btn support-lang-btn" data-support-lang="pl">Polski</button></div><div id="supportCopy" class="support-copy"></div></div></div></div>
 <script>
-(async()=>{
-  try{
-    const parts=await Promise.all(
-      Array.from({length:6},(_,i)=>
-        fetch(`assets/banner-data/p${i}.txt?v=20260827real`,{cache:'no-store'}).then(r=>{
-          if(!r.ok) throw new Error(`banner part ${i}`);
-          return r.text();
-        })
-      )
-    );
-    document.getElementById('heroBanner').src='data:image/avif;base64,'+parts.join('');
-  }catch(e){
-    console.error('Hero banner load failed',e);
-  }
-})();
+(async()=>{try{const parts=await Promise.all(Array.from({length:6},(_,i)=>fetch(`assets/banner-data/p${i}.txt?v=20260827real`,{cache:'no-store'}).then(r=>r.text())));document.getElementById('heroBanner').src='data:image/avif;base64,'+parts.join('')}catch(e){document.getElementById('heroBanner').src='assets/hero-no-ads.webp'}})();
 const products=[
- {id:'obd-active-exhaust-pro',name:'OBD Active Exhaust Pro',type:'app',tag:'Android App',img:'assets/obd.webp',desc:'Automotive tools, active exhaust control, diagnostics and live data.',details:true},
- {name:'Drive Recorder',type:'app',tag:'Android App',img:'assets/drive-recorder.webp',desc:'A practical driving recorder for Android.'},
- {name:'ARVION Watch Faces',type:'watch',tag:'Smartwatch',img:'assets/watch-faces.webp',desc:'ARVION watch faces and smartwatch content.'},
- {name:'Checkers Royal Game',type:'game',tag:'Game',img:'assets/checkers.webp',desc:'Classic checkers in the ARVION style.'},
- {name:'Royal Chess',type:'game',tag:'Game',img:'assets/chess.webp',desc:'Chess with a premium visual presentation.'},
- {name:'Chicken Drop',type:'game',tag:'Game',img:'assets/chicken-drop.webp',desc:'Fast arcade gameplay for Android.'},
- {name:'Crystal Blocks',type:'game',tag:'Game',img:'assets/crystal-blocks.webp',desc:'A colorful block puzzle game.'},
- {name:'Kalendarz Zmianowy',type:'app',tag:'Android App',img:'assets/kalendarz.webp',desc:'Shift calendar designed for PSP duty schedules.'},
- {name:'Live Data',type:'app',tag:'Android App',img:'assets/live-data.webp',desc:'Live vehicle data presented on your phone.'},
- {name:'Media Player',type:'app',tag:'Android App',img:'assets/media.webp',desc:'Media playback in the ARVION ecosystem.'},
- {name:'Music 2 Watch',type:'watch',tag:'Smartwatch',img:'assets/music-2-watch.webp',desc:'Music features designed for phone and watch.'},
- {name:'Pixel Critters',type:'game',tag:'Game',img:'assets/pixel-critters.webp',desc:'Pixel-style creature game for Android.'},
- {name:'Pixel Critters 3D',type:'game',tag:'Game',img:'assets/pixel-critters-3d.webp',desc:'The 3D evolution of Pixel Critters.'},
- {name:'Snake Classic',type:'game',tag:'Game',img:'assets/snake.webp',desc:'A modern take on the classic Snake game.'},
- {name:'Spy 2 Watch',type:'watch',tag:'Smartwatch',img:'assets/spy-2-watch.webp',desc:'Phone-to-watch companion software.'},
- {name:'Video 2 Watch',type:'watch',tag:'Smartwatch',img:'assets/video-2-watch.webp',desc:'Video features connecting Android phone and watch.'}
-];
-const obdGallery=[
- {src:'assets/obd.webp',alt:'OBD Active Exhaust Pro main screen'},
- {src:'assets/live-data.webp',alt:'Live Data module'},
- {src:'assets/drive-recorder.webp',alt:'Drive Recorder module'},
- {src:'assets/media.webp',alt:'Media module'},
- {src:'assets/kalendarz.webp',alt:'Shift Calendar module'}
-];
-const obdCopy={
- en:`<h3>One app. A complete automotive toolkit.</h3>
- <p>OBD Active Exhaust Pro brings together vehicle-focused tools and everyday utilities in one premium Android application. It is designed around a clear dark interface and quick access to the functions you use most.</p>
- <ul class="feature-list">
-   <li><strong>Active Exhaust</strong> — control the exhaust sound module, select sound profiles and fine-tune the effect from the phone.</li>
-   <li><strong>Live Data</strong> — view real-time vehicle parameters from a compatible OBD/ELM327 connection using clear gauges and data panels.</li>
-   <li><strong>Diagnostics</strong> — access diagnostic information and trouble-code tools from one place.</li>
-   <li><strong>AI Mechanic</strong> — an in-app assistant designed to help explain vehicle symptoms, diagnostic information and possible next steps.</li>
-   <li><strong>Drive Recorder</strong> — record your journey using the phone camera with a driving-focused interface.</li>
-   <li><strong>Media & utilities</strong> — media player, voice recorder, notes, shift calendar, SOS, streaming and additional built-in tools.</li>
- </ul>
- <p><strong>No ads. No subscriptions.</strong> Purchase once and use the application without recurring fees. Future ARVION updates are included.</p>
- <a class="store-button" href="https://play.google.com/store/search?q=OBD%20Active%20Exhaust%20Pro&c=apps" target="_blank" rel="noopener">GET IT ON GOOGLE PLAY</a>
- <span class="store-note">The button opens Google Play search for OBD Active Exhaust Pro while the final public product URL is being assigned.</span>`,
- pl:`<h3>Jedna aplikacja. Kompletny zestaw narzędzi dla kierowcy.</h3>
- <p>OBD Active Exhaust Pro łączy funkcje związane z samochodem oraz praktyczne narzędzia codziennego użytku w jednej rozbudowanej aplikacji na Androida. Całość została zaprojektowana z ciemnym, czytelnym interfejsem i szybkim dostępem do najważniejszych modułów.</p>
- <ul class="feature-list">
-   <li><strong>Aktywny wydech</strong> — sterowanie modułem dźwięku wydechu, wybór profili brzmienia oraz regulacja efektu bezpośrednio z telefonu.</li>
-   <li><strong>Live Data</strong> — podgląd parametrów pojazdu w czasie rzeczywistym przez kompatybilne połączenie OBD/ELM327, z czytelnymi wskaźnikami i panelami danych.</li>
-   <li><strong>Diagnostyka</strong> — dostęp do informacji diagnostycznych i narzędzi związanych z kodami błędów w jednym miejscu.</li>
-   <li><strong>AI Mechanik</strong> — wbudowany asystent pomagający wyjaśniać objawy, dane diagnostyczne i możliwe dalsze kroki.</li>
-   <li><strong>Rejestrator jazdy</strong> — nagrywanie trasy kamerą telefonu w interfejsie przygotowanym do użytkowania podczas jazdy.</li>
-   <li><strong>Media i narzędzia</strong> — odtwarzacz multimediów, dyktafon, notatnik, kalendarz zmianowy, SOS, Stream i dodatkowe moduły.</li>
- </ul>
- <p><strong>Bez reklam. Bez subskrypcji.</strong> Jednorazowy zakup bez cyklicznych opłat. Przyszłe aktualizacje ARVION są wliczone.</p>
- <a class="store-button" href="https://play.google.com/store/search?q=OBD%20Active%20Exhaust%20Pro&c=apps" target="_blank" rel="noopener">GOOGLE PLAY</a>
- <span class="store-note">Przycisk otwiera wyszukiwanie OBD Active Exhaust Pro w Google Play do czasu przypisania końcowego publicznego adresu produktu.</span>`
-};
-const grid=document.getElementById('grid');
-const productModal=document.getElementById('productModal');
-const supportModal=document.getElementById('supportModal');
-const galleryMain=document.getElementById('galleryMain');
-const galleryStrip=document.getElementById('galleryStrip');
-const productCopy=document.getElementById('productCopy');
-let currentLang='en';
-function render(filter='all'){
- const list=products.filter(p=>filter==='all'||p.type===filter);
- grid.innerHTML=list.map(p=>`<article class="card${p.details?' details':''}" ${p.details?'tabindex="0" role="button" aria-label="Open details for '+p.name+'" data-product="'+p.id+'"':''}><div class="pic"><img src="${p.img}" alt="${p.name}" loading="lazy">${p.details?'<span class="details-badge">View details</span>':''}</div><div class="body"><span class="tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p></div></article>`).join('');
- document.querySelectorAll('[data-product="obd-active-exhaust-pro"]').forEach(card=>{
-   card.addEventListener('click',openProduct);
-   card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProduct();}});
- });
-}
-function buildGallery(){
- galleryStrip.innerHTML=obdGallery.map((item,i)=>`<button type="button" class="gallery-thumb${i===0?' active':''}" data-gallery-index="${i}" aria-label="Show screenshot ${i+1}"><img src="${item.src}" alt="${item.alt}"></button>`).join('');
- galleryStrip.querySelectorAll('.gallery-thumb').forEach(btn=>btn.addEventListener('click',()=>{
-   const i=Number(btn.dataset.galleryIndex);
-   const item=obdGallery[i];
-   galleryMain.src=item.src;
-   galleryMain.alt=item.alt;
-   galleryStrip.querySelectorAll('.gallery-thumb').forEach(x=>x.classList.remove('active'));
-   btn.classList.add('active');
- }));
-}
-function setLang(lang){
- currentLang=lang;
- productCopy.innerHTML=obdCopy[lang];
- document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
-}
-function openProduct(){
- buildGallery();
- galleryMain.src=obdGallery[0].src;
- galleryMain.alt=obdGallery[0].alt;
- setLang(currentLang);
- productModal.classList.add('open');
- document.body.classList.add('modal-open');
- document.getElementById('productClose').focus();
-}
-function closeModal(modal){
- modal.classList.remove('open');
- if(!document.querySelector('.modal.open')) document.body.classList.remove('modal-open');
-}
-document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.filter)}));
-document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-document.getElementById('productClose').addEventListener('click',()=>closeModal(productModal));
-document.getElementById('supportClose').addEventListener('click',()=>closeModal(supportModal));
-document.getElementById('supportOpen').addEventListener('click',()=>{supportModal.classList.add('open');document.body.classList.add('modal-open');document.getElementById('supportClose').focus();});
-[productModal,supportModal].forEach(modal=>modal.addEventListener('click',e=>{if(e.target===modal)closeModal(modal);}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(productModal.classList.contains('open'))closeModal(productModal);if(supportModal.classList.contains('open'))closeModal(supportModal);}});
-render();
+{id:'obd',name:'OBD Active Exhaust Pro',type:'app',tag:'Android App',img:'assets/obd.webp',desc:'Automotive tools, active exhaust control, diagnostics and live data.',details:true},
+{name:'Drive Recorder',type:'app',tag:'Android App',img:'assets/drive-recorder.webp',desc:'A practical driving recorder for Android.'},{name:'ARVION Watch Faces',type:'watch',tag:'Smartwatch',img:'assets/watch-faces.webp',desc:'ARVION watch faces and smartwatch content.'},{name:'Checkers Royal Game',type:'game',tag:'Game',img:'assets/checkers.webp',desc:'Classic checkers in the ARVION style.'},{name:'Royal Chess',type:'game',tag:'Game',img:'assets/chess.webp',desc:'Chess with a premium visual presentation.'},{name:'Chicken Drop',type:'game',tag:'Game',img:'assets/chicken-drop.webp',desc:'Fast arcade gameplay for Android.'},{name:'Crystal Blocks',type:'game',tag:'Game',img:'assets/crystal-blocks.webp',desc:'A colorful block puzzle game.'},{name:'Kalendarz Zmianowy',type:'app',tag:'Android App',img:'assets/kalendarz.webp',desc:'Shift calendar designed for PSP duty schedules.'},{name:'Live Data',type:'app',tag:'Android App',img:'assets/live-data.webp',desc:'Live vehicle data presented on your phone.'},{name:'Media Player',type:'app',tag:'Android App',img:'assets/media.webp',desc:'Media playback in the ARVION ecosystem.'},{name:'Music 2 Watch',type:'watch',tag:'Smartwatch',img:'assets/music-2-watch.webp',desc:'Music features designed for phone and watch.'},{name:'Pixel Critters',type:'game',tag:'Game',img:'assets/pixel-critters.webp',desc:'Pixel-style creature game for Android.'},{name:'Pixel Critters 3D',type:'game',tag:'Game',img:'assets/pixel-critters-3d.webp',desc:'The 3D evolution of Pixel Critters.'},{name:'Snake Classic',type:'game',tag:'Game',img:'assets/snake.webp',desc:'A modern take on the classic Snake game.'},{name:'Spy 2 Watch',type:'watch',tag:'Smartwatch',img:'assets/spy-2-watch.webp',desc:'Phone-to-watch companion software.'},{name:'Video 2 Watch',type:'watch',tag:'Smartwatch',img:'assets/video-2-watch.webp',desc:'Video features connecting Android phone and watch.'}];
+const gallery=[{src:'assets/obd.webp',alt:'OBD Active Exhaust Pro'},{src:'assets/live-data.webp',alt:'Live Data'},{src:'assets/drive-recorder.webp',alt:'Drive Recorder'},{src:'assets/media.webp',alt:'Media Player'},{src:'assets/kalendarz.webp',alt:'Shift Calendar'},{src:'assets/visit-arvion-qr.svg',alt:'Scan QR to visit ARVION website'}];
+const productCopy={en:`<h3>One app. A complete automotive toolkit.</h3><p>OBD Active Exhaust Pro combines vehicle-focused tools and everyday utilities in one premium Android application.</p><ul class="feature-list"><li><strong>Active Exhaust</strong> — control sound profiles and the exhaust sound module.</li><li><strong>Live Data</strong> — view real-time parameters through a compatible OBD/ELM327 connection.</li><li><strong>Diagnostics</strong> — read diagnostic information and work with trouble codes.</li><li><strong>AI Mechanic</strong> — assistance with symptoms, diagnostic data and possible next steps.</li><li><strong>Drive Recorder</strong> — record journeys using the phone camera.</li><li><strong>Media & utilities</strong> — media player, voice recorder, notes, shift calendar, SOS, Stream and more.</li></ul><p><strong>No ads. No subscriptions.</strong> One purchase with free lifetime updates.</p><a class="store-button" href="https://play.google.com/store/search?q=OBD%20Active%20Exhaust%20Pro&c=apps" target="_blank" rel="noopener">GET IT ON GOOGLE PLAY</a>`,pl:`<h3>Jedna aplikacja. Kompletny zestaw narzędzi dla kierowcy.</h3><p>OBD Active Exhaust Pro łączy funkcje związane z samochodem oraz praktyczne narzędzia w jednej rozbudowanej aplikacji na Androida.</p><ul class="feature-list"><li><strong>Aktywny wydech</strong> — sterowanie profilem dźwięku i modułem aktywnego wydechu.</li><li><strong>Live Data</strong> — parametry pojazdu w czasie rzeczywistym przez kompatybilne OBD/ELM327.</li><li><strong>Diagnostyka</strong> — informacje diagnostyczne i obsługa kodów błędów.</li><li><strong>AI Mechanik</strong> — pomoc w analizie objawów, danych i możliwych dalszych kroków.</li><li><strong>Rejestrator jazdy</strong> — nagrywanie trasy kamerą telefonu.</li><li><strong>Media i narzędzia</strong> — odtwarzacz, dyktafon, notatnik, kalendarz zmianowy, SOS, Stream i więcej.</li></ul><p><strong>Bez reklam. Bez subskrypcji.</strong> Jednorazowy zakup i dożywotnie darmowe aktualizacje.</p><a class="store-button" href="https://play.google.com/store/search?q=OBD%20Active%20Exhaust%20Pro&c=apps" target="_blank" rel="noopener">GOOGLE PLAY</a>`};
+const supportCopy={en:`<div class="eyebrow">Support independent development</div><h2>Support ARVION</h2><p>I am the independent developer behind ARVION. I design Android applications and games for smartphones and smartwatches, including Wear OS. My goal is useful, polished software without advertising and without subscriptions.</p><p>ARVION uses a simple model: one purchase, no recurring fees and free lifetime updates. Financial support helps fund development tools, testing devices, design work and future applications, games and smartwatch projects.</p><div class="support-highlight"><p><strong>Want to support future projects?</strong><br>Every contribution is appreciated.</p><div class="support-values"><div class="support-value"><span>BLIK / phone</span><strong id="phoneData" class="hidden-data">+48 797 053 984</strong></div><div class="support-value"><span>Bank account</span><strong id="bankData" class="hidden-data">91 1050 0145 1000 0097 0803 3007</strong></div></div><p><button class="reveal-btn" id="revealSupport">SHOW PAYMENT DETAILS</button></p><p class="privacy-note">The payment details are blurred until you choose to reveal them.</p></div><div class="qr-card"><img src="assets/visit-arvion-qr.svg" alt="QR code to ARVION website"><p><strong>Visit ARVION website</strong><br>Scan this QR code with your phone camera.</p></div><p>Thank you for supporting independent Android development.</p>`,pl:`<div class="eyebrow">Wesprzyj niezależny rozwój</div><h2>Wesprzyj ARVION</h2><p>Jestem niezależnym twórcą stojącym za ARVION. Projektuję aplikacje i gry na telefony oraz zegarki z systemem Android, w tym Wear OS. Moim celem jest tworzenie dopracowanego oprogramowania bez reklam i bez subskrypcji.</p><p>ARVION działa na prostej zasadzie: jednorazowy zakup, brak cyklicznych opłat i dożywotnie darmowe aktualizacje. Wsparcie finansowe pomaga pokrywać narzędzia programistyczne, urządzenia testowe, grafikę oraz rozwój kolejnych aplikacji, gier i projektów na zegarki.</p><div class="support-highlight"><p><strong>Chcesz wesprzeć kolejne projekty?</strong><br>Każde wsparcie jest mile widziane.</p><div class="support-values"><div class="support-value"><span>BLIK / telefon</span><strong id="phoneData" class="hidden-data">+48 797 053 984</strong></div><div class="support-value"><span>Numer konta</span><strong id="bankData" class="hidden-data">91 1050 0145 1000 0097 0803 3007</strong></div></div><p><button class="reveal-btn" id="revealSupport">POKAŻ DANE DO WSPARCIA</button></p><p class="privacy-note">Dane są rozmyte do momentu świadomego odsłonięcia.</p></div><div class="qr-card"><img src="assets/visit-arvion-qr.svg" alt="Kod QR do strony ARVION"><p><strong>Odwiedź stronę ARVION</strong><br>Zeskanuj kod QR aparatem telefonu.</p></div><p>Dziękuję za wsparcie niezależnego rozwoju aplikacji na Androida.</p>`};
+const grid=document.getElementById('grid'),productModal=document.getElementById('productModal'),supportModal=document.getElementById('supportModal'),galleryMain=document.getElementById('galleryMain'),galleryStrip=document.getElementById('galleryStrip'),productCopyEl=document.getElementById('productCopy'),supportCopyEl=document.getElementById('supportCopy');let currentLang='en',supportLang='en';
+function render(filter='all'){const list=products.filter(p=>filter==='all'||p.type===filter);grid.innerHTML=list.map(p=>`<article class="card${p.details?' details':''}" ${p.details?'tabindex="0" data-product="obd"':''}><div class="pic"><img src="${p.img}" alt="${p.name}" loading="lazy">${p.details?'<span class="details-badge">View details</span>':''}</div><div class="body"><span class="tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p></div></article>`).join('');document.querySelectorAll('[data-product="obd"]').forEach(c=>{c.onclick=openProduct;c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProduct()}}})}
+function buildGallery(){galleryStrip.innerHTML=gallery.map((x,i)=>`<button class="gallery-thumb${i===0?' active':''}" data-i="${i}"><img src="${x.src}" alt="${x.alt}"></button>`).join('');galleryStrip.querySelectorAll('button').forEach(b=>b.onclick=()=>{const x=gallery[+b.dataset.i];galleryMain.src=x.src;galleryMain.alt=x.alt;galleryStrip.querySelectorAll('button').forEach(y=>y.classList.remove('active'));b.classList.add('active')})}
+function setProductLang(l){currentLang=l;productCopyEl.innerHTML=productCopy[l];document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===l))}
+function setSupportLang(l){supportLang=l;supportCopyEl.innerHTML=supportCopy[l];document.querySelectorAll('[data-support-lang]').forEach(b=>b.classList.toggle('active',b.dataset.supportLang===l));const r=document.getElementById('revealSupport');if(r)r.onclick=()=>{document.getElementById('phoneData').classList.add('revealed');document.getElementById('bankData').classList.add('revealed');r.style.display='none'}}
+function openProduct(){buildGallery();galleryMain.src=gallery[0].src;setProductLang(currentLang);productModal.classList.add('open');document.body.classList.add('modal-open')}
+function closeModal(m){m.classList.remove('open');if(!document.querySelector('.modal.open'))document.body.classList.remove('modal-open')}
+document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.filter)});document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setProductLang(b.dataset.lang));document.querySelectorAll('[data-support-lang]').forEach(b=>b.onclick=()=>setSupportLang(b.dataset.supportLang));document.getElementById('productClose').onclick=()=>closeModal(productModal);document.getElementById('supportClose').onclick=()=>closeModal(supportModal);document.getElementById('supportOpen').onclick=()=>{setSupportLang(supportLang);supportModal.classList.add('open');document.body.classList.add('modal-open')};[productModal,supportModal].forEach(m=>m.onclick=e=>{if(e.target===m)closeModal(m)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal(productModal);closeModal(supportModal)}});render();setSupportLang('en');
 </script>
 </body>
 </html>
