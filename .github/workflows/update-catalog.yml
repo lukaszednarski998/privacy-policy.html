@@ -6,6 +6,8 @@ on:
     paths:
       - "scripts/update_catalog.py"
       - ".github/workflows/update-catalog.yml"
+  issues:
+    types: [opened]
   workflow_dispatch:
 
 permissions:
@@ -13,6 +15,7 @@ permissions:
 
 jobs:
   update:
+    if: github.event_name != 'issues' || github.event.issue.title == '[ARVION IMPORT NEW PRODUCT IMAGES]'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
