@@ -1,0 +1,99 @@
+name: Import ARVION Watch Face originals
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/import-watch-faces.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract original watch-face images and update site
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import json
+          import re
+          import shutil
+
+          zip_path = Path('assets/new-product-images/ARVION WATCH FACE.zip')
+          dest = Path('assets/imported-new-products/ARVION WATCH FACE')
+          if not zip_path.exists():
+              raise SystemExit('ARVION WATCH FACE.zip not found')
+
+          if dest.exists():
+              shutil.rmtree(dest)
+          dest.mkdir(parents=True, exist_ok=True)
+
+          root = dest.resolve()
+          with ZipFile(zip_path) as z:
+              for member in z.infolist():
+                  target = (dest / member.filename).resolve()
+                  if root != target and root not in target.parents:
+                      raise SystemExit(f'Unsafe ZIP path: {member.filename}')
+                  z.extract(member, dest)
+
+          exts = {'.png', '.jpg', '.jpeg', '.webp', '.avif'}
+          images = sorted((p for p in dest.rglob('*') if p.is_file() and p.suffix.lower() in exts), key=lambda p: p.as_posix().lower())
+          if not images:
+              raise SystemExit('No image files found in ARVION WATCH FACE.zip')
+
+          web_paths = [p.as_posix() for p in images]
+          (dest / 'manifest.txt').write_text('\n'.join(web_paths) + '\n', encoding='utf-8')
+
+          index = Path('index.html')
+          s = index.read_text(encoding='utf-8')
+          first = web_paths[0].replace("'", "\\'")
+
+          card = "{id:'watch-faces',name:'ARVION Watch Faces',type:'watch',tag:'Phone · Wear OS',img:'%s',desc:'Premium watch faces managed from Android for compatible Wear OS smartwatches.',details:true}" % first
+          s, n = re.subn(r"\{id:'watch-faces',name:'ARVION Watch Faces',type:'watch',tag:'[^']*',img:'[^']*',desc:'[^']*',details:true\}", card, s, count=1)
+          if n != 1:
+              raise SystemExit('Could not update ARVION Watch Faces product card')
+
+          gallery = '[' + ','.join("{src:%s,alt:%s}" % (json.dumps(path, ensure_ascii=False), json.dumps(f'ARVION Watch Faces original image {i+1}', ensure_ascii=False)) for i, path in enumerate(web_paths)) + ']'
+          assignment = "productData['watch-faces'].icon=%s;productData['watch-faces'].gallery=%s;" % (json.dumps(web_paths[0], ensure_ascii=False), gallery)
+          s, n = re.subn(r"productData\['watch-faces'\]\.icon='';productData\['watch-faces'\]\.gallery=\[\];", lambda m: assignment, s, count=1)
+          if n != 1:
+              s, n = re.subn(r"productData\['watch-faces'\]\.icon=.*?;productData\['watch-faces'\]\.gallery=.*?;", lambda m: assignment, s, count=1)
+          if n != 1:
+              raise SystemExit('Could not update ARVION Watch Faces gallery')
+
+          s = s.replace(
+              'Android applications for driving, media, diagnostics and everyday tools. Open a product to view original screenshots, Polish/English descriptions and Google Play access.',
+              'Android applications for driving, media, diagnostics and everyday tools. Apps that work together with Wear OS are also shown here because they include a phone application. Open a product to view original screenshots, Polish/English descriptions and Google Play access.'
+          )
+          s = s.replace(
+              'Applications and watch software designed for compatible Wear OS smartwatches and phone-to-watch workflows.',
+              'Applications and watch software designed for compatible Wear OS smartwatches and phone-to-watch workflows. Products with both phone and watch components are intentionally listed in both sections.'
+          )
+
+          index.write_text(s, encoding='utf-8')
+          zip_path.unlink()
+          print(f'Imported {len(images)} original watch-face images.')
+          PY
+
+      - name: Commit imported originals
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- index.html "assets/imported-new-products/ARVION WATCH FACE" "assets/new-product-images/ARVION WATCH FACE.zip"
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Add ARVION Watch Faces original images"
+          git push
