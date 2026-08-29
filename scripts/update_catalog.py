@@ -30,9 +30,9 @@ s = re.sub(
 )
 
 # Replace the old single filterable catalog with three fixed sections.
-catalog_html = r'''<section id="phone-apps" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Android smartphones</div><h2>Phone Apps</h2></div><p class="section-note">Android applications for driving, media, diagnostics and everyday tools. Open a product to view original screenshots, Polish/English descriptions and Google Play access.</p></div><div class="grid" id="phoneGrid"></div></div></section>
+catalog_html = r'''<section id="phone-apps" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Android smartphones</div><h2>Phone Apps</h2></div><p class="section-note">Android applications for driving, media, diagnostics and everyday tools. Apps that work together with Wear OS are also shown here because they include a phone application. Open a product to view original screenshots, Polish/English descriptions and Google Play access.</p></div><div class="grid" id="phoneGrid"></div></div></section>
 <div class="catalog-divider"></div>
-<section id="watch-apps" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Wear OS</div><h2>Watch Apps</h2></div><p class="section-note">Applications and watch software designed for compatible Wear OS smartwatches and phone-to-watch workflows.</p></div><div class="grid" id="watchGrid"></div></div></section>
+<section id="watch-apps" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Wear OS</div><h2>Watch Apps</h2></div><p class="section-note">Applications and watch software designed for compatible Wear OS smartwatches and phone-to-watch workflows. Products with both phone and watch components are intentionally listed in both sections.</p></div><div class="grid" id="watchGrid"></div></div></section>
 <div class="catalog-divider"></div>
 <section id="games" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">ARVION Games</div><h2>Games</h2></div><p class="section-note">Android and Wear OS games with no advertising and no recurring subscriptions. Wear OS editions are listed separately where supplied.</p></div><div class="grid" id="gameGrid"></div></div></section>'''
 s, n = re.subn(r'<section id="apps">.*?</section>\n<div class="quality"', catalog_html + '\n<div class="quality"', s, count=1, flags=re.S)
@@ -47,7 +47,7 @@ products_js = f'''const products=[
 {{id:'kalendarz-zmianowy',name:'Kalendarz Zmianowy',type:'phone',tag:'Android App',img:'{base}KALENDARZ ZMIAN/KALENDARZ ZMIAN 1.png',desc:'Shift calendar with schedules, notes and work information.',details:true}},
 {{id:'live-data',name:'Live Data',type:'phone',tag:'Android App',img:'{base}LIVE DATA/LIVE DATA 1.png',desc:'Real-time vehicle parameters through compatible OBD/ELM327.',details:true}},
 {{id:'media-player',name:'Media Player',type:'phone',tag:'Android App',img:'{base}MEDIA/MEDIA 1.png',desc:'Local media playback with playlists and visualizers.',details:true}},
-{{id:'watch-faces',name:'ARVION Watch Faces',type:'watch',tag:'Wear OS',img:'',desc:'Premium watch faces for compatible Wear OS smartwatches.',details:true}},
+{{id:'watch-faces',name:'ARVION Watch Faces',type:'watch',tag:'Phone · Wear OS',img:'',desc:'Premium watch faces managed from Android for compatible Wear OS smartwatches.',details:true}},
 {{id:'music-2-watch',name:'Music 2 Watch',type:'watch',tag:'Phone · Wear OS',img:'{base}MUSIC 2 WATCH/MUSIC 2 WATCH 1.png',desc:'Music features connecting Android phone and smartwatch.',details:true}},
 {{id:'spy-2-watch',name:'Spy 2 Watch',type:'watch',tag:'Phone · Wear OS',img:'{base}SPY 2 WATCH/SPY 2 WATCH 1.png',desc:'Phone-camera preview and controls designed for smartwatch use.',details:true}},
 {{id:'video-2-watch',name:'Video 2 Watch',type:'watch',tag:'Phone · Wear OS',img:'{base}VIDEO 2 WATCH/VIDEO 2 WATCH 1.png',desc:'Transfer and play your own videos on a compatible smartwatch.',details:true}},
@@ -108,9 +108,12 @@ s = s.replace(
     1,
 )
 
-render_js = r'''function render(){Object.entries(grids).forEach(([type,grid])=>{const list=products.filter(p=>p.type===type);grid.innerHTML=list.map(p=>`<article class="card${p.details?' details':''}" ${p.details?`tabindex="0" role="button" data-product="${p.id}" aria-label="Open ${p.name}"`:''}><div class="pic">${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:'<span class="image-placeholder">NEW IMAGES COMING SOON</span>'}${p.details?'<span class="details-badge">View details</span>':''}</div><div class="body"><span class="tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p></div></article>`).join('')});document.querySelectorAll('[data-product]').forEach(c=>{c.onclick=()=>openProduct(c.dataset.product);c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProduct(c.dataset.product)}}})}'''
+# Phone + Wear OS applications intentionally appear in both Phone Apps and Watch Apps.
+render_js = r'''function render(){Object.entries(grids).forEach(([type,grid])=>{const list=products.filter(p=>type==='phone'?(p.type==='phone'||p.type==='watch'):p.type===type);grid.innerHTML=list.map(p=>`<article class="card${p.details?' details':''}" ${p.details?`tabindex="0" role="button" data-product="${p.id}" aria-label="Open ${p.name}"`:''}><div class="pic">${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:'<span class="image-placeholder">NEW IMAGES COMING SOON</span>'}${p.details?'<span class="details-badge">View details</span>':''}</div><div class="body"><span class="tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p></div></article>`).join('')});document.querySelectorAll('[data-product]').forEach(c=>{c.onclick=()=>openProduct(c.dataset.product);c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProduct(c.dataset.product)}}})}'''
 s, n = re.subn(r"function render\(filter='all'\)\{.*?\}\nasync function buildGallery", render_js + '\nasync function buildGallery', s, count=1, flags=re.S)
-if n != 1 and 'Object.entries(grids).forEach' not in s:
+if n != 1:
+    s, n = re.subn(r"function render\(\)\{.*?\}\nasync function buildGallery", render_js + '\nasync function buildGallery', s, count=1, flags=re.S)
+if n != 1 and "type==='phone'?(p.type==='phone'||p.type==='watch')" not in s:
     raise SystemExit('Could not patch render()')
 
 # Remove obsolete filter click handlers.
@@ -122,4 +125,4 @@ new_open = "async function openProduct(id){currentProduct=id;const data=productD
 s = s.replace(old_open, new_open, 1)
 
 p.write_text(s, encoding='utf-8')
-print('ARVION catalog rebuilt: Phone Apps -> Watch Apps -> Games, using original PNG files.')
+print('ARVION catalog rebuilt: Phone Apps includes phone + Wear OS companion apps; Watch Apps keeps the Wear OS subset; Games remain separate.')
