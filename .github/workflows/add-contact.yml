@@ -1,0 +1,95 @@
+name: Add ARVION contact tab
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/add-contact.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Add contact tab and masked email
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          # ---------- index.html ----------
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          # Header: Contact button next to Support.
+          s = s.replace(
+              '<button class="support-link" id="supportOpen" type="button">Support</button>',
+              '<button class="support-link" id="contactOpen" type="button">Contact</button><button class="support-link" id="supportOpen" type="button">Support</button>',
+              1,
+          )
+
+          # Contact styling.
+          contact_css = '''\n/* ARVION CONTACT START */\n.contact-inner{max-width:680px;margin:auto;padding:34px}.contact-card{margin-top:20px;padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(216,170,67,.07),rgba(0,0,0,.18));text-align:center}.contact-label{color:#8d8d8d;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}.contact-email{font-size:clamp(18px,3vw,28px);font-weight:900;color:var(--gold2);overflow-wrap:anywhere;letter-spacing:.03em}.contact-note{color:#929292;font-size:12px;line-height:1.6;margin:14px auto 0;max-width:520px}.contact-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}.contact-mail{display:none}.contact-mail.visible{display:inline-flex}\n/* ARVION CONTACT END */\n'''
+          if '/* ARVION CONTACT START */' not in s:
+              s = s.replace('</style>', contact_css + '\n</style>', 1)
+
+          # Contact modal inserted before support modal.
+          contact_modal = '''\n<div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle"><div class="modal-card"><button class="modal-close" id="contactClose" type="button" aria-label="Close">×</button><div class="contact-inner"><div class="eyebrow">ARVION</div><h2 id="contactTitle">Contact / Kontakt</h2><p class="product-sub">Questions, ideas, bug reports or cooperation / Pytania, pomysły, zgłoszenia błędów lub współpraca.</p><div class="contact-card"><div class="contact-label">E-mail</div><div class="contact-email" id="contactEmail">lukasz••••••••998@interia.pl</div><div class="contact-actions"><button class="reveal-btn" id="revealEmail" type="button">SHOW E-MAIL / POKAŻ E-MAIL</button><a class="store-button contact-mail" id="contactMailLink" href="#">WRITE / NAPISZ</a></div><p class="contact-note">The address is masked by default to reduce automatic harvesting by bots. / Adres jest domyślnie zakropkowany, aby ograniczyć automatyczne zbieranie go przez boty.</p></div></div></div></div>\n'''
+          if 'id="contactModal"' not in s:
+              s = s.replace('<div class="modal" id="supportModal"', contact_modal + '<div class="modal" id="supportModal"', 1)
+
+          # Add contactModal variable to JS declaration.
+          s = s.replace(
+              "productModal=document.getElementById('productModal'),supportModal=document.getElementById('supportModal'),",
+              "productModal=document.getElementById('productModal'),contactModal=document.getElementById('contactModal'),supportModal=document.getElementById('supportModal'),",
+              1,
+          )
+
+          # Add contact behavior before render(); only once.
+          contact_js = """\nconst contactEmail=['lukasz','bednarski','998','@','interia','.','pl'].join('');\ndocument.getElementById('contactOpen').onclick=()=>{contactModal.classList.add('open');document.body.classList.add('modal-open')};\ndocument.getElementById('contactClose').onclick=()=>closeModal(contactModal);\ndocument.getElementById('revealEmail').onclick=()=>{const e=document.getElementById('contactEmail'),b=document.getElementById('revealEmail'),m=document.getElementById('contactMailLink');e.textContent=contactEmail;m.href='mailto:'+contactEmail;m.classList.add('visible');b.style.display='none'};\n"""
+          if "const contactEmail=['lukasz'" not in s:
+              s = s.replace("document.getElementById('supportOpen').onclick=", contact_js + "document.getElementById('supportOpen').onclick=", 1)
+
+          # Close Contact on overlay click and ESC.
+          s = s.replace('[productModal,supportModal].forEach', '[productModal,contactModal,supportModal].forEach', 1)
+          s = s.replace("closeModal(productModal);closeModal(supportModal)", "closeModal(productModal);closeModal(contactModal);closeModal(supportModal)", 1)
+
+          # Bump visible site version for cache refresh.
+          s = re.sub(r'<meta name="arvion-site-version" content="[^"]+">', '<meta name="arvion-site-version" content="2026-08-29-1148-contact">', s, count=1)
+          p.write_text(s, encoding='utf-8')
+
+          # ---------- scripts/update_catalog.py ----------
+          gp = Path('scripts/update_catalog.py')
+          g = gp.read_text(encoding='utf-8')
+
+          # Generator must preserve Contact in header navigation/actions.
+          old_nav = '<nav><a href="#phone-apps">Phone Apps</a><a href="#watch-apps">Watch Apps</a><a href="#games">Games</a><a href="#promise">Our promise</a></nav>'
+          new_nav = '<nav><a href="#phone-apps">Phone Apps</a><a href="#watch-apps">Watch Apps</a><a href="#games">Games</a><a href="#promise">Our promise</a></nav>'
+          # Nav itself remains unchanged; Contact is a header action button. Ensure the generator does not delete it.
+          # The generator only rewrites <nav>, so the contact action survives. Add a safeguard after the nav rewrite.
+          safeguard = '''\n# Keep Contact action in the header next to Support.\nif 'id="contactOpen"' not in s:\n    s = s.replace('<button class="support-link" id="supportOpen" type="button">Support</button>', '<button class="support-link" id="contactOpen" type="button">Contact</button><button class="support-link" id="supportOpen" type="button">Support</button>', 1)\n'''
+          if '# Keep Contact action in the header next to Support.' not in g:
+              marker = '# Replace the old single filterable catalog with three fixed sections.'
+              g = g.replace(marker, safeguard + '\n' + marker, 1)
+
+          gp.write_text(g, encoding='utf-8')
+          PY
+
+      - name: Commit contact tab
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html scripts/update_catalog.py
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Add masked Contact email tab"
+          git push
