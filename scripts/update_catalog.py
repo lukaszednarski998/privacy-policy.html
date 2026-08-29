@@ -29,6 +29,11 @@ s = re.sub(
     flags=re.S,
 )
 
+
+# Keep Contact action in the header next to Support.
+if 'id="contactOpen"' not in s:
+    s = s.replace('<button class="support-link" id="supportOpen" type="button">Support</button>', '<button class="support-link" id="contactOpen" type="button">Contact</button><button class="support-link" id="supportOpen" type="button">Support</button>', 1)
+
 # Replace the old single filterable catalog with three fixed sections.
 catalog_html = r'''<section id="phone-apps" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Android smartphones</div><h2>Phone Apps</h2></div><p class="section-note">Android applications for driving, media, diagnostics and everyday tools. Apps that work together with Wear OS are also shown here because they include a phone application. Open a product to view original screenshots, Polish/English descriptions and Google Play access.</p></div><div class="grid" id="phoneGrid"></div></div></section>
 <div class="catalog-divider"></div>
