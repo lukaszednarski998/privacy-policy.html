@@ -1,0 +1,66 @@
+name: Persist ARVION Watch Faces catalog images
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/persist-watch-faces.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  persist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Patch catalog generator
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          p = Path('scripts/update_catalog.py')
+          s = p.read_text(encoding='utf-8')
+
+          first = 'assets/imported-new-products/ARVION WATCH FACE/ARVION WATCH FACE/ARVION WATCH FACE 1.png'
+          files = [
+              'assets/imported-new-products/ARVION WATCH FACE/ARVION WATCH FACE/ARVION WATCH FACE 1.png',
+              'assets/imported-new-products/ARVION WATCH FACE/ARVION WATCH FACE/ARVION WATCH FACE 2.png',
+              'assets/imported-new-products/ARVION WATCH FACE/ARVION WATCH FACE/ARVION WATCH FACE 3.png',
+              'assets/imported-new-products/ARVION WATCH FACE/ARVION WATCH FACE/ARVION WATCH FACE 4.png',
+              'assets/imported-new-products/ARVION WATCH FACE/ARVION WATCH FACE/ARVION WATCH FACE 5.png',
+          ]
+
+          old_card = "{{id:'watch-faces',name:'ARVION Watch Faces',type:'watch',tag:'Phone · Wear OS',img:'',desc:'Premium watch faces managed from Android for compatible Wear OS smartwatches.',details:true}},"
+          new_card = "{{id:'watch-faces',name:'ARVION Watch Faces',type:'watch',tag:'Phone · Wear OS',img:'" + first + "',desc:'Premium watch faces managed from Android for compatible Wear OS smartwatches.',details:true}},"
+          if old_card in s:
+              s = s.replace(old_card, new_card, 1)
+
+          gallery = '[' + ','.join("{{src:'%s',alt:'ARVION Watch Faces original image %d'}}" % (src, i + 1) for i, src in enumerate(files)) + ']'
+          old_assignment = "productData['watch-faces'].icon='';productData['watch-faces'].gallery=[];"
+          new_assignment = "productData['watch-faces'].icon='" + first + "';productData['watch-faces'].gallery=" + gallery + ";"
+          if old_assignment not in s:
+              raise SystemExit('Watch Faces empty assignment not found in catalog generator')
+          s = s.replace(old_assignment, new_assignment, 1)
+
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Commit generator update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/update_catalog.py
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Keep ARVION Watch Faces images in catalog"
+          git push
