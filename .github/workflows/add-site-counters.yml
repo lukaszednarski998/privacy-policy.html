@@ -34,66 +34,65 @@ jobs:
 
           stats_html = '''<div class="site-stats" id="siteStats" aria-label="ARVION website statistics"><div class="site-stat" title="Website visits / Odwiedziny strony"><span class="stat-icon" aria-hidden="true">◉</span><span class="stat-label">VISITS</span><span class="stat-count" id="visitCount">—</span></div><button class="site-stat site-like" id="heartButton" type="button" title="Add a heart / Dodaj serduszko" aria-label="Add a heart"><span class="stat-icon" aria-hidden="true">♥</span><span class="stat-label">LIKES</span><span class="stat-count" id="heartCount">—</span></button></div>'''
           if 'id="siteStats"' not in s:
-              marker = '<div class="header-actions">'
-              s = s.replace(marker, stats_html + marker, 1)
+              s = s.replace('<div class="header-actions">', stats_html + '<div class="header-actions">', 1)
 
           stats_js = r'''
-// ARVION SITE STATS START
-const arvionCounterBase='https://countapi.mileshilliard.com/api/v1';
-const arvionViewKey='arvion_lukaszednarski998_site_views_v1';
-const arvionHeartKey='arvion_lukaszednarski998_site_hearts_v1';
-const visitCountEl=document.getElementById('visitCount'),heartCountEl=document.getElementById('heartCount'),heartButton=document.getElementById('heartButton');
-async function arvionCounter(key,mode='get'){
-  try{
-    const r=await fetch(`${arvionCounterBase}/${mode}/${encodeURIComponent(key)}`,{cache:'no-store'});
-    if(!r.ok){if(mode==='get'&&r.status===404)return 0;throw new Error('counter '+r.status)}
-    const d=await r.json();
-    return Number.isFinite(Number(d.value))?Number(d.value):0;
-  }catch(e){console.warn('ARVION counter unavailable',e);return null}
-}
-function formatStat(n){return n===null?'—':new Intl.NumberFormat().format(n)}
-async function initArvionStats(){
-  let countVisit=true;
-  try{if(sessionStorage.getItem('arvionVisitCountedV1'))countVisit=false;else sessionStorage.setItem('arvionVisitCountedV1','1')}catch(e){}
-  const views=await arvionCounter(arvionViewKey,countVisit?'hit':'get');
-  visitCountEl.textContent=formatStat(views);
-  if(views===null)visitCountEl.closest('.site-stat').classList.add('stats-offline');
-
-  let liked=false;
-  try{liked=localStorage.getItem('arvionHeartGivenV1')==='1'}catch(e){}
-  const hearts=await arvionCounter(arvionHeartKey,'get');
-  heartCountEl.textContent=formatStat(hearts);
-  if(hearts===null)heartButton.classList.add('stats-offline');
-  if(liked){heartButton.classList.add('liked');heartButton.setAttribute('aria-label','Heart already added / Serduszko już dodane');heartButton.title='Thank you! / Dziękujemy!'}
-}
-heartButton.addEventListener('click',async()=>{
-  let liked=false;
-  try{liked=localStorage.getItem('arvionHeartGivenV1')==='1'}catch(e){}
-  if(liked){heartButton.classList.add('liked');return}
-  heartButton.disabled=true;
-  const hearts=await arvionCounter(arvionHeartKey,'hit');
-  if(hearts!==null){
-    heartCountEl.textContent=formatStat(hearts);
-    heartButton.classList.add('liked');
-    heartButton.classList.remove('stats-offline');
-    heartButton.title='Thank you! / Dziękujemy!';
-    heartButton.setAttribute('aria-label','Heart added / Serduszko dodane');
-    try{localStorage.setItem('arvionHeartGivenV1','1')}catch(e){}
-  }
-  heartButton.disabled=false;
-});
-initArvionStats();
-// ARVION SITE STATS END
-'''
+          // ARVION SITE STATS START
+          const arvionCounterBase='https://countapi.mileshilliard.com/api/v1';
+          const arvionViewKey='arvion_lukaszednarski998_site_views_v1';
+          const arvionHeartKey='arvion_lukaszednarski998_site_hearts_v1';
+          const visitCountEl=document.getElementById('visitCount'),heartCountEl=document.getElementById('heartCount'),heartButton=document.getElementById('heartButton');
+          async function arvionCounter(key,mode='get'){
+            try{
+              const r=await fetch(`${arvionCounterBase}/${mode}/${encodeURIComponent(key)}`,{cache:'no-store'});
+              if(!r.ok){if(mode==='get'&&r.status===404)return 0;throw new Error('counter '+r.status)}
+              const d=await r.json();
+              return Number.isFinite(Number(d.value))?Number(d.value):0;
+            }catch(e){console.warn('ARVION counter unavailable',e);return null}
+          }
+          function formatStat(n){return n===null?'—':new Intl.NumberFormat().format(n)}
+          async function initArvionStats(){
+            let countVisit=true;
+            try{if(sessionStorage.getItem('arvionVisitCountedV1'))countVisit=false;else sessionStorage.setItem('arvionVisitCountedV1','1')}catch(e){}
+            const views=await arvionCounter(arvionViewKey,countVisit?'hit':'get');
+            visitCountEl.textContent=formatStat(views);
+            if(views===null)visitCountEl.closest('.site-stat').classList.add('stats-offline');
+            let liked=false;
+            try{liked=localStorage.getItem('arvionHeartGivenV1')==='1'}catch(e){}
+            const hearts=await arvionCounter(arvionHeartKey,'get');
+            heartCountEl.textContent=formatStat(hearts);
+            if(hearts===null)heartButton.classList.add('stats-offline');
+            if(liked){heartButton.classList.add('liked');heartButton.setAttribute('aria-label','Heart already added / Serduszko już dodane');heartButton.title='Thank you! / Dziękujemy!'}
+          }
+          heartButton.addEventListener('click',async()=>{
+            let liked=false;
+            try{liked=localStorage.getItem('arvionHeartGivenV1')==='1'}catch(e){}
+            if(liked){heartButton.classList.add('liked');return}
+            heartButton.disabled=true;
+            const hearts=await arvionCounter(arvionHeartKey,'hit');
+            if(hearts!==null){
+              heartCountEl.textContent=formatStat(hearts);
+              heartButton.classList.add('liked');
+              heartButton.classList.remove('stats-offline');
+              heartButton.title='Thank you! / Dziękujemy!';
+              heartButton.setAttribute('aria-label','Heart added / Serduszko dodane');
+              try{localStorage.setItem('arvionHeartGivenV1','1')}catch(e){}
+            }
+            heartButton.disabled=false;
+          });
+          initArvionStats();
+          // ARVION SITE STATS END
+          '''
+          # Dedent only the JavaScript payload from this Python heredoc.
+          stats_js = '\n'.join(line[10:] if line.startswith('          ') else line for line in stats_js.splitlines()) + '\n'
           if '// ARVION SITE STATS START' in s:
               s = re.sub(r'// ARVION SITE STATS START.*?// ARVION SITE STATS END\n?', stats_js, s, count=1, flags=re.S)
           else:
-              s = s.replace('render();setSupportLang(\'en\');', stats_js + "\nrender();setSupportLang('en');", 1)
+              s = s.replace("render();setSupportLang('en');", stats_js + "\nrender();setSupportLang('en');", 1)
 
           s = re.sub(r'<meta name="arvion-site-version" content="[^"]+">', '<meta name="arvion-site-version" content="2026-08-29-1155-stats">', s, count=1)
           p.write_text(s, encoding='utf-8')
 
-          # Keep the counters in future catalog rebuilds.
           gp = Path('scripts/update_catalog.py')
           g = gp.read_text(encoding='utf-8')
           guard = '''\n# Keep the visits and hearts counters between the ARVION brand and Phone Apps navigation.\nif 'id="siteStats"' not in s:\n    stats_html = '<div class="site-stats" id="siteStats" aria-label="ARVION website statistics"><div class="site-stat" title="Website visits / Odwiedziny strony"><span class="stat-icon" aria-hidden="true">◉</span><span class="stat-label">VISITS</span><span class="stat-count" id="visitCount">—</span></div><button class="site-stat site-like" id="heartButton" type="button" title="Add a heart / Dodaj serduszko" aria-label="Add a heart"><span class="stat-icon" aria-hidden="true">♥</span><span class="stat-label">LIKES</span><span class="stat-count" id="heartCount">—</span></button></div>'\n    s = s.replace('<div class="header-actions">', stats_html + '<div class="header-actions">', 1)\n'''
