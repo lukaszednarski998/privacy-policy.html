@@ -7,7 +7,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="arvion-site-version" content="2026-08-29-1148-contact">
+<meta name="arvion-site-version" content="2026-08-29-1155-stats">
 <title>ARVION | Android Apps & Games</title>
 <meta name="description" content="ARVION Android apps and games. No ads. No subscriptions. Free lifetime updates.">
 <style>
@@ -33,10 +33,15 @@ section{padding:42px 0 66px}.section-head{display:flex;align-items:end;justify-c
 .contact-inner{max-width:680px;margin:auto;padding:34px}.contact-card{margin-top:20px;padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,rgba(216,170,67,.07),rgba(0,0,0,.18));text-align:center}.contact-label{color:#8d8d8d;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}.contact-email{font-size:clamp(18px,3vw,28px);font-weight:900;color:var(--gold2);overflow-wrap:anywhere;letter-spacing:.03em}.contact-note{color:#929292;font-size:12px;line-height:1.6;margin:14px auto 0;max-width:520px}.contact-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}.contact-mail{display:none}.contact-mail.visible{display:inline-flex}
 /* ARVION CONTACT END */
 
+
+/* ARVION SITE STATS START */
+.site-stats{display:flex;align-items:center;gap:8px;flex:0 0 auto}.site-stat{height:38px;display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(216,170,67,.42);background:linear-gradient(180deg,#151109,#090806);color:#e8d39d;border-radius:999px;padding:0 12px;font-size:11px;font-weight:900;letter-spacing:.07em;white-space:nowrap}.site-stat .stat-icon{font-size:16px;line-height:1}.site-stat .stat-count{color:var(--gold2);font-size:13px;min-width:18px;text-align:center}.site-like{cursor:pointer;transition:.2s ease}.site-like:hover{border-color:var(--gold2);transform:translateY(-1px)}.site-like.liked{background:linear-gradient(180deg,#341018,#16080b);border-color:#d85a72;color:#ffd5dc}.site-like.liked .stat-icon{color:#ff5d78}.site-like:disabled{cursor:default;opacity:.85}.stats-offline .stat-count{color:#777}@media(max-width:1120px){.site-stat{padding:0 9px}.site-stat .stat-label{display:none}.header-actions{gap:12px}nav{gap:15px}}@media(max-width:760px){.top{gap:10px}.site-stats{margin-left:auto}.site-stat{height:36px;padding:0 9px}.brand span{display:none}.header-actions{gap:8px}.support-link{padding:9px 11px;font-size:12px}}@media(max-width:520px){.site-stat{padding:0 7px}.site-stat .stat-icon{font-size:14px}.site-stat .stat-count{font-size:12px}.header-actions{gap:5px}.support-link{padding:8px 9px;font-size:11px}}
+/* ARVION SITE STATS END */
+
 </style>
 </head>
 <body>
-<header><div class="wrap top"><a class="brand" href="#top"><img src="assets/brand-badge.webp" alt="ARVION logo"><span>ARVION</span></a><div class="header-actions"><nav><a href="#phone-apps">Phone Apps</a><a href="#watch-apps">Watch Apps</a><a href="#games">Games</a><a href="#promise">Our promise</a></nav><button class="support-link" id="contactOpen" type="button">Contact</button><button class="support-link" id="supportOpen" type="button">Support</button></div></div></header>
+<header><div class="wrap top"><a class="brand" href="#top"><img src="assets/brand-badge.webp" alt="ARVION logo"><span>ARVION</span></a><div class="site-stats" id="siteStats" aria-label="ARVION website statistics"><div class="site-stat" title="Website visits / Odwiedziny strony"><span class="stat-icon" aria-hidden="true">◉</span><span class="stat-label">VISITS</span><span class="stat-count" id="visitCount">—</span></div><button class="site-stat site-like" id="heartButton" type="button" title="Add a heart / Dodaj serduszko" aria-label="Add a heart"><span class="stat-icon" aria-hidden="true">♥</span><span class="stat-label">LIKES</span><span class="stat-count" id="heartCount">—</span></button></div><div class="header-actions"><nav><a href="#phone-apps">Phone Apps</a><a href="#watch-apps">Watch Apps</a><a href="#games">Games</a><a href="#promise">Our promise</a></nav><button class="support-link" id="contactOpen" type="button">Contact</button><button class="support-link" id="supportOpen" type="button">Support</button></div></div></header>
 <main id="top">
 <div class="wrap hero"><div class="hero-card"><img id="heroBanner" alt="No Ads No Subscription"></div><div class="hero-copy"><div class="eyebrow">ARVION Android Software</div><h1>No ads. No subscriptions.</h1><p>Buy once and use it without advertising or recurring fees. Every ARVION purchase includes free lifetime updates.</p><div class="promise"><span class="pill">NO ADS</span><span class="pill">NO SUBSCRIPTION</span><span class="pill">FREE LIFETIME UPDATES</span></div></div></div>
 <section id="phone-apps" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Android smartphones</div><h2>Phone Apps</h2></div><p class="section-note">Android applications for driving, media, diagnostics and everyday tools. Apps that work together with Wear OS are also shown here because they include a phone application. Open a product to view original screenshots, Polish/English descriptions and Google Play access.</p></div><div class="grid" id="phoneGrid"></div></div></section>
@@ -134,7 +139,54 @@ const contactEmail=['lukasz','bednarski','998','@','interia','.','pl'].join('');
 document.getElementById('contactOpen').onclick=()=>{contactModal.classList.add('open');document.body.classList.add('modal-open')};
 document.getElementById('contactClose').onclick=()=>closeModal(contactModal);
 document.getElementById('revealEmail').onclick=()=>{const e=document.getElementById('contactEmail'),b=document.getElementById('revealEmail'),m=document.getElementById('contactMailLink');e.textContent=contactEmail;m.href='mailto:'+contactEmail;m.classList.add('visible');b.style.display='none'};
-document.getElementById('supportOpen').onclick=()=>{setSupportLang(supportLang);supportModal.classList.add('open');document.body.classList.add('modal-open')};[productModal,contactModal,supportModal].forEach(m=>m.onclick=e=>{if(e.target===m)closeModal(m)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal(productModal);closeModal(contactModal);closeModal(supportModal)}});render();setSupportLang('en');
+document.getElementById('supportOpen').onclick=()=>{setSupportLang(supportLang);supportModal.classList.add('open');document.body.classList.add('modal-open')};[productModal,contactModal,supportModal].forEach(m=>m.onclick=e=>{if(e.target===m)closeModal(m)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal(productModal);closeModal(contactModal);closeModal(supportModal)}});
+// ARVION SITE STATS START
+const arvionCounterBase='https://countapi.mileshilliard.com/api/v1';
+const arvionViewKey='arvion_lukaszednarski998_site_views_v1';
+const arvionHeartKey='arvion_lukaszednarski998_site_hearts_v1';
+const visitCountEl=document.getElementById('visitCount'),heartCountEl=document.getElementById('heartCount'),heartButton=document.getElementById('heartButton');
+async function arvionCounter(key,mode='get'){
+  try{
+    const r=await fetch(`${arvionCounterBase}/${mode}/${encodeURIComponent(key)}`,{cache:'no-store'});
+    if(!r.ok){if(mode==='get'&&r.status===404)return 0;throw new Error('counter '+r.status)}
+    const d=await r.json();
+    return Number.isFinite(Number(d.value))?Number(d.value):0;
+  }catch(e){console.warn('ARVION counter unavailable',e);return null}
+}
+function formatStat(n){return n===null?'—':new Intl.NumberFormat().format(n)}
+async function initArvionStats(){
+  let countVisit=true;
+  try{if(sessionStorage.getItem('arvionVisitCountedV1'))countVisit=false;else sessionStorage.setItem('arvionVisitCountedV1','1')}catch(e){}
+  const views=await arvionCounter(arvionViewKey,countVisit?'hit':'get');
+  visitCountEl.textContent=formatStat(views);
+  if(views===null)visitCountEl.closest('.site-stat').classList.add('stats-offline');
+  let liked=false;
+  try{liked=localStorage.getItem('arvionHeartGivenV1')==='1'}catch(e){}
+  const hearts=await arvionCounter(arvionHeartKey,'get');
+  heartCountEl.textContent=formatStat(hearts);
+  if(hearts===null)heartButton.classList.add('stats-offline');
+  if(liked){heartButton.classList.add('liked');heartButton.setAttribute('aria-label','Heart already added / Serduszko już dodane');heartButton.title='Thank you! / Dziękujemy!'}
+}
+heartButton.addEventListener('click',async()=>{
+  let liked=false;
+  try{liked=localStorage.getItem('arvionHeartGivenV1')==='1'}catch(e){}
+  if(liked){heartButton.classList.add('liked');return}
+  heartButton.disabled=true;
+  const hearts=await arvionCounter(arvionHeartKey,'hit');
+  if(hearts!==null){
+    heartCountEl.textContent=formatStat(hearts);
+    heartButton.classList.add('liked');
+    heartButton.classList.remove('stats-offline');
+    heartButton.title='Thank you! / Dziękujemy!';
+    heartButton.setAttribute('aria-label','Heart added / Serduszko dodane');
+    try{localStorage.setItem('arvionHeartGivenV1','1')}catch(e){}
+  }
+  heartButton.disabled=false;
+});
+initArvionStats();
+// ARVION SITE STATS END
+
+render();setSupportLang('en');
 </script>
 </body>
 </html>

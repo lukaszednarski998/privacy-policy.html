@@ -34,6 +34,12 @@ s = re.sub(
 if 'id="contactOpen"' not in s:
     s = s.replace('<button class="support-link" id="supportOpen" type="button">Support</button>', '<button class="support-link" id="contactOpen" type="button">Contact</button><button class="support-link" id="supportOpen" type="button">Support</button>', 1)
 
+
+# Keep the visits and hearts counters between the ARVION brand and Phone Apps navigation.
+if 'id="siteStats"' not in s:
+    stats_html = '<div class="site-stats" id="siteStats" aria-label="ARVION website statistics"><div class="site-stat" title="Website visits / Odwiedziny strony"><span class="stat-icon" aria-hidden="true">◉</span><span class="stat-label">VISITS</span><span class="stat-count" id="visitCount">—</span></div><button class="site-stat site-like" id="heartButton" type="button" title="Add a heart / Dodaj serduszko" aria-label="Add a heart"><span class="stat-icon" aria-hidden="true">♥</span><span class="stat-label">LIKES</span><span class="stat-count" id="heartCount">—</span></button></div>'
+    s = s.replace('<div class="header-actions">', stats_html + '<div class="header-actions">', 1)
+
 # Replace the old single filterable catalog with three fixed sections.
 catalog_html = r'''<section id="phone-apps" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Android smartphones</div><h2>Phone Apps</h2></div><p class="section-note">Android applications for driving, media, diagnostics and everyday tools. Apps that work together with Wear OS are also shown here because they include a phone application. Open a product to view original screenshots, Polish/English descriptions and Google Play access.</p></div><div class="grid" id="phoneGrid"></div></div></section>
 <div class="catalog-divider"></div>
