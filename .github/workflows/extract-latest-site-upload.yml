@@ -28,7 +28,7 @@ jobs:
           set -euo pipefail
           rm -rf assets/latest-site-upload
           mkdir -p assets/latest-site-upload
-          7zz x -y -oassets/latest-site-upload "DO STRONY INTERNETOWEJ.part1.rar"
+          7z x -y -oassets/latest-site-upload "DO STRONY INTERNETOWEJ.part1.rar"
           find assets/latest-site-upload -type f -printf '%P\n' | sort > assets/latest-site-upload/MANIFEST.txt
           echo "Extracted files:"
           cat assets/latest-site-upload/MANIFEST.txt
