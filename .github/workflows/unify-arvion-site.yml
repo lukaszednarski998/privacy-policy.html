@@ -1,0 +1,68 @@
+name: Unify ARVION website
+
+on:
+  push:
+    paths:
+      - '.github/workflows/unify-arvion-site.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  unify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge all current website changes into index.html
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          index = Path('index.html')
+          addon_path = Path('assets/latest-products.js')
+          workflow_path = Path('.github/workflows/unify-arvion-site.yml')
+
+          html = index.read_text(encoding='utf-8')
+          addon = addon_path.read_text(encoding='utf-8')
+
+          external = '<script src="assets/latest-products.js?v=20260903"></script>'
+          marker = '/* ARVION latest catalog additions - 2026-09-03 */'
+
+          if external in html:
+              html = html.replace(external, '<script>\n' + addon + '\n</script>')
+          elif marker not in html:
+              raise SystemExit('Could not find latest-products loader or already integrated code.')
+
+          html = re.sub(
+              r'<meta name="arvion-site-version" content="[^"]*">',
+              '<meta name="arvion-site-version" content="2026-09-03-unified">',
+              html,
+              count=1,
+          )
+
+          canonical = '<link rel="canonical" href="https://lukaszednarski998.github.io/privacy-policy.html/">'
+          if canonical not in html:
+              html = html.replace('</head>', canonical + '\n</head>', 1)
+
+          normalize = "<script>if(location.search){history.replaceState(null,'',location.pathname+location.hash);}</script>"
+          if normalize not in html:
+              html = html.replace('</body>', normalize + '\n</body>', 1)
+
+          index.write_text(html, encoding='utf-8')
+
+          if addon_path.exists():
+              addon_path.unlink()
+          if workflow_path.exists():
+              workflow_path.unlink()
+          PY
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Unify ARVION website into one canonical page"
+          git push
