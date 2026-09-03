@@ -1,0 +1,91 @@
+name: Apply latest ARVION website update
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/apply-latest-site-update.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update website
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          base='assets/latest-site-upload/DO STRONY INTERNETOWEJ/'
+
+          # Exact Google Play link supplied by the developer.
+          s=s.replace("https://play.google.com/store/search?q=OBD%20Active%20Exhaust%20Pro&c=apps","https://play.google.com/store/apps/details?id=com.obdactiveeeexhaust.pro")
+
+          # New catalog cards.
+          if "id:'arvion-moto-speed'" not in s:
+              marker="];\nconst mkProduct="
+              cards="""{id:'arvion-moto-speed',name:'ARVION Moto Speed',type:'phone',tag:'Android · Wear OS',img:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION MOTO SPEED/ARVION MOTO SPEED 1.png',desc:'GPS motorcycle speedometer with ride data and Wear OS support.',details:true},
+{id:'arvion-pdf',name:'ARVION PDF Toolbox Offline',type:'phone',tag:'Android App',img:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PDF/ARVION PDF 1.jpeg',desc:'Offline PDF, OCR and document toolbox with powerful local processing.',details:true},
+{id:'arvion-phone-diagnostics',name:'ARVION Phone Diagnostics',type:'phone',tag:'Android App',img:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PHONE DIAGNOSTIC/ARVION Phone Diagnostics 1.jpeg',desc:'Offline diagnostics, benchmarks and device performance tools.',details:true},
+{id:'battery-guard',name:'ARVION Battery Guard',type:'phone',tag:'Android App',img:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/BATTERY GUARD/BATTERY GUARD 01.jpeg',desc:'Battery monitoring, charging history, temperature alerts and battery-care tools.',details:true},
+{id:'arvion-calculator',name:'ARVION Calculator',type:'phone',tag:'Android App',img:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/CALCULATOR/CALCULATOR 1.png',desc:'A practical collection of calculators with scan-assisted input and clear results.',details:true},
+{id:'private-iptv',name:'Private IPTV',type:'phone',tag:'Android App',img:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/IP TV/IP TV 1.png',desc:'Private IPTV player for user-provided playlists and compatible streaming sources.',details:true},
+{id:'kids-time',name:'Kids Time',type:'phone',tag:'Android App',img:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/KIDS TIME/KIDS TIME 1.png',desc:'Simple parental time control with PIN protection, alerts and emergency access.',details:true},
+"""
+              if marker not in s: raise SystemExit('products marker not found')
+              s=s.replace(marker, cards+"];
+const mkProduct=",1)
+
+          # New bilingual product detail entries.
+          if "'arvion-moto-speed':mkProduct" not in s:
+              marker="\n};\n// ARVION ORIGINAL IMAGE CATALOG START"
+              details=r""",
+'arvion-moto-speed':mkProduct({title:'ARVION Moto Speed',icon:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION MOTO SPEED/ARVION MOTO SPEED 1.png',enSub:'GPS motorcycle speedometer for Android and compatible Wear OS watches.',plSub:'Motocyklowy licznik GPS na Androida i kompatybilne zegarki Wear OS.',en:'Turn your phone or compatible Wear OS watch into a clear motorcycle speedometer. ARVION Moto Speed uses GPS to show current and maximum speed, distance, ride time, GPS accuracy and related ride information, with phone-and-watch synchronization where supported.',pl:'Zmień telefon lub kompatybilny zegarek Wear OS w czytelny licznik motocyklowy. ARVION Moto Speed wykorzystuje GPS do prezentowania aktualnej i maksymalnej prędkości, dystansu, czasu jazdy, dokładności GPS i powiązanych danych przejazdu, a na zgodnych urządzeniach umożliwia synchronizację telefonu z zegarkiem.',gallery:[{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION MOTO SPEED/ARVION MOTO SPEED 1.png',alt:'ARVION Moto Speed 1'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION MOTO SPEED/ARVION MOTO SPEED 2.png',alt:'ARVION Moto Speed 2'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION MOTO SPEED/ARVION MOTO SPEED 3.png',alt:'ARVION Moto Speed 3'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION MOTO SPEED/ARVION MOTO SPEED 4.png',alt:'ARVION Moto Speed 4'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION MOTO SPEED/ARVION MOTO SPEED 5.png',alt:'ARVION Moto Speed 5'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION MOTO SPEED/ARVION MOTO SPEED 6.jpg',alt:'ARVION Moto Speed 6'}],play:'https://play.google.com/store/search?q=ARVION%20Moto%20Speed&c=apps'}),
+'arvion-pdf':mkProduct({title:'ARVION PDF Toolbox Offline',icon:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PDF/ARVION PDF 1.jpeg',enSub:'A complete offline PDF, OCR and document toolbox.',plSub:'Kompletny zestaw narzędzi PDF, OCR i dokumentów działający offline.',en:'Work with documents directly on your Android device without sending files to a developer cloud. Convert and edit PDFs, use OCR, export recognized content to DOCX, merge and split pages, compress files, add annotations and signatures, manage metadata and use other everyday document tools in one application.',pl:'Pracuj z dokumentami bezpośrednio na urządzeniu z Androidem bez wysyłania plików do chmury dewelopera. Konwertuj i edytuj PDF-y, korzystaj z OCR, eksportuj rozpoznaną treść do DOCX, łącz i dziel strony, kompresuj pliki, dodawaj adnotacje i podpisy, zarządzaj metadanymi oraz korzystaj z innych codziennych narzędzi dokumentowych w jednej aplikacji.',gallery:[{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PDF/ARVION PDF 1.jpeg',alt:'ARVION PDF 1'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PDF/ARVION PDF 2.jpeg',alt:'ARVION PDF 2'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PDF/ARVION PDF 3.jpeg',alt:'ARVION PDF 3'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PDF/ARVION PDF 4.png',alt:'ARVION PDF 4'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PDF/ARVION PDF 5.png',alt:'ARVION PDF 5'}],play:'https://play.google.com/store/search?q=ARVION%20PDF%20Toolbox%20Offline&c=apps'}),
+'arvion-phone-diagnostics':mkProduct({title:'ARVION Phone Diagnostics',icon:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PHONE DIAGNOSTIC/ARVION Phone Diagnostics 1.jpeg',enSub:'Offline phone diagnostics, benchmarks and performance tools.',plSub:'Diagnostyka telefonu, benchmarki i narzędzia wydajności działające offline.',en:'Check the condition and performance of your Android device in one place. ARVION Phone Diagnostics presents storage, RAM, battery, temperature and system information, includes CPU, memory and storage performance tests, keeps local test history and provides practical recovery and management shortcuts.',pl:'Sprawdź kondycję i wydajność urządzenia z Androidem w jednym miejscu. ARVION Phone Diagnostics pokazuje informacje o pamięci, RAM, baterii, temperaturze i systemie, oferuje testy CPU, pamięci RAM i pamięci masowej, przechowuje lokalną historię wyników oraz udostępnia praktyczne narzędzia i skróty do zarządzania wydajnością.',gallery:[{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PHONE DIAGNOSTIC/ARVION Phone Diagnostics 1.jpeg',alt:'ARVION Phone Diagnostics 1'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PHONE DIAGNOSTIC/ARVION Phone Diagnostics 2.jpeg',alt:'ARVION Phone Diagnostics 2'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PHONE DIAGNOSTIC/ARVION Phone Diagnostics 3.jpeg',alt:'ARVION Phone Diagnostics 3'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PHONE DIAGNOSTIC/ARVION Phone Diagnostics 5.jpeg',alt:'ARVION Phone Diagnostics 5'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/ARVION PHONE DIAGNOSTIC/ARVION Phone Diagnostics.jpeg',alt:'ARVION Phone Diagnostics'}],play:'https://play.google.com/store/search?q=ARVION%20Phone%20Diagnostics&c=apps'}),
+'battery-guard':mkProduct({title:'ARVION Battery Guard',icon:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/BATTERY GUARD/BATTERY GUARD 01.jpeg',enSub:'Battery monitoring and charging-care tools for Android.',plSub:'Monitorowanie baterii i narzędzia dbania o ładowanie na Androidzie.',en:'Monitor battery level, charging status, temperature and other information available from your device. Battery Guard adds charging history, charge-limit and temperature alerts, battery-care analytics, local statistics and reports to help you better understand everyday charging.',pl:'Monitoruj poziom baterii, stan ładowania, temperaturę i inne informacje udostępniane przez urządzenie. Battery Guard oferuje historię ładowania, alerty limitu naładowania i temperatury, analizę dbania o baterię, lokalne statystyki oraz raporty pomagające lepiej kontrolować codzienne ładowanie.',gallery:[{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/BATTERY GUARD/BATTERY GUARD 01.jpeg',alt:'Battery Guard 1'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/BATTERY GUARD/BATTERY GUARD 02.jpeg',alt:'Battery Guard 2'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/BATTERY GUARD/BATTERY GUARD 03.jpeg',alt:'Battery Guard 3'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/BATTERY GUARD/BATTERY GUARD 04.jpeg',alt:'Battery Guard 4'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/BATTERY GUARD/BATTERY GUARD 05.jpeg',alt:'Battery Guard 5'}],play:'https://play.google.com/store/search?q=ARVION%20Battery%20Guard&c=apps'}),
+'arvion-calculator':mkProduct({title:'ARVION Calculator',icon:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/CALCULATOR/CALCULATOR 1.png',enSub:'A practical multi-calculator toolbox with scan-assisted input.',plSub:'Praktyczny zestaw wielu kalkulatorów z możliwością wspomagania skanowaniem.',en:'Keep useful calculations in one clear application. ARVION Calculator combines multiple calculator tools with simple input, translated results and scan-assisted workflows that can help read values before calculation. It is designed for fast everyday use without unnecessary complexity.',pl:'Miej przydatne obliczenia w jednej czytelnej aplikacji. ARVION Calculator łączy wiele narzędzi kalkulatora z prostym wprowadzaniem danych, przetłumaczonymi wynikami oraz funkcjami wspomaganymi skanowaniem, które mogą pomóc odczytać wartości przed wykonaniem obliczenia. Aplikacja została zaprojektowana do szybkiego, codziennego użycia.',gallery:[{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/CALCULATOR/CALCULATOR 1.png',alt:'ARVION Calculator 1'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/CALCULATOR/CALCULATOR 2 (1).png',alt:'ARVION Calculator 2'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/CALCULATOR/CALCULATOR 2 (2).png',alt:'ARVION Calculator 3'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/CALCULATOR/CALCULATOR 2 (4).png',alt:'ARVION Calculator 4'}],play:'https://play.google.com/store/search?q=ARVION%20Calculator&c=apps'}),
+'private-iptv':mkProduct({title:'Private IPTV',icon:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/IP TV/IP TV 1.png',enSub:'A private IPTV player for playlists and sources supplied by the user.',plSub:'Prywatny odtwarzacz IPTV dla list i źródeł dodawanych przez użytkownika.',en:'Play IPTV content from compatible playlists and streaming addresses that you add yourself. Private IPTV focuses on a clean TV-style interface, playlist handling and playback controls. The application does not provide channel lists or access rights to third-party content; the user is responsible for the sources they add.',pl:'Odtwarzaj treści IPTV z kompatybilnych list i adresów strumieniowych, które dodajesz samodzielnie. Private IPTV oferuje czytelny interfejs telewizyjny, obsługę list oraz sterowanie odtwarzaniem. Aplikacja nie dostarcza list kanałów ani praw dostępu do treści podmiotów trzecich — za dodawane źródła odpowiada użytkownik.',gallery:[{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/IP TV/IP TV 1.png',alt:'Private IPTV 1'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/IP TV/IP TV 2.png',alt:'Private IPTV 2'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/IP TV/IP TV 3.png',alt:'Private IPTV 3'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/IP TV/IP TV 4.png',alt:'Private IPTV 4'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/IP TV/IP TV 5.png',alt:'Private IPTV 5'}],play:'https://play.google.com/store/search?q=Private%20IPTV%20ARVION&c=apps'}),
+'kids-time':mkProduct({title:'Kids Time',icon:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/KIDS TIME/KIDS TIME 1.png',enSub:'Simple parental time control with PIN protection and emergency access.',plSub:'Prosta kontrola czasu dziecka z ochroną PIN i dostępem awaryjnym.',en:'A straightforward parental-control utility focused on ease of use. Set protected time limits with PIN confirmation, use an alarm after repeated incorrect PIN attempts and keep a separate emergency access procedure for situations when normal unlocking is not possible.',pl:'Proste narzędzie kontroli rodzicielskiej, w którym najważniejsza jest łatwość obsługi. Ustawiaj chronione limity czasu z potwierdzeniem PIN, korzystaj z alarmu po kolejnych błędnych próbach wpisania kodu oraz z osobnej procedury awaryjnego dostępu, gdy standardowe odblokowanie nie jest możliwe.',gallery:[{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/KIDS TIME/KIDS TIME 1.png',alt:'Kids Time 1'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/KIDS TIME/KIDS TIME 02.png',alt:'Kids Time 2'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/KIDS TIME/KIDS TIME 04.png',alt:'Kids Time 3'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/KIDS TIME/KIDS TIME 93.png',alt:'Kids Time 4'},{src:'assets/latest-site-upload/DO STRONY INTERNETOWEJ/KIDS TIME/KIEDS TIME 05.png',alt:'Kids Time 5'}],play:'https://play.google.com/store/search?q=Kids%20Time%20ARVION&c=apps'})"""
+              if marker not in s: raise SystemExit('productData marker not found')
+              s=s.replace(marker,details+marker,1)
+
+          # Support: reveal creator photo together with payment details and add payment title in both languages.
+          if 'supportPhotoPath' not in s:
+              marker="const grids={phone:"
+              support_js="""const supportPhotoPath='assets/latest-site-upload/DO STRONY INTERNETOWEJ/DO WSTAWIENIA DO KONT BANKOWYCH.png';
+supportCopy.en=supportCopy.en.replace('<h3>International bank transfer details</h3>',`<div class=\"support-photo-wrap hidden-data\"><img src=\"${supportPhotoPath}\" alt=\"Łukasz — creator of ARVION\"><span>Łukasz — creator of ARVION</span></div><div class=\"support-value hidden-data transfer-title\"><span>Transfer title</span><strong>Creator support</strong></div><h3>International bank transfer details</h3>`);
+supportCopy.pl=supportCopy.pl.replace('<h3>Dane do przelewu międzynarodowego</h3>',`<div class=\"support-photo-wrap hidden-data\"><img src=\"${supportPhotoPath}\" alt=\"Łukasz — twórca ARVION\"><span>Łukasz — twórca ARVION</span></div><div class=\"support-value hidden-data transfer-title\"><span>Tytuł przelewu</span><strong>Wsparcie twórców</strong></div><h3>Dane do przelewu międzynarodowego</h3>`);
+"""
+              if marker not in s: raise SystemExit('support marker not found')
+              s=s.replace(marker,support_js+marker,1)
+
+          # CSS for a photo that is fully hidden until the same reveal action as payment numbers.
+          if '.support-photo-wrap.hidden-data' not in s:
+              css="""
+.support-photo-wrap{margin:20px auto;max-width:300px;text-align:center;border:1px solid var(--line);border-radius:18px;background:#080808;padding:12px;transition:.25s ease}.support-photo-wrap img{display:block;width:100%;height:auto;border-radius:12px}.support-photo-wrap span{display:block;margin-top:9px;color:#bba66f;font-size:12px;font-weight:800}.support-photo-wrap.hidden-data{filter:none;opacity:0;max-height:0;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;border-width:0;overflow:hidden;pointer-events:none}.support-photo-wrap.hidden-data.revealed{opacity:1;max-height:520px;margin-top:20px;margin-bottom:20px;padding:12px;border-width:1px;pointer-events:auto}.transfer-title{margin:16px 0}.transfer-title.hidden-data{filter:blur(6px)}.transfer-title.hidden-data.revealed{filter:none}
+"""
+              s=s.replace('</style>',css+'</style>',1)
+
+          p.write_text(s,encoding='utf-8')
+          PY
+
+      - name: Commit website update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No website changes"
+            exit 0
+          fi
+          git commit -m "Add seven new apps and update support section"
+          git push
