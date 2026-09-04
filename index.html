@@ -321,40 +321,5 @@ render();setSupportLang('en');
 
 </script>
 <script>if(location.search){history.replaceState(null,'',location.pathname+location.hash);}</script>
-<!-- ARVION AVAILABILITY SCRIPT START -->
-<script>
-(function(){
-  const AVAILABLE_NAMES=['obd active sound','obd active exhaust pro'];
-  const statusFor=(name)=>AVAILABLE_NAMES.some(x=>(name||'').toLowerCase().includes(x))
-    ? {cls:'available',text:'DOSTĘPNA TERAZ · AVAILABLE NOW'}
-    : {cls:'soon',text:'DOSTĘPNA WKRÓTCE · COMING SOON'};
-  function applyCardStatus(){
-    document.querySelectorAll('.card').forEach(card=>{
-      const h=card.querySelector('h3');
-      if(!h||card.querySelector('.availability-status')) return;
-      const st=statusFor(h.textContent);
-      const el=document.createElement('div');
-      el.className='availability-status '+st.cls;
-      el.textContent=st.text;
-      const body=card.querySelector('.body')||card;
-      body.appendChild(el);
-    });
-  }
-  function applyModalStatus(){
-    const modal=document.querySelector('#productModal');
-    if(!modal) return;
-    const h=modal.querySelector('.product-head h2, h2');
-    if(!h) return;
-    let el=modal.querySelector('.modal-availability');
-    if(!el){el=document.createElement('div');el.className='availability-status modal-availability';h.insertAdjacentElement('afterend',el);}
-    const st=statusFor(h.textContent);el.className='availability-status modal-availability '+st.cls;el.textContent=st.text;
-  }
-  function run(){applyCardStatus();applyModalStatus();}
-  document.addEventListener('DOMContentLoaded',()=>{run();setTimeout(run,250);setTimeout(run,1000);});
-  document.addEventListener('click',()=>setTimeout(run,40));
-  new MutationObserver(run).observe(document.documentElement,{childList:true,subtree:true});
-})();
-</script>
-<!-- ARVION AVAILABILITY SCRIPT END -->
 </body>
 </html>
