@@ -23,6 +23,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes"
           else
-            git commit -m "Add bilingual product availability labels"
+            git commit -m "Repair bilingual product availability labels"
             git push
           fi
