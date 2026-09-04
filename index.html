@@ -38,6 +38,11 @@ section{padding:42px 0 66px}.section-head{display:flex;align-items:end;justify-c
 .site-stats{display:flex;align-items:center;gap:8px;flex:0 0 auto}.site-stat{height:38px;display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(216,170,67,.42);background:linear-gradient(180deg,#151109,#090806);color:#e8d39d;border-radius:999px;padding:0 12px;font-size:11px;font-weight:900;letter-spacing:.07em;white-space:nowrap}.site-stat .stat-icon{font-size:16px;line-height:1}.site-stat .stat-count{color:var(--gold2);font-size:13px;min-width:18px;text-align:center}.site-like{cursor:pointer;transition:.2s ease}.site-like:hover{border-color:var(--gold2);transform:translateY(-1px)}.site-like.liked{background:linear-gradient(180deg,#341018,#16080b);border-color:#d85a72;color:#ffd5dc}.site-like.liked .stat-icon{color:#ff5d78}.site-like:disabled{cursor:default;opacity:.85}.stats-offline .stat-count{color:#777}@media(max-width:1120px){.site-stat{padding:0 9px}.site-stat .stat-label{display:none}.header-actions{gap:12px}nav{gap:15px}}@media(max-width:760px){.top{gap:10px}.site-stats{margin-left:auto}.site-stat{height:36px;padding:0 9px}.brand span{display:none}.header-actions{gap:8px}.support-link{padding:9px 11px;font-size:12px}}@media(max-width:520px){.site-stat{padding:0 7px}.site-stat .stat-icon{font-size:14px}.site-stat .stat-count{font-size:12px}.header-actions{gap:5px}.support-link{padding:8px 9px;font-size:11px}}
 /* ARVION SITE STATS END */
 
+
+/* ARVION AVAILABILITY START */
+.availability-status{display:flex;align-items:center;gap:8px;margin:12px 0 0;padding:9px 11px;border-radius:12px;font-size:11px;font-weight:900;letter-spacing:.035em;line-height:1.35}.availability-status:before{content:'';width:8px;height:8px;border-radius:50%;flex:0 0 8px}.availability-status.available{color:#bff5c9;border:1px solid rgba(73,190,96,.55);background:rgba(36,125,54,.13)}.availability-status.available:before{background:#49d66a;box-shadow:0 0 10px rgba(73,214,106,.75)}.availability-status.soon{color:#f2d99d;border:1px solid rgba(216,170,67,.42);background:rgba(216,170,67,.07)}.availability-status.soon:before{background:#d8aa43}.modal-availability{margin:8px 0 14px;max-width:520px}
+/* ARVION AVAILABILITY END */
+
 </style>
 <link rel="canonical" href="https://lukaszednarski998.github.io/privacy-policy.html/">
 </head>
@@ -60,7 +65,7 @@ section{padding:42px 0 66px}.section-head{display:flex;align-items:end;justify-c
 <script>
 (async()=>{try{const parts=await Promise.all(Array.from({length:6},(_,i)=>fetch(`assets/banner-data/p${i}.txt?v=20260829fresh`,{cache:'no-store'}).then(r=>r.text())));document.getElementById('heroBanner').src='data:image/avif;base64,'+parts.join('')}catch(e){document.getElementById('heroBanner').src='assets/hero-no-ads.webp'}})();
 const products=[
-{id:'obd',name:'OBD Active Exhaust Pro',type:'phone',tag:'Android App',img:'assets/imported-new-products/STRONA INTERNETOWA/OBD GLOWNA/OBD 1.png',desc:'Active exhaust, diagnostics, live vehicle data and driver tools.',details:true},
+{id:'obd',name:'OBD Active Sound',type:'phone',tag:'Android App',img:'assets/imported-new-products/STRONA INTERNETOWA/OBD GLOWNA/OBD 1.png',desc:'Active exhaust, diagnostics, live vehicle data and driver tools.',details:true},
 {id:'drive-recorder',name:'Drive Recorder',type:'phone',tag:'Android App',img:'assets/imported-new-products/STRONA INTERNETOWA/REJESTRATOR JAZDY/REJESTRATOR 1.png',desc:'Full HD driving recorder with GPS and loop recording.',details:true},
 {id:'kalendarz-zmianowy',name:'Kalendarz Zmianowy',type:'phone',tag:'Android App',img:'assets/imported-new-products/STRONA INTERNETOWA/KALENDARZ ZMIAN/KALENDARZ ZMIAN 1.png',desc:'Shift calendar with schedules, notes and work information.',details:true},
 {id:'live-data',name:'Live Data',type:'phone',tag:'Android App',img:'assets/imported-new-products/STRONA INTERNETOWA/LIVE DATA/LIVE DATA 1.png',desc:'Real-time vehicle parameters through compatible OBD/ELM327.',details:true},
@@ -83,7 +88,7 @@ const mkProduct=({title,icon,enSub,plSub,en,pl,gallery,play,noteEn='',notePl=''}
 en:`<h3>${title}</h3><p>${en}</p><p><strong>No ads. No subscriptions.</strong> One purchase with future ARVION updates included.</p><a class="store-button" href="${play}" target="_blank" rel="noopener">GET IT ON GOOGLE PLAY</a>${noteEn?`<span class="store-note">${noteEn}</span>`:''}`,
 pl:`<h3>${title}</h3><p>${pl}</p><p><strong>Bez reklam. Bez subskrypcji.</strong> Jednorazowy zakup, a kolejne aktualizacje ARVION są wliczone.</p><a class="store-button" href="${play}" target="_blank" rel="noopener">POBIERZ W GOOGLE PLAY</a>${notePl?`<span class="store-note">${notePl}</span>`:''}`}});
 const productData={
-'obd':mkProduct({title:'OBD Active Exhaust Pro',icon:'assets/obd.webp',enSub:'Complete automotive tools in one Android app.',plSub:'Kompletny zestaw narzędzi samochodowych w jednej aplikacji.',en:'Control active exhaust functions, view live vehicle parameters through a compatible OBD/ELM327 connection, use diagnostics and access additional driver tools. The application combines automotive functions in one clear interface.',pl:'Steruj funkcjami aktywnego wydechu, obserwuj parametry pojazdu przez kompatybilne OBD/ELM327, korzystaj z diagnostyki i dodatkowych narzędzi dla kierowcy. Aplikacja łączy funkcje samochodowe w jednym czytelnym interfejsie.',gallery:[{src:'assets/obd.webp',alt:'OBD Active Exhaust Pro'}],play:'https://play.google.com/store/search?q=OBD%20Active%20Exhaust%20Pro&c=apps'}),
+'obd':mkProduct({title:'OBD Active Sound',icon:'assets/obd.webp',enSub:'Complete automotive tools in one Android app.',plSub:'Kompletny zestaw narzędzi samochodowych w jednej aplikacji.',en:'Control active exhaust functions, view live vehicle parameters through a compatible OBD/ELM327 connection, use diagnostics and access additional driver tools. The application combines automotive functions in one clear interface.',pl:'Steruj funkcjami aktywnego wydechu, obserwuj parametry pojazdu przez kompatybilne OBD/ELM327, korzystaj z diagnostyki i dodatkowych narzędzi dla kierowcy. Aplikacja łączy funkcje samochodowe w jednym czytelnym interfejsie.',gallery:[{src:'assets/obd.webp',alt:'OBD Active Exhaust Pro'}],play:'https://play.google.com/store/search?q=OBD%20Active%20Exhaust%20Pro&c=apps'}),
 'drive-recorder':mkProduct({title:'Drive Recorder',icon:'assets/drive-recorder.webp',enSub:'Full HD driving recorder with GPS and road-focused tools.',plSub:'Rejestrator jazdy Full HD z GPS i narzędziami dla kierowcy.',en:'Turn your Android phone into a driving recorder. The application offers a dashboard-style interface for recording journeys, GPS information, loop recording, storage management and quick access to recording tools.',pl:'Zmień telefon z Androidem w rejestrator jazdy. Aplikacja oferuje interfejs w stylu samochodowego kokpitu, nagrywanie tras, informacje GPS, nagrywanie w pętli, zarządzanie pamięcią i szybki dostęp do funkcji nagrywania.',gallery:[{src:'7e9c2f92-e74d-474b-b17d-d4345413b7d7.png',alt:'Drive Recorder original screenshot'},{src:'assets/drive-recorder.webp',alt:'Drive Recorder'}],play:'https://play.google.com/store/search?q=Drive%20Recorder%20ARVION&c=apps'}),
 'watch-faces':mkProduct({title:'ARVION Watch Faces',icon:'assets/watch-faces.webp',enSub:'Premium Wear OS watch faces in many visual styles.',plSub:'Tarcze premium Wear OS w wielu różnych stylach.',en:'A growing collection of watch faces for compatible Wear OS smartwatches, including classic, digital, automotive, animated and artistic designs. Browse the collection from Android and give your watch a distinctive ARVION look.',pl:'Rozwijana kolekcja tarcz dla kompatybilnych smartwatchy Wear OS, obejmująca projekty klasyczne, cyfrowe, motoryzacyjne, animowane i artystyczne. Przeglądaj kolekcję na Androidzie i nadaj zegarkowi charakterystyczny styl ARVION.',gallery:[{src:'assets/watch-faces.webp',alt:'ARVION Watch Faces'}],play:'https://play.google.com/store/search?q=ARVION%20Watch%20Faces&c=apps'}),
 'checkers-royal':mkProduct({title:'Checkers Royal Game',icon:'assets/checkers.webp',enSub:'Royal checkers for Android and compatible Wear OS watches.',plSub:'Królewskie warcaby na Androida i kompatybilne zegarki Wear OS.',en:'Classic checkers in an ornate black, gold and emerald presentation. Play against AI or locally with two players and enjoy simple touch controls. A smartwatch version is also available for compatible Wear OS devices.',pl:'Klasyczne warcaby w ozdobnej czarno-złoto-szmaragdowej oprawie. Graj przeciwko AI lub lokalnie w dwie osoby i korzystaj z prostego sterowania dotykowego. Dostępna jest również wersja na kompatybilne zegarki Wear OS.',gallery:[{src:'1f7b7381-74c7-4af8-a345-961b4afd158d.png',alt:'Checkers Royal Game original promotional image'},{src:'37e1950b-eda3-4b38-ad6f-7e4a40b62abe.png',alt:'Checkers Royal Game original promotional image'}],play:'https://play.google.com/store/apps/details?id=com.aplikacjeandroid.checkersroyalgame',noteEn:'Also available in a smartwatch version.',notePl:'Dostępna również w wersji na zegarek.'}),
@@ -315,5 +320,40 @@ render();setSupportLang('en');
 
 </script>
 <script>if(location.search){history.replaceState(null,'',location.pathname+location.hash);}</script>
+<!-- ARVION AVAILABILITY SCRIPT START -->
+<script>
+(function(){
+  const AVAILABLE_NAMES=['obd active sound','obd active exhaust pro'];
+  const statusFor=(name)=>AVAILABLE_NAMES.some(x=>(name||'').toLowerCase().includes(x))
+    ? {cls:'available',text:'DOSTĘPNA TERAZ · AVAILABLE NOW'}
+    : {cls:'soon',text:'DOSTĘPNA WKRÓTCE · COMING SOON'};
+  function applyCardStatus(){
+    document.querySelectorAll('.card').forEach(card=>{
+      const h=card.querySelector('h3');
+      if(!h||card.querySelector('.availability-status')) return;
+      const st=statusFor(h.textContent);
+      const el=document.createElement('div');
+      el.className='availability-status '+st.cls;
+      el.textContent=st.text;
+      const body=card.querySelector('.body')||card;
+      body.appendChild(el);
+    });
+  }
+  function applyModalStatus(){
+    const modal=document.querySelector('#productModal');
+    if(!modal) return;
+    const h=modal.querySelector('.product-head h2, h2');
+    if(!h) return;
+    let el=modal.querySelector('.modal-availability');
+    if(!el){el=document.createElement('div');el.className='availability-status modal-availability';h.insertAdjacentElement('afterend',el);}
+    const st=statusFor(h.textContent);el.className='availability-status modal-availability '+st.cls;el.textContent=st.text;
+  }
+  function run(){applyCardStatus();applyModalStatus();}
+  document.addEventListener('DOMContentLoaded',()=>{run();setTimeout(run,250);setTimeout(run,1000);});
+  document.addEventListener('click',()=>setTimeout(run,40));
+  new MutationObserver(run).observe(document.documentElement,{childList:true,subtree:true});
+})();
+</script>
+<!-- ARVION AVAILABILITY SCRIPT END -->
 </body>
 </html>
