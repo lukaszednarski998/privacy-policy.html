@@ -1,0 +1,57 @@
+name: Apply game media simple
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/apply-games-simple.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract split archive
+        run: |
+          rm -rf /tmp/arvion-games
+          mkdir -p /tmp/arvion-games
+          7z x -y "STRONA INTERNETOWA.zip" -o/tmp/arvion-games
+      - name: Copy assets
+        run: |
+          ROOT="/tmp/arvion-games/STRONA INTERNETOWA"
+          DEST="assets/games-20260911"
+          rm -rf "$DEST"
+          mkdir -p "$DEST/phone/arvion-my-pet-3d" "$DEST/watch/arvion-breakout" "$DEST/watch/arvion-my-pet-3d" "$DEST/watch/snake"
+          cp "$ROOT/PHONE GAME/ARVION MY PET 3D/ikona.png" "$DEST/phone/arvion-my-pet-3d/icon.png"
+          cp "$ROOT/PHONE GAME/ARVION MY PET 3D/ARVION MY PET 3 D 1.png" "$DEST/phone/arvion-my-pet-3d/screen-1.png"
+          cp "$ROOT/PHONE GAME/ARVION MY PET 3D/ARVION MY PET 3 D 2.png" "$DEST/phone/arvion-my-pet-3d/screen-2.png"
+          cp "$ROOT/PHONE GAME/ARVION MY PET 3D/ARVION MY PET 3 D 3.png" "$DEST/phone/arvion-my-pet-3d/screen-3.png"
+          cp "$ROOT/PHONE GAME/ARVION MY PET 3D/VIDEO 3.mp4" "$DEST/phone/arvion-my-pet-3d/demo.mp4"
+          cp "$ROOT/WATCH GAMES/ARVION BREAKOUT/ARVION BREAKOUT (1).png" "$DEST/watch/arvion-breakout/screen-1.png"
+          cp "$ROOT/WATCH GAMES/ARVION BREAKOUT/ARVION BREAKOUT (2).png" "$DEST/watch/arvion-breakout/screen-2.png"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/ikona.png" "$DEST/watch/arvion-my-pet-3d/icon.png"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/ARVION MY PET 3 D 1.png" "$DEST/watch/arvion-my-pet-3d/screen-1.png"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/ARVION MY PET 3 D 2.png" "$DEST/watch/arvion-my-pet-3d/screen-2.png"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/ARVION MY PET 3 D 3.png" "$DEST/watch/arvion-my-pet-3d/screen-3.png"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/VIDEO 1.mp4" "$DEST/watch/arvion-my-pet-3d/demo-1.mp4"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/VIDEO 02.mp4" "$DEST/watch/arvion-my-pet-3d/demo-2.mp4"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/VIDEO 3.mp4" "$DEST/watch/arvion-my-pet-3d/demo-3.mp4"
+          n=1
+          for f in "$ROOT"/WATCH\ GAMES/SNAKE/*.png; do
+            cp "$f" "$DEST/watch/snake/screen-$n.png"
+            n=$((n+1))
+          done
+      - name: Patch page
+        run: python3 scripts/apply_games_20260911.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/games-20260911
+          git commit -m "Add My Pet 3D Breakout and Snake website media" || exit 0
+          git push
