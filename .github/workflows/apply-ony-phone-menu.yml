@@ -1,0 +1,154 @@
+name: Apply ONY phone menu images
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/apply-ony-phone-menu.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract ONY.zip and apply phone menu images
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile, shutil, re, unicodedata
+
+          archive = Path('ONY.zip')
+          if not archive.exists():
+              raise SystemExit('ONY.zip not found')
+
+          tmp = Path('/tmp/ony-images')
+          if tmp.exists(): shutil.rmtree(tmp)
+          tmp.mkdir(parents=True)
+          with zipfile.ZipFile(archive) as z:
+              z.extractall(tmp)
+
+          allowed = {'.png','.jpg','.jpeg','.webp','.avif'}
+          files = [p for p in tmp.rglob('*') if p.is_file() and p.suffix.lower() in allowed]
+          if len(files) < 3:
+              raise SystemExit(f'Expected at least 3 images in ONY.zip, found {len(files)}')
+
+          def norm(s):
+              s = unicodedata.normalize('NFKD', s).encode('ascii','ignore').decode().lower()
+              return re.sub(r'[^a-z0-9]+',' ',s).strip()
+
+          def pick(words):
+              candidates=[]
+              for p in files:
+                  n=norm(p.stem)
+                  score=sum(1 for w in words if w in n)
+                  if score: candidates.append((score, len(n), p))
+              if not candidates: return None
+              candidates.sort(key=lambda x:(-x[0],x[1]))
+              return candidates[0][2]
+
+          pdf = pick(['arvion pdf','pdf'])
+          diag = pick(['phone diagnostics','diagnostics','diagnostic'])
+          battery = pick(['battery guard','battery','guard'])
+          chosen={'arvion-pdf':pdf,'arvion-phone-diagnostics':diag,'arvion-battery-guard':battery}
+          if any(v is None for v in chosen.values()):
+              raise SystemExit('Could not identify all three images: '+str([(k,str(v) if v else None) for k,v in chosen.items()]))
+          if len({v.resolve() for v in chosen.values()}) != 3:
+              raise SystemExit('Image matching selected the same file more than once: '+str(chosen))
+
+          dest = Path('assets/phone-menu')
+          dest.mkdir(parents=True, exist_ok=True)
+          paths={}
+          for key,src in chosen.items():
+              ext=src.suffix.lower()
+              if ext=='.jpeg': ext='.jpg'
+              out=dest/(key+ext)
+              # Remove older variants so each product has one canonical menu image.
+              for old in dest.glob(key+'.*'):
+                  old.unlink()
+              shutil.copy2(src,out)
+              paths[key]=out.as_posix()
+              print(key, '<-', src.name, '=>', out)
+
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          # Watch Games heading: one language only (English), no doubled PL/EN title.
+          s=s.replace('<div class="eyebrow">Wear OS Games · Gry na zegarek</div><h2>Watch Games / Gry na zegarek</h2>',
+                      '<div class="eyebrow">Wear OS Games</div><h2>Watch Games</h2>')
+          s=s.replace('Games designed specifically for compatible Wear OS smartwatches. Gry stworzone specjalnie dla kompatybilnych zegarków Wear OS.',
+                      'Games designed specifically for compatible Wear OS smartwatches.')
+
+          def replace_card_image(text, names, newpath):
+              for name in names:
+                  pat=re.compile(r"(\{id:'[^']+',name:'"+re.escape(name)+r"'[^\n]*?img:')[^']*(')")
+                  text,n=pat.subn(r'\1'+newpath+r'\2',text,count=1)
+                  if n: return text, True
+              return text, False
+
+          s,pdf_found=replace_card_image(s,['ARVION PDF','ARVION PDF Toolbox','ARVION PDF Tools Offline'],paths['arvion-pdf'])
+          s,diag_found=replace_card_image(s,['ARVION Phone Diagnostics','Phone Diagnostics'],paths['arvion-phone-diagnostics'])
+          s,bat_found=replace_card_image(s,['ARVION Battery Guard','Battery Guard'],paths['arvion-battery-guard'])
+
+          # Current homepage revision may not contain these older phone cards. Restore them if missing.
+          if not pdf_found or not diag_found or not bat_found:
+              anchor="{id:'watch-faces',name:'ARVION Watch Faces'"
+              pos=s.find(anchor)
+              if pos < 0: raise SystemExit('Could not locate phone/watch card insertion point')
+              add=[]
+              if not pdf_found:
+                  add.append("{id:'arvion-pdf',name:'ARVION PDF',type:'phone',tag:'Android App',img:'%s',desc:'Offline PDF tools for creating, converting, merging, splitting, scanning and managing documents.',details:true},"%paths['arvion-pdf'])
+              if not diag_found:
+                  add.append("{id:'phone-diagnostics',name:'ARVION Phone Diagnostics',type:'phone',tag:'Android App',img:'%s',desc:'Phone diagnostics and quick access to storage, apps, battery and system tools.',details:true},"%paths['arvion-phone-diagnostics'])
+              if not bat_found:
+                  add.append("{id:'battery-guard',name:'ARVION Battery Guard',type:'phone',tag:'Android App',img:'%s',desc:'Battery monitoring and practical charging and device-health information for Android.',details:true},"%paths['arvion-battery-guard'])
+              s=s[:pos]+'\n'.join(add)+'\n'+s[pos:]
+
+          # Add product detail data only when the restored cards need it.
+          data_anchor="'watch-faces':mkProduct("
+          dpos=s.find(data_anchor)
+          if dpos < 0: raise SystemExit('Could not locate product data insertion point')
+          blocks=[]
+          if "'arvion-pdf':mkProduct(" not in s:
+              blocks.append("'arvion-pdf':mkProduct({title:'ARVION PDF',icon:'%s',enSub:'Offline PDF tools for Android.',plSub:'Narzędzia PDF offline na Androida.',en:'Create and manage PDF documents directly on your phone. Convert images and PDF files, merge, split, rotate, reorder, compress and scan documents without relying on a cloud account.',pl:'Twórz i obsługuj dokumenty PDF bezpośrednio na telefonie. Konwertuj obrazy i pliki PDF, łącz, dziel, obracaj, zmieniaj kolejność, kompresuj i skanuj dokumenty bez konieczności korzystania z konta w chmurze.',gallery:[{src:'%s',alt:'ARVION PDF'}],play:'https://play.google.com/store/search?q=ARVION%%20PDF&c=apps'}),"%(paths['arvion-pdf'],paths['arvion-pdf']))
+          if "'phone-diagnostics':mkProduct(" not in s:
+              blocks.append("'phone-diagnostics':mkProduct({title:'ARVION Phone Diagnostics',icon:'%s',enSub:'Android phone diagnostics and system tools.',plSub:'Diagnostyka telefonu i narzędzia systemowe Android.',en:'Check key areas of your Android phone and quickly open tools related to storage, applications, battery and system settings.',pl:'Sprawdzaj najważniejsze obszary telefonu z Androidem i szybko otwieraj narzędzia związane z pamięcią, aplikacjami, baterią oraz ustawieniami systemowymi.',gallery:[{src:'%s',alt:'ARVION Phone Diagnostics'}],play:'https://play.google.com/store/search?q=ARVION%%20Phone%%20Diagnostics&c=apps'}),"%(paths['arvion-phone-diagnostics'],paths['arvion-phone-diagnostics']))
+          if "'battery-guard':mkProduct(" not in s:
+              blocks.append("'battery-guard':mkProduct({title:'ARVION Battery Guard',icon:'%s',enSub:'Battery monitoring and charging information.',plSub:'Monitorowanie baterii i informacje o ładowaniu.',en:'Monitor useful battery and charging information on your Android device and keep important battery-health data easy to reach.',pl:'Monitoruj przydatne informacje o baterii i ładowaniu urządzenia z Androidem oraz miej najważniejsze dane dotyczące kondycji baterii pod ręką.',gallery:[{src:'%s',alt:'ARVION Battery Guard'}],play:'https://play.google.com/store/search?q=ARVION%%20Battery%%20Guard&c=apps'}),"%(paths['arvion-battery-guard'],paths['arvion-battery-guard']))
+          if blocks:
+              s=s[:dpos]+'\n'.join(blocks)+'\n'+s[dpos:]
+
+          # Cache/version marker to make the homepage update obvious after Pages deploy.
+          s=re.sub(r'<meta name="arvion-site-version" content="[^"]+">',
+                   '<meta name="arvion-site-version" content="2026-09-11-ony-phone-menu">',s,count=1)
+          p.write_text(s,encoding='utf-8')
+
+          # Sanity checks.
+          for path in paths.values():
+              if path not in s: raise SystemExit('Missing image reference '+path)
+          if 'Watch Games / Gry na zegarek' in s or 'Wear OS Games · Gry na zegarek' in s:
+              raise SystemExit('Bilingual Watch Games heading still present')
+          print('index.html updated successfully')
+          PY
+
+      - name: Commit website update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/phone-menu
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Update phone app menu images from ONY"
+          git push
