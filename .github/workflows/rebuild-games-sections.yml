@@ -1,0 +1,77 @@
+name: Rebuild ARVION game sections
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/rebuild-games-sections.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch website
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          s=s.replace('<a href="#games">Games</a>', '<a href="#games">Phone Games</a><a href="#watch-games">Watch Games</a>')
+
+          old='<section id="games" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">ARVION Games</div><h2>Games</h2></div><p class="section-note">Android and Wear OS games with no advertising and no recurring subscriptions. Wear OS editions are listed separately where supplied.</p></div><div class="grid" id="gameGrid"></div></div></section>'
+          new='<section id="games" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">ARVION Games</div><h2>Phone Games</h2></div><p class="section-note">Android games for smartphones. Open a product to view screenshots, Polish/English descriptions and available video materials.</p></div><div class="grid" id="gameGrid"></div></div></section>\n<div class="catalog-divider"></div>\n<section id="watch-games" class="catalog-section"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Wear OS Games · Gry na zegarek</div><h2>Watch Games / Gry na zegarek</h2></div><p class="section-note">Games designed specifically for compatible Wear OS smartwatches. Gry stworzone specjalnie dla kompatybilnych zegarków Wear OS.</p></div><div class="grid" id="watchGameGrid"></div></div></section>'
+          if old in s:
+              s=s.replace(old,new,1)
+
+          s=s.replace("id:'checkers-royal-watch',name:'Checkers Royal · Wear OS',type:'game'", "id:'checkers-royal-watch',name:'Checkers Royal · Wear OS',type:'watchgame'")
+          s=s.replace("id:'royal-chess-watch',name:'Royal Chess · Wear OS',type:'game'", "id:'royal-chess-watch',name:'Royal Chess · Wear OS',type:'watchgame'")
+
+          pet_card="{id:'arvion-my-pet-3d',name:'ARVION MY PET 3D',type:'game',tag:'Android Game',img:'',desc:'A 3D virtual pet game with interactive rooms, activities and animal companions.',details:true},\n"
+          marker="{id:'snake-classic',name:'Snake Classic'"
+          if "id:'arvion-my-pet-3d'" not in s and marker in s:
+              s=s.replace(marker,pet_card+marker,1)
+
+          pet_data="""\nproductData['arvion-my-pet-3d']=mkProduct({title:'ARVION MY PET 3D',icon:'',enSub:'Your interactive 3D virtual pet on Android.',plSub:'Twój interaktywny wirtualny pupil 3D na Androidzie.',en:'ARVION MY PET 3D is a colorful virtual-pet game where you care for an animal companion, interact with it and explore a 3D environment. Visit rooms, perform activities and build your own everyday routine with your pet.',pl:'ARVION MY PET 3D to kolorowa gra z wirtualnym pupilem, w której opiekujesz się zwierzakiem, wchodzisz z nim w interakcje i odkrywasz otoczenie 3D. Odwiedzaj pomieszczenia, wykonuj różne aktywności i twórz własną codzienną rutynę ze swoim pupilem.',gallery:[],play:'https://play.google.com/store/search?q=ARVION%20MY%20PET%203D&c=apps',noteEn:'Android phone game.',notePl:'Gra na telefon z Androidem.'});\n"""
+          if "productData['arvion-my-pet-3d']" not in s:
+              pos=s.find('// ARVION ORIGINAL IMAGE CATALOG START')
+              if pos!=-1:
+                  s=s[:pos]+pet_data+s[pos:]
+
+          oldgrids="const grids={phone:document.getElementById('phoneGrid'),watch:document.getElementById('watchGrid'),game:document.getElementById('gameGrid')}"
+          newgrids="const grids={phone:document.getElementById('phoneGrid'),watch:document.getElementById('watchGrid'),game:document.getElementById('gameGrid'),watchgame:document.getElementById('watchGameGrid')}"
+          s=s.replace(oldgrids,newgrids)
+
+          oldrender="const list=products.filter(p=>type==='phone'?(p.type==='phone'||p.type==='watch'):p.type===type);"
+          newrender="const list=products.filter(p=>type==='phone'?(p.type==='phone'||p.type==='watch'):p.type===type);"
+          s=s.replace(oldrender,newrender)
+
+          # Add video styling and make HTML5 videos playable when gallery entries end in .mp4/.webm.
+          if '.gallery-main video' not in s:
+              s=s.replace('.gallery-main img{display:block;width:100%;max-height:620px;object-fit:contain;background:#000}', '.gallery-main img,.gallery-main video{display:block;width:100%;max-height:620px;object-fit:contain;background:#000}')
+
+          s=s.replace("<div class=\"gallery-main\"><img id=\"galleryMain\" alt=\"\"></div>", "<div class=\"gallery-main\" id=\"galleryFrame\"><img id=\"galleryMain\" alt=\"\"><video id=\"galleryVideo\" controls playsinline preload=\"metadata\" style=\"display:none\"></video></div>")
+
+          old="galleryMain.src=resolved[0].resolved;galleryMain.alt=resolved[0].alt;"
+          new="const gv=document.getElementById('galleryVideo');const showMedia=x=>{const v=/\\.(mp4|webm)(\\?|$)/i.test(x.resolved);if(v){galleryMain.style.display='none';gv.style.display='block';gv.src=x.resolved;gv.load()}else{gv.pause();gv.removeAttribute('src');gv.style.display='none';galleryMain.style.display='block';galleryMain.src=x.resolved;galleryMain.alt=x.alt}};showMedia(resolved[0]);"
+          s=s.replace(old,new)
+          s=s.replace("galleryMain.src=x.resolved;galleryMain.alt=x.alt;galleryStrip.querySelectorAll", "showMedia(x);galleryStrip.querySelectorAll")
+
+          s=s.replace('meta name="arvion-site-version" content="2026-09-03-unified"','meta name="arvion-site-version" content="2026-09-11-games-update"')
+          p.write_text(s,encoding='utf-8')
+      - name: Commit website update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Add phone and Wear OS game sections"
+          git push
