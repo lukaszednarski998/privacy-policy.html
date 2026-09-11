@@ -1,0 +1,154 @@
+name: Apply 2026-09-11 game assets
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/apply-games-20260911.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract uploaded split ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "STRONA INTERNETOWA.zip"
+          test -f "STRONA INTERNETOWA.z01"
+          test -f "STRONA INTERNETOWA.z02"
+          rm -rf /tmp/arvion-games
+          mkdir -p /tmp/arvion-games
+          7z x -y "STRONA INTERNETOWA.zip" -o/tmp/arvion-games
+          echo "Extracted files:"
+          find /tmp/arvion-games -type f -print
+
+      - name: Copy game assets to website
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="/tmp/arvion-games/STRONA INTERNETOWA"
+          test -d "$ROOT"
+          DEST="assets/games-20260911"
+          rm -rf "$DEST"
+          mkdir -p "$DEST/phone/arvion-my-pet-3d" "$DEST/watch/arvion-breakout" "$DEST/watch/arvion-my-pet-3d" "$DEST/watch/snake"
+
+          cp "$ROOT/PHONE GAME/ARVION MY PET 3D/ikona.png" "$DEST/phone/arvion-my-pet-3d/icon.png"
+          cp "$ROOT/PHONE GAME/ARVION MY PET 3D/ARVION MY PET 3 D 1.png" "$DEST/phone/arvion-my-pet-3d/screen-1.png"
+          cp "$ROOT/PHONE GAME/ARVION MY PET 3D/ARVION MY PET 3 D 2.png" "$DEST/phone/arvion-my-pet-3d/screen-2.png"
+          cp "$ROOT/PHONE GAME/ARVION MY PET 3D/ARVION MY PET 3 D 3.png" "$DEST/phone/arvion-my-pet-3d/screen-3.png"
+          cp "$ROOT/PHONE GAME/ARVION MY PET 3D/VIDEO 3.mp4" "$DEST/phone/arvion-my-pet-3d/demo.mp4"
+
+          cp "$ROOT/WATCH GAMES/ARVION BREAKOUT/ARVION BREAKOUT (1).png" "$DEST/watch/arvion-breakout/screen-1.png"
+          cp "$ROOT/WATCH GAMES/ARVION BREAKOUT/ARVION BREAKOUT (2).png" "$DEST/watch/arvion-breakout/screen-2.png"
+
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/ikona.png" "$DEST/watch/arvion-my-pet-3d/icon.png"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/ARVION MY PET 3 D 1.png" "$DEST/watch/arvion-my-pet-3d/screen-1.png"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/ARVION MY PET 3 D 2.png" "$DEST/watch/arvion-my-pet-3d/screen-2.png"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/ARVION MY PET 3 D 3.png" "$DEST/watch/arvion-my-pet-3d/screen-3.png"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/VIDEO 1.mp4" "$DEST/watch/arvion-my-pet-3d/demo-1.mp4"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/VIDEO 02.mp4" "$DEST/watch/arvion-my-pet-3d/demo-2.mp4"
+          cp "$ROOT/WATCH GAMES/ARVION MY PET 3 D/VIDEO 3.mp4" "$DEST/watch/arvion-my-pet-3d/demo-3.mp4"
+
+          i=1
+          while IFS= read -r -d '' f; do
+            cp "$f" "$DEST/watch/snake/screen-$i.png"
+            i=$((i+1))
+          done < <(find "$ROOT/WATCH GAMES/SNAKE" -maxdepth 1 -type f -name '*.png' -print0 | sort -z)
+          test "$i" -eq 7
+
+      - name: Patch index.html
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          BASE = 'assets/games-20260911/'
+
+          # Card artwork for phone My Pet 3D.
+          s = s.replace(
+              "{id:'arvion-my-pet-3d',name:'ARVION MY PET 3D',type:'game',tag:'Android Game',img:'',desc:'A 3D virtual pet game with interactive rooms, activities and animal companions.',details:true},",
+              "{id:'arvion-my-pet-3d',name:'ARVION MY PET 3D',type:'game',tag:'Android Game',img:'" + BASE + "phone/arvion-my-pet-3d/icon.png',desc:'A 3D virtual pet game with interactive rooms, activities and animal companions.',details:true},"
+          )
+
+          # Add the three new watch games once. Chess and Checkers are already watchgame items.
+          if "id:'arvion-breakout-watch'" not in s:
+              anchor = "{id:'royal-chess-watch',name:'Royal Chess · Wear OS',type:'watchgame',tag:'Wear OS Game',img:'assets/imported-new-products/STRONA INTERNETOWA/SZACHY NA ZEGAREK/SZACHY NA ZEGAREK 1.png',desc:'Classic chess adapted for play directly on a compatible Wear OS watch.',details:true},"
+              insert = anchor + "\n" + \
+                  "{id:'arvion-breakout-watch',name:'ARVION BREAKOUT',type:'watchgame',tag:'Wear OS Game',img:'" + BASE + "watch/arvion-breakout/screen-1.png',desc:'Classic brick-breaking arcade action designed for Wear OS smartwatches.',details:true},\n" + \
+                  "{id:'arvion-my-pet-3d-watch',name:'ARVION MY PET 3D · Wear OS',type:'watchgame',tag:'Wear OS Game',img:'" + BASE + "watch/arvion-my-pet-3d/icon.png',desc:'Your virtual 3D pet adapted for a compatible Wear OS smartwatch.',details:true},\n" + \
+                  "{id:'snake-watch',name:'SNAKE · Wear OS',type:'watchgame',tag:'Wear OS Game',img:'" + BASE + "watch/snake/screen-1.png',desc:'Classic Snake gameplay optimized for a smartwatch display.',details:true},"
+              if anchor not in s:
+                  raise SystemExit('Could not locate Royal Chess Wear OS card anchor')
+              s = s.replace(anchor, insert, 1)
+
+          # Replace phone My Pet details with real media.
+          phone_pat = re.compile(r"productData\['arvion-my-pet-3d'\]=mkProduct\(\{.*?\}\);", re.S)
+          phone_new = "productData['arvion-my-pet-3d']=mkProduct({title:'ARVION MY PET 3D',icon:'" + BASE + "phone/arvion-my-pet-3d/icon.png',enSub:'Your interactive 3D virtual pet on Android.',plSub:'Twój interaktywny wirtualny pupil 3D na Androidzie.',en:'ARVION MY PET 3D is a virtual pet experience in a full 3D environment. Take care of your pet, watch its behavior, enjoy interactive moments and explore its world. The game is designed for simple, friendly play without ads or recurring subscriptions.',pl:'ARVION MY PET 3D to wirtualny pupil w pełnym środowisku 3D. Opiekuj się swoim zwierzakiem, obserwuj jego zachowanie, korzystaj z interakcji i odkrywaj jego świat. Gra została przygotowana do prostej, przyjaznej rozgrywki bez reklam i bez cyklicznych subskrypcji.',gallery:[{src:'" + BASE + "phone/arvion-my-pet-3d/screen-1.png',alt:'ARVION MY PET 3D screenshot 1'},{src:'" + BASE + "phone/arvion-my-pet-3d/screen-2.png',alt:'ARVION MY PET 3D screenshot 2'},{src:'" + BASE + "phone/arvion-my-pet-3d/screen-3.png',alt:'ARVION MY PET 3D screenshot 3'},{src:'" + BASE + "phone/arvion-my-pet-3d/demo.mp4',alt:'ARVION MY PET 3D gameplay video'}],play:'https://play.google.com/store/search?q=ARVION%20MY%20PET%203D&c=apps',noteEn:'Android phone game.',notePl:'Gra na telefon z Androidem.'});"
+          s, n = phone_pat.subn(phone_new, s, count=1)
+          if n != 1:
+              raise SystemExit('Could not replace phone My Pet product data')
+
+          # New watch product details.
+          if "productData['arvion-breakout-watch']" not in s:
+              anchor = "// ARVION ORIGINAL IMAGE CATALOG START"
+              block = """
+productData['arvion-breakout-watch']=mkProduct({title:'ARVION BREAKOUT',icon:'assets/games-20260911/watch/arvion-breakout/screen-1.png',enSub:'Classic brick-breaking arcade action on your Wear OS watch.',plSub:'Klasyczna zręcznościowa rozgrywka Breakout na zegarku Wear OS.',en:'ARVION BREAKOUT is a classic arcade game created for smartwatch play. Bounce the ball, destroy blocks and chase higher scores with controls and a layout adapted to a compatible Wear OS display.',pl:'ARVION BREAKOUT to klasyczna gra zręcznościowa przygotowana do grania na smartwatchu. Odbijaj piłkę, niszcz kolejne bloki i poprawiaj rekordy, korzystając ze sterowania i układu dopasowanego do kompatybilnego ekranu Wear OS.',gallery:[{src:'assets/games-20260911/watch/arvion-breakout/screen-1.png',alt:'ARVION BREAKOUT screenshot 1'},{src:'assets/games-20260911/watch/arvion-breakout/screen-2.png',alt:'ARVION BREAKOUT screenshot 2'}],play:'https://play.google.com/store/search?q=ARVION%20BREAKOUT&c=apps',noteEn:'Wear OS game for compatible smartwatches.',notePl:'Gra Wear OS dla kompatybilnych smartwatchy.'});
+productData['arvion-my-pet-3d-watch']=mkProduct({title:'ARVION MY PET 3D · Wear OS',icon:'assets/games-20260911/watch/arvion-my-pet-3d/icon.png',enSub:'Keep your virtual 3D pet close on a compatible Wear OS watch.',plSub:'Miej swojego wirtualnego pupila 3D zawsze przy sobie na Wear OS.',en:'ARVION MY PET 3D for smartwatch brings the virtual pet experience to your wrist. Check on your pet directly on a compatible Wear OS watch and enjoy a compact interface prepared for the smaller display.',pl:'ARVION MY PET 3D w wersji zegarkowej przenosi wirtualnego pupila na Twój nadgarstek. Sprawdzaj swojego zwierzaka bezpośrednio na kompatybilnym zegarku Wear OS i korzystaj z interfejsu przygotowanego do mniejszego ekranu.',gallery:[{src:'assets/games-20260911/watch/arvion-my-pet-3d/screen-1.png',alt:'ARVION MY PET 3D Wear OS screenshot 1'},{src:'assets/games-20260911/watch/arvion-my-pet-3d/screen-2.png',alt:'ARVION MY PET 3D Wear OS screenshot 2'},{src:'assets/games-20260911/watch/arvion-my-pet-3d/screen-3.png',alt:'ARVION MY PET 3D Wear OS screenshot 3'},{src:'assets/games-20260911/watch/arvion-my-pet-3d/demo-1.mp4',alt:'ARVION MY PET 3D Wear OS video 1'},{src:'assets/games-20260911/watch/arvion-my-pet-3d/demo-2.mp4',alt:'ARVION MY PET 3D Wear OS video 2'},{src:'assets/games-20260911/watch/arvion-my-pet-3d/demo-3.mp4',alt:'ARVION MY PET 3D Wear OS video 3'}],play:'https://play.google.com/store/search?q=ARVION%20MY%20PET%203D&c=apps',noteEn:'Wear OS game for compatible smartwatches.',notePl:'Gra Wear OS dla kompatybilnych smartwatchy.'});
+productData['snake-watch']=mkProduct({title:'SNAKE · Wear OS',icon:'assets/games-20260911/watch/snake/screen-1.png',enSub:'The classic Snake formula redesigned for a smartwatch display.',plSub:'Klasyczny Snake zaprojektowany na nowo dla ekranu smartwatcha.',en:'SNAKE for Wear OS keeps the familiar arcade formula on your wrist. Guide the snake, collect items, grow longer and try to beat your best result using a layout optimized for a compatible smartwatch.',pl:'SNAKE na Wear OS przenosi klasyczną zręcznościową rozgrywkę na nadgarstek. Steruj wężem, zbieraj elementy, wydłużaj go i próbuj pobić swój rekord w układzie zoptymalizowanym dla kompatybilnego smartwatcha.',gallery:[{src:'assets/games-20260911/watch/snake/screen-1.png',alt:'SNAKE Wear OS screenshot 1'},{src:'assets/games-20260911/watch/snake/screen-2.png',alt:'SNAKE Wear OS screenshot 2'},{src:'assets/games-20260911/watch/snake/screen-3.png',alt:'SNAKE Wear OS screenshot 3'},{src:'assets/games-20260911/watch/snake/screen-4.png',alt:'SNAKE Wear OS screenshot 4'},{src:'assets/games-20260911/watch/snake/screen-5.png',alt:'SNAKE Wear OS screenshot 5'},{src:'assets/games-20260911/watch/snake/screen-6.png',alt:'SNAKE Wear OS screenshot 6'}],play:'https://play.google.com/store/search?q=ARVION%20SNAKE%20Wear%20OS&c=apps',noteEn:'Wear OS game for compatible smartwatches.',notePl:'Gra Wear OS dla kompatybilnych smartwatchy.'});
+"""
+              if anchor not in s:
+                  raise SystemExit('Could not locate productData insertion anchor')
+              s = s.replace(anchor, block + anchor, 1)
+
+          # Video-aware thumbnails: do not try to load MP4 files into IMG elements.
+          old = "galleryStrip.innerHTML=resolved.map((x,i)=>`<button class=\"gallery-thumb${i===0?' active':''}\" data-i=\"${i}\" type=\"button\"><img src=\"${x.resolved}\" alt=\"${x.alt}\"></button>`).join('');"
+          new = "galleryStrip.innerHTML=resolved.map((x,i)=>{const v=/\\.(mp4|webm)(\\?|$)/i.test(x.resolved);return `<button class=\"gallery-thumb${i===0?' active':''}\" data-i=\"${i}\" type=\"button\">${v?'<span class=\"video-thumb\" aria-hidden=\"true\">▶ VIDEO</span>':`<img src=\"${x.resolved}\" alt=\"${x.alt}\">`}</button>`}).join('');"
+          if old in s:
+              s = s.replace(old, new, 1)
+
+          if '.video-thumb{' not in s:
+              s = s.replace('.gallery-thumb.active{border-color:var(--gold2);box-shadow:0 0 0 1px var(--gold2) inset}', '.gallery-thumb.active{border-color:var(--gold2);box-shadow:0 0 0 1px var(--gold2) inset}.video-thumb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#0b0b0b;color:var(--gold2);font-size:11px;font-weight:900;letter-spacing:.08em}')
+
+          s = s.replace('content="2026-09-11-games-update"', 'content="2026-09-11-games-media-final"')
+          p.write_text(s, encoding='utf-8')
+          PY
+
+      - name: Verify website game update
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q "id:'arvion-breakout-watch'" index.html
+          grep -q "id:'arvion-my-pet-3d-watch'" index.html
+          grep -q "id:'snake-watch'" index.html
+          grep -q "games-20260911/phone/arvion-my-pet-3d/demo.mp4" index.html
+          grep -q "games-20260911/watch/arvion-my-pet-3d/demo-3.mp4" index.html
+          test -f assets/games-20260911/phone/arvion-my-pet-3d/demo.mp4
+          test -f assets/games-20260911/watch/arvion-my-pet-3d/demo-1.mp4
+          test -f assets/games-20260911/watch/snake/screen-6.png
+
+      - name: Commit website update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets/games-20260911
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Add My Pet 3D and Wear OS game media"
+          git push
