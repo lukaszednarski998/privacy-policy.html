@@ -1,0 +1,189 @@
+name: Update ARVION site with 12-language switcher
+
+on:
+  push:
+    paths:
+      - '.github/workflows/arvion-site-12-languages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Patch index.html
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          # Keep the existing public URL unchanged. Only edit the current homepage file.
+          text = re.sub(
+              r'<meta name="description" content="[^"]*">',
+              '<meta name="description" content="ARVION Android apps and games.">',
+              text,
+              count=1,
+          )
+          text = re.sub(
+              r'<meta name="arvion-site-version" content="[^"]*">',
+              '<meta name="arvion-site-version" content="2026-09-13-12-language-switcher">',
+              text,
+              count=1,
+          )
+
+          old_hero = '''<div class="wrap hero"><div class="hero-card"><img id="heroBanner" alt="No Ads No Subscription"></div><div class="hero-copy"><div class="eyebrow">ARVION Android Software</div><h1>No ads. No subscriptions.</h1><p>Buy once and use it without advertising or recurring fees. Every ARVION purchase includes free lifetime updates.</p><div class="promise"><span class="pill">NO ADS</span><span class="pill">NO SUBSCRIPTION</span><span class="pill">FREE LIFETIME UPDATES</span></div></div></div>'''
+
+          new_hero = '''<div class="wrap hero"><div class="hero-card"><img id="heroBanner" alt="ARVION"></div><div class="site-language-panel"><div class="site-language-title">🌐 LANGUAGE / JĘZYK</div><div class="site-language-switch" id="siteLanguageSwitch" role="group" aria-label="Choose website language"><button class="site-lang-btn" type="button" data-lang="pl" title="Polski" aria-label="Polski">🇵🇱</button><button class="site-lang-btn active" type="button" data-lang="en" title="English" aria-label="English">🇬🇧</button><button class="site-lang-btn" type="button" data-lang="de" title="Deutsch" aria-label="Deutsch">🇩🇪</button><button class="site-lang-btn" type="button" data-lang="fr" title="Français" aria-label="Français">🇫🇷</button><button class="site-lang-btn" type="button" data-lang="es" title="Español" aria-label="Español">🇪🇸</button><button class="site-lang-btn" type="button" data-lang="it" title="Italiano" aria-label="Italiano">🇮🇹</button><button class="site-lang-btn" type="button" data-lang="pt" title="Português" aria-label="Português">🇵🇹</button><button class="site-lang-btn" type="button" data-lang="ru" title="Русский" aria-label="Русский">🇷🇺</button><button class="site-lang-btn" type="button" data-lang="uk" title="Українська" aria-label="Українська">🇺🇦</button><button class="site-lang-btn" type="button" data-lang="zh-CN" title="中文" aria-label="中文">🇨🇳</button><button class="site-lang-btn" type="button" data-lang="ja" title="日本語" aria-label="日本語">🇯🇵</button><button class="site-lang-btn" type="button" data-lang="ko" title="한국어" aria-label="한국어">🇰🇷</button></div><div id="google_translate_element" class="google-translate-host" aria-hidden="true"></div></div></div>'''
+
+          if old_hero in text:
+              text = text.replace(old_hero, new_hero, 1)
+          elif 'id="siteLanguageSwitch"' not in text:
+              # Fallback for small future formatting differences around the current hero block.
+              pattern = re.compile(r'<div class="wrap hero">.*?</div>\s*<section id="phone-apps"', re.S)
+              match = pattern.search(text)
+              if not match:
+                  raise SystemExit('Could not locate homepage hero block')
+              text = text[:match.start()] + new_hero + '\n<section id="phone-apps"' + text[match.end():]
+
+          css_marker = '/* ARVION 12-LANGUAGE SWITCHER START */'
+          if css_marker not in text:
+              css = r'''
+/* ARVION 12-LANGUAGE SWITCHER START */
+.site-language-panel{padding:22px 12px 6px;text-align:center}.site-language-title{color:var(--gold2);font-size:12px;font-weight:900;letter-spacing:.16em;margin-bottom:13px}.site-language-switch{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}.site-lang-btn{width:52px;height:40px;padding:0;border:1px solid #343434;border-radius:11px;background:linear-gradient(180deg,#131313,#080808);font-size:27px;line-height:1;cursor:pointer;transition:.18s ease;box-shadow:0 7px 18px rgba(0,0,0,.22)}.site-lang-btn:hover{transform:translateY(-2px);border-color:var(--gold2)}.site-lang-btn.active{border-color:var(--gold2);box-shadow:0 0 0 2px rgba(216,170,67,.16),0 8px 22px rgba(0,0,0,.3)}.google-translate-host{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}.goog-te-banner-frame.skiptranslate,.goog-te-gadget-icon{display:none!important}body{top:0!important}.goog-tooltip,.goog-tooltip:hover{display:none!important}.goog-text-highlight{background:none!important;box-shadow:none!important}@media(max-width:600px){.site-language-panel{padding-top:17px}.site-language-switch{gap:7px}.site-lang-btn{width:46px;height:37px;font-size:24px}}
+/* ARVION 12-LANGUAGE SWITCHER END */
+'''
+              text = text.replace('</style>', css + '\n</style>', 1)
+
+          js_marker = '/* ARVION 12-LANGUAGE SWITCHER JS START */'
+          if js_marker not in text:
+              js = r'''
+<script>
+/* ARVION 12-LANGUAGE SWITCHER JS START */
+(function(){
+  const supported = ['pl','en','de','fr','es','it','pt','ru','uk','zh-CN','ja','ko'];
+  const storageKey = 'arvion-site-language';
+
+  function updateActive(lang){
+    document.querySelectorAll('.site-lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+      btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
+    });
+    document.documentElement.lang = lang === 'zh-CN' ? 'zh-CN' : lang;
+  }
+
+  function setCookie(name,value){
+    const maxAge = 60 * 60 * 24 * 365;
+    document.cookie = `${name}=${value};path=/;max-age=${maxAge};SameSite=Lax`;
+    document.cookie = `${name}=${value};path=/;domain=.lukaszednarski998.github.io;max-age=${maxAge};SameSite=Lax`;
+  }
+
+  function clearTranslateCookie(){
+    document.cookie = 'googtrans=;path=/;max-age=0';
+    document.cookie = 'googtrans=;path=/;domain=.lukaszednarski998.github.io;max-age=0';
+  }
+
+  function applyLanguage(lang){
+    if(!supported.includes(lang)) lang = 'en';
+    localStorage.setItem(storageKey, lang);
+    updateActive(lang);
+
+    if(lang === 'en'){
+      clearTranslateCookie();
+      const combo = document.querySelector('.goog-te-combo');
+      if(combo){
+        const englishOption = Array.from(combo.options).find(o => o.value === 'en');
+        if(englishOption){
+          combo.value = 'en';
+          combo.dispatchEvent(new Event('change'));
+          return;
+        }
+      }
+      if(document.documentElement.classList.contains('translated-ltr') || document.documentElement.classList.contains('translated-rtl') || document.cookie.includes('googtrans=')){
+        location.reload();
+      }
+      return;
+    }
+
+    setCookie('googtrans', `/en/${lang}`);
+    const combo = document.querySelector('.goog-te-combo');
+    if(combo){
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change'));
+    }
+  }
+
+  window.googleTranslateElementInit = function(){
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: supported.filter(x => x !== 'en').join(','),
+      autoDisplay: false,
+      multilanguagePage: true
+    }, 'google_translate_element');
+
+    const saved = localStorage.getItem(storageKey) || 'en';
+    updateActive(saved);
+    if(saved !== 'en'){
+      let tries = 0;
+      const timer = setInterval(() => {
+        const combo = document.querySelector('.goog-te-combo');
+        if(combo){
+          clearInterval(timer);
+          combo.value = saved;
+          combo.dispatchEvent(new Event('change'));
+        } else if(++tries > 40){
+          clearInterval(timer);
+        }
+      }, 100);
+    }
+  };
+
+  document.addEventListener('click', function(event){
+    const btn = event.target.closest('.site-lang-btn');
+    if(!btn) return;
+    applyLanguage(btn.dataset.lang);
+  });
+
+  const saved = localStorage.getItem(storageKey) || 'en';
+  updateActive(saved);
+})();
+/* ARVION 12-LANGUAGE SWITCHER JS END */
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+'''
+              text = text.replace('</body>', js + '\n</body>', 1)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Verify requested changes
+        shell: bash
+        run: |
+          set -e
+          grep -q 'id="siteLanguageSwitch"' index.html
+          grep -q 'data-lang="pl"' index.html
+          grep -q 'data-lang="ko"' index.html
+          ! grep -q '<h1>No ads. No subscriptions.</h1>' index.html
+          ! grep -q 'Buy once and use it without advertising or recurring fees. Every ARVION purchase includes free lifetime updates.</p>' index.html
+          grep -q 'href="https://lukaszednarski998.github.io/privacy-policy.html/"' index.html
+
+      - name: Commit homepage update
+        shell: bash
+        run: |
+          if git diff --quiet -- index.html; then
+            echo 'No changes needed.'
+            exit 0
+          fi
+          git config user.name 'ARVION Site Updater'
+          git config user.email 'actions@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Update homepage layout and add 12-language flag switcher'
+          git push
