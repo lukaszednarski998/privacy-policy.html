@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
     }
 
     private void openWallpaperPreview() {
-        ComponentName component = new ComponentName(this, HackWallpaperService.class);
+        ComponentName component = new ComponentName(this, CanvasWallpaperService.class);
         Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
         intent.putExtra(WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT, component);
         startActivity(intent);
