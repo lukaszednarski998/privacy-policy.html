@@ -7,19 +7,22 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "pl.arvion.hacktheworldlive"
-        minSdk = 26
-        targetSdk = 36
-        versionCode = 2
-        versionName = "1.0.1"
+        applicationId = "pl.arvion.hacktheworld.live2026"
+        minSdk = 24
+        targetSdk = 35
+        versionCode = 3
+        versionName = "1.0.2"
     }
 
     buildTypes {
-        debug { isMinifyEnabled = false }
+        debug {
+            isMinifyEnabled = false
+        }
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            isDebuggable = false
+            isMinifyEnabled = false
+            isShrinkResources = false
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
 
