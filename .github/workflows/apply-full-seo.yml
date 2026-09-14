@@ -1,0 +1,42 @@
+name: Apply full ARVION SEO
+
+on:
+  push:
+    paths:
+      - 'seo_apply.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply-seo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Sync latest main
+        run: git pull --rebase origin main
+
+      - name: Generate SEO pages and sitemap
+        run: python seo_apply.py
+
+      - name: Commit generated SEO changes
+        run: |
+          git config user.name "ARVION SEO Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html apps sitemap.xml robots.txt
+          if git diff --cached --quiet; then
+            echo "No SEO changes to commit."
+            exit 0
+          fi
+          git commit -m "SEO: index full ARVION app catalog"
+          git push origin HEAD:main
