@@ -1,114 +1,192 @@
 from pathlib import Path
 from html import escape
+import json
+import re
 
 ROOT = Path(__file__).resolve().parent
 BASE = "https://lukaszednarski998.github.io/privacy-policy.html"
-TODAY = "2026-09-14"
+TODAY = "2026-09-17"
 
 apps = [
-    ("obd-active-exhaust-pro", "OBD Active Exhaust Pro", "Android App", "OBD2 diagnostics Android, ELM327 live vehicle data, active exhaust control, car diagnostics app, ECU data and driver tools.", ["OBD2 diagnostics Android","ELM327 diagnostics","car diagnostics app","vehicle live data","active exhaust app","exhaust control Android","diagnostyka OBD2","aktywny wydech aplikacja"]),
-    ("drive-recorder", "Drive Recorder", "Android App", "Full HD driving recorder with GPS, loop recording and road-focused tools for Android.", ["dash cam Android","driving recorder Android","GPS dashcam","loop recording dash cam","car camera app","rejestrator jazdy","kamera samochodowa telefon","nagrywanie trasy GPS"]),
-    ("kalendarz-zmianowy", "Kalendarz Zmianowy", "Android App", "Shift calendar for work schedules, notes, history and everyday planning.", ["shift calendar Android","shift work calendar","work schedule app","rota planner","shift planner","kalendarz zmianowy","grafik pracy","harmonogram zmian"]),
-    ("live-data-obd", "Live Data OBD", "Android App", "Real-time OBD2 and ECU vehicle parameters on Android through compatible ELM327 adapters.", ["OBD2 live data","ELM327 live data","ECU parameters Android","car sensor data","vehicle telemetry","parametry OBD na żywo","dane ECU","parametry samochodu"]),
-    ("media-player", "Media Player", "Android App", "Local Android media playback with playlists, audio controls and visualizers.", ["local media player Android","offline music player","playlist player Android","audio visualizer","spectrum music player","odtwarzacz muzyki offline","lokalny odtwarzacz multimediów"]),
-    ("arvion-pdf-toolbox", "ARVION PDF Toolbox Offline", "Android App", "Offline PDF editor, converter, OCR scanner and document toolbox for Android.", ["offline PDF editor Android","PDF converter Android","JPG to PDF offline","PDF to JPG Android","merge PDF","split PDF","compress PDF","OCR Android","scan to PDF","OCR to DOCX"]),
-    ("arvion-phone-diagnostics", "ARVION Phone Diagnostics", "Android App", "Android diagnostics, hardware information, CPU, RAM and storage benchmarks and performance tools.", ["phone diagnostics Android","Android hardware info","CPU benchmark Android","RAM benchmark","storage benchmark","device diagnostics","phone performance test","diagnostyka telefonu"]),
-    ("arvion-battery-guard", "ARVION Battery Guard", "Android App", "Battery monitoring, charging history, temperature alerts and battery-care analytics for Android.", ["battery monitor Android","battery health Android","charging history","battery temperature alert","charge limit alert","battery statistics","monitoring baterii","historia ładowania"]),
-    ("arvion-calculator", "ARVION Calculator", "Android App", "Multi-calculator toolbox for Android with practical calculations and scan-assisted input.", ["calculator toolbox Android","multi calculator app","formula calculator Android","scan calculator","camera calculator","everyday calculators","kalkulatory Android","skanowanie zadania"]),
-    ("private-iptv", "Private IPTV", "Android App", "Private IPTV player for user-provided M3U playlists and compatible streaming sources.", ["M3U IPTV player Android","private IPTV player","IPTV playlist player","user playlist IPTV","streaming player Android","M3U player Android","odtwarzacz IPTV"]),
-    ("kids-time", "Kids Time", "Android App", "Parental time control with PIN protection, time limits, alerts and emergency access.", ["parental control Android","screen time Android","child phone timer","PIN parental control","kids time limit","parental timer app","kontrola rodzicielska","limit czasu telefonu"]),
-    ("arvion-moto-speed", "ARVION Moto Speed", "Android / Wear OS", "GPS motorcycle speedometer and ride dashboard for Android phones and compatible Wear OS watches.", ["GPS motorcycle speedometer","motorcycle speedometer Android","Wear OS speedometer","GPS ride tracker","motorcycle dashboard","GPS speed tracker","motocyklowy licznik GPS"]),
-    ("arvion-watch-faces", "ARVION Watch Faces", "Wear OS", "Wear OS watch faces in digital, classic, automotive, animated and artistic styles.", ["Wear OS watch faces","smartwatch watch faces","premium watch faces","digital watch face","animated watch face","automotive watch face","tarcze Wear OS"]),
-    ("music-2-watch", "Music 2 Watch", "Android / Wear OS", "Music transfer and playback workflows between Android phones and compatible Wear OS smartwatches.", ["music on Wear OS","smartwatch music player","transfer music to smartwatch","phone to watch music","Wear OS music control","muzyka na zegarku","muzyka Wear OS"]),
-    ("spy-2-watch", "Spy 2 Watch", "Android / Wear OS", "Phone camera preview and remote controls on a compatible Wear OS smartwatch.", ["Wear OS camera remote","phone camera preview smartwatch","smartwatch camera control","remote camera Wear OS","camera preview watch","podgląd kamery na zegarku"]),
-    ("video-2-watch", "Video 2 Watch", "Android / Wear OS", "Transfer, stream and play your own video files on a compatible Wear OS smartwatch.", ["video on Wear OS","Wear OS video player","transfer video to smartwatch","smartwatch video player","phone to watch video","video streaming smartwatch","filmy na zegarku"]),
-    ("checkers-royal", "Checkers Royal Game", "Android Game", "Classic checkers with AI and local play in a premium royal presentation.", ["checkers Android","checkers vs AI","two player checkers","offline checkers game","board game Android","warcaby Android","warcaby z komputerem"]),
-    ("checkers-royal-wear-os", "Checkers Royal · Wear OS", "Wear OS Game", "Classic checkers designed for compatible Wear OS smartwatches.", ["checkers Wear OS","smartwatch checkers","board game smartwatch","checkers on watch","warcaby na zegarek","warcaby Wear OS"]),
-    ("royal-chess", "Royal Chess", "Android Game", "Classic chess with AI, timers and a premium royal interface for Android.", ["chess Android","chess vs computer","AI chess Android","offline chess game","chess timer Android","szachy Android","szachy z komputerem"]),
-    ("royal-chess-wear-os", "Royal Chess · Wear OS", "Wear OS Game", "Classic chess adapted for compatible Wear OS smartwatch displays.", ["chess Wear OS","smartwatch chess","play chess on watch","Wear OS board game","szachy na zegarek","szachy Wear OS"]),
-    ("arvion-breakout-wear-os", "ARVION BREAKOUT", "Wear OS Game", "Brick-breaking arcade game created for compatible Wear OS smartwatches.", ["Breakout Wear OS","brick breaker smartwatch","brick breaking game Wear OS","smartwatch arcade game","Wear OS arcade"]),
-    ("snake-wear-os", "SNAKE · Wear OS", "Wear OS Game", "Classic Snake gameplay optimized for compatible Wear OS smartwatches.", ["Snake Wear OS","smartwatch Snake game","classic Snake smartwatch","arcade game Wear OS","Snake na zegarek"]),
-    ("arvion-my-pet-3d-wear-os", "ARVION MY PET 3D · Wear OS", "Wear OS Game", "A 3D virtual pet experience adapted for compatible Wear OS smartwatches.", ["virtual pet Wear OS","smartwatch virtual pet","pet game smartwatch","3D pet Wear OS","virtual animal watch game","wirtualny pupil zegarek"]),
-    ("chicken-drop", "Chicken Drop", "Android Game", "Fast casual arcade gameplay for Android with simple controls and short sessions.", ["arcade game Android","casual arcade game","reflex game Android","quick mobile game","casual Android game","gra zręcznościowa Android"]),
-    ("crystal-blocks", "Crystal Blocks", "Android Game", "Falling-block puzzle game with levels, combos and touch-friendly controls.", ["falling block puzzle Android","block puzzle Android","line clearing game","puzzle blocks game","falling blocks game","gra w spadające klocki"]),
-    ("pixel-critters", "Pixel Critters", "Android Game", "Retro pixel-art virtual pet experience for Android.", ["virtual pet Android","pixel virtual pet","pixel art pet game","retro pet game","virtual creature Android","wirtualny pupil pixel art"]),
-    ("pixel-critters-3d", "Pixel Critters 3D", "Android Game", "3D creature adventure with rooms, characters and mini-games.", ["3D virtual pet Android","creature game Android","pet adventure game","room exploration game","mini games Android","wirtualny pupil 3D"]),
-    ("arvion-my-pet-3d", "ARVION MY PET 3D", "Android Game", "Interactive 3D virtual pet game with rooms, activities and animal companions.", ["3D virtual pet","pet simulator Android","virtual animal game","interactive pet game","virtual pet no ads","wirtualny pupil 3D"]),
-    ("snake-classic", "Snake Classic", "Android Game", "Classic Snake game for Android with touch-friendly arcade gameplay.", ["Snake game Android","classic Snake game","offline Snake Android","arcade Snake game","touch Snake game","klasyczny Snake"]),
+    {"slug":"obd-active-exhaust-pro","name":"OBD Active Exhaust Pro","kind":"Android App","seo":"OBD2 Live Vehicle Data & Active Exhaust","desc":"View live OBD2 and ELM327 vehicle data, control active exhaust functions and access practical driver tools on Android.","pl":"Odczytuj dane pojazdu OBD2 i ELM327 na żywo, steruj funkcjami aktywnego wydechu i korzystaj z narzędzi dla kierowcy.","features":["OBD2 live vehicle data","ELM327 real-time parameters","active exhaust control","Android driver tools"]},
+    {"slug":"drive-recorder","name":"Drive Recorder","kind":"Android App","seo":"Dash Cam with GPS & Loop Recording","desc":"Use your Android phone as a Full HD driving recorder with GPS information, loop recording and practical road-focused controls.","pl":"Używaj telefonu z Androidem jako rejestratora jazdy Full HD z GPS, nagrywaniem w pętli i narzędziami dla kierowcy.","features":["Full HD driving recorder","GPS trip information","loop recording","Android dash cam"]},
+    {"slug":"kalendarz-zmianowy","name":"Kalendarz Zmianowy","kind":"Android App","seo":"Shift Work Calendar & Schedule Planner","desc":"Plan shift work, schedules, notes and everyday duties in a practical Android calendar made for rotating work patterns.","pl":"Planuj pracę zmianową, grafik, notatki i codzienne obowiązki w kalendarzu przeznaczonym do systemów zmianowych.","features":["shift work calendar","work schedule planner","rota planning","notes and shift history"]},
+    {"slug":"live-data-obd","name":"Live Data OBD","kind":"Android App","seo":"OBD2 Live Data & ECU Parameters","desc":"Read real-time OBD2 and ECU vehicle parameters on Android through compatible ELM327 adapters and monitor live sensor values.","pl":"Odczytuj parametry OBD2 i ECU na żywo przez kompatybilny adapter ELM327 i monitoruj bieżące dane czujników pojazdu.","features":["OBD2 live data","ELM327 live parameters","ECU sensor values","vehicle telemetry"]},
+    {"slug":"media-player","name":"MEDIA PRO","kind":"Android App","seo":"Offline Music & Media Player","desc":"Play local audio and media files on Android with playlists, playback controls and visualizers without relying on cloud streaming.","pl":"Odtwarzaj lokalne pliki audio i multimedia na Androidzie z playlistami, sterowaniem odtwarzaniem i wizualizacjami.","features":["offline media player","local music playback","playlists","audio visualizer"]},
+    {"slug":"arvion-pdf-toolbox","name":"ARVION PDF Toolbox Offline","kind":"Android App","seo":"Offline PDF Converter, OCR & Scanner","desc":"Create, convert, merge, split, scan and manage PDF documents offline on Android, including OCR and image-to-PDF workflows.","pl":"Twórz, konwertuj, łącz, dziel, skanuj i obsługuj pliki PDF offline na Androidzie, także z OCR i konwersją obrazów do PDF.","features":["JPG to PDF offline","PDF to JPG","merge and split PDF","OCR scanner","scan to PDF"]},
+    {"slug":"arvion-phone-diagnostics","name":"ARVION Phone Diagnostics","kind":"Android App","seo":"Phone Hardware Info & System Tools","desc":"Check Android phone hardware and system information with quick access to storage, apps, battery and device-management tools.","pl":"Sprawdzaj informacje o sprzęcie i systemie telefonu oraz szybko otwieraj narzędzia pamięci, aplikacji, baterii i ustawień urządzenia.","features":["Android hardware information","storage information","battery information","system tools","device diagnostics"]},
+    {"slug":"arvion-battery-guard","name":"ARVION Battery Guard","kind":"Android App","seo":"Battery Monitor, Charging History & Temperature","desc":"Monitor Android battery information, charging history, temperature and useful battery-care data in one practical dashboard.","pl":"Monitoruj baterię Androida, historię ładowania, temperaturę i przydatne informacje dotyczące kondycji baterii.","features":["battery monitor Android","charging history","battery temperature","battery statistics"]},
+    {"slug":"arvion-calculator","name":"ARVION Calculator","kind":"Android App","seo":"100 Calculators & Camera-Assisted Input","desc":"Use a large collection of practical Android calculators with explanations and camera-assisted input for faster everyday calculations.","pl":"Korzystaj z dużej kolekcji praktycznych kalkulatorów z objaśnieniami i wprowadzaniem danych wspomaganym kamerą.","features":["100 calculators","everyday calculations","formula tools","camera-assisted input"]},
+    {"slug":"private-iptv","name":"Private IPTV","kind":"Android App","seo":"M3U IPTV Player for Your Own Playlists","desc":"Play user-provided M3U playlists and compatible streaming sources on Android in a private IPTV player designed for your own content.","pl":"Odtwarzaj własne playlisty M3U i kompatybilne źródła strumieniowe na Androidzie w prywatnym odtwarzaczu IPTV.","features":["M3U IPTV player","user-provided playlists","Android streaming player","private IPTV playback"]},
+    {"slug":"kids-time","name":"Kids Time","kind":"Android App","seo":"Screen Time & Parental Time Limits","desc":"Manage child device time with PIN protection, usage limits, alerts and emergency access in a straightforward Android parental-control app.","pl":"Zarządzaj czasem korzystania z telefonu dziecka za pomocą PIN-u, limitów czasu, alertów i dostępu awaryjnego.","features":["parental control Android","screen time limits","PIN protection","child phone timer"]},
+    {"slug":"arvion-moto-speed","name":"ARVION Moto Speed","kind":"Android / Wear OS","seo":"GPS Motorcycle Speedometer & Ride Dashboard","desc":"Use GPS speed information and a motorcycle-focused ride dashboard on Android phones and compatible Wear OS smartwatches.","pl":"Korzystaj z prędkości GPS i motocyklowego kokpitu na telefonie z Androidem oraz kompatybilnym zegarku Wear OS.","features":["GPS motorcycle speedometer","motorcycle dashboard","Wear OS speedometer","GPS ride information"]},
+    {"slug":"arvion-watch-faces","name":"ARVION Watch Faces","kind":"Wear OS","seo":"Wear OS Watch Faces for Smartwatches","desc":"Browse digital, classic, automotive, animated and artistic watch faces for compatible Wear OS smartwatches.","pl":"Wybieraj cyfrowe, klasyczne, motoryzacyjne, animowane i artystyczne tarcze dla kompatybilnych smartwatchy Wear OS.","features":["Wear OS watch faces","digital watch faces","animated watch faces","automotive watch faces"]},
+    {"slug":"music-2-watch","name":"Music 2 Watch","kind":"Android / Wear OS","seo":"Transfer Music to a Wear OS Watch","desc":"Transfer and play music between an Android phone and compatible Wear OS smartwatch with phone-to-watch music workflows.","pl":"Przesyłaj i odtwarzaj muzykę między telefonem z Androidem a kompatybilnym smartwatchem Wear OS.","features":["music on Wear OS","transfer music to smartwatch","phone to watch music","smartwatch music playback"]},
+    {"slug":"spy-2-watch","name":"Spy 2 Watch","kind":"Android / Wear OS","seo":"Wear OS Camera Remote & Phone Preview","desc":"Preview a phone camera and use remote camera controls from a compatible Wear OS smartwatch.","pl":"Wyświetlaj podgląd aparatu telefonu i korzystaj ze zdalnego sterowania kamerą na kompatybilnym zegarku Wear OS.","features":["Wear OS camera remote","phone camera preview on smartwatch","remote camera controls","smartwatch camera preview"]},
+    {"slug":"video-2-watch","name":"Video 2 Watch","kind":"Android / Wear OS","seo":"Video Player & Transfer for Wear OS","desc":"Transfer, stream and play your own video files on a compatible Wear OS smartwatch from an Android phone.","pl":"Przesyłaj, strumieniuj i odtwarzaj własne pliki wideo na kompatybilnym smartwatchu Wear OS z telefonu Android.","features":["video on Wear OS","smartwatch video player","transfer video to smartwatch","phone to watch video"]},
+    {"slug":"checkers-royal","name":"Checkers Royal Game","kind":"Android Game","seo":"Checkers vs AI & Local Two-Player Game","desc":"Play classic checkers on Android against AI or locally with two players in a premium royal board presentation.","pl":"Graj w klasyczne warcaby na Androidzie przeciwko AI lub lokalnie w dwie osoby w królewskiej oprawie planszy.","features":["checkers Android","checkers vs AI","two-player checkers","offline board game"]},
+    {"slug":"checkers-royal-wear-os","name":"Checkers Royal · Wear OS","kind":"Wear OS Game","seo":"Checkers Game for Wear OS Smartwatches","desc":"Play classic checkers directly on a compatible Wear OS smartwatch with controls adapted to a small touch display.","pl":"Graj w klasyczne warcaby bezpośrednio na kompatybilnym smartwatchu Wear OS ze sterowaniem dopasowanym do małego ekranu.","features":["checkers Wear OS","smartwatch checkers","board game on watch","warcaby na zegarek"]},
+    {"slug":"royal-chess","name":"Royal Chess","kind":"Android Game","seo":"Chess vs AI with Timers on Android","desc":"Play classic chess against the computer on Android with AI levels, match timers and a premium royal interface.","pl":"Graj w klasyczne szachy przeciwko komputerowi na Androidzie, wybieraj poziom AI i korzystaj z zegarów partii.","features":["chess Android","chess vs computer","AI chess","chess timers"]},
+    {"slug":"royal-chess-wear-os","name":"Royal Chess · Wear OS","kind":"Wear OS Game","seo":"Chess Game for Wear OS Smartwatches","desc":"Play classic chess directly on a compatible Wear OS smartwatch with a board and controls adapted for the watch display.","pl":"Graj w klasyczne szachy bezpośrednio na kompatybilnym smartwatchu Wear OS z planszą dopasowaną do ekranu zegarka.","features":["chess Wear OS","smartwatch chess","play chess on watch","szachy na zegarek"]},
+    {"slug":"arvion-breakout-wear-os","name":"ARVION BREAKOUT","kind":"Wear OS Game","seo":"Brick Breaker Arcade Game for Wear OS","desc":"Play classic brick-breaking arcade action on a compatible Wear OS smartwatch with controls designed for a watch display.","pl":"Graj w klasyczną zręcznościową grę w rozbijanie cegieł na kompatybilnym smartwatchu Wear OS.","features":["brick breaker Wear OS","Breakout smartwatch game","Wear OS arcade","brick breaking game"]},
+    {"slug":"snake-wear-os","name":"SNAKE · Wear OS","kind":"Wear OS Game","seo":"Classic Snake Game for Wear OS","desc":"Play the classic Snake formula on a compatible Wear OS smartwatch with touch-friendly controls optimized for the wrist.","pl":"Graj w klasycznego Snake'a na kompatybilnym smartwatchu Wear OS ze sterowaniem zoptymalizowanym dla zegarka.","features":["Snake Wear OS","smartwatch Snake game","classic Snake on watch","Wear OS arcade game"]},
+    {"slug":"arvion-my-pet-3d-wear-os","name":"ARVION MY PET 3D · Wear OS","kind":"Wear OS Game","seo":"3D Virtual Pet Game for Wear OS","desc":"Care for a 3D virtual pet on a compatible Wear OS smartwatch in a pet-game experience adapted to the watch display.","pl":"Opiekuj się wirtualnym pupilem 3D na kompatybilnym smartwatchu Wear OS w grze dostosowanej do ekranu zegarka.","features":["virtual pet Wear OS","3D pet smartwatch game","virtual animal on watch","pet game Wear OS"]},
+    {"slug":"chicken-drop","name":"Chicken Drop","kind":"Android Game","seo":"Casual Reflex Arcade Game for Android","desc":"Play a fast casual Android arcade game built around simple controls, quick reactions and short mobile sessions.","pl":"Graj w szybką zręcznościową grę na Androida opartą na prostym sterowaniu, refleksie i krótkich sesjach.","features":["arcade game Android","casual reflex game","quick mobile game","simple touch controls"]},
+    {"slug":"crystal-blocks","name":"Crystal Blocks","kind":"Android Game","seo":"Falling Block Puzzle Game for Android","desc":"Arrange falling blocks, clear lines, build combos and progress through a touch-friendly crystal-themed puzzle game on Android.","pl":"Układaj spadające klocki, usuwaj linie, twórz kombosy i przechodź poziomy w kryształowej grze logicznej na Androida.","features":["falling block puzzle","block puzzle Android","line clearing game","touch puzzle game"]},
+    {"slug":"pixel-critters","name":"Pixel Critters","kind":"Android Game","seo":"Pixel Art Virtual Pet Game for Android","desc":"Raise a retro pixel-art virtual pet on Android in a nostalgic creature-care game inspired by classic handheld pets.","pl":"Opiekuj się wirtualnym pupilem w stylu pixel art na Androidzie w nostalgicznej grze inspirowanej klasycznymi elektronicznymi zwierzakami.","features":["virtual pet Android","pixel art pet game","retro pet game","virtual creature"]},
+    {"slug":"pixel-critters-3d","name":"Pixel Critters 3D","kind":"Android Game","seo":"3D Virtual Pet Adventure with Mini-Games","desc":"Explore rooms, interact with 3D creatures and play mini-games in a virtual-pet adventure designed for Android.","pl":"Zwiedzaj pokoje, opiekuj się stworzeniami 3D i graj w minigry w przygodzie z wirtualnym pupilem na Androida.","features":["3D virtual pet Android","creature adventure","room exploration","mini-games"]},
+    {"slug":"arvion-my-pet-3d","name":"ARVION MY PET 3D","kind":"Android Game","seo":"3D Virtual Pet Simulator for Android","desc":"Care for interactive 3D animal companions, move between rooms and use activities in a virtual-pet game for Android.","pl":"Opiekuj się interaktywnymi zwierzakami 3D, przechodź między pokojami i korzystaj z aktywności w grze z wirtualnym pupilem.","features":["3D virtual pet","pet simulator Android","interactive animal game","virtual pet rooms"]},
+    {"slug":"snake-classic","name":"Snake Classic","kind":"Android Game","seo":"Classic Snake Game for Android","desc":"Play a modern Android version of classic Snake with simple touch-friendly arcade controls and familiar score-chasing gameplay.","pl":"Graj w nowoczesną wersję klasycznego Snake'a na Androidzie z prostym sterowaniem dotykowym i biciem rekordów.","features":["Snake game Android","classic Snake","offline arcade game","touch Snake game"]},
 ]
 
 
-def page(slug, name, kind, desc, keywords):
-    kw = ", ".join(keywords)
-    canonical = f"{BASE}/apps/{slug}.html"
-    json_ld = f'''{{
-  "@context":"https://schema.org",
-  "@type":"SoftwareApplication",
-  "name":{name!r},
-  "applicationCategory":{kind!r},
-  "operatingSystem":"Android / Wear OS",
-  "description":{desc!r},
-  "url":{canonical!r},
-  "author":{{"@type":"Organization","name":"ARVION"}}
-}}'''.replace("'", '"')
+def os_for(kind):
+    if kind == "Wear OS" or kind == "Wear OS Game":
+        return "Wear OS"
+    if "Android / Wear OS" in kind:
+        return "Android, Wear OS"
+    return "Android"
+
+
+def category_for(kind):
+    return "GameApplication" if "Game" in kind else "UtilitiesApplication"
+
+
+def app_page(app):
+    canonical = f"{BASE}/apps/{app['slug']}.html"
+    title = f"{app['seo']} | {app['name']}"
+    schema = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": app["name"],
+        "applicationCategory": category_for(app["kind"]),
+        "operatingSystem": os_for(app["kind"]),
+        "description": app["desc"],
+        "url": canonical,
+        "author": {"@type": "Organization", "name": "ARVION"},
+    }, ensure_ascii=False)
+    feature_html = "\n".join(f"<li>{escape(item)}</li>" for item in app["features"])
     return f'''<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{escape(name)} | {escape(kind)} | ARVION</title>
-<meta name="description" content="{escape(desc)}">
+<title>{escape(title)}</title>
+<meta name="description" content="{escape(app['desc'])}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="canonical" href="{canonical}">
-<meta property="og:title" content="{escape(name)} | ARVION">
-<meta property="og:description" content="{escape(desc)}">
+<meta property="og:title" content="{escape(title)}">
+<meta property="og:description" content="{escape(app['desc'])}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{canonical}">
-<script type="application/ld+json">{json_ld}</script>
-<style>body{{margin:0;background:#050505;color:#f5f5f5;font-family:Arial,sans-serif}}main{{max-width:900px;margin:auto;padding:48px 24px}}a{{color:#f1d17a}}h1{{font-size:42px;line-height:1.1}}h2{{color:#f1d17a;margin-top:34px}}p,li{{color:#c2c2c2;line-height:1.75}}.tag{{display:inline-block;border:1px solid #5f4a1c;border-radius:999px;padding:8px 12px;color:#f1d17a}}.keys{{border-top:1px solid #332b1b;margin-top:34px;padding-top:20px}}</style>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{escape(title)}">
+<meta name="twitter:description" content="{escape(app['desc'])}">
+<script type="application/ld+json">{schema}</script>
+<style>body{{margin:0;background:#050505;color:#f5f5f5;font-family:Arial,sans-serif}}main{{max-width:900px;margin:auto;padding:48px 24px}}a{{color:#f1d17a}}h1{{font-size:42px;line-height:1.1;margin-bottom:10px}}h2{{color:#f1d17a;margin-top:34px}}p,li{{color:#c2c2c2;line-height:1.75}}.tag{{display:inline-block;border:1px solid #5f4a1c;border-radius:999px;padding:8px 12px;color:#f1d17a}}.appname{{font-size:18px;color:#f1d17a;margin-top:0}}.pl{{border-top:1px solid #332b1b;margin-top:34px;padding-top:20px}}</style>
 </head>
 <body><main>
-<p><a href="../">← ARVION apps</a> · <a href="{BASE}/">Home</a></p>
-<span class="tag">{escape(kind)}</span>
-<h1>{escape(name)}</h1>
-<p>{escape(desc)}</p>
-<h2>What this app is for</h2>
-<p>{escape(desc)} ARVION focuses on practical Android and Wear OS software with clear functionality and straightforward access to official distribution where available.</p>
-<div class="keys"><h2>Related searches and features</h2><p>{escape(kw)}.</p></div>
-<p><a href="../">Browse all ARVION apps and games</a></p>
+<p><a href="../">← Android &amp; Wear OS apps</a> · <a href="{BASE}/">ARVION home</a></p>
+<span class="tag">{escape(app['kind'])}</span>
+<h1>{escape(app['seo'])}</h1>
+<p class="appname">{escape(app['name'])}</p>
+<p>{escape(app['desc'])}</p>
+<h2>Key features</h2>
+<ul>{feature_html}</ul>
+<section class="pl" lang="pl">
+<h2>Funkcje aplikacji</h2>
+<p>{escape(app['pl'])}</p>
+</section>
+<p><a href="../">Browse all Android &amp; Wear OS apps and games</a></p>
 </main></body></html>'''
+
 
 apps_dir = ROOT / "apps"
 apps_dir.mkdir(exist_ok=True)
-
-for slug, name, kind, desc, keywords in apps:
-    (apps_dir / f"{slug}.html").write_text(page(slug, name, kind, desc, keywords), encoding="utf-8")
+for app in apps:
+    (apps_dir / f"{app['slug']}.html").write_text(app_page(app), encoding="utf-8")
 
 cards = "\n".join(
-    f'<div class="c"><a href="{slug}.html">{escape(name)}</a><p>{escape(desc)}</p></div>'
-    for slug, name, kind, desc, keywords in apps
+    f'<article class="c"><a href="{a["slug"]}.html">{escape(a["seo"])}</a><strong>{escape(a["name"])}</strong><p>{escape(a["desc"])}</p></article>'
+    for a in apps
 )
+item_schema = json.dumps({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "name": a["name"], "url": f"{BASE}/apps/{a['slug']}.html"}
+        for i, a in enumerate(apps)
+    ],
+}, ensure_ascii=False)
 
-apps_index = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Android & Wear OS Apps, Games and Tools | ARVION</title><meta name="description" content="ARVION Android and Wear OS apps and games: PDF and OCR tools, phone diagnostics, battery monitoring, OBD2 and ELM327, GPS motorcycle speedometer, smartwatch media, watch faces, parental controls, IPTV and mobile games."><link rel="canonical" href="{BASE}/apps/"><meta property="og:title" content="ARVION Android & Wear OS Apps"><meta property="og:description" content="Android and Wear OS tools, utilities and games across documents, diagnostics, automotive, smartwatch media and entertainment."><style>body{{margin:0;background:#050505;color:#f5f5f5;font-family:Arial,sans-serif}}.w{{max-width:1100px;margin:auto;padding:48px 24px}}a{{color:#f1d17a}}h1{{font-size:44px;line-height:1.08}}h2{{margin-top:42px;color:#f1d17a}}.lead,.topic p,.c p{{color:#bbb;line-height:1.75}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}}.c{{border:1px solid #3b3320;border-radius:16px;padding:18px;background:#0b0b0b}}.c a{{font-size:20px;font-weight:700}}.topic{{border-top:1px solid #2d281b;margin-top:42px;padding-top:10px}}</style></head><body><main class="w"><p><a href="../">← ARVION home</a></p><h1>Android & Wear OS apps, tools and games</h1><p class="lead">Explore the complete ARVION catalog: offline PDF and OCR tools, Android phone diagnostics and benchmarks, battery monitoring, OBD2 and ELM327 vehicle data, GPS motorcycle tools, Wear OS watch faces, phone-to-watch music and video, parental controls, IPTV and Android or smartwatch games.</p><div class="grid">{cards}</div><section class="topic"><h2>Android apps and utilities</h2><p>ARVION covers offline document tools, calculators, battery monitoring, phone diagnostics, parental controls, media, driving tools and IPTV for user-provided sources.</p><h2>Wear OS apps and smartwatch software</h2><p>Browse watch faces, GPS motorcycle tools, phone-to-watch media workflows, camera controls and games designed for compatible Wear OS smartwatches.</p><h2>Automotive apps</h2><p>Use OBD2 and ELM327 data, live ECU parameters, active exhaust tools, driving recording and motorcycle GPS speed information.</p><h2>Games</h2><p>ARVION games include chess, checkers, Snake, Breakout, falling-block puzzles and virtual-pet experiences on Android and Wear OS.</p></section></main></body></html>'''
+apps_index = f'''<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Android &amp; Wear OS Apps by Function | OBD2, PDF, GPS, Watch Tools &amp; Games</title>
+<meta name="description" content="Android and Wear OS apps for OBD2 live data, offline PDF and OCR, battery monitoring, phone tools, GPS motorcycle speed, smartwatch media, watch faces and games.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="{BASE}/apps/">
+<meta property="og:title" content="Android & Wear OS Apps by Function | ARVION">
+<meta property="og:description" content="Browse Android and Wear OS tools by what they do: OBD2 live data, PDF/OCR, battery, GPS, smartwatch media, watch faces and games.">
+<meta property="og:type" content="website"><meta property="og:url" content="{BASE}/apps/">
+<script type="application/ld+json">{item_schema}</script>
+<style>body{{margin:0;background:#050505;color:#f5f5f5;font-family:Arial,sans-serif}}.w{{max-width:1100px;margin:auto;padding:48px 24px}}a{{color:#f1d17a}}h1{{font-size:44px;line-height:1.08}}h2{{margin-top:42px;color:#f1d17a}}.lead,.topic p,.c p{{color:#bbb;line-height:1.75}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}}.c{{border:1px solid #3b3320;border-radius:16px;padding:18px;background:#0b0b0b}}.c a{{display:block;font-size:20px;font-weight:700;margin-bottom:7px}}.c strong{{display:block;color:#eee;font-size:13px}}.topic{{border-top:1px solid #2d281b;margin-top:42px;padding-top:10px}}</style>
+</head><body><main class="w">
+<p><a href="../">← ARVION home</a></p>
+<h1>Android &amp; Wear OS apps by function</h1>
+<p class="lead">Find apps by what you need: OBD2 and ELM327 live vehicle data, active exhaust tools, offline PDF conversion and OCR, Android phone information, battery monitoring, GPS motorcycle speed, Wear OS watch faces, phone-to-watch music and video, parental controls, IPTV and mobile games.</p>
+<div class="grid">{cards}</div>
+<section class="topic">
+<h2>Automotive apps</h2><p>OBD2 and ELM327 live data, active exhaust control, driving recording and GPS motorcycle speed tools.</p>
+<h2>PDF, phone and battery tools</h2><p>Offline PDF conversion and OCR, Android system information, battery monitoring, charging history and practical calculators.</p>
+<h2>Wear OS and smartwatch apps</h2><p>Watch faces, music and video transfer, camera remote controls, GPS speed information and smartwatch games.</p>
+<h2>Android and Wear OS games</h2><p>Chess, checkers, Snake, Breakout, falling-block puzzles, arcade games and virtual-pet experiences.</p>
+<section lang="pl"><h2>Aplikacje według funkcji</h2><p>Znajdziesz tu narzędzia OBD2 i ELM327, PDF i OCR offline, monitoring baterii, informacje o telefonie, licznik GPS na motocykl, aplikacje Wear OS oraz gry na telefon i smartwatch.</p></section>
+</section></main></body></html>'''
 (apps_dir / "index.html").write_text(apps_index, encoding="utf-8")
 
-# Improve homepage SEO without changing URL or layout.
+# Homepage SEO head. No visual layout changes.
 index_path = ROOT / "index.html"
 index = index_path.read_text(encoding="utf-8")
-index = index.replace("<title>ARVION | Android Apps & Games</title>", "<title>ARVION Android & Wear OS Apps | OBD2, PDF, Diagnostics, Smartwatch & Games</title>")
-index = index.replace('<meta name="description" content="ARVION Android apps and games.">', '<meta name="description" content="ARVION Android and Wear OS apps and games: OBD2 and ELM327 diagnostics, offline PDF and OCR tools, phone diagnostics, battery monitoring, GPS motorcycle speedometer, smartwatch media, watch faces, parental controls and mobile games.">')
-if '<meta property="og:title"' not in index:
-    marker = '<link rel="canonical" href="https://lukaszednarski998.github.io/privacy-policy.html/">'
-    social = marker + '\n<meta property="og:title" content="ARVION Android & Wear OS Apps">\n<meta property="og:description" content="OBD2, PDF, diagnostics, battery, GPS, smartwatch media, Wear OS watch faces and Android games.">\n<meta property="og:type" content="website">\n<meta property="og:url" content="https://lukaszednarski998.github.io/privacy-policy.html/">'
-    index = index.replace(marker, social)
+home_title = "Android & Wear OS Apps: OBD2 Live Data, PDF OCR, Watch Tools | ARVION"
+home_desc = "Android and Wear OS apps for OBD2 live vehicle data, offline PDF and OCR, phone tools, battery monitoring, GPS motorcycle speed, smartwatch media, watch faces and games."
+index = re.sub(r"<title>.*?</title>", f"<title>{home_title}</title>", index, count=1, flags=re.S)
+index = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{home_desc}">', index, count=1)
+index = re.sub(r"\n?<!-- ARVION SEO HEAD START -->.*?<!-- ARVION SEO HEAD END -->\n?", "\n", index, flags=re.S)
+home_schema = json.dumps({"@context":"https://schema.org","@type":"WebSite","name":"ARVION Android & Wear OS Apps","url":f"{BASE}/","publisher":{"@type":"Organization","name":"ARVION"}}, ensure_ascii=False)
+home_items = json.dumps({"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":i+1,"name":a["name"],"url":f"{BASE}/apps/{a['slug']}.html"} for i,a in enumerate(apps)]}, ensure_ascii=False)
+seo_head = f'''<!-- ARVION SEO HEAD START -->
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="{BASE}/">
+<meta property="og:title" content="{home_title}">
+<meta property="og:description" content="{home_desc}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{BASE}/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{home_title}">
+<meta name="twitter:description" content="{home_desc}">
+<script type="application/ld+json">{home_schema}</script>
+<script type="application/ld+json">{home_items}</script>
+<!-- ARVION SEO HEAD END -->'''
+needle = f'<meta name="description" content="{home_desc}">'
+if needle in index:
+    index = index.replace(needle, needle + "\n" + seo_head, 1)
+else:
+    index = index.replace("<style>", seo_head + "\n<style>", 1)
 index_path.write_text(index, encoding="utf-8")
 
-urls = [f"{BASE}/", f"{BASE}/apps/"] + [f"{BASE}/apps/{slug}.html" for slug, *_ in apps]
-sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-for i, url in enumerate(urls):
-    priority = "1.0" if i == 0 else ("0.9" if i == 1 else "0.8")
-    sitemap += ["<url>", f"<loc>{url}</loc>", f"<lastmod>{TODAY}</lastmod>", "<changefreq>weekly</changefreq>", f"<priority>{priority}</priority>", "</url>"]
-sitemap.append("</urlset>")
-(ROOT / "sitemap.xml").write_text("\n".join(sitemap) + "\n", encoding="utf-8")
-(ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n", encoding="utf-8")
+# Keep both sitemap filenames synchronized because Search Console currently uses sitemap-google.xml.
+urls = [f"{BASE}/", f"{BASE}/apps/"] + [f"{BASE}/apps/{a['slug']}.html" for a in apps]
+sitemap_lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+for url in urls:
+    sitemap_lines += ["  <url>", f"    <loc>{url}</loc>", f"    <lastmod>{TODAY}</lastmod>", "  </url>"]
+sitemap_lines.append("</urlset>")
+sitemap_text = "\n".join(sitemap_lines) + "\n"
+(ROOT / "sitemap.xml").write_text(sitemap_text, encoding="utf-8")
+(ROOT / "sitemap-google.xml").write_text(sitemap_text, encoding="utf-8")
+(ROOT / "robots.txt").write_text(
+    f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\nSitemap: {BASE}/sitemap-google.xml\n",
+    encoding="utf-8",
+)
 
-print(f"Generated {len(apps)} SEO product pages plus apps index and sitemap with {len(urls)} URLs.")
+print(f"Generated {len(apps)} function-first SEO pages and {len(urls)} sitemap URLs.")
