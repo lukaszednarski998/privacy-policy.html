@@ -18,6 +18,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Sync latest main
+        run: git pull --rebase origin main
+
       - name: Add permanent HTML link to apps catalog
         run: |
           python - <<'PY'
@@ -67,7 +70,6 @@ jobs:
         run: |
           git config user.name "ARVION SEO Bot"
           git config user.email "actions@users.noreply.github.com"
-          git pull --rebase origin main
           git add index.html seo_apply.py
           if git diff --cached --quiet; then
             echo "No changes needed."
