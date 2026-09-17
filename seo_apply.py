@@ -200,6 +200,19 @@ if needle in index:
     index = index.replace(needle, needle + "\n" + seo_head, 1)
 else:
     index = index.replace("<style>", seo_head + "\n<style>", 1)
+# ARVION crawlable apps catalog link
+catalog_link = """<!-- ARVION APPS INDEX LINK START -->
+<div class="wrap" style="padding:24px 16px 8px;text-align:center">
+  <a href="apps/" style="display:inline-block;color:#f1d17a;border:1px solid rgba(216,170,67,.55);border-radius:999px;padding:12px 18px;font-weight:700">
+    Browse all apps by function / Wszystkie aplikacje według funkcji
+  </a>
+</div>
+<!-- ARVION APPS INDEX LINK END -->"""
+if "ARVION APPS INDEX LINK START" not in index:
+    if "<footer" in index:
+        index = index.replace("<footer", catalog_link + "\n<footer", 1)
+    else:
+        index = index.replace("</body>", catalog_link + "\n</body>", 1)
 index_path.write_text(index, encoding="utf-8")
 
 # Keep both sitemap filenames synchronized. Search Console currently uses sitemap-google.xml.
