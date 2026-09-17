@@ -1,0 +1,77 @@
+name: Add crawlable apps catalog link
+
+on:
+  push:
+    paths:
+      - '.github/workflows/add-crawlable-apps-link.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  add-link:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add permanent HTML link to apps catalog
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          link_block = '''<!-- ARVION APPS INDEX LINK START -->
+          <div class="wrap" style="padding:24px 16px 8px;text-align:center">
+            <a href="apps/" style="display:inline-block;color:#f1d17a;border:1px solid rgba(216,170,67,.55);border-radius:999px;padding:12px 18px;font-weight:700">
+              Browse all apps by function / Wszystkie aplikacje według funkcji
+            </a>
+          </div>
+          <!-- ARVION APPS INDEX LINK END -->'''
+
+          index_path = Path('index.html')
+          index = index_path.read_text(encoding='utf-8')
+          if 'ARVION APPS INDEX LINK START' not in index:
+              if '<footer' in index:
+                  index = index.replace('<footer', link_block + '\n<footer', 1)
+              else:
+                  index = index.replace('</body>', link_block + '\n</body>', 1)
+              index_path.write_text(index, encoding='utf-8')
+
+          seo_path = Path('seo_apply.py')
+          seo = seo_path.read_text(encoding='utf-8')
+          marker = '# ARVION crawlable apps catalog link'
+          write_line = 'index_path.write_text(index, encoding="utf-8")'
+          if marker not in seo and write_line in seo:
+              injected = '''# ARVION crawlable apps catalog link
+          catalog_link = """<!-- ARVION APPS INDEX LINK START -->
+          <div class=\"wrap\" style=\"padding:24px 16px 8px;text-align:center\">
+            <a href=\"apps/\" style=\"display:inline-block;color:#f1d17a;border:1px solid rgba(216,170,67,.55);border-radius:999px;padding:12px 18px;font-weight:700\">
+              Browse all apps by function / Wszystkie aplikacje według funkcji
+            </a>
+          </div>
+          <!-- ARVION APPS INDEX LINK END -->"""
+          if "ARVION APPS INDEX LINK START" not in index:
+              if "<footer" in index:
+                  index = index.replace("<footer", catalog_link + "\\n<footer", 1)
+              else:
+                  index = index.replace("</body>", catalog_link + "\\n</body>", 1)
+          index_path.write_text(index, encoding="utf-8")'''
+              seo = seo.replace(write_line, injected, 1)
+              seo_path.write_text(seo, encoding='utf-8')
+          PY
+
+      - name: Commit crawlable link
+        run: |
+          git config user.name "ARVION SEO Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git pull --rebase origin main
+          git add index.html seo_apply.py
+          if git diff --cached --quiet; then
+            echo "No changes needed."
+            exit 0
+          fi
+          git commit -m "SEO: link homepage to apps catalog"
+          git push origin HEAD:main
