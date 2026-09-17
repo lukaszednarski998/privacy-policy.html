@@ -3,39 +3,53 @@ import re
 
 p = Path('index.html')
 s = p.read_text(encoding='utf-8')
+original = s
 
-# Remove every older availability implementation first.
+# MEDIA PRO: use the final public product name everywhere in the catalog.
+s = s.replace("id:'media-player',name:'Media Player'", "id:'media-player',name:'MEDIA PRO'", 1)
+s = s.replace("'media-player':mkProduct({title:'Media Player'", "'media-player':mkProduct({title:'MEDIA PRO'", 1)
+s = s.replace("gallery:[{src:'assets/media.webp',alt:'Media Player'}]", "gallery:[{src:'assets/media.webp',alt:'MEDIA PRO'}]", 1)
+
+# MEDIA PRO is now publicly available on Google Play: use the direct listing URL.
+old_play = 'https://play.google.com/store/search?q=ARVION%20Media%20Player&c=apps'
+new_play = 'https://play.google.com/store/apps/details?id=com.obdactiveexhaust.mediapro'
+if old_play in s:
+    s = s.replace(old_play, new_play, 1)
+elif new_play not in s:
+    raise SystemExit('MEDIA PRO Google Play link target was not found; index.html was left unchanged.')
+
+# Mark MEDIA PRO as AVAILABLE NOW while preserving all products already marked live.
+pattern = r"const availableNow=\[([^\]]*)\]\.includes\(p\.id\);"
+match = re.search(pattern, s)
+if not match:
+    raise SystemExit('Availability list was not found; index.html was left unchanged.')
+items = [x.strip() for x in match.group(1).split(',') if x.strip()]
+if "'media-player'" not in items:
+    items.append("'media-player'")
+replacement = 'const availableNow=[' + ','.join(items) + '].includes(p.id);'
+s = s[:match.start()] + replacement + s[match.end():]
+
+# Bump the page version marker so browsers/CDNs can clearly identify the update.
 s = re.sub(
-    r'\s*/\* ARVION AVAILABILITY START \*/.*?/\* ARVION AVAILABILITY END \*/\s*',
-    '\n',
+    r'<meta name="arvion-site-version" content="[^"]+">',
+    '<meta name="arvion-site-version" content="2026-09-17-media-pro-live">',
     s,
-    flags=re.S,
-)
-s = re.sub(
-    r'\s*<!-- ARVION AVAILABILITY SCRIPT START -->.*?<!-- ARVION AVAILABILITY SCRIPT END -->\s*',
-    '\n',
-    s,
-    flags=re.S,
+    count=1,
 )
 
-# Pure styling only. The labels themselves are rendered as normal HTML by the
-# existing card renderer, so there is no MutationObserver and no extra runtime
-# script that could freeze the page.
-css = '''
-/* ARVION AVAILABILITY START */
-.availability-label{display:block;margin-top:12px;padding:9px 11px;border-radius:12px;font-size:11px;font-weight:900;letter-spacing:.035em;line-height:1.35;text-align:center}
-.availability-label.soon{border:1px solid rgba(216,170,67,.55);background:rgba(216,170,67,.08);color:#f2d99d}
-.availability-label.available{border:1px solid rgba(73,190,96,.65);background:rgba(36,125,54,.16);color:#bff5c9}
-/* ARVION AVAILABILITY END */
-'''
-s = s.replace('</style>', css + '\n</style>', 1)
+# Sanity checks before writing anything.
+required = [
+    "id:'media-player',name:'MEDIA PRO'",
+    "'media-player':mkProduct({title:'MEDIA PRO'",
+    new_play,
+    "'media-player'",
+]
+missing = [value for value in required if value not in s]
+if missing:
+    raise SystemExit('MEDIA PRO update validation failed: ' + ', '.join(missing))
 
-old = '<div class="body"><span class="tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p></div></article>'
-new = '<div class="body"><span class="tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p><div class="availability-label ${p.id===\'obd\'?\'available\':\'soon\'}">${p.id===\'obd\'?\'DOSTĘPNA TERAZ · AVAILABLE NOW\':\'DOSTĘPNA WKRÓTCE · COMING SOON\'}</div></div></article>'
-
-if old in s:
-    s = s.replace(old, new, 1)
-elif 'availability-label ${p.id===' not in s:
-    raise SystemExit('Product card template not found; index.html was left unchanged.')
-
-p.write_text(s, encoding='utf-8')
+if s == original:
+    print('MEDIA PRO is already fully configured and available.')
+else:
+    p.write_text(s, encoding='utf-8')
+    print('MEDIA PRO configured as AVAILABLE NOW with direct Google Play link.')
