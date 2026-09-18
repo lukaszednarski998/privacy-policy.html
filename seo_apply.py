@@ -5,7 +5,7 @@ import re
 
 ROOT = Path(__file__).resolve().parent
 BASE = "https://lukaszednarski998.github.io/privacy-policy.html"
-TODAY = "2026-09-17"
+TODAY = "2026-09-18"
 
 apps = [
     {"slug":"obd-active-exhaust-pro","name":"OBD Active Exhaust Pro","kind":"Android App","seo":"OBD2 Live Vehicle Data & Active Exhaust","desc":"Read live OBD2 and ELM327 vehicle data, monitor real-time parameters and use active exhaust controls and practical driver tools on Android.","pl":"Odczytuj dane OBD2 i ELM327 na żywo, monitoruj parametry pojazdu w czasie rzeczywistym i korzystaj ze sterowania aktywnym wydechem.","features":["OBD2 live vehicle data","ELM327 real-time parameters","active exhaust control","Android driver tools"]},
@@ -224,8 +224,9 @@ sitemap_lines.append("</urlset>")
 sitemap_text = "\n".join(sitemap_lines) + "\n"
 (ROOT / "sitemap.xml").write_text(sitemap_text, encoding="utf-8")
 (ROOT / "sitemap-google.xml").write_text(sitemap_text, encoding="utf-8")
+(ROOT / "sitemap.txt").write_text("\n".join(urls) + "\n", encoding="utf-8")
 (ROOT / "robots.txt").write_text(
-    f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\nSitemap: {BASE}/sitemap-google.xml\n",
+    f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.txt\n",
     encoding="utf-8",
 )
 
