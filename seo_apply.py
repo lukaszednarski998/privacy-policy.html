@@ -213,6 +213,30 @@ if "ARVION APPS INDEX LINK START" not in index:
         index = index.replace("<footer", catalog_link + "\n<footer", 1)
     else:
         index = index.replace("</body>", catalog_link + "\n</body>", 1)
+
+# Direct crawlable links from the indexed homepage to every app page.
+direct_links = "\n".join(
+    f'<a href="apps/{escape(a["slug"])}.html">{escape(a["seo"])}</a>'
+    for a in apps
+)
+direct_block = f"""<!-- ARVION DIRECT APP LINKS START -->
+<details class="wrap" style="margin:18px auto 8px;padding:16px;border:1px solid rgba(216,170,67,.28);border-radius:16px;background:#090909">
+  <summary style="cursor:pointer;color:#f1d17a;font-weight:700">App directory / Katalog aplikacji</summary>
+  <nav aria-label="ARVION app directory" style="display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:14px;line-height:1.5">
+    {direct_links}
+  </nav>
+</details>
+<!-- ARVION DIRECT APP LINKS END -->"""
+index = re.sub(
+    r"\n?<!-- ARVION DIRECT APP LINKS START -->.*?<!-- ARVION DIRECT APP LINKS END -->\n?",
+    "\n",
+    index,
+    flags=re.S,
+)
+if "<footer" in index:
+    index = index.replace("<footer", direct_block + "\n<footer", 1)
+else:
+    index = index.replace("</body>", direct_block + "\n</body>", 1)
 index_path.write_text(index, encoding="utf-8")
 
 # Keep both sitemap filenames synchronized. Search Console currently uses sitemap-google.xml.
