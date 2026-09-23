@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://lukaszednarski998.github.io/privacy-policy.html/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://lukaszednarski998.github.io/privacy-policy.html/apps/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-23</lastmod>
   </url>
   <url>
     <loc>https://lukaszednarski998.github.io/privacy-policy.html/apps/obd-active-exhaust-pro.html</loc>
@@ -18,7 +18,27 @@
   </url>
   <url>
     <loc>https://lukaszednarski998.github.io/privacy-policy.html/apps/kalendarz-zmianowy.html</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-23</lastmod>
+    <image:image>
+      <image:loc>https://lukaszednarski998.github.io/privacy-policy.html/ChatGPT%20Image%2023%20wrz%202026%2C%2018_23_43%20(1).png</image:loc>
+      <image:title>Kalendarz Zmian na Android – grafik pracy zmianowej i kalendarz 3 zmian</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lukaszednarski998.github.io/privacy-policy.html/ChatGPT%20Image%2023%20wrz%202026%2C%2018_23_43%20(2).png</image:loc>
+      <image:title>Kalendarz Zmian – harmonogram pracy, godziny i notatki</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lukaszednarski998.github.io/privacy-policy.html/ChatGPT%20Image%2023%20wrz%202026%2C%2018_23_44%20(3).png</image:loc>
+      <image:title>Kalendarz pracy zmianowej – planowanie grafiku i kontrola normatywu</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lukaszednarski998.github.io/privacy-policy.html/ChatGPT%20Image%2023%20wrz%202026%2C%2018_23_45%20(4).png</image:loc>
+      <image:title>Grafik zmianowy na Android – historia godzin i plan pracy</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://lukaszednarski998.github.io/privacy-policy.html/ChatGPT%20Image%2023%20wrz%202026%2C%2018_23_45%20(5).png</image:loc>
+      <image:title>Kalendarz Zmian – aplikacja do pracy zmianowej bez reklam i subskrypcji</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://lukaszednarski998.github.io/privacy-policy.html/apps/live-data-obd.html</loc>
