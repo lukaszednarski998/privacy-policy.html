@@ -1,0 +1,32 @@
+name: Inspect DO STRONY app upload
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/inspect-do-strony.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: List upload contents safely
+        run: |
+          python3 - <<'PY'
+          import zipfile, pathlib
+          z=zipfile.ZipFile('DO STRONY.zip')
+          lines=[]
+          for item in z.infolist():
+              lines.append(f'{item.filename}\t{item.file_size} bytes')
+          pathlib.Path('archive-inspection').mkdir(exist_ok=True)
+          pathlib.Path('archive-inspection/do-strony-manifest.txt').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+          PY
+      - name: Save manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add archive-inspection/do-strony-manifest.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Inspect DO STRONY ZIP contents"
+          git push
