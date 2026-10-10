@@ -51,10 +51,15 @@ function start(){
 }
 function event(name,params){if(consent==='yes'){start();if(initialized)window.gtag('event',name,params)}}
 function notifyConsent(value){
+ const wasInitialized=initialized;
  consent=value;
  try{localStorage.setItem(KEY,value)}catch(e){}
  document.getElementById('arvion-analytics-consent')?.remove();
  if(value==='yes')start();
+ else if(wasInitialized){
+  if(window.gtag)window.gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied'});
+  location.reload();
+ }
 }
 function banner(){
  if(consent==='yes'||consent==='no'||document.getElementById('arvion-analytics-consent'))return;
@@ -81,7 +86,9 @@ function storeClick(e){
  const card=a.closest('[data-product],article,.card,.modal');
  if(card?.dataset?.product)app=card.dataset.product;
  else if(card?.querySelector('h1,h2,h3'))app=card.querySelector('h1,h2,h3').textContent.trim().slice(0,95);
- event('google_play_click',{app_name:app,link_url:u.origin+u.pathname,link_type:u.pathname.includes('/details')?'app_detail':'store_search',page_path:location.pathname});
+ const appId=u.searchParams.get('id');
+ const safeUrl=u.origin+u.pathname+(appId?'?id='+encodeURIComponent(appId):'');
+ event('google_play_click',{app_name:app,link_url:safeUrl,link_type:u.pathname.includes('/details')?'app_detail':'store_search',page_path:location.pathname});
 }
 document.addEventListener('click',storeClick,true);
 function settings(){if(!/^G-[A-Z0-9]+$/.test(GA_ID))return;const b=document.createElement('button');b.type='button';b.textContent=pl?'Ustawienia statystyk':'Analytics settings';b.style.cssText='margin:12px;padding:8px 12px;border:1px solid #777;border-radius:8px;background:#222;color:#fff;cursor:pointer';b.addEventListener('click',()=>{try{localStorage.removeItem(KEY)}catch(e){}consent=null;banner()});(document.querySelector('footer')||document.body).appendChild(b)}
