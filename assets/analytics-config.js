@@ -1,2 +1,2 @@
-// Public Google Analytics 4 measurement ID, e.g. G-XXXXXXXXXX.
-window.ARVION_GA4_ID = '';
+// ARVION Google Analytics 4 public measurement ID.
+window.ARVION_GA4_ID = 'G-N4FKFZVYJD';
