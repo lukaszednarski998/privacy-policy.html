@@ -1,61 +1,67 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polityka prywatności – MEDIA PRO</title>
-<style>
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    max-width:900px;
-    margin:40px auto;
-    padding:20px;
-    line-height:1.7;
-    color:#333;
-}
-h1,h2{
-    color:#111;
-}
-</style>
-</head>
-<body>
+# ARVION — Android & Wear OS apps
 
-<h1>Polityka prywatności – MEDIA PRO</h1>
+ARVION builds practical Android and Wear OS applications for drivers, everyday productivity, media, family tools, smartwatch utilities and mobile games.
 
-<p><strong>Data wejścia w życie:</strong> 23.07.2026</p>
+## Explore the catalog
 
-<p>MEDIA PRO szanuje prywatność użytkowników i dokłada wszelkich starań, aby chronić ich dane.</p>
+- [Official ARVION website](https://lukaszednarski998.github.io/privacy-policy.html/)
+- [Browse apps by function](https://lukaszednarski998.github.io/privacy-policy.html/apps/)
+- [Privacy policies](https://lukaszednarski998.github.io/privacy-policy.html/privacy-policy.html)
 
-<h2>1. Gromadzenie danych</h2>
-<p>Aplikacja MEDIA PRO nie gromadzi danych osobowych użytkowników.</p>
+The catalog is available in 14 languages: English, Polish, German, French, Spanish, Italian, Brazilian Portuguese, Japanese, Korean, Simplified Chinese, Turkish, Indonesian, Russian and Ukrainian.
 
-<h2>2. Uprawnienia</h2>
-<p>Aplikacja może korzystać z następujących uprawnień:</p>
-<ul>
-<li>Dostęp do pamięci urządzenia – w celu odczytu i odtwarzania plików audio oraz wideo.</li>
-<li>Bluetooth – do współpracy z urządzeniami audio.</li>
-<li>Powiadomienia – do sterowania odtwarzaniem.</li>
-</ul>
+## Automotive and driving
 
-<h2>3. Przechowywanie danych</h2>
-<p>Playlisty, ustawienia oraz pozostałe dane aplikacji są przechowywane wyłącznie lokalnie na urządzeniu użytkownika.</p>
+- [OBD Active Exhaust Pro](https://lukaszednarski998.github.io/privacy-policy.html/apps/obd-active-exhaust-pro.html) — live OBD2 and ELM327 vehicle data with active exhaust controls.
+- [Live Data OBD](https://lukaszednarski998.github.io/privacy-policy.html/apps/live-data-obd.html) — real-time ECU sensor and vehicle parameters.
+- [Drive Recorder](https://lukaszednarski998.github.io/privacy-policy.html/apps/drive-recorder.html) — Android dash cam with GPS and loop recording.
+- [ARVION Moto Speed](https://lukaszednarski998.github.io/privacy-policy.html/apps/arvion-moto-speed.html) — GPS motorcycle speedometer and ride dashboard.
 
-<h2>4. Udostępnianie danych</h2>
-<p>Aplikacja nie sprzedaje, nie udostępnia ani nie przekazuje danych użytkowników osobom trzecim.</p>
+## Productivity, phone and media tools
 
-<h2>5. Reklamy</h2>
-<p>MEDIA PRO nie wyświetla reklam.</p>
+- [ARVION Battery Guard](https://lukaszednarski998.github.io/privacy-policy.html/apps/arvion-battery-guard.html) — charging power, temperature alerts and battery-care tools.
+- [ARVION Phone Diagnostics](https://lukaszednarski998.github.io/privacy-policy.html/apps/arvion-phone-diagnostics.html) — CPU, RAM, storage, battery and thermal diagnostics.
+- [ARVION PDF Toolbox](https://lukaszednarski998.github.io/privacy-policy.html/apps/arvion-pdf-toolbox.html) — offline PDF conversion, OCR, scanning, merging and splitting.
+- [ARVION Calculator](https://lukaszednarski998.github.io/privacy-policy.html/apps/arvion-calculator.html) — practical calculators with explanations and camera-assisted input.
+- [Shift Work Calendar](https://lukaszednarski998.github.io/privacy-policy.html/apps/kalendarz-zmianowy-en.html) — shift schedules, work hours, notes and history.
+- [MEDIA PRO](https://lukaszednarski998.github.io/privacy-policy.html/apps/media-player.html) — offline music and video player.
+- [Private IPTV](https://lukaszednarski998.github.io/privacy-policy.html/apps/private-iptv.html) — player for user-provided M3U playlists and compatible streams.
 
-<h2>6. Bezpieczeństwo</h2>
-<p>Dane nie są przesyłane na zewnętrzne serwery i pozostają wyłącznie na urządzeniu użytkownika.</p>
+## Family and creative tools
 
-<h2>7. Kontakt</h2>
-<p>W sprawach dotyczących prywatności można skontaktować się pod adresem:</p>
+- [Kids Time](https://lukaszednarski998.github.io/privacy-policy.html/apps/kids-time.html) — parental controls and screen-time limits.
+- [Mask Maker Kids](https://lukaszednarski998.github.io/privacy-policy.html/apps/mask-maker-kids.html) — create, color and print children's masks.
+- [Kids Remote Lock](https://lukaszednarski998.github.io/privacy-policy.html/apps/kids-remote-lock.html) — upcoming parent-managed screen-time and remote-lock tools.
 
-<p><strong>E-mail:</strong> obdactiveexhaust@gmail.com</p>
+## Wear OS utilities
 
-<h2>8. Zmiany polityki prywatności</h2>
-<p>Polityka prywatności może być aktualizowana wraz z rozwojem aplikacji. Aktualna wersja będzie publikowana na tej stronie.</p>
+- [ARVION Watch Faces](https://lukaszednarski998.github.io/privacy-policy.html/apps/arvion-watch-faces.html) — digital, classic, animated and automotive watch faces.
+- [Music 2 Watch](https://lukaszednarski998.github.io/privacy-policy.html/apps/music-2-watch.html) — transfer music from Android to Wear OS.
+- [Spy 2 Watch](https://lukaszednarski998.github.io/privacy-policy.html/apps/spy-2-watch.html) — phone camera preview and remote controls on a compatible watch.
+- [Video 2 Watch](https://lukaszednarski998.github.io/privacy-policy.html/apps/video-2-watch.html) — stream or transfer video from a phone to Wear OS.
+- [File 2 Watch](https://lukaszednarski998.github.io/privacy-policy.html/apps/file-2-watch.html) — upcoming phone-to-watch file transfer and management.
+- [Inspect 2 Watch](https://lukaszednarski998.github.io/privacy-policy.html/apps/inspect-2-watch.html) — upcoming inspection-camera preview for Wear OS.
 
-</body>
-</html>
+## Android and Wear OS games
+
+- [Checkers Royal](https://lukaszednarski998.github.io/privacy-policy.html/apps/checkers-royal.html)
+- [Checkers Royal for Wear OS](https://lukaszednarski998.github.io/privacy-policy.html/apps/checkers-royal-wear-os.html)
+- [Royal Chess](https://lukaszednarski998.github.io/privacy-policy.html/apps/royal-chess.html)
+- [Royal Chess for Wear OS](https://lukaszednarski998.github.io/privacy-policy.html/apps/royal-chess-wear-os.html)
+- [ARVION Breakout for Wear OS](https://lukaszednarski998.github.io/privacy-policy.html/apps/arvion-breakout-wear-os.html)
+- [Snake for Wear OS](https://lukaszednarski998.github.io/privacy-policy.html/apps/snake-wear-os.html)
+- [Retro Snake Classic](https://lukaszednarski998.github.io/privacy-policy.html/apps/snake-classic.html)
+- [Chicken Drop](https://lukaszednarski998.github.io/privacy-policy.html/apps/chicken-drop.html)
+- [Crystal Blocks](https://lukaszednarski998.github.io/privacy-policy.html/apps/crystal-blocks.html)
+- [Pixel Critters](https://lukaszednarski998.github.io/privacy-policy.html/apps/pixel-critters.html)
+- [Pixel Critters 3D](https://lukaszednarski998.github.io/privacy-policy.html/apps/pixel-critters-3d.html)
+- [ARVION My Pet 3D](https://lukaszednarski998.github.io/privacy-policy.html/apps/arvion-my-pet-3d.html)
+- [ARVION My Pet 3D for Wear OS](https://lukaszednarski998.github.io/privacy-policy.html/apps/arvion-my-pet-3d-wear-os.html)
+
+## Availability
+
+Availability, compatibility and release status are stated on each product page. Products marked **coming soon** are announcements and are not yet available to install.
+
+## Contact
+
+For support and product questions, use the contact information published on the official ARVION website.
