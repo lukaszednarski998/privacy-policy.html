@@ -7,6 +7,7 @@ const GA_ID=(window.ARVION_GA4_ID||'').trim();
 const KEY='arvion_analytics_consent_v1';
 const lang=(document.documentElement.lang||'en').toLowerCase();
 const pl=lang.startsWith('pl');
+if(!/^G-[A-Z0-9]+$/.test(GA_ID))return;
 let consent=null, initialized=false;
 try{consent=localStorage.getItem(KEY)}catch(e){}
 function start(){
@@ -35,13 +36,14 @@ function banner(){
  el.style.cssText='position:fixed;z-index:2147483000;bottom:12px;left:12px;right:12px;max-width:620px;margin:auto;box-sizing:border-box;background:#171717;color:#fff;border:1px solid #666;border-radius:12px;padding:15px 18px;box-shadow:0 4px 25px #0009;font:14px/1.5 system-ui,sans-serif';
  const desc=document.createElement('p');desc.style.margin='0 0 10px';
  desc.textContent=pl?'Czy zgadzasz się na anonimowe statystyki odwiedzin i kliknięć w Google Play (Google Analytics)? Możesz odmówić.':'Allow optional visit and Google Play click analytics (Google Analytics)? You may decline.';
+ const link=document.createElement('a');link.href=location.pathname.startsWith('/privacy-policy.html/apps/')?'../site-privacy.html':'site-privacy.html';link.textContent=pl?'Prywatność i statystyki':'Privacy and analytics';link.style.cssText='color:#ffc4ca;text-decoration:underline;display:inline-block;margin-bottom:10px';
  const buttons=document.createElement('div');buttons.style.cssText='display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap';
  for(const [value,label] of [['no',pl?'Odmów':'Decline'],['yes',pl?'Akceptuję':'Accept']]){
   const b=document.createElement('button');b.type='button';b.textContent=label;
   b.style.cssText='padding:8px 16px;border-radius:7px;border:1px solid #777;background:'+(value==='yes'?'#a02736':'#303030')+';color:white;cursor:pointer;font:inherit';
   b.addEventListener('click',()=>notifyConsent(value));buttons.appendChild(b);
  }
- el.append(desc,buttons);document.body.appendChild(el);
+ el.append(desc,link,buttons);document.body.appendChild(el);
 }
 function storeClick(e){
  const a=e.target.closest?.('a[href]');if(!a)return;
