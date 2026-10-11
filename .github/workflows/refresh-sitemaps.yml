@@ -1,0 +1,53 @@
+name: Keep ARVION sitemaps complete
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/refresh_sitemaps.py'
+      - '.github/workflows/refresh-sitemaps.yml'
+      - 'apps/**'
+      - '*.html'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: arvion-sitemap-sync
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate full canonical sitemap
+        run: python scripts/refresh_sitemaps.py
+      - name: Verify map and root-domain scope
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          root=Path('.')
+          xml=(root/'sitemap.xml').read_text(encoding='utf-8')
+          assert xml==(root/'sitemap-google.xml').read_text(encoding='utf-8')
+          links=[e.text for e in ET.fromstring(xml).iter() if e.tag.endswith('loc')]
+          assert len(links)==len(set(links))
+          for s in ('/CAR-MEDIA-2-WATCH-PRO-VIDEO.html','/site-privacy.html','/apps/'):
+              assert any(x.endswith(s) for x in links),s
+          print('Verified',len(links),'distinct canonical URLs')
+          PY
+      - name: Commit sitemap updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml sitemap-google.xml sitemap.txt
+          if git diff --cached --quiet; then
+            echo 'All sitemaps already synchronized'
+          else
+            git commit -m 'Refresh ARVION sitemaps for all public app pages'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
