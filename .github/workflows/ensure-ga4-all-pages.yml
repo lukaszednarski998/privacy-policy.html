@@ -1,0 +1,42 @@
+name: Ensure analytics on every ARVION page
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/ensure_ga4_all_pages.py'
+      - '.github/workflows/ensure-ga4-all-pages.yml'
+      - 'apps/**'
+      - 'index*.html'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: arvion-analytics-site
+  cancel-in-progress: false
+jobs:
+  ensure-analytics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Add consent-based analytics links to missing pages
+        run: python scripts/ensure_ga4_all_pages.py
+      - name: Confirm full site coverage
+        run: python scripts/ensure_ga4_all_pages.py --check
+      - name: Commit public HTML updates
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- '*.html'
+          if git diff --cached --quiet; then
+            echo 'No missing GA4 script references'
+          else
+            git commit -m 'Ensure consent-based analytics on every ARVION page'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
