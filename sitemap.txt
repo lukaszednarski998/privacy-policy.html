@@ -526,11 +526,15 @@ https://lukaszednarski998.github.io/privacy-policy.html/kids-time-privacy.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-de.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-es.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-fr.html
+https://lukaszednarski998.github.io/privacy-policy.html/manifest-id.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-it.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-ja.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-ko.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-pl.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-pt-br.html
+https://lukaszednarski998.github.io/privacy-policy.html/manifest-ru.html
+https://lukaszednarski998.github.io/privacy-policy.html/manifest-tr.html
+https://lukaszednarski998.github.io/privacy-policy.html/manifest-uk.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-zh-cn.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest.html
 https://lukaszednarski998.github.io/privacy-policy.html/privacy-arvion-moto-speed.html
