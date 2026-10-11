@@ -1,0 +1,76 @@
+name: Unpack ARVION promotional Shorts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/unpack-arvion-shorts.yml"
+      - "shorts/ARVION_15_FILMOW_TIKTOK_YOUTUBE_GOTOWE.zip"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify and extract the 15 promo MP4 files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile
+          archive = Path("shorts/ARVION_15_FILMOW_TIKTOK_YOUTUBE_GOTOWE.zip")
+          if not archive.exists():
+              raise SystemExit("Source ZIP is missing")
+          expected = {
+              "01_OBD_ACTIVE_EXHAUST_PRO_SHOWCASE.mp4",
+              "02_OBD_ACTIVE_EXHAUST_PRO_FEATURES.mp4",
+              "03_OBD_ACTIVE_EXHAUST_PRO_DISCOVER.mp4",
+              "04_MEDIA_PRO_SHOWCASE.mp4",
+              "05_MEDIA_PRO_FEATURES.mp4",
+              "06_MEDIA_PRO_DISCOVER.mp4",
+              "07_PIXEL_CRITTERS_SHOWCASE.mp4",
+              "08_PIXEL_CRITTERS_FEATURES.mp4",
+              "09_PIXEL_CRITTERS_DISCOVER.mp4",
+              "10_RETRO_SNAKE_CLASSIC_SHOWCASE.mp4",
+              "11_RETRO_SNAKE_CLASSIC_FEATURES.mp4",
+              "12_RETRO_SNAKE_CLASSIC_DISCOVER.mp4",
+              "13_KALENDARZ_ZMIAN_SHOWCASE.mp4",
+              "14_KALENDARZ_ZMIAN_FEATURES.mp4",
+              "15_KALENDARZ_ZMIAN_DISCOVER.mp4",
+          }
+          with zipfile.ZipFile(archive) as z:
+              names = {i.filename for i in z.infolist() if i.filename.endswith(".mp4")}
+              if names != expected:
+                  raise SystemExit(f"Unexpected MP4 filenames; missing={expected-names}, extra={names-expected}")
+              damaged = z.testzip()
+              if damaged:
+                  raise SystemExit("Corrupt ZIP member: " + damaged)
+              for name in sorted(expected):
+                  info = z.getinfo(name)
+                  if not (100_000 < info.file_size < 30_000_000):
+                      raise SystemExit("Unexpected file size: " + name)
+                  dst = Path("shorts") / name
+                  dst.write_bytes(z.read(info))
+                  print(f"Extracted {dst} ({info.file_size} bytes)")
+          PY
+
+      - name: Commit ready-to-stream MP4s
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add shorts/*.mp4
+          if git diff --cached --quiet; then
+            echo "All videos already present"
+            exit 0
+          fi
+          git commit -m "Extract 15 ARVION videos for public social publishing"
+          git push
