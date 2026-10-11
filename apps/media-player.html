@@ -1009,4 +1009,6 @@ MEDIA PRO містить 60-хвилинну пробну версію, щоб �
 const buttons=[...document.querySelectorAll('.lang')],locales=[...document.querySelectorAll('.locale')];
 buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.classList.toggle('active',x===b));locales.forEach(x=>x.classList.toggle('active',x.dataset.locale===b.dataset.lang));document.documentElement.lang=b.dataset.lang;}));
 </script>
+<script defer src="../assets/analytics-config.js"></script>
+<script defer src="../assets/site-analytics.js"></script>
 </body></html>
