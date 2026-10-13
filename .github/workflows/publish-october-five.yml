@@ -1,0 +1,55 @@
+name: Publish five October applications in 14 languages
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-october-five.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-october-five
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Unpack and update pages, galleries and catalog
+        run: python3 scripts/publish_october_five.py
+      - name: Update sitemap
+        run: python3 scripts/refresh_sitemaps.py
+      - name: Verify site completeness
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          root=Path('.')
+          langs=['en','pl','de','fr','es','it','pt-br','ja','ko','zh-cn','tr','id','ru','uk']
+          slugs=['obd-active-exhaust-pro','car-media-2-watch-pro','note-vault-pro','voice-recorder-pro-ai','zoomstrike-ai-1000x']
+          for lang in langs:
+            home=(root/('index.html' if lang=='en' else f'index-{lang}.html')).read_text(encoding='utf8')
+            assert 'id:"car-media-2-watch"' in home or '"id": "car-media-2-watch"' in home
+            assert 'id:"note-vault-pro"' in home or '"id": "note-vault-pro"' in home
+            assert 'id:"voice-recorder-pro-ai"' in home or '"id": "voice-recorder-pro-ai"' in home
+            assert 'id:"zoomstrike-ai-1000x"' in home or '"id": "zoomstrike-ai-1000x"' in home
+            for slug in slugs:
+              file=root/'apps'/(slug+('' if lang=='en' else '-'+lang)+'.html')
+              assert file.is_file(),file
+              text=file.read_text(encoding='utf8')
+              assert '<div class="gallery">' in text and 'alt=' in text
+          print('OK: 14 homepages, 70 app pages, original galleries')
+          PY
+      - name: Commit changes to site
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index*.html apps/ assets/october-20261013/ sitemap.xml sitemap-google.xml sitemap.txt
+          if git diff --cached --quiet; then echo 'Already current'; exit 0; fi
+          git commit -m 'Publish October five-app gallery and coming-soon pages in 14 languages'
+          git pull --rebase origin main
+          git push origin HEAD:main
