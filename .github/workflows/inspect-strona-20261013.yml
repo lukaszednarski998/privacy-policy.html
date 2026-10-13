@@ -1,0 +1,60 @@
+name: Inspect uploaded split website archive (2026-10-13)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/inspect-strona-20261013.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify archive volumes and list contents
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p archive-inspection
+          python3 - <<'PY'
+          import pathlib,subprocess,collections,time
+          parts=[pathlib.Path('STRONA INTERNETOWA.z01'),pathlib.Path('STRONA INTERNETOWA.z02'),pathlib.Path('STRONA INTERNETOWA.zip')]
+          lines=['# STRONA INTERNETOWA: 2026-10-13 inspection','']
+          for p in parts:
+              lines.append(f'{p.name}: {p.stat().st_size if p.exists() else "MISSING"} bytes')
+          lines.append('')
+          for arg in [['7z','l','-slt',str(parts[-1])],['7z','l','-slt',str(parts[0])]]:
+              try:
+                  r=subprocess.run(arg,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=120)
+                  raw=r.stdout
+                  names=[x[7:] for x in raw.splitlines() if x.startswith('Path = ')]
+                  lines.extend([f'## {arg[-1]}','exit: '+str(r.returncode), 'file count: '+str(len(names)), ''])
+                  for name in names[:400]: lines.append('- '+name)
+                  lines.append('') 
+                  if r.returncode: lines.append('ERROR: '+raw[-1800:])
+              except Exception as e:
+                  lines.append(repr(e))
+          cmd=['7z','x',str(parts[-1]),'-o/tmp/strona-upload','-y']
+          try:
+              r=subprocess.run(cmd,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=180)
+              files=sorted(p.relative_to('/tmp/strona-upload').as_posix() for p in pathlib.Path('/tmp/strona-upload').rglob('*') if p.is_file())
+              lines.extend(['## Extract attempt','exit: '+str(r.returncode),'extracted file count: '+str(len(files)), ''])
+              lines+=['- '+p for p in files[:400]]
+              if r.returncode: lines+=['', 'ERROR: '+r.stdout[-2000:]]
+          except Exception as e: lines.append('EXTRACTION ERROR: '+repr(e))
+          dest=pathlib.Path('archive-inspection/strona-20261013.md')
+          dest.write_text('\n'.join(lines)+'\n',encoding='utf8')
+          print('\n'.join(lines)[:16000])
+          PY
+      - name: Commit archive inspection
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add archive-inspection/strona-20261013.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Inspect new split website archive for four applications'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
