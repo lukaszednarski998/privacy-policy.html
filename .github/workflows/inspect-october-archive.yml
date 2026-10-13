@@ -1,0 +1,71 @@
+name: Identify files in October split archive
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/inspect-october-archive.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  identify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect only the two new volumes (do not use September zip)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p archive-inspection
+          python3 - <<'PY'
+          from pathlib import Path
+          import struct,hashlib,collections
+          parts=[Path('STRONA INTERNETOWA.z01'),Path('STRONA INTERNETOWA.z02')]
+          data=b''.join(x.read_bytes() for x in parts)
+          lines=['# Inspection of the two uploaded October volumes','',
+                 'Note: STRONA INTERNETOWA.zip is an older September archive and has been excluded from this inspection.','']
+          for p in parts:
+              a=p.read_bytes()
+              lines += [f'{p.name}: bytes={len(a)}, sha256={hashlib.sha256(a).hexdigest()}',f'first32hex={a[:32].hex()}',f'last32hex={a[-32:].hex()}','']
+          found=[]
+          i=0
+          while True:
+              p=data.find(b'PK\\x03\\x04',i)
+              if p<0:break
+              i=p+4
+              if p+30>len(data):break
+              try:
+                  sig,version,flags,method,mt,md,crc,csz,usz,nlen,elen=struct.unpack_from('<IHHHHHIIIHH',data,p)
+                  if nlen<1 or nlen>2048 or elen>65535 or p+30+nlen+elen>len(data):continue
+                  name_bytes=data[p+30:p+30+nlen]
+                  name=name_bytes.decode('utf8' if flags&0x800 else 'cp437',errors='replace')
+                  if not all((ord(c)>30 and c not in '\\x7f') for c in name):continue
+                  if not any(c in name for c in ('.','/','\\\\')):continue
+                  found.append((p,flags,method,csz,usz,name))
+              except Exception:continue
+          lines+=['Local-file headers visible in the new volumes: '+str(len(found)),'']
+          for n,(pos,flags,method,csz,usz,name) in enumerate(found):
+              lines.append(f'{n+1:03d} offset={pos} flags={flags} method={method} compressed={csz} original={usz} path={name}')
+          lines+=['','Top folders detected:']
+          root=collections.Counter()
+          for pos,flags,method,csz,usz,name in found:
+              split=name.replace('\\\\','/').strip('/').split('/')
+              if len(split)>1: root[split[1] if split[0].casefold().startswith('strona') else split[0]]+=1
+          lines += [f'{k}: {v}' for k,v in root.most_common()]
+          lines += ['','The actual closing .zip volume (uploaded on the same date as z01/z02) is required for reliable full archive extraction if these are split ZIP volumes.']
+          out=Path('archive-inspection/october-new-volumes.md')
+          out.write_text('\\n'.join(lines)+'\\n',encoding='utf8')
+          print('\\n'.join(lines)[:18000])
+          PY
+      - name: Commit inspection manifest
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add archive-inspection/october-new-volumes.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Identify the October ZIP volumes independently of the old archive'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
