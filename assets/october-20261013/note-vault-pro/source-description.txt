@@ -1,0 +1,538 @@
+
+
+========================================[pl-PL]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Prywatne notatki na Android i Wear OS: szyfrowanie, pismo, OCR i sync.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO to rozbudowany notatnik dla Androida, który przechowuje dane przede wszystkim na urządzeniu. Do korzystania z aplikacji nie jest potrzebne konto.
+
+Twórz zwykłe notatki, checklisty, tabele, bloki kodu i wzory LaTeX. Dodawaj zdjęcia, dokumenty PDF, nagrania oraz inne załączniki. Korzystaj z pisma odręcznego z piórem, ołówkiem, zakreślaczem, gumką, figurami, linijką, trójkątem i lassem. Rozpoznawanie pisma, OCR dokumentów oraz lokalne dyktowanie pomagają szybciej zamieniać treść na tekst. Dostępność rozpoznawania mowy zależy od urządzenia, wersji Androida i zainstalowanego języka.
+
+PORZĄDEK I SZYBKI DOSTĘP
+• foldery i podfoldery, tagi, przypinanie, ulubione i archiwum,
+• inteligentne foldery i sortowanie,
+• wyszukiwanie w tytułach, treści, folderach i tagach,
+• linki między notatkami oraz backlinki,
+• historia wersji, automatyczny zapis, szkice i Kosz,
+• karty ostatnich notatek, widok tabletowy i widżet wybranej notatki,
+• szybka notatka, checklista, skan, nagranie i pismo odręczne.
+
+PRYWATNOŚĆ I OCHRONA
+Wybrane notatki oraz obsługiwane załączniki możesz chronić szyfrowaniem AES-GCM. Aplikacja oferuje PIN, biometrię i blokadę całej aplikacji. Wyszukiwanie treści chronionych notatek jest dostępne po uwierzytelnieniu i działa w pamięci bieżącej sesji.
+
+PRZYPOMNIENIA I ORGANIZACJA
+Ustawiaj przypomnienia jednorazowe, codzienne, tygodniowe, miesięczne albo tylko w dni robocze. Powiadomienie można odroczyć o 10 minut lub oznaczyć jako wykonane.
+
+IMPORT, EKSPORT I PDF
+Importuj notatki i pliki, udostępniaj tekst wraz z załącznikami oraz eksportuj do TXT, Markdown, PDF, HTML i DOCX. Adnotacje odręczne można dodawać do istniejących dokumentów PDF bez zamiany całej strony na obraz. Web Clipper zapisuje tekst wskazanej strony HTTPS wraz ze źródłem.
+
+KOPIA ZAPASOWA I SYNCHRONIZACJA
+Twórz ręczne lub automatyczne kopie zapasowe. Sync PRO synchronizuje notatki przez folder wybrany w systemie Android. Może to być folder lokalny albo folder udostępniony przez obsługiwanego dostawcę chmury widocznego w systemowym selektorze plików. Automatyczne kopie i synchronizacja są chronione hasłem. Aplikacja nie udostępnia własnej chmury.
+
+TELEFON + WEAR OS
+Połącz aplikację ze zgodnym zegarkiem Wear OS. Notatki synchronizują się automatycznie, a przycisk Synchronizuj pozwala uruchomić proces ręcznie. Pasek postępu kończy się zielonym znacznikiem po potwierdzeniu odbioru przez zegarek. Na zegarku można przeglądać notatki, tworzyć i edytować tekst, zmieniać przypięcie, ulubione, archiwum i ochronę oraz pracować offline. Synchronizowane są treść i dane organizacyjne; równoczesne zmiany są zachowywane jako kopia konfliktowa. Metadane załączników są widoczne na zegarku, a plik można pobrać na żądanie.
+
+NOTE VAULT PRO nie zawiera reklam. Funkcje sieciowe są uruchamiane przy synchronizacji, pobieraniu modeli rozpoznawania, zakupach Google Play lub użyciu Web Clippera.
+
+[en-US]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Private notes with handwriting, encryption and Wear OS sync.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO is a private, feature-rich notebook for Android with support for Wear OS. Notes are stored on your device, and no account is required to use the app.
+
+Create and edit notes
+Create notes, checklists, tables, code blocks and LaTeX formulas. Add images, PDF documents, audio recordings and other attachments. Write by hand using a pen, pencil, highlighter, eraser, shapes, ruler, triangle and lasso.
+
+Handwriting recognition, document OCR and local dictation help convert content into text. Speech recognition availability depends on the device, Android version and installed language.
+
+Organize your notes
+- Folders, subfolders, tags, pinned notes, favorites and archive
+- Smart folders and sorting
+- Search through titles, content, folders and tags
+- Links between notes and backlinks
+- Version history, autosave, drafts and Trash
+- Recent note tabs, tablet view and a selected-note widget
+- Quick actions for notes, checklists, scans, recordings and handwriting
+
+Privacy and protection
+Protect selected notes and supported attachments using AES-GCM encryption. Use a PIN, biometric authentication and an app lock. Searching protected notes is available after authentication and runs in memory during the current session.
+
+Reminders
+Schedule one-time, daily, weekly, monthly or weekday reminders. Snooze a reminder for 10 minutes or mark it as complete.
+
+Import, export and PDF
+Import notes and files, share text with attachments, and export to TXT, Markdown, PDF, HTML or DOCX. Add handwritten vector annotations to existing PDF documents without converting the entire page into an image. Web Clipper saves the text of a selected HTTPS page along with its source.
+
+Backups and Sync PRO
+Create manual or automatic backups. Sync PRO synchronizes notes through a folder selected in the Android system file picker. This can be a local folder or one made available by a supported cloud provider. Automatic backups and synchronization are password-protected. The app does not provide its own cloud service.
+
+Phone and Wear OS
+Connect NOTE VAULT PRO to a compatible Wear OS watch. Notes sync automatically, or you can start synchronization with the Sync button. When the watch confirms receipt, the progress bar shows a green check mark.
+
+On your watch, browse notes, create and edit text, manage pinned notes, favorites, archived items and protection, and work offline. Note content and organizational data are synchronized. Concurrent edits are preserved as conflict copies. Attachment details are displayed on the watch, and files can be downloaded on demand.
+
+NOTE VAULT PRO contains no ads. Network features are used for synchronization, recognition-model downloads, Google Play purchases and Web Clipper when you choose to use them.
+
+[de-DE]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Private Notizen für Android und Wear OS mit Verschlüsselung und Sync.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO ist eine umfangreiche, lokal ausgerichtete Notiz-App für Android. Notizen werden auf dem Gerät gespeichert und für die Nutzung ist kein Konto erforderlich.
+
+Erstelle normale Notizen, Checklisten, Tabellen, Codeblöcke und LaTeX-Formeln. Füge Bilder, PDF-Dokumente, Aufnahmen und weitere Anhänge hinzu. Schreibe mit Stift, Bleistift oder Textmarker und nutze Radierer, Formen, Lineal, Dreieck und Lasso. Handschrifterkennung, Dokument-OCR und lokale Diktierfunktion helfen dabei, Inhalte schneller in Text umzuwandeln. Die Verfügbarkeit der Spracherkennung hängt vom Gerät, der Android-Version und der installierten Sprache ab.
+
+ORDNUNG UND SCHNELLER ZUGRIFF
+• Ordner und Unterordner, Tags, angeheftete Notizen, Favoriten und Archiv,
+• intelligente Ordner und Sortierung,
+• Suche in Titeln, Inhalten, Ordnern und Tags,
+• Links zwischen Notizen und Rückverweise,
+• Versionsverlauf, automatisches Speichern, Entwürfe und Papierkorb,
+• Tabs für zuletzt verwendete Notizen, Tablet-Vorschau und Notiz-Widget,
+• Schnellaktionen für Notiz, Checkliste, Scan, Aufnahme und Handschrift.
+
+DATENSCHUTZ UND SCHUTZ
+Ausgewählte Notizen und unterstützte Anhänge lassen sich mit AES-GCM verschlüsseln. Die App bietet PIN, biometrische Authentifizierung und eine vollständige App-Sperre. Die Suche in geschützten Notizen ist nach der Authentifizierung möglich und wird im Arbeitsspeicher der aktuellen Sitzung ausgeführt.
+
+ERINNERUNGEN
+Lege einmalige, tägliche, wöchentliche, monatliche oder werktägliche Erinnerungen fest. Benachrichtigungen lassen sich um 10 Minuten verschieben oder als erledigt markieren.
+
+IMPORT, EXPORT UND PDF
+Importiere Notizen und Dateien, teile Text mit Anhängen und exportiere in TXT, Markdown, PDF, HTML und DOCX. Ergänze vorhandene PDFs um handschriftliche Vektoranmerkungen, ohne die gesamte Seite in ein Bild umzuwandeln. Der Web Clipper speichert den Text einer ausgewählten HTTPS-Seite zusammen mit der Quelle.
+
+BACKUP UND SYNCHRONISIERUNG
+Erstelle manuelle oder automatische Backups. Sync PRO synchronisiert Notizen über einen im Android-System ausgewählten Ordner. Dies kann ein lokaler Ordner oder ein Ordner eines unterstützten Cloud-Anbieters im System-Dateiauswahldialog sein. Automatische Backups und Synchronisierung sind passwortgeschützt. Die App betreibt keinen eigenen Cloud-Dienst.
+
+SMARTPHONE + WEAR OS
+Verbinde die App mit einer kompatiblen Wear-OS-Uhr. Notizen werden automatisch synchronisiert; über die Schaltfläche Synchronisieren lässt sich der Vorgang auch manuell starten. Nach der Bestätigung durch die Uhr endet der Fortschrittsbalken mit einem grünen Häkchen. Auf der Uhr kannst du Notizen anzeigen, Text erstellen und bearbeiten, angeheftet, Favorit, Archiv und Schutz ändern sowie offline arbeiten. Inhalt und Organisationsdaten werden synchronisiert; gleichzeitige Änderungen bleiben als Konfliktkopie erhalten. Anhangdetails sind sichtbar, Dateien werden bei Bedarf geladen.
+
+NOTE VAULT PRO enthält keine Werbung. Netzwerkfunktionen werden für die Synchronisierung, den Download von Erkennungsmodellen, Google-Play-Käufe oder beim Start des Web Clippers verwendet.
+
+[fr-FR]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Notes privées sur Android et Wear OS avec chiffrement et synchronisation.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO est un carnet de notes complet pour Android, conçu pour conserver les données en priorité sur l’appareil. Les notes sont stockées sur votre appareil et aucun compte n’est nécessaire.
+
+Créez des notes, des listes de tâches, des tableaux, des blocs de code et des formules LaTeX. Ajoutez des images, des documents PDF, des enregistrements et d’autres pièces jointes. Écrivez avec un stylo, un crayon ou un surligneur et utilisez la gomme, les formes, la règle, l’équerre et le lasso. La reconnaissance de l’écriture, l’OCR des documents et la dictée locale permettent de convertir plus rapidement le contenu en texte. La reconnaissance vocale dépend de l’appareil, de la version d’Android et de la langue installée.
+
+ORGANISATION ET ACCÈS RAPIDE
+• dossiers et sous-dossiers, étiquettes, notes épinglées, favoris et archives,
+• dossiers intelligents et tri,
+• recherche dans les titres, le contenu, les dossiers et les étiquettes,
+• liens entre notes et liens retour,
+• historique des versions, sauvegarde automatique, brouillons et corbeille,
+• onglets des notes récentes, aperçu sur tablette et widget de note,
+• actions rapides pour une note, une liste, un scan, un enregistrement ou l’écriture.
+
+CONFIDENTIALITÉ ET PROTECTION
+Protégez les notes sélectionnées et les pièces jointes compatibles avec le chiffrement AES-GCM. L’application propose un code PIN, l’authentification biométrique et le verrouillage complet de l’application. La recherche dans les notes protégées est disponible après authentification et s’effectue en mémoire pendant la session en cours.
+
+RAPPELS
+Créez des rappels uniques, quotidiens, hebdomadaires, mensuels ou réservés aux jours ouvrés. Une notification peut être reportée de 10 minutes ou marquée comme terminée.
+
+IMPORTATION, EXPORTATION ET PDF
+Importez des notes et des fichiers, partagez du texte avec des pièces jointes et exportez en TXT, Markdown, PDF, HTML et DOCX. Ajoutez des annotations vectorielles manuscrites aux PDF existants sans convertir toute la page en image. Web Clipper enregistre le texte d’une page HTTPS sélectionnée avec sa source.
+
+SAUVEGARDE ET SYNCHRONISATION
+Créez des sauvegardes manuelles ou automatiques. Sync PRO synchronise les notes via un dossier choisi avec le sélecteur Android. Il peut s’agir d’un dossier local ou d’un dossier fourni par un service cloud compatible visible dans le sélecteur système. Les sauvegardes automatiques et la synchronisation sont protégées par mot de passe. L’application n’exploite pas son propre service cloud.
+
+TÉLÉPHONE + WEAR OS
+Connectez l’application à une montre Wear OS compatible. Les notes se synchronisent automatiquement et le bouton Synchroniser permet aussi de lancer l’opération manuellement. La barre de progression se termine par une coche verte après confirmation de la montre. Sur la montre, vous pouvez consulter les notes, créer et modifier du texte, changer l’état épinglé, favori, archivé ou protégé et travailler hors connexion. Le contenu et les données d’organisation sont synchronisés ; les modifications simultanées sont conservées dans une copie de conflit. Les détails des pièces jointes sont visibles et les fichiers se téléchargent à la demande.
+
+NOTE VAULT PRO ne contient aucune publicité. Les fonctions réseau servent à la synchronisation, au téléchargement des modèles de reconnaissance, aux achats Google Play ou au lancement de Web Clipper.
+
+[es-ES]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Notas privadas para Android y Wear OS con cifrado y sincronización.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO es un cuaderno completo para Android diseñado para guardar los datos primero en el dispositivo. Las notas se almacenan en el dispositivo y no necesitas una cuenta para usar la aplicación.
+
+Crea notas, listas de tareas, tablas, bloques de código y fórmulas LaTeX. Añade imágenes, documentos PDF, grabaciones y otros archivos adjuntos. Escribe a mano con bolígrafo, lápiz o marcador y utiliza borrador, formas, regla, triángulo y lazo. El reconocimiento de escritura, el OCR de documentos y el dictado local ayudan a convertir el contenido en texto. La disponibilidad del reconocimiento de voz depende del dispositivo, la versión de Android y el idioma instalado.
+
+ORGANIZACIÓN Y ACCESO RÁPIDO
+• carpetas y subcarpetas, etiquetas, notas fijadas, favoritos y archivo,
+• carpetas inteligentes y ordenación,
+• búsqueda en títulos, contenido, carpetas y etiquetas,
+• enlaces entre notas y enlaces de retorno,
+• historial de versiones, guardado automático, borradores y Papelera,
+• pestañas de notas recientes, vista para tablet y widget de nota,
+• acciones rápidas para notas, listas, escaneos, grabaciones y escritura.
+
+PRIVACIDAD Y PROTECCIÓN
+Protege las notas seleccionadas y los adjuntos compatibles mediante cifrado AES-GCM. La aplicación ofrece PIN, autenticación biométrica y bloqueo completo. La búsqueda en notas protegidas está disponible después de autenticarte y se realiza en la memoria de la sesión actual.
+
+RECORDATORIOS
+Configura recordatorios únicos, diarios, semanales, mensuales o solo para días laborables. Puedes aplazar una notificación 10 minutos o marcarla como completada.
+
+IMPORTACIÓN, EXPORTACIÓN Y PDF
+Importa notas y archivos, comparte texto con adjuntos y exporta a TXT, Markdown, PDF, HTML y DOCX. Añade anotaciones manuscritas vectoriales a documentos PDF existentes sin convertir toda la página en una imagen. Web Clipper guarda el texto de una página HTTPS seleccionada junto con su fuente.
+
+COPIA DE SEGURIDAD Y SINCRONIZACIÓN
+Crea copias manuales o automáticas. Sync PRO sincroniza las notas mediante una carpeta seleccionada con el selector de Android. Puede ser una carpeta local o una carpeta ofrecida por un proveedor de nube compatible visible en el selector del sistema. Las copias automáticas y la sincronización están protegidas con contraseña. La aplicación no gestiona un servicio de nube propio.
+
+TELÉFONO + WEAR OS
+Conecta la aplicación a un reloj Wear OS compatible. Las notas se sincronizan automáticamente y el botón Sincronizar también permite iniciar el proceso manualmente. La barra de progreso termina con una marca verde cuando el reloj confirma la recepción. En el reloj puedes consultar notas, crear y editar texto, cambiar los estados fijada, favorita, archivada y protegida, y trabajar sin conexión. Se sincronizan el contenido y los datos de organización; los cambios simultáneos se conservan como copia en conflicto. Los datos de los adjuntos aparecen en el reloj y los archivos se descargan bajo demanda.
+
+NOTE VAULT PRO no contiene anuncios. Las funciones de red se utilizan para sincronizar, descargar modelos de reconocimiento, realizar compras en Google Play o iniciar Web Clipper.
+
+[it-IT]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Note private per Android e Wear OS con crittografia e sincronizzazione.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO è un taccuino completo per Android progettato per conservare i dati prima di tutto sul dispositivo. Le note vengono salvate sul dispositivo e non è necessario un account per usare l’app.
+
+Crea note, liste di controllo, tabelle, blocchi di codice e formule LaTeX. Aggiungi immagini, documenti PDF, registrazioni e altri allegati. Scrivi a mano con penna, matita o evidenziatore e usa gomma, forme, righello, triangolo e lazo. Il riconoscimento della scrittura, l’OCR dei documenti e la dettatura locale aiutano a convertire più rapidamente i contenuti in testo. La disponibilità del riconoscimento vocale dipende dal dispositivo, dalla versione di Android e dalla lingua installata.
+
+ORGANIZZAZIONE E ACCESSO RAPIDO
+• cartelle e sottocartelle, tag, note fissate, preferiti e archivio,
+• cartelle intelligenti e ordinamento,
+• ricerca in titoli, contenuti, cartelle e tag,
+• collegamenti tra note e backlink,
+• cronologia delle versioni, salvataggio automatico, bozze e Cestino,
+• schede delle note recenti, anteprima per tablet e widget della nota,
+• azioni rapide per note, checklist, scansioni, registrazioni e scrittura.
+
+PRIVACY E PROTEZIONE
+Proteggi le note selezionate e gli allegati supportati con la crittografia AES-GCM. L’app offre PIN, autenticazione biometrica e blocco completo. La ricerca nel contenuto delle note protette è disponibile dopo l’autenticazione e viene eseguita nella memoria della sessione corrente.
+
+PROMEMORIA
+Imposta promemoria singoli, giornalieri, settimanali, mensili o solo nei giorni feriali. Puoi posticipare una notifica di 10 minuti o contrassegnarla come completata.
+
+IMPORTAZIONE, ESPORTAZIONE E PDF
+Importa note e file, condividi testo con allegati ed esporta in TXT, Markdown, PDF, HTML e DOCX. Aggiungi annotazioni vettoriali scritte a mano ai PDF esistenti senza convertire l’intera pagina in un’immagine. Web Clipper salva il testo di una pagina HTTPS selezionata insieme alla fonte.
+
+BACKUP E SINCRONIZZAZIONE
+Crea backup manuali o automatici. Sync PRO sincronizza le note tramite una cartella selezionata con il selettore di Android. Può essere una cartella locale oppure una cartella fornita da un servizio cloud compatibile e visibile nel selettore di sistema. I backup automatici e la sincronizzazione sono protetti da password. L’app non gestisce un proprio servizio cloud.
+
+TELEFONO + WEAR OS
+Collega l’app a un orologio Wear OS compatibile. Le note vengono sincronizzate automaticamente e il pulsante Sincronizza consente di avviare il processo manualmente. La barra di avanzamento termina con un segno di spunta verde dopo la conferma dell’orologio. Dall’orologio puoi consultare le note, creare e modificare testo, cambiare gli stati fissata, preferita, archiviata e protetta e lavorare offline. Contenuto e dati organizzativi vengono sincronizzati; le modifiche simultanee sono conservate come copia in conflitto. I dettagli degli allegati sono visibili e i file si scaricano su richiesta.
+
+NOTE VAULT PRO non contiene pubblicità. Le funzioni di rete vengono utilizzate per la sincronizzazione, il download dei modelli di riconoscimento, gli acquisti Google Play o quando avvii Web Clipper.
+
+[pt-BR]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Notas privadas no Android e Wear OS com criptografia e sincronização.
+
+FULL DESCRIPTION:
+O NOTE VAULT PRO é um caderno completo para Android, criado para manter os dados primeiro no dispositivo. As notas ficam armazenadas no aparelho e nenhuma conta é necessária para usar o app.
+
+Crie notas, listas de tarefas, tabelas, blocos de código e fórmulas LaTeX. Adicione imagens, documentos PDF, gravações e outros anexos. Escreva à mão com caneta, lápis ou marca-texto e use borracha, formas, régua, triângulo e laço. O reconhecimento de escrita, o OCR de documentos e o ditado local ajudam a transformar conteúdo em texto. A disponibilidade do reconhecimento de voz depende do aparelho, da versão do Android e do idioma instalado.
+
+ORGANIZAÇÃO E ACESSO RÁPIDO
+• pastas e subpastas, tags, notas fixadas, favoritos e arquivo,
+• pastas inteligentes e ordenação,
+• pesquisa em títulos, conteúdo, pastas e tags,
+• links entre notas e backlinks,
+• histórico de versões, salvamento automático, rascunhos e Lixeira,
+• abas de notas recentes, visualização para tablet e widget de nota,
+• ações rápidas para nota, lista, digitalização, gravação e escrita.
+
+PRIVACIDADE E PROTEÇÃO
+Proteja notas selecionadas e anexos compatíveis com criptografia AES-GCM. O app oferece PIN, autenticação biométrica e bloqueio completo. A pesquisa no conteúdo de notas protegidas fica disponível após a autenticação e é executada na memória da sessão atual.
+
+LEMBRETES
+Defina lembretes únicos, diários, semanais, mensais ou apenas em dias úteis. Uma notificação pode ser adiada por 10 minutos ou marcada como concluída.
+
+IMPORTAÇÃO, EXPORTAÇÃO E PDF
+Importe notas e arquivos, compartilhe texto com anexos e exporte para TXT, Markdown, PDF, HTML e DOCX. Adicione anotações vetoriais manuscritas a PDFs existentes sem converter a página inteira em imagem. O Web Clipper salva o texto de uma página HTTPS selecionada junto com a fonte.
+
+BACKUP E SINCRONIZAÇÃO
+Crie backups manuais ou automáticos. O Sync PRO sincroniza notas por uma pasta selecionada no seletor do Android. Pode ser uma pasta local ou uma pasta disponibilizada por um provedor de nuvem compatível no seletor do sistema. Backups automáticos e sincronização são protegidos por senha. O app não opera um serviço de nuvem próprio.
+
+CELULAR + WEAR OS
+Conecte o app a um relógio Wear OS compatível. As notas são sincronizadas automaticamente, e o botão Sincronizar também inicia o processo manualmente. A barra de progresso termina com uma marca verde quando o relógio confirma o recebimento. No relógio, você pode consultar notas, criar e editar texto, alterar os estados fixada, favorita, arquivada e protegida e trabalhar offline. O conteúdo e os dados de organização são sincronizados; alterações simultâneas são mantidas como cópia de conflito. Os detalhes dos anexos aparecem no relógio e os arquivos podem ser baixados sob demanda.
+
+O NOTE VAULT PRO não contém anúncios. Os recursos de rede são usados para sincronização, download de modelos de reconhecimento, compras no Google Play ou quando você inicia o Web Clipper.
+
+[ja-JP]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+暗号化、手書き、OCR、同期に対応した Android／Wear OS 用プライベートノート。
+
+FULL DESCRIPTION:
+NOTE VAULT PRO は、端末内の保存を中心に設計された Android 用の多機能ノートアプリです。ノートは端末に保存され、利用にアカウントは必要ありません。
+
+通常のノート、チェックリスト、表、コードブロック、LaTeX 数式を作成できます。画像、PDF、録音、その他の添付ファイルにも対応しています。ペン、鉛筆、蛍光ペン、消しゴム、図形、定規、三角定規、投げ縄を使って手書きできます。手書き認識、文書 OCR、端末上の音声入力により、内容をすばやくテキスト化できます。音声認識の利用可否は、端末、Android のバージョン、インストール済み言語によって異なります。
+
+整理とクイックアクセス
+• フォルダーとサブフォルダー、タグ、ピン留め、お気に入り、アーカイブ
+• スマートフォルダーと並べ替え
+• タイトル、本文、フォルダー、タグの検索
+• ノート間リンクとバックリンク
+• バージョン履歴、自動保存、下書き、ゴミ箱
+• 最近のノートのタブ、タブレット表示、選択したノートのウィジェット
+• ノート、チェックリスト、スキャン、録音、手書きのクイック操作
+
+プライバシーと保護
+選択したノートと対応する添付ファイルを AES-GCM で暗号化できます。PIN、生体認証、アプリ全体のロックに対応しています。保護されたノートの本文検索は認証後に利用でき、現在のセッションのメモリ上で実行されます。
+
+リマインダー
+1 回、毎日、毎週、毎月、平日のみのリマインダーを設定できます。通知は 10 分間スヌーズするか、完了として処理できます。
+
+インポート、エクスポート、PDF
+ノートやファイルをインポートし、添付ファイル付きでテキストを共有できます。TXT、Markdown、PDF、HTML、DOCX にエクスポートできます。既存の PDF 全体を画像化せず、手書きのベクター注釈を追加できます。Web Clipper は、指定した HTTPS ページのテキストを参照元とともに保存します。
+
+バックアップと同期
+手動または自動でバックアップできます。Sync PRO は Android のシステム選択画面で指定したフォルダーを通してノートを同期します。ローカルフォルダーのほか、システムのファイル選択画面に表示される対応クラウド事業者のフォルダーを利用できます。自動バックアップと同期はパスワードで保護されます。このアプリは独自のクラウドサービスを運営しません。
+
+スマートフォン + WEAR OS
+対応する Wear OS ウォッチと接続できます。ノートは自動同期され、同期ボタンから手動でも開始できます。ウォッチが受信を確認すると、進捗バーは緑のチェックで完了します。ウォッチではノートの閲覧、テキストの作成と編集、固定・お気に入り・アーカイブ・保護状態の変更、オフライン作業ができます。ノート内容と整理情報が同期され、同時変更は競合コピーとして保持されます。添付ファイルの情報を確認し、必要なファイルだけをダウンロードできます。
+
+NOTE VAULT PRO には広告がありません。ネットワーク機能は、同期、認識モデルのダウンロード、Google Play での購入、または Web Clipper の起動時に使用されます。
+
+[ko-KR]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+암호화, 필기, OCR, 동기화를 지원하는 Android 및 Wear OS용 개인 노트.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO는 기기 내 저장을 중심으로 설계된 Android용 다기능 노트 앱입니다. 노트는 기기에 저장되며 앱을 사용하는 데 계정이 필요하지 않습니다.
+
+일반 노트, 체크리스트, 표, 코드 블록 및 LaTeX 수식을 만들 수 있습니다. 이미지, PDF 문서, 녹음 및 기타 첨부 파일을 추가하세요. 펜, 연필, 형광펜, 지우개, 도형, 자, 삼각자 및 올가미로 필기할 수 있습니다. 필기 인식, 문서 OCR 및 기기 내 받아쓰기를 사용하면 콘텐츠를 더 빠르게 텍스트로 바꿀 수 있습니다. 음성 인식 사용 가능 여부는 기기, Android 버전 및 설치된 언어에 따라 달라집니다.
+
+정리 및 빠른 접근
+• 폴더와 하위 폴더, 태그, 고정 노트, 즐겨찾기 및 보관함
+• 스마트 폴더 및 정렬
+• 제목, 본문, 폴더 및 태그 검색
+• 노트 간 링크 및 백링크
+• 버전 기록, 자동 저장, 초안 및 휴지통
+• 최근 노트 탭, 태블릿 보기 및 선택한 노트 위젯
+• 노트, 체크리스트, 스캔, 녹음 및 필기 빠른 작업
+
+개인정보 보호
+선택한 노트와 지원되는 첨부 파일을 AES-GCM으로 암호화할 수 있습니다. PIN, 생체 인증 및 전체 앱 잠금을 제공합니다. 보호된 노트의 본문 검색은 인증 후 사용할 수 있으며 현재 세션의 메모리에서 실행됩니다.
+
+알림
+한 번, 매일, 매주, 매월 또는 평일에만 알림을 설정할 수 있습니다. 알림을 10분 동안 미루거나 완료로 표시할 수 있습니다.
+
+가져오기, 내보내기 및 PDF
+노트와 파일을 가져오고 첨부 파일과 함께 텍스트를 공유하며 TXT, Markdown, PDF, HTML 및 DOCX로 내보낼 수 있습니다. 기존 PDF의 전체 페이지를 이미지로 변환하지 않고 필기 벡터 주석을 추가할 수 있습니다. Web Clipper는 선택한 HTTPS 페이지의 텍스트와 출처를 함께 저장합니다.
+
+백업 및 동기화
+수동 또는 자동 백업을 만들 수 있습니다. Sync PRO는 Android 시스템 선택 화면에서 지정한 폴더를 통해 노트를 동기화합니다. 로컬 폴더나 시스템 파일 선택 화면에 표시되는 지원 클라우드 제공업체의 폴더를 사용할 수 있습니다. 자동 백업과 동기화는 비밀번호로 보호됩니다. 앱은 자체 클라우드 서비스를 운영하지 않습니다.
+
+휴대전화 + WEAR OS
+호환되는 Wear OS 시계와 연결할 수 있습니다. 노트는 자동으로 동기화되며 동기화 버튼으로 직접 시작할 수도 있습니다. 시계가 수신을 확인하면 진행률 표시줄이 녹색 체크로 완료됩니다. 시계에서 노트를 보고 텍스트를 만들고 편집하며 고정, 즐겨찾기, 보관 및 보호 상태를 변경하고 오프라인으로 작업할 수 있습니다. 노트 내용과 정리 정보가 동기화되며 동시 변경은 충돌 사본으로 보관됩니다. 첨부 파일 정보를 확인하고 필요한 파일을 요청할 때 다운로드할 수 있습니다.
+
+NOTE VAULT PRO에는 광고가 없습니다. 네트워크 기능은 동기화, 인식 모델 다운로드, Google Play 구매 또는 Web Clipper 실행 시 사용됩니다.
+
+[zh-CN]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+适用于 Android 和 Wear OS 的私人笔记，支持加密、手写、OCR 和同步。
+
+FULL DESCRIPTION:
+NOTE VAULT PRO 是一款以本机存储为核心的 Android 多功能笔记应用。笔记保存在设备上，使用应用无需注册账户。
+
+你可以创建普通笔记、清单、表格、代码块和 LaTeX 公式，并添加图片、PDF 文档、录音及其他附件。手写功能提供钢笔、铅笔、荧光笔、橡皮擦、图形、直尺、三角尺和套索工具。手写识别、文档 OCR 和设备端语音输入可帮助你更快地将内容转换为文字。语音识别是否可用取决于设备、Android 版本和已安装的语言。
+
+整理与快速访问
+• 文件夹和子文件夹、标签、置顶、收藏及归档
+• 智能文件夹和排序
+• 搜索标题、正文、文件夹及标签
+• 笔记间链接及反向链接
+• 版本历史、自动保存、草稿及回收站
+• 最近笔记标签页、平板预览及指定笔记小组件
+• 快速创建笔记、清单、扫描、录音和手写内容
+
+隐私与保护
+可使用 AES-GCM 加密选定笔记及受支持的附件。应用支持 PIN、生物识别和整款应用锁定。通过身份验证后可搜索受保护笔记的正文，搜索仅在当前会话的内存中进行。
+
+提醒
+可设置单次、每日、每周、每月或仅工作日提醒。通知可延后 10 分钟或标记为完成。
+
+导入、导出与 PDF
+可导入笔记和文件，连同附件分享文字，并导出为 TXT、Markdown、PDF、HTML 和 DOCX。可在不将整个页面转换为图片的情况下，为现有 PDF 添加手写矢量批注。Web Clipper 会保存所选 HTTPS 网页的文字及其来源。
+
+备份与同步
+可创建手动或自动备份。Sync PRO 通过 Android 系统选择器中指定的文件夹同步笔记。该文件夹可以是本地文件夹，也可以是系统文件选择器中受支持云服务商提供的文件夹。自动备份和同步受密码保护。应用不运营自己的云服务。
+
+手机 + WEAR OS
+可连接兼容的 Wear OS 手表。笔记会自动同步，也可通过“同步”按钮手动启动。手表确认接收后，进度条以绿色对勾结束。你可以在手表上查看笔记、创建和编辑文字、更改置顶、收藏、归档和保护状态，并可离线使用。笔记内容和整理数据会同步；同时发生的修改会保留为冲突副本。手表可显示附件信息，并按需下载文件。
+
+NOTE VAULT PRO 不含广告。网络功能用于同步、下载识别模型、Google Play 购买或用户启动 Web Clipper 时。
+
+[tr-TR]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Android ve Wear OS için şifreleme, el yazısı, OCR ve eşitlemeli notlar.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO, verileri öncelikle cihazda tutmak üzere tasarlanmış kapsamlı bir Android not uygulamasıdır. Notlar cihazınızda saklanır ve uygulamayı kullanmak için hesap gerekmez.
+
+Normal notlar, kontrol listeleri, tablolar, kod blokları ve LaTeX formülleri oluşturun. Resimler, PDF belgeleri, ses kayıtları ve diğer ekleri ekleyin. Kalem, kurşun kalem, fosforlu kalem, silgi, şekiller, cetvel, gönye ve kement ile el yazısı yazın. El yazısı tanıma, belge OCR özelliği ve cihaz içi dikte, içerikleri daha hızlı metne dönüştürmenize yardımcı olur. Ses tanımanın kullanılabilirliği cihaza, Android sürümüne ve yüklü dile bağlıdır.
+
+DÜZENLEME VE HIZLI ERİŞİM
+• klasörler ve alt klasörler, etiketler, sabitlenmiş notlar, favoriler ve arşiv,
+• akıllı klasörler ve sıralama,
+• başlıklar, içerik, klasörler ve etiketlerde arama,
+• notlar arası bağlantılar ve geri bağlantılar,
+• sürüm geçmişi, otomatik kayıt, taslaklar ve Çöp Kutusu,
+• son not sekmeleri, tablet önizlemesi ve seçilen not için widget,
+• not, kontrol listesi, tarama, kayıt ve el yazısı için hızlı işlemler.
+
+GİZLİLİK VE KORUMA
+Seçili notları ve desteklenen ekleri AES-GCM ile şifreleyin. Uygulama PIN, biyometrik doğrulama ve tam uygulama kilidi sunar. Korunan notların içeriğinde arama, kimlik doğrulamadan sonra kullanılabilir ve geçerli oturumun belleğinde çalışır.
+
+HATIRLATICILAR
+Tek seferlik, günlük, haftalık, aylık veya yalnızca hafta içi hatırlatıcılar ayarlayın. Bir bildirim 10 dakika ertelenebilir veya tamamlandı olarak işaretlenebilir.
+
+İÇE AKTARMA, DIŞA AKTARMA VE PDF
+Notları ve dosyaları içe aktarın, metni eklerle paylaşın ve TXT, Markdown, PDF, HTML ile DOCX biçimlerinde dışa aktarın. Tüm sayfayı görüntüye dönüştürmeden mevcut PDF'lere el yazısı vektör açıklamaları ekleyin. Web Clipper, seçilen HTTPS sayfasındaki metni kaynağıyla birlikte kaydeder.
+
+YEDEKLEME VE EŞİTLEME
+Manuel veya otomatik yedekler oluşturun. Sync PRO, Android sistem seçicisinde belirlenen bir klasör üzerinden notları eşitler. Bu, yerel bir klasör veya sistem dosya seçicisinde görünen desteklenen bir bulut sağlayıcısının klasörü olabilir. Otomatik yedekler ve eşitleme parola ile korunur. Uygulama kendi bulut hizmetini işletmez.
+
+TELEFON + WEAR OS
+Uygulamayı uyumlu bir Wear OS saate bağlayın. Notlar otomatik eşitlenir; Eşitle düğmesi işlemi elle de başlatır. Saat alımı onayladığında ilerleme çubuğu yeşil onay işaretiyle tamamlanır. Saatte notları görebilir, metin oluşturup düzenleyebilir, sabit, favori, arşiv ve koruma durumlarını değiştirebilir ve çevrimdışı çalışabilirsiniz. İçerik ve düzenleme verileri eşitlenir; eş zamanlı değişiklikler çakışma kopyası olarak korunur. Ek bilgileri görünür ve dosyalar isteğe bağlı indirilir.
+
+NOTE VAULT PRO reklam içermez. Ağ özellikleri eşitleme, tanıma modeli indirme, Google Play satın alımları veya Web Clipper başlatıldığında kullanılır.
+
+[id-ID]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Catatan pribadi Android dan Wear OS dengan enkripsi, tulisan, OCR, sinkronisasi.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO adalah aplikasi catatan lengkap untuk Android yang dirancang untuk menyimpan data terutama di perangkat. Catatan disimpan di perangkat dan Anda tidak memerlukan akun untuk menggunakan aplikasi.
+
+Buat catatan biasa, daftar periksa, tabel, blok kode, dan rumus LaTeX. Tambahkan gambar, dokumen PDF, rekaman, dan lampiran lainnya. Menulis dengan pena, pensil, penyorot, penghapus, bentuk, penggaris, segitiga, dan laso. Pengenalan tulisan tangan, OCR dokumen, dan dikte lokal membantu mengubah konten menjadi teks lebih cepat. Ketersediaan pengenalan suara bergantung pada perangkat, versi Android, dan bahasa yang terpasang.
+
+PENGATURAN DAN AKSES CEPAT
+• folder dan subfolder, tag, catatan yang disematkan, favorit, dan arsip,
+• folder pintar dan pengurutan,
+• pencarian dalam judul, isi, folder, dan tag,
+• tautan antarcatatan dan tautan balik,
+• riwayat versi, penyimpanan otomatis, draf, dan Sampah,
+• tab catatan terbaru, pratinjau tablet, dan widget catatan pilihan,
+• tindakan cepat untuk catatan, daftar periksa, pemindaian, rekaman, dan tulisan tangan.
+
+PRIVASI DAN PERLINDUNGAN
+Lindungi catatan pilihan dan lampiran yang didukung dengan enkripsi AES-GCM. Aplikasi menyediakan PIN, autentikasi biometrik, dan kunci aplikasi penuh. Pencarian isi catatan yang dilindungi tersedia setelah autentikasi dan berjalan di memori sesi saat ini.
+
+PENGINGAT
+Atur pengingat satu kali, harian, mingguan, bulanan, atau hanya pada hari kerja. Notifikasi dapat ditunda selama 10 menit atau ditandai selesai.
+
+IMPOR, EKSPOR, DAN PDF
+Impor catatan dan file, bagikan teks beserta lampiran, lalu ekspor ke TXT, Markdown, PDF, HTML, dan DOCX. Tambahkan anotasi vektor tulisan tangan ke PDF yang ada tanpa mengubah seluruh halaman menjadi gambar. Web Clipper menyimpan teks halaman HTTPS pilihan beserta sumbernya.
+
+CADANGAN DAN SINKRONISASI
+Buat cadangan manual atau otomatis. Sync PRO menyinkronkan catatan melalui folder yang dipilih dengan pemilih sistem Android. Folder ini dapat berupa folder lokal atau folder dari penyedia cloud yang didukung dan terlihat di pemilih file sistem. Cadangan otomatis dan sinkronisasi dilindungi kata sandi. Aplikasi tidak mengoperasikan layanan cloud sendiri.
+
+PONSEL + WEAR OS
+Hubungkan aplikasi ke jam Wear OS yang kompatibel. Catatan disinkronkan otomatis, dan tombol Sinkronkan juga dapat memulai proses secara manual. Bilah progres berakhir dengan tanda centang hijau setelah jam mengonfirmasi penerimaan. Di jam, Anda dapat melihat catatan, membuat dan mengedit teks, mengubah status sematkan, favorit, arsip dan perlindungan, serta bekerja offline. Isi dan data organisasi disinkronkan; perubahan bersamaan disimpan sebagai salinan konflik. Detail lampiran terlihat di jam dan file dapat diunduh sesuai permintaan.
+
+NOTE VAULT PRO tidak berisi iklan. Fitur jaringan digunakan untuk sinkronisasi, pengunduhan model pengenalan, pembelian Google Play, atau saat Anda menjalankan Web Clipper.
+
+[ru-RU]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Личные заметки для Android и Wear OS: шифрование, рукопись, OCR и синхронизация.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO — многофункциональное приложение для заметок на Android, ориентированное на хранение данных на устройстве. Заметки сохраняются на устройстве, а для работы с приложением не требуется учетная запись.
+
+Создавайте обычные заметки, списки задач, таблицы, блоки кода и формулы LaTeX. Добавляйте изображения, PDF-документы, аудиозаписи и другие вложения. Пишите от руки пером, карандашом или маркером и используйте ластик, фигуры, линейку, угольник и лассо. Распознавание рукописного текста, OCR документов и локальный голосовой ввод помогают быстрее преобразовывать материалы в текст. Доступность распознавания речи зависит от устройства, версии Android и установленного языка.
+
+ОРГАНИЗАЦИЯ И БЫСТРЫЙ ДОСТУП
+• папки и подпапки, теги, закрепленные заметки, избранное и архив,
+• умные папки и сортировка,
+• поиск по заголовкам, содержимому, папкам и тегам,
+• ссылки между заметками и обратные ссылки,
+• история версий, автосохранение, черновики и Корзина,
+• вкладки недавних заметок, режим планшета и виджет выбранной заметки,
+• быстрые действия для заметок, списков, сканирования, записи и рукописного ввода.
+
+КОНФИДЕНЦИАЛЬНОСТЬ И ЗАЩИТА
+Защищайте выбранные заметки и поддерживаемые вложения с помощью шифрования AES-GCM. Приложение поддерживает PIN-код, биометрическую аутентификацию и полную блокировку. Поиск по содержимому защищенных заметок доступен после аутентификации и выполняется в памяти текущего сеанса.
+
+НАПОМИНАНИЯ
+Настраивайте однократные, ежедневные, еженедельные, ежемесячные напоминания или напоминания только по рабочим дням. Уведомление можно отложить на 10 минут или отметить как выполненное.
+
+ИМПОРТ, ЭКСПОРТ И PDF
+Импортируйте заметки и файлы, делитесь текстом с вложениями и экспортируйте данные в TXT, Markdown, PDF, HTML и DOCX. Добавляйте рукописные векторные аннотации в существующие PDF без преобразования всей страницы в изображение. Web Clipper сохраняет текст выбранной HTTPS-страницы вместе с источником.
+
+РЕЗЕРВНОЕ КОПИРОВАНИЕ И СИНХРОНИЗАЦИЯ
+Создавайте резервные копии вручную или автоматически. Sync PRO синхронизирует заметки через папку, выбранную в системном окне Android. Это может быть локальная папка или папка поддерживаемого облачного провайдера, доступная в системном окне выбора файлов. Автоматические копии и синхронизация защищены паролем. У приложения нет собственного облачного сервиса.
+
+ТЕЛЕФОН + WEAR OS
+Подключите приложение к совместимым часам Wear OS. Заметки синхронизируются автоматически, а кнопка «Синхронизировать» запускает процесс вручную. После подтверждения часами индикатор завершается зелёной галочкой. На часах можно просматривать заметки, создавать и редактировать текст, менять состояния закрепления, избранного, архива и защиты, а также работать офлайн. Содержимое и данные организации синхронизируются; одновременные изменения сохраняются как конфликтная копия. Сведения о вложениях видны на часах, файлы загружаются по запросу.
+
+NOTE VAULT PRO не содержит рекламы. Сетевые функции используются для синхронизации, загрузки моделей распознавания, покупок в Google Play или при запуске Web Clipper.
+
+[uk-UA]
+APP NAME:
+NOTE VAULT PRO
+
+SHORT DESCRIPTION:
+Нотатки для Android і Wear OS: шифрування, рукопис, OCR і синхронізація.
+
+FULL DESCRIPTION:
+NOTE VAULT PRO — багатофункціональний застосунок для нотаток на Android, орієнтований на зберігання даних на пристрої. Нотатки зберігаються на пристрої, а для користування застосунком не потрібен обліковий запис.
+
+Створюйте звичайні нотатки, контрольні списки, таблиці, блоки коду та формули LaTeX. Додавайте зображення, PDF-документи, аудіозаписи й інші вкладення. Пишіть від руки пером, олівцем або маркером і використовуйте гумку, фігури, лінійку, косинець і ласо. Розпізнавання рукопису, OCR документів і локальне голосове введення допомагають швидше перетворювати матеріали на текст. Доступність розпізнавання мовлення залежить від пристрою, версії Android і встановленої мови.
+
+ОРГАНІЗАЦІЯ ТА ШВИДКИЙ ДОСТУП
+• папки й підпапки, теги, закріплені нотатки, вибране та архів,
+• розумні папки й сортування,
+• пошук у заголовках, вмісті, папках і тегах,
+• посилання між нотатками та зворотні посилання,
+• історія версій, автозбереження, чернетки та Кошик,
+• вкладки нещодавніх нотаток, режим планшета та віджет вибраної нотатки,
+• швидкі дії для нотатки, списку, сканування, запису та рукопису.
+
+КОНФІДЕНЦІЙНІСТЬ І ЗАХИСТ
+Захищайте вибрані нотатки й підтримувані вкладення за допомогою шифрування AES-GCM. Застосунок підтримує PIN-код, біометричну автентифікацію та повне блокування. Пошук у вмісті захищених нотаток доступний після автентифікації та виконується в пам’яті поточного сеансу.
+
+НАГАДУВАННЯ
+Налаштовуйте одноразові, щоденні, щотижневі, щомісячні нагадування або нагадування лише в робочі дні. Сповіщення можна відкласти на 10 хвилин або позначити як виконане.
+
+ІМПОРТ, ЕКСПОРТ І PDF
+Імпортуйте нотатки й файли, діліться текстом із вкладеннями та експортуйте у TXT, Markdown, PDF, HTML і DOCX. Додавайте рукописні векторні анотації до наявних PDF без перетворення всієї сторінки на зображення. Web Clipper зберігає текст вибраної HTTPS-сторінки разом із джерелом.
+
+РЕЗЕРВНЕ КОПІЮВАННЯ ТА СИНХРОНІЗАЦІЯ
+Створюйте резервні копії вручну або автоматично. Sync PRO синхронізує нотатки через папку, вибрану в системному вікні Android. Це може бути локальна папка або папка підтримуваного хмарного провайдера, доступна в системному вікні вибору файлів. Автоматичні копії та синхронізація захищені паролем. Застосунок не керує власною хмарною службою.
+
+ТЕЛЕФОН + WEAR OS
+Підключіть застосунок до сумісного годинника Wear OS. Нотатки синхронізуються автоматично, а кнопка «Синхронізувати» запускає процес вручну. Після підтвердження годинником індикатор завершується зеленою позначкою. На годиннику можна переглядати нотатки, створювати й редагувати текст, змінювати стани закріплення, обраного, архіву та захисту, а також працювати офлайн. Вміст і дані організації синхронізуються; одночасні зміни зберігаються як конфліктна копія. Відомості про вкладення видно на годиннику, файли завантажуються на запит.
+
+NOTE VAULT PRO не містить реклами. Мережеві функції використовуються для синхронізації, завантаження моделей розпізнавання, покупок Google Play або під час запуску Web Clipper.

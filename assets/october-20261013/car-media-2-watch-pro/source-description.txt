@@ -1,0 +1,467 @@
+CAR MEDIA 2 WATCH PRO — GOOGLE PLAY STORE LISTING — 14 JĘZYKÓW
+Kodowanie: UTF-8 | Plik do wklejania do pól podstawowych informacji o aplikacji.
+Limity: nazwa 30, krótki opis 80, pełny opis 4000 znaków.
+Zweryfikowane względem kodu źródłowego projektu z 10.10.2026.
+UWAGA: Google Play Console nie udostępnia standardowego importu tych pól bezpośrednio z pliku TXT.
+Ustaw język na odpowiedni kod i wklej tekst do 3 pól w Google Play Console.
+
+========================================================================
+Polski [pl-PL]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (59/80):
+Prześlij muzykę na Wear OS i steruj odtwarzaniem z zegarka.
+
+Pełny opis (1728/4000):
+CAR MEDIA 2 WATCH PRO łączy odtwarzacz muzyki w telefonie Android z zegarkiem Wear OS. Pozwala organizować własne pliki audio, przesyłać wybrane utwory na zegarek i sterować odtwarzaniem.
+
+NA TELEFONIE
+• Przeglądaj utwory, albumy i wykonawców oraz wyszukuj muzykę w bibliotece.
+• Importuj pliki audio przez systemowy wybór plików Androida.
+• Twórz playlisty, dodawaj do nich utwory i usuwaj je z list.
+• Korzystaj z odtwarzania, pauzy, przewijania, zmiany utworów, losowania, powtarzania i regulacji głośności.
+• Wysyłaj zaznaczone utwory na sparowany zegarek i sprawdzaj postęp transferu.
+• Włącz tryb samochodowy z większymi przyciskami odtwarzacza.
+
+NA ZEGARKU WEAR OS
+• Przeglądaj lokalną bibliotekę przesłanych utworów i playlisty.
+• Odtwarzaj muzykę zapisaną w pamięci zegarka bez bieżącego połączenia z telefonem, używając zgodnego wyjścia audio.
+• Przełącz się w tryb pilota, aby sterować odtwarzaniem na połączonym telefonie.
+
+WAŻNE INFORMACJE
+Transfer wymaga sparowanego telefonu Android i zegarka Wear OS z usługami Google Play. Odtwarzanie z zegarka bezpośrednio do samochodu jest możliwe tylko wtedy, gdy zegarek i system audio auta obsługują odpowiedni profil Bluetooth; parowanie odbywa się w ustawieniach urządzeń. Tryb samochodowy to widok odtwarzacza na telefonie, a nie integracja z Android Auto. Aplikacja nie przesyła dźwięku z telefonu na zegarek na żywo. Obsługa formatów audio zależy od dekoderów urządzenia.
+
+DOSTĘP
+60-minutowy okres próbny liczony od instalacji, również po zamknięciu aplikacji. Po jego zakończeniu pełną wersję można odblokować jednorazowym zakupem w Google Play. Zakup można przywrócić w ustawieniach. Bez reklam i subskrypcji. Aplikacja nie udostępnia internetowego katalogu muzyki.
+
+
+========================================================================
+English (United States) [en-US]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (63/80):
+Transfer music to Wear OS and control playback from your watch.
+
+Pełny opis (1542/4000):
+CAR MEDIA 2 WATCH PRO connects a music player on your Android phone with a Wear OS smartwatch. Organize your own audio files, transfer selected tracks to the watch, and control playback.
+
+ON YOUR PHONE
+• Browse songs, albums and artists, and search your music library.
+• Import audio files using the Android system file picker.
+• Create playlists and add or remove tracks.
+• Play, pause, seek, skip, shuffle, repeat and adjust volume.
+• Send selected tracks to your paired watch and view transfer progress.
+• Open Car mode for larger playback controls on your phone.
+
+ON YOUR WEAR OS WATCH
+• Browse transferred songs and playlists in the local watch library.
+• Play music saved on the watch without an active phone connection, using a compatible audio output.
+• Switch to Phone mode to control playback on your connected phone.
+
+IMPORTANT
+Transfers require a paired Android phone and Wear OS watch with Google Play services. Direct watch-to-car playback works only if both devices support compatible Bluetooth audio; pairing and audio routing use system settings. Car mode is a larger player view on the phone, not Android Auto integration. The app does not stream live audio from the phone to the watch. Supported audio formats depend on the device's decoders.
+
+ACCESS
+A 60-minute trial starts at installation and continues while the app is closed. After the trial, unlock the full version with a one-time Google Play purchase. You can restore purchases in Settings. No ads or subscriptions. The app does not include an online music catalog.
+
+
+========================================================================
+Deutsch [de-DE]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (71/80):
+Eigene Musik auf Wear OS übertragen und die Wiedergabe per Uhr steuern.
+
+Pełny opis (1730/4000):
+CAR MEDIA 2 WATCH PRO verbindet einen Musikplayer auf dem Android-Smartphone mit einer Wear OS-Smartwatch. Verwalte deine eigenen Audiodateien, übertrage ausgewählte Titel auf die Uhr und steuere die Wiedergabe.
+
+AUF DEM SMARTPHONE
+• Durchsuche Titel, Alben und Interpreten in deiner Musikbibliothek.
+• Importiere Audiodateien über die Android-Dateiauswahl.
+• Erstelle Playlists und füge Titel hinzu oder entferne sie.
+• Nutze Wiedergabe, Pause, Titelsprung, Positionssuche, Zufallswiedergabe, Wiederholung und Lautstärke.
+• Übertrage ausgewählte Titel auf die gekoppelte Uhr und verfolge den Fortschritt.
+• Aktiviere den Automodus mit größeren Bedienelementen auf dem Smartphone.
+
+AUF DER WEAR OS-UHR
+• Durchsuche lokal gespeicherte Titel und Playlists.
+• Spiele übertragene Musik ohne aktive Verbindung zum Smartphone ab, wenn ein kompatibler Audioausgang verfügbar ist.
+• Wechsle in den Telefon-Fernbedienungsmodus, um die Wiedergabe auf dem verbundenen Smartphone zu steuern.
+
+WICHTIG
+Für die Übertragung sind ein gekoppeltes Android-Smartphone und eine Wear OS-Uhr mit Google Play-Diensten erforderlich. Die direkte Audiowiedergabe von der Uhr zum Auto funktioniert nur mit kompatiblen Bluetooth-Audioprofilen beider Geräte; Kopplung und Audioausgabe werden in den Systemeinstellungen festgelegt. Der Automodus ist keine Android Auto-Integration. Es gibt keinen Live-Audiostream vom Smartphone zur Uhr. Unterstützte Audioformate hängen von den Gerätedecodern ab.
+
+TEST UND KAUF
+60 Minuten Testzeit ab Installation, auch bei geschlossener App. Danach kann die Vollversion einmalig über Google Play gekauft werden. Eine Wiederherstellung ist in den Einstellungen möglich. Keine Werbung und keine Abos. Kein Online-Musikkatalog.
+
+
+========================================================================
+Français (France) [fr-FR]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (76/80):
+Transférez votre musique vers Wear OS et contrôlez la lecture sur la montre.
+
+Pełny opis (1858/4000):
+CAR MEDIA 2 WATCH PRO relie un lecteur de musique sur téléphone Android à une montre Wear OS. Organisez vos propres fichiers audio, transférez des morceaux sélectionnés sur la montre et contrôlez la lecture.
+
+SUR LE TÉLÉPHONE
+• Parcourez les titres, albums et artistes et recherchez dans votre bibliothèque musicale.
+• Importez des fichiers audio avec le sélecteur de fichiers Android.
+• Créez des playlists, ajoutez ou retirez des morceaux.
+• Utilisez lecture, pause, piste précédente ou suivante, recherche dans le morceau, lecture aléatoire, répétition et volume.
+• Envoyez des titres sélectionnés vers la montre associée et suivez la progression des transferts.
+• Activez le mode voiture avec des commandes de lecture agrandies sur le téléphone.
+
+SUR LA MONTRE WEAR OS
+• Retrouvez les morceaux transférés et les playlists dans la bibliothèque locale.
+• Écoutez les morceaux enregistrés sur la montre sans connexion active au téléphone, avec une sortie audio compatible.
+• Passez en mode télécommande pour contrôler la lecture sur le téléphone connecté.
+
+À SAVOIR
+Les transferts nécessitent un téléphone Android et une montre Wear OS associés, avec les services Google Play. La lecture directe de la montre vers l'autoradio dépend de la compatibilité des profils audio Bluetooth des deux appareils ; l'association et la sortie audio se règlent dans le système. Le mode voiture n'est pas une intégration Android Auto. L'application ne diffuse pas le son du téléphone vers la montre en temps réel. Les formats audio compatibles dépendent des décodeurs de l'appareil.
+
+ESSAI ET ACHAT
+Essai de 60 minutes à partir de l'installation, même lorsque l'application est fermée. Ensuite, la version complète se débloque par un achat unique sur Google Play, restaurable dans les paramètres. Sans publicité ni abonnement. Aucun catalogue musical en ligne n'est fourni.
+
+
+========================================================================
+Español (España) [es-ES]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (64/80):
+Pasa música a Wear OS y controla la reproducción desde tu reloj.
+
+Pełny opis (1801/4000):
+CAR MEDIA 2 WATCH PRO conecta un reproductor de música de tu teléfono Android con un reloj Wear OS. Organiza tus archivos de audio, transfiere las canciones que elijas al reloj y controla la reproducción.
+
+EN EL TELÉFONO
+• Explora canciones, álbumes y artistas y busca en tu biblioteca musical.
+• Importa archivos de audio con el selector de archivos de Android.
+• Crea listas de reproducción y añade o quita canciones.
+• Reproduce, pausa, avanza, retrocede, cambia de pista, usa el modo aleatorio, repite y ajusta el volumen.
+• Envía canciones seleccionadas al reloj vinculado y consulta el progreso de la transferencia.
+• Activa el modo coche con controles de reproducción más grandes en el teléfono.
+
+EN EL RELOJ WEAR OS
+• Consulta la biblioteca local de canciones transferidas y las listas de reproducción.
+• Escucha la música guardada en el reloj sin una conexión activa con el teléfono, usando una salida de audio compatible.
+• Cambia al modo de control remoto para manejar la música que suena en el teléfono conectado.
+
+IMPORTANTE
+La transferencia requiere un teléfono Android y un reloj Wear OS vinculados con los servicios de Google Play. Para reproducir audio directamente del reloj al coche, ambos dispositivos deben admitir perfiles de audio Bluetooth compatibles; el emparejamiento se realiza en los ajustes del sistema. El modo coche no equivale a integración con Android Auto. No se transmite audio en directo del teléfono al reloj. Los formatos admitidos dependen de los decodificadores del dispositivo.
+
+PRUEBA Y COMPRA
+Prueba de 60 minutos desde la instalación, incluso con la aplicación cerrada. Después, desbloquea la versión completa con un único pago en Google Play. Puedes restaurar la compra en Ajustes. Sin anuncios ni suscripciones. No incluye un catálogo de música en línea.
+
+
+========================================================================
+Italiano [it-IT]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (72/80):
+Trasferisci musica su Wear OS e controlla la riproduzione dall’orologio.
+
+Pełny opis (1737/4000):
+CAR MEDIA 2 WATCH PRO collega un lettore musicale sul telefono Android a uno smartwatch Wear OS. Organizza i tuoi file audio, trasferisci i brani selezionati sull'orologio e controlla la riproduzione.
+
+SUL TELEFONO
+• Sfoglia brani, album e artisti e cerca nella tua libreria musicale.
+• Importa file audio usando il selettore documenti di Android.
+• Crea playlist e aggiungi o rimuovi brani.
+• Usa riproduzione, pausa, ricerca nel brano, salto traccia, riproduzione casuale, ripetizione e volume.
+• Invia i brani selezionati all'orologio associato e controlla l'avanzamento del trasferimento.
+• Attiva la modalità auto con comandi di riproduzione più grandi sul telefono.
+
+SULL'OROLOGIO WEAR OS
+• Sfoglia la libreria locale dei brani trasferiti e le playlist.
+• Ascolta la musica salvata sull'orologio senza una connessione attiva al telefono, con un'uscita audio compatibile.
+• Passa alla modalità telecomando per controllare la riproduzione sul telefono connesso.
+
+IMPORTANTE
+Il trasferimento richiede un telefono Android e un orologio Wear OS associati con i servizi Google Play. L'audio diretto dall'orologio all'auto richiede profili Bluetooth audio compatibili su entrambi i dispositivi; associazione e uscita audio si configurano nelle impostazioni di sistema. La modalità auto non è un'integrazione Android Auto. Non è previsto lo streaming audio in tempo reale dal telefono all'orologio. I formati supportati dipendono dai decoder del dispositivo.
+
+PROVA E ACQUISTO
+Prova di 60 minuti dall'installazione, anche con l'app chiusa. Al termine puoi sbloccare la versione completa con un acquisto una tantum su Google Play, ripristinabile dalle Impostazioni. Nessuna pubblicità o abbonamento. Non include un catalogo musicale online.
+
+
+========================================================================
+Português (Brasil) [pt-BR]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (70/80):
+Transfira músicas para o Wear OS e controle a reprodução pelo relógio.
+
+Pełny opis (1709/4000):
+CAR MEDIA 2 WATCH PRO conecta um player de música no celular Android a um relógio Wear OS. Organize seus próprios arquivos de áudio, transfira as faixas selecionadas para o relógio e controle a reprodução.
+
+NO CELULAR
+• Navegue por músicas, álbuns e artistas e pesquise na biblioteca musical.
+• Importe arquivos de áudio pelo seletor de arquivos do Android.
+• Crie playlists e adicione ou remova faixas.
+• Use reproduzir, pausar, avançar, voltar, buscar no áudio, reprodução aleatória, repetição e volume.
+• Envie faixas selecionadas ao relógio pareado e acompanhe o progresso da transferência.
+• Abra o modo carro para usar controles de reprodução maiores na tela do celular.
+
+NO RELÓGIO WEAR OS
+• Acesse a biblioteca local com as faixas transferidas e playlists.
+• Ouça músicas salvas no relógio sem manter o celular conectado, com uma saída de áudio compatível.
+• Alterne para o modo controle remoto para comandar a reprodução no celular conectado.
+
+IMPORTANTE
+A transferência exige um celular Android e um relógio Wear OS pareados com o Google Play Services. O áudio direto do relógio para o carro só funciona quando ambos oferecem perfis Bluetooth de áudio compatíveis; pareamento e saída são configurados pelo sistema. O modo carro não oferece integração com Android Auto. O aplicativo não transmite áudio ao vivo do celular para o relógio. Os formatos de áudio aceitos dependem dos decodificadores do dispositivo.
+
+TESTE E COMPRA
+Teste de 60 minutos a partir da instalação, inclusive com o aplicativo fechado. Depois, desbloqueie a versão completa com uma compra única no Google Play. É possível restaurar a compra nas Configurações. Sem anúncios ou assinaturas. Não inclui catálogo de músicas on-line.
+
+
+========================================================================
+日本語 [ja-JP]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (33/80):
+音楽をWear OSウォッチに転送し、時計から再生を操作できます。
+
+Pełny opis (828/4000):
+CAR MEDIA 2 WATCH PROは、AndroidスマートフォンとWear OSスマートウォッチで自分の音楽を楽しむための音楽プレーヤーです。端末内の音声ファイルを整理し、選んだ曲を時計へ転送して再生を操作できます。
+
+スマートフォンでできること
+• 曲、アルバム、アーティスト別にライブラリを表示し、曲を検索。
+• Androidのファイル選択画面から音声ファイルを取り込み。
+• プレイリストの作成、曲の追加と削除。
+• 再生、一時停止、曲送り、シーク、シャッフル、リピート、音量調整。
+• ペア設定済みの時計へ選択した曲を送り、転送状況を確認。
+• 大きな操作ボタンを表示する車内向けモード。
+
+Wear OSウォッチでできること
+• 転送済みの曲とプレイリストを時計内のライブラリで確認。
+• 対応する音声出力機器があれば、スマートフォンとの接続がなくても時計に保存した曲を再生。
+• リモコンモードで接続中のスマートフォンの再生を操作。
+
+ご利用上の注意
+転送には、Google Playサービスを利用できるAndroidスマートフォンとWear OSウォッチのペア設定が必要です。時計から車のオーディオへ直接音を出すには、双方が対応するBluetoothオーディオプロファイルを備えている必要があります。接続先は端末の設定で選びます。車内向けモードはスマートフォン上の操作画面であり、Android Auto連携ではありません。スマートフォンの音を時計へリアルタイム配信する機能はありません。再生可能な音声形式は端末のデコーダーによって異なります。
+
+試用と購入
+インストール時から60分間の試用期間があります。アプリを閉じている間も時間は経過します。試用後はGoogle Playでの一度きりの購入でフル機能を解除できます。設定から購入を復元できます。広告とサブスクリプションはありません。オンライン音楽配信カタログは含まれません。
+
+
+========================================================================
+한국어 [ko-KR]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (36/80):
+음악을 Wear OS 시계로 전송하고 시계에서 재생을 제어하세요.
+
+Pełny opis (906/4000):
+CAR MEDIA 2 WATCH PRO는 Android 휴대전화와 Wear OS 스마트워치를 연결해 사용자의 음악 파일을 관리하는 음악 플레이어입니다. 휴대전화의 노래를 선택해 시계로 전송하고 재생을 제어할 수 있습니다.
+
+휴대전화 기능
+• 노래, 앨범, 아티스트별로 음악을 찾아보고 검색합니다.
+• Android 시스템 파일 선택기로 오디오 파일을 가져옵니다.
+• 재생목록을 만들고 노래를 추가하거나 제거합니다.
+• 재생, 일시정지, 이전/다음 곡, 탐색, 셔플, 반복, 음량 조절을 사용합니다.
+• 연결된 시계로 선택한 곡을 전송하고 진행 상태를 확인합니다.
+• 큰 재생 버튼이 표시되는 차량 모드를 엽니다.
+
+WEAR OS 시계 기능
+• 시계에 저장된 곡과 재생목록을 찾아봅니다.
+• 호환되는 오디오 출력 장치가 있으면 휴대전화에 연결하지 않아도 시계에 저장된 음악을 재생할 수 있습니다.
+• 휴대전화 리모컨 모드로 연결된 휴대전화의 재생을 제어합니다.
+
+알아두세요
+전송하려면 Google Play 서비스가 있는 Android 휴대전화와 Wear OS 시계가 페어링되어 있어야 합니다. 시계에서 차량 오디오로 직접 재생하려면 두 장치 모두 호환되는 Bluetooth 오디오 프로필을 지원해야 하며 연결과 출력 선택은 시스템 설정에서 합니다. 차량 모드는 휴대전화의 큰 재생 화면이며 Android Auto 통합 기능이 아닙니다. 휴대전화의 소리를 시계로 실시간 스트리밍하지 않습니다. 지원 오디오 형식은 기기 디코더에 따라 달라집니다.
+
+체험 및 구매
+설치 시점부터 60분 동안 체험할 수 있으며 앱을 닫아도 시간이 계속 흐릅니다. 이후 Google Play에서 한 번 구매하면 전체 기능이 잠금 해제됩니다. 설정에서 구매를 복원할 수 있습니다. 광고와 구독이 없습니다. 온라인 음악 카탈로그는 제공하지 않습니다.
+
+
+========================================================================
+简体中文 [zh-CN]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (27/80):
+将音乐传至 Wear OS 手表，并在手表上控制播放。
+
+Pełny opis (639/4000):
+CAR MEDIA 2 WATCH PRO 是连接 Android 手机和 Wear OS 智能手表的本地音乐播放器。您可以整理自己的音频文件，将选中的歌曲传到手表，并控制音乐播放。
+
+手机功能
+• 按歌曲、专辑和歌手浏览音乐库，并搜索曲目。
+• 使用 Android 系统文件选择器导入音频文件。
+• 创建播放列表，添加或移除歌曲。
+• 控制播放、暂停、上一首或下一首、进度、随机播放、循环播放和音量。
+• 将选中的歌曲发送到已配对手表，并查看传输进度。
+• 使用车载模式，在手机上显示更大的播放控件。
+
+WEAR OS 手表功能
+• 查看已传输的歌曲和本地播放列表。
+• 配有兼容的音频输出设备时，无需持续连接手机也能播放手表内保存的音乐。
+• 切换到手机遥控模式，控制已连接手机上的音乐播放。
+
+使用须知
+传输音乐需要已配对的 Android 手机和 Wear OS 手表，并使用 Google Play 服务。只有手表和车载音响都支持兼容的蓝牙音频协议时，才能将手表音频直接播放到汽车；配对和输出选择须在系统设置中完成。车载模式只是手机上的大按钮播放界面，并不提供 Android Auto 集成。本应用不支持从手机向手表实时串流音频。可播放的音频格式取决于设备的解码器。
+
+试用与购买
+安装后可试用 60 分钟，关闭应用后试用时间仍会继续计算。试用结束后可通过 Google Play 一次性购买解锁完整版本，并可在设置中恢复购买。无广告、无订阅。不提供在线音乐曲库。
+
+
+========================================================================
+Türkçe [tr-TR]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (63/80):
+Müziğinizi Wear OS saate aktarın, çalmayı saatten kontrol edin.
+
+Pełny opis (1689/4000):
+CAR MEDIA 2 WATCH PRO, Android telefonunuzdaki müzik çaları Wear OS akıllı saatinize bağlar. Kendi ses dosyalarınızı düzenleyin, seçtiğiniz parçaları saate aktarın ve oynatmayı kontrol edin.
+
+TELEFONDA
+• Şarkıları, albümleri ve sanatçıları görüntüleyin; müzik arayın.
+• Android sistem dosya seçicisinden ses dosyaları içe aktarın.
+• Çalma listeleri oluşturun, parça ekleyin veya kaldırın.
+• Oynat, duraklat, parça değiştir, ileri/geri sar, karıştır, tekrarla ve ses seviyesi kontrollerini kullanın.
+• Seçtiğiniz parçaları eşleştirilmiş saate gönderin ve aktarım ilerlemesini izleyin.
+• Telefonda daha büyük oynatma düğmeleri için Araç modunu açın.
+
+WEAR OS SAATTE
+• Saate aktarılmış müzikleri ve çalma listelerini yerel kitaplıkta görün.
+• Uyumlu bir ses çıkışı varsa telefon bağlantısı olmadan saatte kayıtlı müzikleri çalın.
+• Bağlı telefondaki oynatmayı yönetmek için telefon kumandası moduna geçin.
+
+ÖNEMLİ
+Aktarım için Google Play hizmetleri bulunan eşleştirilmiş bir Android telefon ve Wear OS saat gerekir. Saatten araç ses sistemine doğrudan müzik vermek, her iki cihazın da uyumlu Bluetooth ses profillerini desteklemesine bağlıdır; eşleştirme ve ses çıkışı sistem ayarlarından yapılır. Araç modu, telefondaki büyük düğmeli oynatıcı ekranıdır; Android Auto entegrasyonu değildir. Telefondan saate canlı ses akışı yapılmaz. Desteklenen ses biçimleri cihazın kod çözücülerine bağlıdır.
+
+DENEME VE SATIN ALMA
+Kurulumdan itibaren 60 dakikalık deneme sunulur; uygulama kapalıyken de süre ilerler. Ardından Google Play üzerinden tek seferlik satın alma ile tam sürümü açabilirsiniz. Satın alma Ayarlar'dan geri yüklenebilir. Reklam ve abonelik yoktur. Çevrimiçi müzik kataloğu sunulmaz.
+
+
+========================================================================
+Bahasa Indonesia [id]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (61/80):
+Kirim musik ke jam Wear OS dan kendalikan pemutaran dari jam.
+
+Pełny opis (1735/4000):
+CAR MEDIA 2 WATCH PRO menghubungkan pemutar musik di ponsel Android dengan jam tangan Wear OS. Kelola file audio milik Anda, kirim lagu pilihan ke jam tangan, dan kendalikan pemutaran.
+
+DI PONSEL
+• Jelajahi lagu, album, dan artis serta cari musik di pustaka.
+• Impor file audio melalui pemilih file bawaan Android.
+• Buat playlist, lalu tambahkan atau hapus lagu dari daftar.
+• Gunakan putar, jeda, lagu sebelumnya/berikutnya, geser posisi, acak, ulangi, dan volume.
+• Kirim lagu pilihan ke jam tangan yang dipasangkan dan lihat progres transfer.
+• Aktifkan Mode Mobil untuk kontrol pemutar yang lebih besar di layar ponsel.
+
+DI JAM WEAR OS
+• Buka pustaka lokal yang berisi lagu hasil transfer dan playlist.
+• Putar lagu yang sudah tersimpan di jam tanpa koneksi aktif ke ponsel, dengan keluaran audio yang kompatibel.
+• Beralih ke mode remote ponsel untuk mengendalikan pemutaran pada ponsel yang terhubung.
+
+PENTING
+Transfer memerlukan ponsel Android dan jam Wear OS yang dipasangkan serta Google Play Services. Audio langsung dari jam ke mobil hanya dapat digunakan jika kedua perangkat mendukung profil audio Bluetooth yang kompatibel; pemasangan dan pemilihan keluaran dilakukan melalui pengaturan sistem. Mode Mobil hanya menampilkan kontrol besar di ponsel, bukan integrasi Android Auto. Aplikasi tidak mengalirkan audio langsung dari ponsel ke jam secara real-time. Format audio yang didukung bergantung pada dekoder perangkat.
+
+UJI COBA DAN PEMBELIAN
+Masa uji coba 60 menit dihitung sejak pemasangan dan tetap berjalan saat aplikasi ditutup. Setelahnya, buka versi lengkap melalui pembelian satu kali di Google Play. Pembelian dapat dipulihkan di Pengaturan. Tanpa iklan atau langganan. Tidak menyediakan katalog musik online.
+
+
+========================================================================
+Русский [ru-RU]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (68/80):
+Передавайте музыку на Wear OS и управляйте воспроизведением с часов.
+
+Pełny opis (1735/4000):
+CAR MEDIA 2 WATCH PRO связывает музыкальный проигрыватель на телефоне Android с умными часами Wear OS. Организуйте собственные аудиофайлы, переносите выбранные треки на часы и управляйте воспроизведением.
+
+НА ТЕЛЕФОНЕ
+• Просматривайте песни, альбомы и исполнителей, ищите музыку в библиотеке.
+• Импортируйте аудиофайлы через системный выбор файлов Android.
+• Создавайте плейлисты, добавляйте и удаляйте композиции.
+• Используйте воспроизведение, паузу, перемотку, переключение треков, случайный порядок, повтор и регулировку громкости.
+• Отправляйте выбранные треки на сопряжённые часы и отслеживайте передачу.
+• Включайте автомобильный режим с увеличенными кнопками на телефоне.
+
+НА ЧАСАХ WEAR OS
+• Просматривайте сохранённые на часах треки и плейлисты.
+• Слушайте музыку, уже перенесённую на часы, без активного соединения с телефоном при наличии совместимого аудиовыхода.
+• Переключайтесь в режим пульта для управления воспроизведением на подключённом телефоне.
+
+ВАЖНО
+Для передачи нужны сопряжённые телефон Android и часы Wear OS с сервисами Google Play. Прямое воспроизведение звука с часов через автомобильную аудиосистему возможно только при совместимых аудиопрофилях Bluetooth у обоих устройств; сопряжение и выбор выхода выполняются в настройках системы. Автомобильный режим не является интеграцией с Android Auto. Приложение не передаёт аудио с телефона на часы в реальном времени. Поддержка форматов зависит от декодеров устройства.
+
+ПРОБНЫЙ ПЕРИОД И ПОКУПКА
+Пробный период длится 60 минут с момента установки, в том числе когда приложение закрыто. После него полная версия разблокируется однократной покупкой в Google Play. В настройках можно восстановить покупку. Без рекламы и подписок. Онлайн-каталог музыки отсутствует.
+
+
+========================================================================
+Українська [uk]
+========================================================================
+
+Nazwa aplikacji (21/30):
+CAR MEDIA 2 WATCH PRO
+
+Krótki opis (66/80):
+Передавайте музику на Wear OS і керуйте відтворенням із годинника.
+
+Pełny opis (1759/4000):
+CAR MEDIA 2 WATCH PRO поєднує музичний програвач на телефоні Android із розумним годинником Wear OS. Упорядковуйте власні аудіофайли, передавайте вибрані композиції на годинник і керуйте відтворенням.
+
+НА ТЕЛЕФОНІ
+• Переглядайте пісні, альбоми й виконавців та шукайте музику в бібліотеці.
+• Імпортуйте аудіофайли через системний засіб вибору файлів Android.
+• Створюйте плейлисти, додавайте та вилучайте композиції.
+• Користуйтеся відтворенням, паузою, перемотуванням, перемиканням треків, випадковим порядком, повтором і гучністю.
+• Надсилайте вибрані треки на спарений годинник і відстежуйте перебіг передавання.
+• Увімкніть автомобільний режим зі збільшеними кнопками програвача на телефоні.
+
+НА ГОДИННИКУ WEAR OS
+• Переглядайте збережені на годиннику пісні та плейлисти.
+• Відтворюйте музику, уже збережену на годиннику, без активного з'єднання з телефоном за наявності сумісного аудіовиходу.
+• Перемикайтеся в режим пульта для керування відтворенням на підключеному телефоні.
+
+ВАЖЛИВО
+Для передавання потрібні спарені телефон Android і годинник Wear OS із сервісами Google Play. Пряме відтворення звуку з годинника через автомобільну аудіосистему можливе лише за підтримки сумісних аудіопрофілів Bluetooth обома пристроями; спарювання та вибір виходу виконуються в системних налаштуваннях. Автомобільний режим не є інтеграцією з Android Auto. Програма не транслює аудіо з телефона на годинник у реальному часі. Підтримка форматів залежить від декодерів пристрою.
+
+ПРОБНИЙ ПЕРІОД І ПОКУПКА
+Пробний період триває 60 хвилин від встановлення, зокрема коли програма закрита. Після його завершення повну версію можна розблокувати одноразовою покупкою в Google Play. Покупку можна відновити в налаштуваннях. Без реклами й підписок. Онлайн-каталогу музики немає.

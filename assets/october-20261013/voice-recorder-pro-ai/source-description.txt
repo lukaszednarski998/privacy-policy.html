@@ -1,0 +1,45 @@
+VOICE RECORDER PRO AI is a voice recorder and audio recording app for Android and Wear OS. It is designed for voice notes, meetings, interviews, lectures, ideas and longer recordings, with local storage and practical tools for organizing, editing and transcribing audio.
+
+PHONE + WEAR OS
+- Control phone recording from a Wear OS watch.
+- Use the watch itself as an independent voice recorder.
+- Record audio on the watch, add markers and keep a local watch library.
+- Send selected watch recordings to the paired phone.
+
+RECORDING TOOLS
+- PCM16 WAV recording.
+- Pause and resume recording.
+- Add time markers while recording.
+- Real-time waveform and audio level monitoring.
+- Quality profiles plus manual sample-rate and channel settings.
+- Select an available audio input.
+- Optional system noise suppression, echo cancellation and automatic gain control when supported by the device.
+- Silence skipping and recording segmentation.
+- Recovery support for interrupted WAV sessions when recorded PCM data is available.
+
+LIBRARY AND PLAYBACK
+- Search recording names, folders, tags and transcripts.
+- Organize recordings with folders, tags and favorites.
+- Trash and restore recordings before permanent deletion.
+- Playback with seeking, markers and adjustable speed.
+- Import compatible PCM16 WAV files.
+- Share recordings with other apps.
+- Create and restore manual ZIP backups.
+
+AUDIO EDITING AND EXPORT
+- Keep a selected part of a recording or remove the selected part.
+- Merge compatible recordings.
+- Normalize audio.
+- Export to WAV, lossless FLAC, M4A/AAC or OPUS using supported device encoders.
+
+SPEECH TO TEXT AND LOCAL AI TOOLS
+- Transcribe saved recordings on supported Android devices with on-device speech recognition.
+- Use an imported Vosk model for private offline transcription.
+- Edit and save transcripts.
+- Extract a concise summary and explicit tasks from transcript text.
+- Export or share a transcript as a TXT file.
+
+PRIVACY AND PURCHASE
+Recordings are stored locally in the app's private storage unless you choose to export, share, back up or transfer them. The app does not include ads or subscriptions. Access is provided through a 60-minute trial followed by a one-time purchase option.
+
+VOICE RECORDER PRO AI combines a phone voice recorder, Wear OS recorder, remote recording control, audio editor and local speech-to-text tools in one Android app.

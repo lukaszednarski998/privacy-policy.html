@@ -1,0 +1,551 @@
+AI ACTIVE EXHAUST PRO – OBD2
+GOOGLE PLAY – 14 LANGUAGE STORE LISTINGS
+UTF-8
+
+Format: APP NAME / SHORT DESCRIPTION / FULL DESCRIPTION
+
+==============================================================================
+LANGUAGE: pl-PL
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+Aktywny wydech OBD2 z Live Data, dźwiękiem RPM i własnymi brzmieniami.
+[70/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 łączy aktywny dźwięk wydechu z rzeczywistymi danymi OBD2 z samochodu.
+
+Połącz kompatybilny adapter Bluetooth OBD2 / ELM327 i obserwuj dane pojazdu w czasie rzeczywistym. Aplikacja wykorzystuje wybrany dźwięk silnika lub wydechu i dynamicznie dopasowuje jego odtwarzanie do obrotów silnika — wraz ze wzrostem RPM zmienia się szybkość i wysokość dźwięku, a RPM, gaz i obciążenie silnika wpływają na jego głośność.
+
+NAJWAŻNIEJSZE FUNKCJE
+
+• aktywny dźwięk wydechu sterowany danymi OBD2
+• zmiana szybkości i wysokości dźwięku zależnie od RPM
+• reakcja głośności na RPM, gaz i obciążenie silnika
+• Live Data: RPM, położenie przepustnicy, prędkość, obciążenie silnika, temperatury, napięcie i inne obsługiwane parametry OBD2
+• ręczny TEST RPM i TEST GAZU do sprawdzania reakcji dźwięku
+• własna biblioteka dźwięków zapisywana w aplikacji
+• import i ponowne używanie własnych plików dźwiękowych po ponownym uruchomieniu
+• Sound Studio: przycinanie, pętla, fade, bazowe RPM i gain
+• wybór wyjścia audio i kompensacja opóźnienia Bluetooth
+• odtwarzanie dźwięku w tle dzięki usłudze pierwszoplanowej
+• nowoczesny obrotomierz oraz interfejs pionowy i poziomy
+• 14 języków
+• bez reklam i bez subskrypcji
+• 60-minutowy trial oraz jednorazowe odblokowanie pełnej wersji
+
+AI ACTIVE EXHAUST PRO – OBD2 został zaprojektowany dla kierowców, którzy chcą połączyć dane OBD2 z własnym brzmieniem silnika i wydechu. Możesz korzystać z dźwięków dostępnych w aplikacji albo dodać własne próbki i zapisać je w bibliotece.
+
+Do odczytu danych pojazdu wymagany jest kompatybilny adapter Bluetooth OBD2 / ELM327. Zakres dostępnych parametrów zależy od samochodu i adaptera.
+
+[1673/4000 characters]
+
+==============================================================================
+LANGUAGE: en-US
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+OBD2 active exhaust with Live Data, RPM-based sound and custom sound library.
+[77/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 combines active exhaust sound with real vehicle data from OBD2.
+
+Connect a compatible Bluetooth OBD2 / ELM327 adapter and view live vehicle data. The app uses a selected engine or exhaust sample and dynamically follows engine speed — as RPM rises, playback speed and pitch change, while RPM, throttle and engine load influence volume.
+
+MAIN FEATURES
+
+• active exhaust sound controlled by OBD2 data
+• playback speed and pitch change with RPM
+• volume response based on RPM, throttle and engine load
+• Live Data: RPM, throttle position, speed, engine load, temperatures, voltage and other supported OBD2 values
+• manual TEST RPM and TEST THROTTLE controls for checking sound response
+• persistent custom sound library
+• import your own sound files and reuse them after restarting the app
+• Sound Studio with trim, loop, fade, base RPM and gain controls
+• audio output selection and Bluetooth latency compensation
+• background audio playback using a foreground media service
+• modern tachometer with portrait and landscape layouts
+• 14 supported languages
+• no ads and no subscriptions
+• 60-minute trial with a one-time full-version unlock
+
+AI ACTIVE EXHAUST PRO – OBD2 is designed for drivers who want to combine OBD2 vehicle data with their own engine and exhaust sound experience. Use available sounds or add your own samples and keep them saved in the sound library.
+
+A compatible Bluetooth OBD2 / ELM327 adapter is required for vehicle data. Available parameters depend on the vehicle and adapter.
+
+[1528/4000 characters]
+
+==============================================================================
+LANGUAGE: de-DE
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+OBD2 Active Exhaust mit Live-Daten, RPM-Sound und eigener Soundbibliothek.
+[74/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 verbindet aktiven Auspuffsound mit realen Fahrzeugdaten über OBD2.
+
+Verbinde einen kompatiblen Bluetooth-OBD2-/ELM327-Adapter und zeige Fahrzeugdaten in Echtzeit an. Die App verwendet einen ausgewählten Motor- oder Auspuffsound und passt ihn dynamisch an die Motordrehzahl an: Mit steigender RPM ändern sich Wiedergabegeschwindigkeit und Tonhöhe, während RPM, Gaspedalstellung und Motorlast die Lautstärke beeinflussen.
+
+HAUPTFUNKTIONEN
+
+• aktiver Auspuffsound, gesteuert durch OBD2-Daten
+• Wiedergabegeschwindigkeit und Tonhöhe abhängig von RPM
+• Lautstärkereaktion auf RPM, Gaspedalstellung und Motorlast
+• Live-Daten: RPM, Drosselklappenstellung, Geschwindigkeit, Motorlast, Temperaturen, Spannung und weitere unterstützte OBD2-Werte
+• manueller TEST RPM und TEST GAS zur Prüfung der Soundreaktion
+• dauerhaft gespeicherte eigene Soundbibliothek
+• eigene Audiodateien importieren und nach einem Neustart weiterverwenden
+• Sound Studio: Trim, Loop, Fade, Basis-RPM und Gain
+• Auswahl des Audioausgangs und Bluetooth-Latenzkompensation
+• Audiowiedergabe im Hintergrund über einen Vordergrunddienst
+• moderner Drehzahlmesser für Hoch- und Querformat
+• 14 Sprachen
+• keine Werbung und keine Abonnements
+• 60-Minuten-Testversion mit einmaliger Freischaltung der Vollversion
+
+AI ACTIVE EXHAUST PRO – OBD2 richtet sich an Fahrer, die OBD2-Fahrzeugdaten mit einem individuellen Motor- und Auspuffsound verbinden möchten. Nutze vorhandene Sounds oder füge eigene Samples hinzu und speichere sie in der Bibliothek.
+
+Für Fahrzeugdaten ist ein kompatibler Bluetooth-OBD2-/ELM327-Adapter erforderlich. Verfügbare Parameter hängen vom Fahrzeug und Adapter ab.
+
+[1677/4000 characters]
+
+==============================================================================
+LANGUAGE: fr-FR
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+Échappement actif OBD2 avec Live Data, son RPM et bibliothèque personnalisée.
+[77/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 associe un son d’échappement actif aux données réelles du véhicule via OBD2.
+
+Connectez un adaptateur Bluetooth OBD2 / ELM327 compatible et consultez les données du véhicule en temps réel. L’application utilise un échantillon de moteur ou d’échappement sélectionné et adapte sa lecture au régime moteur : lorsque les RPM augmentent, la vitesse de lecture et la hauteur du son évoluent, tandis que les RPM, l’accélérateur et la charge moteur influencent le volume.
+
+FONCTIONS PRINCIPALES
+
+• son d’échappement actif contrôlé par les données OBD2
+• vitesse de lecture et hauteur du son liées aux RPM
+• volume réactif aux RPM, à l’accélérateur et à la charge moteur
+• Live Data : RPM, position de l’accélérateur, vitesse, charge moteur, températures, tension et autres valeurs OBD2 prises en charge
+• TEST RPM et TEST ACCÉLÉRATEUR manuels pour vérifier la réaction du son
+• bibliothèque de sons personnalisés enregistrée durablement
+• import de vos propres fichiers audio et réutilisation après redémarrage
+• Sound Studio : découpe, boucle, fondu, RPM de base et gain
+• choix de la sortie audio et compensation de latence Bluetooth
+• lecture audio en arrière-plan grâce à un service au premier plan
+• compte-tours moderne en mode portrait et paysage
+• 14 langues
+• sans publicité et sans abonnement
+• essai de 60 minutes avec déverrouillage complet par achat unique
+
+AI ACTIVE EXHAUST PRO – OBD2 est conçu pour les conducteurs souhaitant associer les données OBD2 à leur propre expérience sonore moteur et échappement. Utilisez les sons disponibles ou ajoutez vos propres échantillons et conservez-les dans la bibliothèque.
+
+Un adaptateur Bluetooth OBD2 / ELM327 compatible est nécessaire pour lire les données du véhicule. Les paramètres disponibles dépendent du véhicule et de l’adaptateur.
+
+[1817/4000 characters]
+
+==============================================================================
+LANGUAGE: es-ES
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+Escape activo OBD2 con Live Data, sonido por RPM y biblioteca personalizada.
+[76/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 combina sonido de escape activo con datos reales del vehículo obtenidos por OBD2.
+
+Conecta un adaptador Bluetooth OBD2 / ELM327 compatible y consulta datos del vehículo en tiempo real. La aplicación utiliza una muestra de motor o escape seleccionada y adapta dinámicamente la reproducción al régimen del motor: al subir las RPM cambian la velocidad y el tono del sonido, mientras que las RPM, el acelerador y la carga del motor influyen en el volumen.
+
+FUNCIONES PRINCIPALES
+
+• sonido de escape activo controlado por datos OBD2
+• velocidad de reproducción y tono variables según las RPM
+• volumen reactivo a RPM, acelerador y carga del motor
+• Live Data: RPM, posición del acelerador, velocidad, carga del motor, temperaturas, voltaje y otros valores OBD2 compatibles
+• TEST RPM y TEST ACELERADOR manuales para comprobar la respuesta del sonido
+• biblioteca persistente de sonidos personalizados
+• importa tus propios archivos de sonido y reutilízalos tras reiniciar la app
+• Sound Studio: recorte, bucle, fundido, RPM base y ganancia
+• selección de salida de audio y compensación de latencia Bluetooth
+• reproducción de audio en segundo plano mediante servicio en primer plano
+• tacómetro moderno con diseño vertical y horizontal
+• 14 idiomas
+• sin anuncios y sin suscripciones
+• prueba de 60 minutos con desbloqueo completo mediante compra única
+
+AI ACTIVE EXHAUST PRO – OBD2 está pensada para conductores que quieren combinar datos OBD2 con su propia experiencia de sonido de motor y escape. Usa los sonidos disponibles o añade tus propias muestras y guárdalas en la biblioteca.
+
+Se requiere un adaptador Bluetooth OBD2 / ELM327 compatible para leer datos del vehículo. Los parámetros disponibles dependen del vehículo y del adaptador.
+
+[1767/4000 characters]
+
+==============================================================================
+LANGUAGE: it-IT
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+Scarico attivo OBD2 con Live Data, suono RPM e libreria personalizzata.
+[71/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 unisce il suono dello scarico attivo ai dati reali del veicolo tramite OBD2.
+
+Collega un adattatore Bluetooth OBD2 / ELM327 compatibile e visualizza i dati del veicolo in tempo reale. L’app usa un campione motore o scarico selezionato e adatta dinamicamente la riproduzione al regime del motore: aumentando gli RPM cambiano velocità e altezza del suono, mentre RPM, acceleratore e carico motore influenzano il volume.
+
+FUNZIONI PRINCIPALI
+
+• suono di scarico attivo controllato dai dati OBD2
+• velocità di riproduzione e altezza del suono variabili con gli RPM
+• volume reattivo a RPM, acceleratore e carico motore
+• Live Data: RPM, posizione acceleratore, velocità, carico motore, temperature, tensione e altri valori OBD2 supportati
+• TEST RPM e TEST ACCELERATORE manuali per verificare la risposta del suono
+• libreria persistente di suoni personalizzati
+• importa i tuoi file audio e riutilizzali dopo il riavvio dell’app
+• Sound Studio: taglio, loop, fade, RPM di base e gain
+• selezione dell’uscita audio e compensazione della latenza Bluetooth
+• riproduzione audio in background tramite servizio in primo piano
+• contagiri moderno con layout verticale e orizzontale
+• 14 lingue
+• nessuna pubblicità e nessun abbonamento
+• prova di 60 minuti con sblocco completo tramite acquisto una tantum
+
+AI ACTIVE EXHAUST PRO – OBD2 è pensata per chi vuole combinare i dati OBD2 con una propria esperienza sonora di motore e scarico. Usa i suoni disponibili oppure aggiungi i tuoi campioni e salvali nella libreria.
+
+Per i dati del veicolo è necessario un adattatore Bluetooth OBD2 / ELM327 compatibile. I parametri disponibili dipendono dal veicolo e dall’adattatore.
+
+[1691/4000 characters]
+
+==============================================================================
+LANGUAGE: pt-BR
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+Escape ativo OBD2 com Live Data, som por RPM e biblioteca personalizada.
+[72/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 combina som de escapamento ativo com dados reais do veículo via OBD2.
+
+Conecte um adaptador Bluetooth OBD2 / ELM327 compatível e acompanhe os dados do veículo em tempo real. O app usa uma amostra selecionada de motor ou escapamento e ajusta a reprodução dinamicamente às rotações do motor: quando o RPM aumenta, a velocidade e o tom do som mudam, enquanto RPM, acelerador e carga do motor influenciam o volume.
+
+PRINCIPAIS RECURSOS
+
+• som de escapamento ativo controlado por dados OBD2
+• velocidade de reprodução e tom variáveis conforme o RPM
+• volume responsivo a RPM, acelerador e carga do motor
+• Live Data: RPM, posição do acelerador, velocidade, carga do motor, temperaturas, tensão e outros valores OBD2 compatíveis
+• TESTE DE RPM e TESTE DO ACELERADOR manuais para verificar a resposta do som
+• biblioteca persistente de sons personalizados
+• importe seus próprios arquivos de som e reutilize-os após reiniciar o app
+• Sound Studio: corte, loop, fade, RPM base e ganho
+• seleção de saída de áudio e compensação de latência Bluetooth
+• reprodução de áudio em segundo plano com serviço em primeiro plano
+• conta-giros moderno em layouts vertical e horizontal
+• 14 idiomas
+• sem anúncios e sem assinaturas
+• teste de 60 minutos com desbloqueio completo por compra única
+
+AI ACTIVE EXHAUST PRO – OBD2 foi criado para motoristas que desejam combinar dados OBD2 com sua própria experiência sonora de motor e escapamento. Use os sons disponíveis ou adicione suas próprias amostras e mantenha tudo salvo na biblioteca.
+
+É necessário um adaptador Bluetooth OBD2 / ELM327 compatível para ler dados do veículo. Os parâmetros disponíveis dependem do veículo e do adaptador.
+
+[1698/4000 characters]
+
+==============================================================================
+LANGUAGE: ja-JP
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+OBD2ライブデータ、RPM連動サウンド、カスタム音源ライブラリ対応。
+[35/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 は、OBD2の実車データとアクティブエキゾーストサウンドを組み合わせるアプリです。
+
+対応するBluetooth OBD2 / ELM327アダプターに接続すると、車両データをリアルタイムで表示できます。選択したエンジン音または排気音のサンプルはエンジン回転数に合わせて動的に再生され、RPMが上がると再生速度と音程が変化します。さらにRPM、スロットル、エンジン負荷が音量に反映されます。
+
+主な機能
+
+• OBD2データに連動するアクティブエキゾーストサウンド
+• RPMに応じた再生速度と音程の変化
+• RPM、スロットル、エンジン負荷に応じた音量変化
+• Live Data：RPM、スロットル位置、速度、エンジン負荷、温度、電圧、その他対応OBD2値
+• 手動のTEST RPM / TEST THROTTLEでサウンド反応を確認
+• カスタムサウンドを端末に保存するライブラリ
+• 自分の音声ファイルをインポートし、アプリ再起動後も再利用
+• Sound Studio：トリム、ループ、フェード、基準RPM、ゲイン調整
+• 音声出力の選択とBluetooth遅延補正
+• フォアグラウンドサービスによるバックグラウンド再生
+• 縦向き・横向きに対応したモダンなタコメーター
+• 14言語対応
+• 広告なし、サブスクリプションなし
+• 60分間のトライアルと買い切りのフル版解除
+
+AI ACTIVE EXHAUST PRO – OBD2 は、OBD2車両データと自分好みのエンジン・排気サウンドを組み合わせたいドライバー向けに設計されています。用意されたサウンドを使うことも、自分のサンプルを追加してライブラリに保存することもできます。
+
+車両データの読み取りには対応するBluetooth OBD2 / ELM327アダプターが必要です。利用できる項目は車両とアダプターによって異なります。
+
+[831/4000 characters]
+
+==============================================================================
+LANGUAGE: ko-KR
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+OBD2 Live Data, RPM 연동 사운드와 사용자 사운드 라이브러리.
+[42/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2는 OBD2의 실제 차량 데이터와 액티브 배기 사운드를 결합합니다.
+
+호환 Bluetooth OBD2 / ELM327 어댑터에 연결하여 차량 데이터를 실시간으로 확인할 수 있습니다. 앱은 선택한 엔진 또는 배기 사운드 샘플을 엔진 회전수에 맞춰 동적으로 재생합니다. RPM이 올라가면 재생 속도와 음높이가 변하고, RPM·스로틀·엔진 부하가 음량에 영향을 줍니다.
+
+주요 기능
+
+• OBD2 데이터로 제어되는 액티브 배기 사운드
+• RPM에 따라 변하는 재생 속도와 음높이
+• RPM, 스로틀, 엔진 부하에 반응하는 음량
+• Live Data: RPM, 스로틀 위치, 속도, 엔진 부하, 온도, 전압 및 기타 지원 OBD2 값
+• 사운드 반응 확인용 수동 TEST RPM 및 TEST THROTTLE
+• 사용자 사운드를 저장하는 영구 라이브러리
+• 직접 사운드 파일을 가져오고 앱 재시작 후에도 다시 사용
+• Sound Studio: 트림, 루프, 페이드, 기준 RPM, 게인
+• 오디오 출력 선택 및 Bluetooth 지연 보정
+• 포그라운드 미디어 서비스를 이용한 백그라운드 재생
+• 세로/가로 화면을 지원하는 현대적인 타코미터
+• 14개 언어 지원
+• 광고 없음, 구독 없음
+• 60분 체험판과 1회 구매 방식의 전체 버전 잠금 해제
+
+AI ACTIVE EXHAUST PRO – OBD2는 OBD2 차량 데이터와 자신만의 엔진 및 배기 사운드를 결합하고 싶은 운전자를 위해 설계되었습니다. 제공되는 사운드를 사용하거나 직접 샘플을 추가해 라이브러리에 저장할 수 있습니다.
+
+차량 데이터 사용에는 호환 Bluetooth OBD2 / ELM327 어댑터가 필요합니다. 사용 가능한 항목은 차량과 어댑터에 따라 다릅니다.
+
+[879/4000 characters]
+
+==============================================================================
+LANGUAGE: zh-CN
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+OBD2实时数据、RPM联动排气声音和自定义声音库。
+[26/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 将主动排气声音与真实的 OBD2 车辆数据结合在一起。
+
+连接兼容的 Bluetooth OBD2 / ELM327 适配器，即可查看实时车辆数据。应用会使用所选的发动机或排气声音样本，并根据发动机转速动态调整播放：RPM 提升时，播放速度和音高会随之变化；RPM、油门位置和发动机负载还会影响音量。
+
+主要功能
+
+• 由 OBD2 数据控制的主动排气声音
+• 播放速度和音高随 RPM 变化
+• 音量根据 RPM、油门和发动机负载响应
+• Live Data：RPM、油门位置、车速、发动机负载、温度、电压及其他受支持的 OBD2 数据
+• 手动 TEST RPM 和 TEST THROTTLE，用于检查声音响应
+• 可长期保存的自定义声音库
+• 导入自己的声音文件，并在应用重启后继续使用
+• Sound Studio：裁剪、循环、淡入淡出、基础 RPM 和增益
+• 音频输出选择与 Bluetooth 延迟补偿
+• 使用前台媒体服务实现后台声音播放
+• 支持竖屏和横屏的现代转速表
+• 支持 14 种语言
+• 无广告、无订阅
+• 60 分钟试用，完整版采用一次性解锁
+
+AI ACTIVE EXHAUST PRO – OBD2 适合希望将 OBD2 车辆数据与个性化发动机和排气声音结合使用的驾驶者。你可以使用应用内已有声音，也可以添加自己的样本并保存到声音库中。
+
+读取车辆数据需要兼容的 Bluetooth OBD2 / ELM327 适配器。可用参数取决于车辆和适配器。
+
+[671/4000 characters]
+
+==============================================================================
+LANGUAGE: tr-TR
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+OBD2 Live Data, RPM tabanlı egzoz sesi ve özel ses kitaplığı.
+[61/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2, aktif egzoz sesini gerçek OBD2 araç verileriyle birleştirir.
+
+Uyumlu bir Bluetooth OBD2 / ELM327 adaptörü bağlayarak araç verilerini gerçek zamanlı görüntüleyebilirsiniz. Uygulama seçilen motor veya egzoz sesi örneğini motor devrine göre dinamik olarak oynatır: RPM yükseldikçe oynatma hızı ve ses perdesi değişir; RPM, gaz konumu ve motor yükü ise ses seviyesini etkiler.
+
+BAŞLICA ÖZELLİKLER
+
+• OBD2 verileriyle kontrol edilen aktif egzoz sesi
+• RPM’ye göre değişen oynatma hızı ve ses perdesi
+• RPM, gaz ve motor yüküne tepki veren ses seviyesi
+• Live Data: RPM, gaz kelebeği konumu, hız, motor yükü, sıcaklıklar, voltaj ve desteklenen diğer OBD2 değerleri
+• ses tepkisini kontrol etmek için manuel TEST RPM ve TEST THROTTLE
+• kalıcı özel ses kitaplığı
+• kendi ses dosyalarınızı içe aktarın ve uygulama yeniden başlatıldığında tekrar kullanın
+• Sound Studio: kırpma, döngü, fade, temel RPM ve gain
+• ses çıkışı seçimi ve Bluetooth gecikme telafisi
+• foreground medya hizmetiyle arka planda ses oynatma
+• dikey ve yatay düzende modern devir göstergesi
+• 14 dil
+• reklam yok, abonelik yok
+• 60 dakikalık deneme ve tek seferlik tam sürüm kilidi açma
+
+AI ACTIVE EXHAUST PRO – OBD2, OBD2 araç verilerini kendi motor ve egzoz ses deneyimiyle birleştirmek isteyen sürücüler için tasarlanmıştır. Mevcut sesleri kullanabilir veya kendi örneklerinizi ekleyip ses kitaplığında saklayabilirsiniz.
+
+Araç verileri için uyumlu bir Bluetooth OBD2 / ELM327 adaptörü gereklidir. Kullanılabilir parametreler araca ve adaptöre bağlıdır.
+
+[1548/4000 characters]
+
+==============================================================================
+LANGUAGE: id-ID
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+Active exhaust OBD2 dengan Live Data, suara RPM dan pustaka suara sendiri.
+[74/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 menggabungkan suara knalpot aktif dengan data kendaraan nyata dari OBD2.
+
+Hubungkan adaptor Bluetooth OBD2 / ELM327 yang kompatibel untuk melihat data kendaraan secara real time. Aplikasi menggunakan sampel suara mesin atau knalpot yang dipilih dan menyesuaikan pemutaran secara dinamis dengan putaran mesin: saat RPM naik, kecepatan pemutaran dan pitch ikut berubah, sementara RPM, throttle dan beban mesin memengaruhi volume.
+
+FITUR UTAMA
+
+• suara knalpot aktif yang dikendalikan data OBD2
+• kecepatan pemutaran dan pitch berubah sesuai RPM
+• volume merespons RPM, throttle dan beban mesin
+• Live Data: RPM, posisi throttle, kecepatan, beban mesin, suhu, tegangan dan nilai OBD2 lain yang didukung
+• TEST RPM dan TEST THROTTLE manual untuk memeriksa respons suara
+• pustaka suara kustom yang disimpan secara persisten
+• impor file suara sendiri dan gunakan kembali setelah aplikasi dimulai ulang
+• Sound Studio: trim, loop, fade, RPM dasar dan gain
+• pemilihan output audio dan kompensasi latensi Bluetooth
+• pemutaran audio di latar belakang melalui foreground media service
+• tachometer modern untuk tampilan portrait dan landscape
+• 14 bahasa
+• tanpa iklan dan tanpa langganan
+• uji coba 60 menit dengan pembukaan versi penuh melalui pembelian satu kali
+
+AI ACTIVE EXHAUST PRO – OBD2 dibuat untuk pengemudi yang ingin menggabungkan data OBD2 dengan pengalaman suara mesin dan knalpot mereka sendiri. Gunakan suara yang tersedia atau tambahkan sampel milik Anda dan simpan di pustaka.
+
+Adaptor Bluetooth OBD2 / ELM327 yang kompatibel diperlukan untuk data kendaraan. Parameter yang tersedia bergantung pada kendaraan dan adaptor.
+
+[1662/4000 characters]
+
+==============================================================================
+LANGUAGE: ru-RU
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+Активный выхлоп OBD2: Live Data, RPM-звук и своя библиотека звуков.
+[67/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 объединяет активный звук выхлопа с реальными данными автомобиля через OBD2.
+
+Подключите совместимый Bluetooth OBD2 / ELM327 адаптер и просматривайте данные автомобиля в реальном времени. Приложение использует выбранный образец звука двигателя или выхлопа и динамически подстраивает воспроизведение под обороты двигателя: с ростом RPM меняются скорость воспроизведения и высота звука, а RPM, положение газа и нагрузка двигателя влияют на громкость.
+
+ОСНОВНЫЕ ФУНКЦИИ
+
+• активный звук выхлопа, управляемый данными OBD2
+• изменение скорости воспроизведения и высоты звука в зависимости от RPM
+• громкость, реагирующая на RPM, газ и нагрузку двигателя
+• Live Data: RPM, положение дросселя, скорость, нагрузка двигателя, температуры, напряжение и другие поддерживаемые OBD2-параметры
+• ручные TEST RPM и TEST THROTTLE для проверки реакции звука
+• постоянная библиотека пользовательских звуков
+• импорт собственных аудиофайлов и повторное использование после перезапуска приложения
+• Sound Studio: обрезка, цикл, fade, базовые RPM и gain
+• выбор аудиовыхода и компенсация задержки Bluetooth
+• фоновое воспроизведение через foreground media service
+• современный тахометр в портретном и альбомном режимах
+• 14 языков
+• без рекламы и без подписки
+• 60-минутный пробный период и одноразовая разблокировка полной версии
+
+AI ACTIVE EXHAUST PRO – OBD2 создан для водителей, которые хотят объединить OBD2-данные автомобиля со своим звуком двигателя и выхлопа. Используйте доступные звуки или добавляйте собственные образцы и сохраняйте их в библиотеке.
+
+Для данных автомобиля требуется совместимый Bluetooth OBD2 / ELM327 адаптер. Доступные параметры зависят от автомобиля и адаптера.
+
+[1700/4000 characters]
+
+==============================================================================
+LANGUAGE: uk-UA
+==============================================================================
+APP NAME:
+AI ACTIVE EXHAUST PRO – OBD2
+[28/30 characters]
+
+SHORT DESCRIPTION:
+Активний вихлоп OBD2: Live Data, RPM-звук і власна бібліотека звуків.
+[69/80 characters]
+
+FULL DESCRIPTION:
+AI ACTIVE EXHAUST PRO – OBD2 поєднує активний звук вихлопу з реальними даними автомобіля через OBD2.
+
+Підключіть сумісний Bluetooth OBD2 / ELM327 адаптер і переглядайте дані автомобіля в реальному часі. Застосунок використовує вибраний зразок звуку двигуна або вихлопу та динамічно підлаштовує відтворення під оберти двигуна: зі зростанням RPM змінюються швидкість відтворення і висота звуку, а RPM, положення газу та навантаження двигуна впливають на гучність.
+
+ОСНОВНІ ФУНКЦІЇ
+
+• активний звук вихлопу, керований даними OBD2
+• зміна швидкості відтворення і висоти звуку залежно від RPM
+• гучність, що реагує на RPM, газ і навантаження двигуна
+• Live Data: RPM, положення дроселя, швидкість, навантаження двигуна, температури, напруга та інші підтримувані OBD2-параметри
+• ручні TEST RPM і TEST THROTTLE для перевірки реакції звуку
+• постійна бібліотека користувацьких звуків
+• імпорт власних аудіофайлів і повторне використання після перезапуску застосунку
+• Sound Studio: обрізання, цикл, fade, базові RPM і gain
+• вибір аудіовиходу та компенсація затримки Bluetooth
+• фонове відтворення через foreground media service
+• сучасний тахометр у портретному й альбомному режимах
+• 14 мов
+• без реклами та без підписки
+• 60-хвилинний пробний період і одноразове розблокування повної версії
+
+AI ACTIVE EXHAUST PRO – OBD2 створений для водіїв, які хочуть поєднати OBD2-дані автомобіля з власним звучанням двигуна та вихлопу. Використовуйте доступні звуки або додавайте власні зразки й зберігайте їх у бібліотеці.
+
+Для даних автомобіля потрібен сумісний Bluetooth OBD2 / ELM327 адаптер. Доступні параметри залежать від автомобіля та адаптера.
+
+[1636/4000 characters]
