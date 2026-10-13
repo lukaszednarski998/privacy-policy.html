@@ -19,7 +19,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: Unpack and update pages, galleries and catalog
-        run: python3 scripts/publish_october_five.py
+        run: |
+          python3 scripts/publish_october_five.py > archive-inspection/october-publish-log.txt 2>&1 || { cat archive-inspection/october-publish-log.txt; exit 1; }
+          cat archive-inspection/october-publish-log.txt
       - name: Update sitemap
         run: python3 scripts/refresh_sitemaps.py
       - name: Verify site completeness
@@ -44,6 +46,20 @@ jobs:
               assert '<div class="gallery">' in text and 'alt=' in text
           print('OK: 14 homepages, 70 app pages, original galleries')
           PY
+      - name: Save diagnostic log even on failure
+        if: always()
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if test -f archive-inspection/october-publish-log.txt; then
+            git add archive-inspection/october-publish-log.txt
+            if ! git diff --cached --quiet; then
+              git commit -m 'Record October publication diagnostics'
+              git pull --rebase origin main
+              git push origin HEAD:main
+            fi
+          fi
       - name: Commit changes to site
         run: |
           git config user.name 'github-actions[bot]'
