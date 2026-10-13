@@ -1,0 +1,49 @@
+name: Inspect October app description languages
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/inspect-october-descriptions.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract and document description structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/october-5-apps archive-inspection
+          7z x 'STRONA INTERNETOWA.zip' -o/tmp/october-5-apps -y >/dev/null
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          folder=Path('/tmp/october-5-apps/STRONA INTERNETOWA')
+          lines=['# Actual uploaded app description formats','']
+          for p in sorted(folder.rglob('*.txt')):
+              text=p.read_text(encoding='utf-8-sig',errors='replace').replace('\r\n','\n')
+              lines += ['','## '+p.relative_to(folder).as_posix(),'Total lines: '+str(len(text.splitlines())),'','First 70 lines:','~~~']
+              lines+=text.splitlines()[:70]
+              lines+=['~~~','', 'Further language headings/examples:','~~~']
+              for i,line in enumerate(text.splitlines()):
+                  if re.search(r'(?:en-US|pl-PL|de-DE|fr-FR|es-ES|it-IT|pt-BR|ja-JP|ko-KR|zh-CN|tr-TR|id-ID|ru-RU|uk-UA|POLSKI|ENGLISH|DEUTSCH|FRANÇAIS|ESPAÑOL|PORTUGU|日本語|한국어|简体|TÜRKÇE|РУССКИЙ|УКРАЇНСЬКА)',line,re.I) and len(line)<180:
+                      lines.append(f'line {i+1}: {line[:160]}')
+              lines+=['~~~']
+          out=Path('archive-inspection/october-description-headings.md')
+          out.write_text('\n'.join(lines)+'\n',encoding='utf8')
+          print(out.read_text()[:18000])
+          PY
+      - name: Commit manifest
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add archive-inspection/october-description-headings.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Inspect translation and description structure for five new apps'
+          git pull --rebase origin main
+          git push origin HEAD:main
