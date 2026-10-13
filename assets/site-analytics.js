@@ -1,3 +1,70 @@
+/* ARVION DIRECT PLAY BUTTONS: available apps, all localized catalog/detail pages. */
+(()=>{
+  'use strict';
+  const store={
+    'obd-active-exhaust-pro':'https://play.google.com/store/apps/details?id=com.obdactiveeeexhaust.pro',
+    'pixel-critters':'https://play.google.com/store/apps/details?id=pl.pixelcritters.game',
+    'media-player':'https://play.google.com/store/apps/details?id=com.obdactiveexhaust.mediapro',
+    'snake-classic':'https://play.google.com/store/apps/details?id=pl.obdstudio.retrosnakeclassic',
+    'kalendarz-zmianowy':'https://play.google.com/store/apps/details?id=com.kalendarzzmianowy.psp.pro',
+    'arvion-calculator':'https://play.google.com/store/apps/details?id=com.aplikacjeandroid.arvioncalculator',
+    'private-iptv':'https://play.google.com/store/apps/details?id=pl.privateiptv.app',
+    'arvion-moto-speed':'https://play.google.com/store/apps/details?id=com.aplikacjeandroid.arvionmotospeed'
+  };
+  const labels={
+    en:'OPEN IN GOOGLE PLAY',pl:'OTWÓRZ W GOOGLE PLAY',de:'IN GOOGLE PLAY ÖFFNEN',
+    fr:'OUVRIR SUR GOOGLE PLAY',es:'ABRIR EN GOOGLE PLAY',it:'APRI SU GOOGLE PLAY',
+    pt:'ABRIR NO GOOGLE PLAY',ja:'GOOGLE PLAYで開く',ko:'GOOGLE PLAY에서 열기',
+    zh:'在 GOOGLE PLAY 中打开',tr:"GOOGLE PLAY'DE AÇ",id:'BUKA DI GOOGLE PLAY',
+    ru:'ОТКРЫТЬ В GOOGLE PLAY',uk:'ВІДКРИТИ В GOOGLE PLAY'
+  };
+  const suffixes=['en','pl','de','fr','es','it','pt-br','ja','ko','zh-cn','tr','id','ru','uk'];
+  function destination(path){
+    if(!path)return null;
+    let name=path.split(/[?#]/)[0].split('/').pop();
+    try{name=decodeURIComponent(name)}catch(_){}
+    for(const [slug,url] of Object.entries(store)){
+      if(name===slug+'.html'||suffixes.some(l=>name===slug+'-'+l+'.html'))return url;
+    }
+    return null;
+  }
+  function makeButton(url,compact){
+    const a=document.createElement('a');
+    const lang=(document.documentElement.lang||'en').toLowerCase().split('-')[0];
+    a.className='arvion-store-direct';
+    a.textContent=labels[lang]||labels.en;
+    a.href=url;a.target='_blank';a.rel='noopener noreferrer';
+    a.style.cssText='display:inline-flex;align-items:center;justify-content:center;border:1px solid #e5bb60;border-radius:12px;background:#dfae47;color:#101010;text-decoration:none;font-weight:800;text-align:center;line-height:1.3;'+(compact?'font-size:13px;padding:10px 12px;margin:10px 0 4px':'font-size:16px;padding:14px 22px;margin:6px 0 12px');
+    return a;
+  }
+  function install(){
+    if(!location.pathname.includes('/apps/'))return;
+    const name=location.pathname.split('/').pop()||'';
+    const main=document.querySelector('main');
+    if(!main)return;
+    if(/^index(?:-(?:en|pl|de|fr|es|it|pt-br|ja|ko|zh-cn|tr|id|ru|uk))?\.html$/.test(name)||!name){
+      main.querySelectorAll('a.product[href]').forEach(a=>{
+        const url=destination(a.getAttribute('href'));
+        if(!url)return;
+        const card=a.closest('li')||a.parentElement;
+        if(card&&!card.querySelector('.arvion-store-direct'))card.appendChild(makeButton(url,true));
+      });
+      return;
+    }
+    const url=destination(name);
+    if(!url)return;
+    const h1=main.querySelector('h1');
+    if(!h1||main.querySelector('[data-arvion-store-primary]'))return;
+    const wrap=document.createElement('p');
+    wrap.setAttribute('data-arvion-store-primary','true');
+    wrap.style.cssText='margin:12px 0 24px';
+    wrap.appendChild(makeButton(url,false));
+    h1.insertAdjacentElement('afterend',wrap);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});
+  else install();
+})();
+
 /* ARVION: consent-based, site-wide Google Analytics 4 tracking.
    Set window.ARVION_GA4_ID to your own G-XXXXXXXXXX measurement ID.
    No analytics cookies, requests or events are sent before visitor consent. */
