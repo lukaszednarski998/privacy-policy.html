@@ -49,7 +49,7 @@ for file in DOCS:
     prefix = "../" * (len(path.parts) - 1)
     newline = "\r\n" if "\r\n" in source else "\n"
     fragment = "".join(
-        '<script defer src="' + prefix + name + '"></script>' + newline
+        '<script defer src="' + prefix + (name + '?v=20261014-social' if name == 'assets/site-analytics.js' else name) + '"></script>' + newline
         for name in missing
     )
     last = closes[-1]
