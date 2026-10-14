@@ -33,7 +33,7 @@
       else if(control.parentElement)candidates.add(control.parentElement);
     });
     document.querySelectorAll('nav').forEach(nav=>{
-      const flags=[...nav.querySelectorAll('a,button')].filter(control=>/[\\u{1F1E6}-\\u{1F1FF}]{2}/u.test(control.textContent));
+      const flags=[...nav.querySelectorAll('a,button')].filter(control=>/[\u{1F1E6}-\u{1F1FF}]{2}/u.test(control.textContent));
       if(flags.length>=2)candidates.add(nav);
     });
     const containers=[...candidates].filter(el=>

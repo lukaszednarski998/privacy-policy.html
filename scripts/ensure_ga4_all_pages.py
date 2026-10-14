@@ -24,7 +24,7 @@ for file in DOCS:
         continue
     source = file.read_bytes().decode("utf-8")
     original = source
-    source = re.sub(r"""(<script\b[^>]*\bsrc=[\'"])([^\'"]*assets/site-analytics\.js)(?:\?[^\'"]*)?([\'"])""", r"\1\2?v=20261014-social\3", source, flags=re.IGNORECASE)
+    source = re.sub(r"""(<script\b[^>]*\bsrc=[\'"])([^\'"]*assets/site-analytics\.js)(?:\?[^\'"]*)?([\'"])""", r"\1\2?v=20261014-social2\3", source, flags=re.IGNORECASE)
     existing = source.lower()
     missing = [name for name in MARKERS if name not in existing]
     processed += 1
@@ -49,7 +49,7 @@ for file in DOCS:
     prefix = "../" * (len(path.parts) - 1)
     newline = "\r\n" if "\r\n" in source else "\n"
     fragment = "".join(
-        '<script defer src="' + prefix + (name + '?v=20261014-social' if name == 'assets/site-analytics.js' else name) + '"></script>' + newline
+        '<script defer src="' + prefix + (name + '?v=20261014-social2' if name == 'assets/site-analytics.js' else name) + '"></script>' + newline
         for name in missing
     )
     last = closes[-1]
