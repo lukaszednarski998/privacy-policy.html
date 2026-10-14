@@ -9,7 +9,7 @@
   const selectors=[
     '.site-language-switch','.lang-switch','nav.lang','nav.langs','nav.languages',
     '.language-switcher','.language-selector','.language-switch','.language-bar',
-    '.language-nav','.langbar','.langnav','.langs'
+    '.language-nav','.lang-nav','.language-tabs','.langbar','.langnav','.langs'
   ].join(',');
   function button(channel){
     const link=document.createElement('a');
@@ -27,14 +27,18 @@
   function install(){
     const candidates=new Set(document.querySelectorAll(selectors));
     // Cover older pages whose language navigation has no common class.
-    document.querySelectorAll('body a[hreflang],body button[data-lang],body button[data-language]').forEach(control=>{
+    document.querySelectorAll('body a[hreflang],body a.lang-btn,body button.lang-btn,body button[data-lang],body button[data-language]').forEach(control=>{
       const nav=control.closest('nav');
       if(nav)candidates.add(nav);
       else if(control.parentElement)candidates.add(control.parentElement);
     });
+    document.querySelectorAll('nav').forEach(nav=>{
+      const flags=[...nav.querySelectorAll('a,button')].filter(control=>/[\\u{1F1E6}-\\u{1F1FF}]{2}/u.test(control.textContent));
+      if(flags.length>=2)candidates.add(nav);
+    });
     const containers=[...candidates].filter(el=>
       !el.closest('.'+MARKER) &&
-      el.querySelectorAll('a[hreflang],button[data-lang],button[data-language],button[data-support-lang],a.site-lang-btn').length>=2
+      (el.querySelectorAll('a[hreflang],a.lang-btn,button.lang-btn,button[data-lang],button[data-language],button[data-support-lang],a.site-lang-btn').length>=2 || [...el.querySelectorAll('a,button')].filter(control=>/[\u{1F1E6}-\u{1F1FF}]{2}/u.test(control.textContent)).length>=2)
     );
     for(const container of containers){
       // Use the innermost group so links remain immediately below its flags.
