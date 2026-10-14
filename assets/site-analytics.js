@@ -1,3 +1,78 @@
+/* ARVION SOCIAL CHANNELS: display below each language selector. */
+(()=>{
+  'use strict';
+  const MARKER='arvion-social-links';
+  const channels=[
+    {name:'TikTok',url:'https://www.tiktok.com/@new_apps_new_games?_r=1&_t=ZN-9AYDhIeKPzC',icon:'M16.7 1.5c.5 2.6 2 4.1 4.8 4.3v4a9.5 9.5 0 0 1-4.8-1.4v8a6.8 6.8 0 1 1-5.9-6.7v4a2.9 2.9 0 1 0 1.9 2.7V1.5z'},
+    {name:'YouTube',url:'https://youtube.com/@official_skitella?si=WZI39L_slQlZ7Ly3',icon:'M23 7s-.2-1.7-1-2.5c-1-.9-2-.9-2.5-1C16 3.3 12 3.3 12 3.3s-4 0-7.5.2c-.5.1-1.5.1-2.5 1C1.2 5.3 1 7 1 7S.8 9 .8 11v2C.8 15 1 17 1 17s.2 1.7 1 2.5c1 .9 2.3.9 3 1 2.3.2 7 .2 7 .2s4 0 7.5-.3c.5 0 1.5-.1 2.5-1 .8-.8 1-2.5 1-2.5s.2-2 .2-4v-2C23.2 9 23 7 23 7z M9.5 16V8l7 4z'}
+  ];
+  const selectors=[
+    '.site-language-switch','.lang-switch','nav.lang','nav.langs','nav.languages',
+    '.language-switcher','.language-selector','.language-switch','.language-bar',
+    '.language-nav','.langbar','.langnav','.langs'
+  ].join(',');
+  function button(channel){
+    const link=document.createElement('a');
+    link.className='arvion-social-link arvion-social-'+channel.name.toLowerCase();
+    link.href=channel.url;link.target='_blank';link.rel='noopener noreferrer';
+    link.setAttribute('aria-label',channel.name+' — '+(channel.name==='TikTok'?'@new_apps_new_games':'@official_skitella'));
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('width','22');svg.setAttribute('height','22');
+    svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',channel.icon);path.setAttribute('fill','currentColor');path.setAttribute('fill-rule','evenodd');
+    svg.appendChild(path);link.append(svg,document.createTextNode(channel.name));
+    return link;
+  }
+  function install(){
+    const candidates=new Set(document.querySelectorAll(selectors));
+    // Cover older pages whose language navigation has no common class.
+    document.querySelectorAll('body a[hreflang],body button[data-lang],body button[data-language]').forEach(control=>{
+      const nav=control.closest('nav');
+      if(nav)candidates.add(nav);
+      else if(control.parentElement)candidates.add(control.parentElement);
+    });
+    const containers=[...candidates].filter(el=>
+      !el.closest('.'+MARKER) &&
+      el.querySelectorAll('a[hreflang],button[data-lang],button[data-language],button[data-support-lang],a.site-lang-btn').length>=2
+    );
+    for(const container of containers){
+      // Use the innermost group so links remain immediately below its flags.
+      if(containers.some(other=>other!==container&&container.contains(other)))continue;
+      if(container.nextElementSibling?.classList.contains(MARKER))continue;
+      const group=document.createElement('div');group.className=MARKER;
+      group.setAttribute('role','group');group.setAttribute('aria-label','TikTok / YouTube');
+      channels.forEach(channel=>group.appendChild(button(channel)));
+      container.insertAdjacentElement('afterend',group);
+    }
+  }
+  function start(){
+    if(document.getElementById('arvion-social-styles'))return;
+    const css=document.createElement('style');css.id='arvion-social-styles';
+    css.textContent=`
+      .arvion-social-links{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;clear:both;margin:14px 0 20px;width:100%;box-sizing:border-box}
+      .arvion-social-links .arvion-social-link{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:10px 20px;box-sizing:border-box;border:1px solid #706044;border-radius:12px;background:linear-gradient(180deg,#211e19,#101010);color:#f5e2bb;font:700 14px/1.25 Inter,Arial,sans-serif;text-decoration:none;box-shadow:0 4px 12px #0003;transition:transform .15s,border-color .15s,background .15s}
+      .arvion-social-links .arvion-social-link:hover{border-color:#e5bb60;background:#292318;transform:translateY(-1px);color:#fff}
+      .arvion-social-links .arvion-social-link:focus-visible{outline:3px solid #e5bb60;outline-offset:3px}
+      .arvion-social-links .arvion-social-link:active{transform:translateY(1px)}
+      .arvion-social-link svg{flex:0 0 22px;display:block}
+      .arvion-social-youtube svg{color:#ff5264}.arvion-social-tiktok svg{color:#75e4e0}
+      @media(max-width:480px){.arvion-social-links{gap:8px;margin:12px 0 16px}.arvion-social-links .arvion-social-link{padding:10px 14px;min-width:112px;font-size:13px}}
+      @media(prefers-reduced-motion:reduce){.arvion-social-links .arvion-social-link{transition:none}}
+    `;
+    document.head.appendChild(css);install();
+    let scheduled=false;
+    const observer=new MutationObserver(records=>{
+      if(!records.some(record=>record.addedNodes.length))return;
+      if(scheduled)return;
+      scheduled=true;requestAnimationFrame(()=>{scheduled=false;install();});
+    });
+    observer.observe(document.body,{childList:true,subtree:true});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});
+  else start();
+})();
+
 /* ARVION DIRECT PLAY BUTTONS: available apps, all localized catalog/detail pages. */
 (()=>{
   'use strict';
