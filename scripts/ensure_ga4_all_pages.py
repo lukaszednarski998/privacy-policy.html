@@ -23,11 +23,18 @@ for file in DOCS:
     if re.fullmatch(r"google[a-z0-9]+\.html", file.name, re.IGNORECASE):
         continue
     source = file.read_bytes().decode("utf-8")
+    original = source
+    source = re.sub(r"""(<script\b[^>]*\bsrc=[\'"])([^\'"]*assets/site-analytics\.js)(?:\?[^\'"]*)?([\'"])""", r"\1\2?v=20261014-social\3", source, flags=re.IGNORECASE)
     existing = source.lower()
     missing = [name for name in MARKERS if name not in existing]
     processed += 1
     if not missing:
-        already += 1
+        if source != original:
+            changed.append(file.relative_to(ROOT).as_posix())
+            if not CHECK:
+                file.write_bytes(source.encode("utf-8"))
+        else:
+            already += 1
         continue
 
     # Avoid replacing or restructuring the site's existing scripts and markup.
