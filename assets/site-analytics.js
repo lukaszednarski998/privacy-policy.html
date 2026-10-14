@@ -242,3 +242,46 @@ document.addEventListener('DOMContentLoaded',()=>{settings();if(consent===null)b
 if(document.readyState!=='loading'){settings();if(consent===null)banner();else start()}
 window.ARVION_ANALYTICS={track:event,configure:()=>{try{localStorage.removeItem(KEY)}catch(e){}consent=null;banner()}};
 })();
+
+/* OBD Active Exhaust Pro flagship product – separate from AI ACTIVE EXHAUST PRO – OBD2. */
+(()=>{
+  const launch=()=>{
+    const section=document.getElementById('phone-apps');
+    if(!section)return;
+    const lang=(document.documentElement.lang||'en').toLowerCase().split('-')[0];
+    const codes=['en','pl','de','fr','es','it','pt-br','ja','ko','zh-cn','tr','id','ru','uk'];
+    const suffix=(document.documentElement.lang||'en').toLowerCase().replace('_','-');
+    const actual=codes.includes(suffix)?suffix:(codes.includes(lang)?lang:'en');
+    const copy={
+      en:['Available now','OPEN IN GOOGLE PLAY','Full description and gallery'],
+      pl:['DOSTĘPNA TERAZ','OTWÓRZ W GOOGLE PLAY','Pełny opis i zdjęcia'],
+      de:['JETZT VERFÜGBAR','IN GOOGLE PLAY ÖFFNEN','Beschreibung und Bilder'],
+      fr:['DISPONIBLE','OUVRIR DANS GOOGLE PLAY','Description et images'],
+      es:['DISPONIBLE','ABRIR EN GOOGLE PLAY','Descripción e imágenes'],
+      it:['DISPONIBILE','APRI IN GOOGLE PLAY','Descrizione e immagini'],
+      'pt-br':['DISPONÍVEL','ABRIR NO GOOGLE PLAY','Descrição e imagens'],
+      ja:['公開中','GOOGLE PLAYで開く','説明と画像'],
+      ko:['이용 가능','GOOGLE PLAY에서 열기','설명 및 이미지'],
+      'zh-cn':['已上架','在 GOOGLE PLAY 中打开','说明与图片'],
+      tr:['MEVCUT',"GOOGLE PLAY'DE AÇ",'Açıklama ve görseller'],
+      id:['TERSEDIA','BUKA DI GOOGLE PLAY','Deskripsi dan gambar'],
+      ru:['ДОСТУПНО','ОТКРЫТЬ В GOOGLE PLAY','Описание и изображения'],
+      uk:['ДОСТУПНО','ВІДКРИТИ В GOOGLE PLAY','Опис і зображення']
+    }[actual];
+    if(!document.getElementById('obd-main-spotlight')){
+      const box=document.createElement('section');box.id='obd-main-spotlight';
+      box.style.cssText='max-width:1220px;margin:20px auto;padding:24px;border:2px solid #ab8143;border-radius:18px;background:#1b1712;color:white;display:flex;flex-wrap:wrap;gap:20px;align-items:center';
+      const image=document.createElement('img');image.src='1.png';image.alt='OBD Active Exhaust Pro';image.style.cssText='width:140px;max-width:35vw;border-radius:12px';
+      const panel=document.createElement('div');panel.style.cssText='flex:1;min-width:240px';
+      const title=document.createElement('h2');title.textContent='OBD Active Exhaust Pro';
+      const info=document.createElement('p');info.textContent=copy[0]+' · OBD2 · Live Data · Active Exhaust · AI Mechanic';
+      const shop=document.createElement('a');shop.href='https://play.google.com/store/apps/details?id=com.obdactiveeeexhaust.pro';shop.target='_blank';shop.rel='noopener noreferrer';shop.style.cssText='color:#bdf2c7;font-weight:bold;margin-right:16px';shop.textContent=copy[1]+' ↗';
+      const details=document.createElement('a');details.href='apps/obd-active-exhaust-pro-main'+(actual==='en'?'':'-'+actual)+'.html';details.style.cssText='color:#ecc87b';details.textContent=copy[2]+' →';
+      panel.append(title,info,shop,details);box.append(image,panel);section.parentNode.insertBefore(box,section);
+    }
+    if(!document.querySelector('script[data-obd-main-catalog]')){
+      const s=document.createElement('script');s.dataset.obdMainCatalog='1';s.src='assets/obd-main-catalog.js?v=20261014';document.body.appendChild(s);
+    }
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',launch);else launch();
+})();
