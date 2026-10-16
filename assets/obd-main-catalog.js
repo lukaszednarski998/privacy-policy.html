@@ -7,11 +7,11 @@
   const activeLanguage=(document.documentElement.lang||'en').toLowerCase().replace('_','-');
   const loc=languages[activeLanguage] ? activeLanguage : activeLanguage.split('-')[0];
   const translation=languages[loc]||languages.en;
-  // Keep the flagship tile inside the phone-app catalogue, at the bottom.
+  // Keep the flagship tile as the first regular card inside the phone-app catalogue.
   // Do not create a second featured card beneath the TikTok/YouTube links.
   if(!products.some(p=>p.id==='obd-main')){
     const mainCard={id:'obd-main',name:'OBD Active Exhaust Pro',type:'phone',tag:translation.tag,img:'assets/imported-new-products/STRONA INTERNETOWA/OBD GLOWNA/OBD 3.png',desc:translation.short,details:true};
-    products.push(mainCard);
+    products.unshift(mainCard);
   }
   const synopsis={};const subtitles={};
   for(const [key,value] of Object.entries(languages)){
