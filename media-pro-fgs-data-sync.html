@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="MEDIA PRO — film demonstracyjny przesyłania muzyki i wideo między telefonem a zegarkiem Wear OS. FOREGROUND_SERVICE_DATA_SYNC.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://lukaszednarski998.github.io/privacy-policy.html/media-pro-fgs-data-sync.html">
+  <title>MEDIA PRO — FOREGROUND_SERVICE_DATA_SYNC</title>
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;width:100%;height:100%;background:#000;color:#fff;font:15px system-ui,sans-serif}
+    main{width:100%;height:100vh;height:100dvh;position:relative;display:grid;place-items:center}
+    video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+    button{position:absolute;top:max(12px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));padding:11px 16px;border:1px solid #b8c8d9;border-radius:8px;background:#12202ee8;color:#fff;font:inherit;cursor:pointer}
+    button:focus-visible{outline:3px solid #29dcff;outline-offset:3px}
+    #fallback{position:absolute;top:40%;left:10%;width:80%;text-align:center;background:#101923;padding:18px;border-radius:10px}
+    #fallback a{color:#81e6ff}
+    [hidden]{display:none!important}
+  </style>
+</head>
+<body>
+  <main aria-label="MEDIA PRO — film demonstracyjny / demonstration video">
+    <video id="demo" controls autoplay muted playsinline preload="auto" aria-label="MEDIA PRO FOREGROUND_SERVICE_DATA_SYNC">
+      <source src="FOREGROUND_SERVICE_DATA_SYNC%20MEDIA%20PRO.mp4" type="video/mp4">
+      <a href="FOREGROUND_SERVICE_DATA_SYNC%20MEDIA%20PRO.mp4">Otwórz film / Open video</a>
+    </video>
+    <button id="sound" type="button">Włącz dźwięk / Enable sound</button>
+    <button id="start" type="button" hidden>Odtwórz film / Play video</button>
+    <div id="fallback" role="status" hidden>
+      Nie można odtworzyć filmu / Unable to play the video.<br>
+      <a href="FOREGROUND_SERVICE_DATA_SYNC%20MEDIA%20PRO.mp4">Otwórz plik MP4 / Open MP4</a>
+    </div>
+  </main>
+  <script>
+    const video = document.getElementById('demo');
+    const sound = document.getElementById('sound');
+    const start = document.getElementById('start');
+    const fallback = document.getElementById('fallback');
+    async function play() {
+      try { await video.play(); start.hidden = true; }
+      catch { start.hidden = false; sound.hidden = true; }
+    }
+    sound.addEventListener('click', async () => {
+      video.muted = !video.muted;
+      if (video.paused) await play();
+    });
+    video.addEventListener('volumechange', () => {
+      sound.textContent = video.muted ? 'Włącz dźwięk / Enable sound' : 'Wycisz / Mute';
+    });
+    video.addEventListener('playing', () => {
+      start.hidden = true; fallback.hidden = true; sound.hidden = false;
+    });
+    video.addEventListener('error', () => {
+      fallback.hidden = false; sound.hidden = true; start.hidden = true;
+    });
+    video.querySelector('source').addEventListener('error', () => {
+      fallback.hidden = false; sound.hidden = true; start.hidden = true;
+    });
+    start.addEventListener('click', play);
+    play();
+  </script>
+</body>
+</html>
+
