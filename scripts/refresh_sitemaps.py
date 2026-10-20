@@ -9,6 +9,7 @@ from html import escape
 from pathlib import Path
 from urllib.parse import quote
 import re
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://lukaszednarski998.github.io/privacy-policy.html/"
@@ -19,6 +20,25 @@ paths = sorted(
     key=lambda p: p.relative_to(ROOT).as_posix()
 )
 urlset = set()
+lastmod_by_url = {}
+
+def indexnow_relevant(relative):
+    """Only advertise lastmod for this product and its 14 homepage/catalog variants."""
+    name = relative.split("/")[-1]
+    if relative.startswith("apps/arvion-watch-media-hub") and name.endswith(".html"):
+        return True
+    if (relative.startswith("apps/index") or relative.startswith("index")) and name.endswith(".html"):
+        return True
+    return False
+
+def committed_date(relative):
+    result = subprocess.run(
+        ["git", "log", "-1", "--format=%cs", "--", relative],
+        cwd=ROOT, capture_output=True, text=True, check=False,
+    )
+    date = result.stdout.strip()
+    return date if re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", date) else None
+
 for file in paths:
     relative = file.relative_to(ROOT).as_posix()
     if EXCLUDED.fullmatch(relative):
@@ -29,7 +49,12 @@ for file in paths:
         path = "apps/"
     else:
         path = quote(relative, safe="/-_.~")
-    urlset.add(BASE + path)
+    url = BASE + path
+    urlset.add(url)
+    if indexnow_relevant(relative):
+        lastmod = committed_date(relative)
+        if lastmod:
+            lastmod_by_url[url] = lastmod
 
 urls = sorted(urlset, key=lambda url: (url != BASE, url != BASE + "apps/", url))
 xml_lines = [
@@ -37,7 +62,10 @@ xml_lines = [
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 ]
 for url in urls:
-    xml_lines += ["  <url>", f"    <loc>{escape(url)}</loc>", "  </url>"]
+    xml_lines += ["  <url>", f"    <loc>{escape(url)}</loc>"]
+    if url in lastmod_by_url:
+        xml_lines.append(f"    <lastmod>{lastmod_by_url[url]}</lastmod>")
+    xml_lines.append("  </url>")
 xml_lines.append("</urlset>")
 xml = "\n".join(xml_lines) + "\n"
 txt = "\n".join(urls) + "\n"
