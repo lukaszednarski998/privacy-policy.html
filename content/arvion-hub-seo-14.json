@@ -1,0 +1,464 @@
+{
+  "en": {
+    "title": "Connect Android to Wear OS: Music, Files & Camera | ARVION",
+    "desc": "Connect your Android phone to a Wear OS smartwatch. Transfer files both ways, play music offline, watch videos and preview the phone camera with ARVION HUB.",
+    "h1": "Connect your Android phone to a Wear OS smartwatch with ARVION HUB",
+    "lead": "Looking for a way to connect your phone and smartwatch, send files to your watch or play music without carrying your phone? ARVION Watch Media Hub brings MUSIC 2 WATCH, VIDEO 2 WATCH, CAM 2 WATCH and a two-way file explorer into one Android and Wear OS app. Transfer your own music, videos, photos and documents, preview your phone camera on your wrist and manage media over a local connection.",
+    "sections": [
+      [
+        "Connect an Android phone and Wear OS watch",
+        "Install the app on your Android phone and compatible Wear OS smartwatch, open both apps and pair the devices. Discover supported connections using Bluetooth, Wi-Fi or QR pairing; local LAN and Wi-Fi Direct are available on supported hardware. QR exchanges pairing details, not the media itself. For music or video streaming, connect both devices to the same Wi-Fi network; a phone hotspot can provide that local network."
+      ],
+      [
+        "MUSIC 2 WATCH – transfer songs and listen offline",
+        "Copy your own songs, music files and audio recordings from Android to your smartwatch. Organize an offline watch library and play supported tracks without an active phone connection. Music synchronization checks which tracks are missing on the watch and transfers them. You can also stream from the phone when both devices use the same Wi-Fi network."
+      ],
+      [
+        "VIDEO 2 WATCH – transfer and play videos on your watch",
+        "Send personal videos to your Wear OS watch, open supported videos saved on its storage or stream from your phone over local Wi-Fi. WATCH OPTIMIZED can prepare a 480p MP4 copy using H.264 video and AAC audio. Video conversion and playback depend on your watch, storage space and supported codecs."
+      ],
+      [
+        "CAM 2 WATCH – see your phone camera on your smartwatch",
+        "Use the watch as a preview screen to check what your phone camera sees. Switch between front and rear cameras, use microphone and recording controls and tap to reveal automatically hidden controls. Start the camera session on the phone and grant the necessary permissions. A suitable local wireless connection is required; Android shows active camera or microphone indicators."
+      ],
+      [
+        "Transfer files between phone and watch in both directions",
+        "Use the file explorer to send photos, music, videos, PDFs and selected documents from phone to smartwatch or from watch back to phone. Select individual files, queue several transfers or package a folder as ZIP. Check the receiving device, file name, direction and transfer percentage, and cancel a transfer if needed. A watch can store a format it cannot itself display."
+      ],
+      [
+        "Browser Share – download watch or phone files to a PC",
+        "Share selected files with a browser on another phone, tablet or computer connected to the same local network. The receiving device can download shared files without installing the companion app. Keep Browser Share active during the download."
+      ],
+      [
+        "Clear transfer progress and offline media storage",
+        "A transfer panel on Wear OS keeps the file name, direction, percentage and progress bar visible while moving between app screens. Successful delivery is marked by a green check before the panel closes. Your media remains on the receiving device; music and videos already stored on the watch can be opened offline when supported."
+      ],
+      [
+        "60-minute trial, one-time purchase, no ads",
+        "Explore the full hub during a 60-minute trial counted from installation, even while the app is closed. Unlock the full version through a one-time Google Play purchase and restore your purchase when needed. There are no ads or subscriptions. Local file transfer does not require cloud media storage or an app account; installation and purchase checks may require internet. The interface supports 14 languages."
+      ]
+    ],
+    "faqTitle": "Frequently asked questions about connecting your phone and watch",
+    "faq": [
+      [
+        "How do I transfer music from an Android phone to a Wear OS watch?",
+        "Install ARVION Watch Media Hub on both compatible devices, connect them, open MUSIC 2 WATCH and select your own audio files. Supported tracks copied to the watch can play offline."
+      ],
+      [
+        "Can I watch videos on my smartwatch without internet?",
+        "Yes, compatible video files already stored on the watch can play locally. Streaming videos from the phone requires both devices on the same local Wi-Fi network."
+      ],
+      [
+        "Can I display my phone camera on my watch?",
+        "CAM 2 WATCH provides a preview of the phone camera on a compatible watch when you start a session on the phone, grant permissions and have a suitable local connection."
+      ],
+      [
+        "Can I send photos and PDF files from the watch back to the phone?",
+        "Yes. The file explorer supports two-way transfers. Whether a received PDF, photo or other file opens depends on the destination device and its installed apps."
+      ],
+      [
+        "Does ARVION HUB work with every smartwatch?",
+        "No. The watch application is designed for compatible Wear OS models. Check device support and availability in Google Play; Apple Watch and watches with other operating systems are not automatically supported."
+      ]
+    ],
+    "closingTitle": "One hub for your Android phone and Wear OS smartwatch",
+    "closing": "Bring music, videos, file transfers and phone camera preview together on your wrist. Discover ARVION HUB and check availability for your devices.",
+    "card": "Connect Android and Wear OS. Transfer music, video, photos and files both ways, play media offline and preview your phone camera on your watch."
+  },
+  "pl": {
+    "title": "Telefon i zegarek Wear OS: pliki, muzyka, kamera | ARVION",
+    "desc": "Połącz telefon Android z zegarkiem Wear OS. Przesyłaj pliki w obie strony, słuchaj muzyki offline, oglądaj filmy i podglądaj kamerę telefonu z ARVION HUB.",
+    "h1": "Połącz telefon Android z zegarkiem Wear OS dzięki ARVION HUB",
+    "lead": "Szukasz sposobu na połączenie telefonu ze smartwatchem, przesyłanie plików na zegarek albo słuchanie muzyki bez noszenia telefonu? ARVION Watch Media Hub łączy MUSIC 2 WATCH, VIDEO 2 WATCH, CAM 2 WATCH i dwukierunkowy menedżer plików w jednej aplikacji na Androida i Wear OS. Przesyłaj własną muzykę, filmy, zdjęcia i dokumenty, sprawdzaj obraz z kamery telefonu na nadgarstku i zarządzaj multimediami przez sieć lokalną.",
+    "sections": [
+      [
+        "Jak połączyć telefon Android z zegarkiem Wear OS?",
+        "Zainstaluj aplikację na telefonie z Androidem i zgodnym smartwatchu Wear OS, uruchom obie wersje i sparuj urządzenia. Dostępne metody obejmują obsługiwane połączenia Bluetooth, Wi-Fi i parowanie kodem QR, a także LAN lub Wi-Fi Direct na zgodnym sprzęcie. Kod QR przekazuje informacje parowania, nie pliki multimedialne. Streaming muzyki i filmów wymaga tej samej sieci Wi-Fi; może ją zapewnić hotspot telefonu."
+      ],
+      [
+        "MUSIC 2 WATCH – przesyłanie muzyki na zegarek i odtwarzanie offline",
+        "Skopiuj własne piosenki, pliki muzyczne i nagrania z telefonu na smartwatch. Utwórz bibliotekę lub playlistę i odtwarzaj obsługiwane utwory bez aktywnego połączenia z telefonem. Synchronizacja sprawdza, których utworów brakuje w pamięci zegarka, i wysyła je. Możesz też odtwarzać muzykę z telefonu przez wspólne Wi-Fi."
+      ],
+      [
+        "VIDEO 2 WATCH – filmy z telefonu na smartwatch",
+        "Przesyłaj własne filmy na zegarek Wear OS, oglądaj obsługiwane pliki zapisane w jego pamięci albo korzystaj ze streamingu przez lokalne Wi-Fi. WATCH OPTIMIZED przygotowuje kopię MP4 w 480p z obrazem H.264 i dźwiękiem AAC. Konwersja i odtwarzanie zależą od możliwości urządzenia, kodeków i dostępnego miejsca."
+      ],
+      [
+        "CAM 2 WATCH – podgląd kamery telefonu na zegarku",
+        "Zobacz na ekranie smartwatcha, co rejestruje kamera telefonu. Przełączaj kamerę przednią i tylną, korzystaj ze sterowania mikrofonem oraz nagrywaniem. Przyciski mogą się automatycznie ukrywać, aby nie zasłaniać podglądu. Sesję uruchamiasz na telefonie po nadaniu uprawnień; wymagane jest odpowiednie połączenie lokalne, a Android pokazuje wskaźniki pracy kamery i mikrofonu."
+      ],
+      [
+        "Dwukierunkowe przesyłanie plików: telefon ↔ zegarek",
+        "Eksplorator umożliwia wysyłanie zdjęć, muzyki, filmów, PDF-ów i innych wybranych plików z telefonu na zegarek oraz z zegarka na telefon. Wybierz pojedyncze pliki, dodaj kilka do kolejki lub spakuj folder do ZIP. Kontroluj nazwę, kierunek, procent i pasek postępu; w razie potrzeby anuluj transfer. Zegarek może przechowywać także plik, którego formatu nie potrafi otworzyć."
+      ],
+      [
+        "Browser Share – udostępnianie plików komputerowi bez dodatkowej aplikacji",
+        "Udostępnij wybrane pliki przez przeglądarkę innemu telefonowi, tabletowi lub komputerowi w tej samej sieci lokalnej. Odbiorca pobierze je bez instalowania osobnej aplikacji. Podczas pobierania pozostaw sesję Browser Share aktywną."
+      ],
+      [
+        "Procent przesyłania i pliki zapisane lokalnie",
+        "Na Wear OS panel transferu pokazuje nazwę pliku, kierunek, procent i postęp również po przejściu do innej zakładki. Po udanym przesłaniu pojawia się zielone potwierdzenie. Pliki zostają na wybranym urządzeniu; zgodne utwory i filmy zapisane na zegarku można uruchamiać offline."
+      ],
+      [
+        "60 minut testu, jedna płatność, bez reklam",
+        "Sprawdź cały hub podczas 60-minutowego okresu próbnego liczonego od instalacji, także gdy aplikacja jest zamknięta. Pełną wersję odblokujesz jednorazowym zakupem w Google Play; dostępne jest przywracanie zakupu. Bez reklam i abonamentu. Lokalny transfer nie wymaga konta ani przesyłania biblioteki do chmury dewelopera. Instalacja i weryfikacja zakupu mogą wymagać internetu. Interfejs obsługuje 14 języków."
+      ]
+    ],
+    "faqTitle": "Najczęstsze pytania o połączenie telefonu i smartwatcha",
+    "faq": [
+      [
+        "Jak przesłać muzykę z telefonu Android na zegarek Wear OS?",
+        "Zainstaluj ARVION Watch Media Hub na obu zgodnych urządzeniach, połącz je, otwórz MUSIC 2 WATCH i wybierz własne pliki audio. Obsługiwane utwory zapisane na zegarku możesz odtwarzać offline."
+      ],
+      [
+        "Czy mogę oglądać filmy na zegarku bez internetu?",
+        "Tak, jeśli zgodne pliki są już zapisane w pamięci zegarka. Streaming filmów z telefonu wymaga wspólnej lokalnej sieci Wi-Fi."
+      ],
+      [
+        "Czy na smartwatchu zobaczę obraz z kamery telefonu?",
+        "Tak, moduł CAM 2 WATCH udostępnia podgląd po uruchomieniu sesji na telefonie, nadaniu uprawnień i zapewnieniu odpowiedniego połączenia lokalnego."
+      ],
+      [
+        "Czy prześlę zdjęcia i PDF-y z zegarka na telefon?",
+        "Tak. Eksplorator umożliwia transfer w obie strony. Otwieranie otrzymanych plików zależy od formatów obsługiwanych przez urządzenie i zainstalowanych aplikacji."
+      ],
+      [
+        "Czy ARVION HUB działa z każdym smartwatchem?",
+        "Nie. Aplikacja zegarkowa jest przeznaczona dla zgodnych urządzeń Wear OS. Sprawdź kompatybilność i dostępność w Google Play; Apple Watch i zegarki z innymi systemami nie są automatycznie obsługiwane."
+      ]
+    ],
+    "closingTitle": "Jedna aplikacja do połączenia telefonu i smartwatcha",
+    "closing": "Muzyka offline, filmy na Wear OS, przesyłanie plików i podgląd kamery telefonu w jednym miejscu. Poznaj ARVION HUB i sprawdź dostępność dla swoich urządzeń.",
+    "card": "Połącz telefon Android z Wear OS. Przesyłaj pliki, muzykę, filmy i zdjęcia w obie strony, odtwarzaj multimedia offline i podglądaj kamerę telefonu."
+  },
+  "de": {
+    "title": "Android mit Wear OS verbinden: Musik, Dateien & Kamera | ARVION",
+    "desc": "Verbinde Android-Handy und Wear-OS-Smartwatch. Übertrage Dateien in beide Richtungen, höre Musik offline, sieh Videos und die Handykamera mit ARVION HUB.",
+    "h1": "Android-Handy und Wear-OS-Smartwatch mit ARVION HUB verbinden",
+    "lead": "Möchtest du dein Handy mit einer Smartwatch verbinden, Musik auf die Uhr übertragen oder Dateien zwischen beiden Geräten austauschen? ARVION Watch Media Hub vereint MUSIC 2 WATCH, VIDEO 2 WATCH, CAM 2 WATCH und einen Datei-Explorer für Android und kompatible Wear-OS-Uhren. Übertrage eigene Musik, Videos, Fotos und Dokumente und sieh das Kamerabild deines Handys am Handgelenk.",
+    "sections": [
+      [
+        "Android und Wear OS per WLAN, Bluetooth und QR koppeln",
+        "Installiere die App auf Handy und kompatibler Wear-OS-Uhr und öffne beide Versionen. Die Verbindung nutzt je nach Gerät Bluetooth, WLAN, QR-Kopplung, lokales LAN oder Wi-Fi Direct. Ein QR-Code übermittelt Kopplungsdaten, nicht die Mediendateien. Für Musik- und Videostreaming müssen beide Geräte im selben WLAN sein; ein Handy-Hotspot kann dafür genügen."
+      ],
+      [
+        "MUSIC 2 WATCH – Musik auf die Smartwatch übertragen",
+        "Kopiere eigene Musiktitel und Audioaufnahmen vom Android-Handy auf die Uhr. Spiele unterstützte Titel aus dem lokalen Uhrenspeicher ohne aktive Handyverbindung ab und erstelle eine Playlist für Sport oder Reisen. Die Synchronisierung erkennt fehlende Titel und überträgt sie. Streaming vom Handy funktioniert im gemeinsamen WLAN."
+      ],
+      [
+        "VIDEO 2 WATCH – Videos auf Wear OS ansehen",
+        "Übertrage eigene Videos auf die Uhr oder streame sie im lokalen WLAN vom Handy. WATCH OPTIMIZED kann eine MP4-Kopie in 480p mit H.264-Video und AAC-Audio erstellen. Ob Umwandlung und Wiedergabe funktionieren, hängt von Gerät, Codecs und Speicherplatz ab."
+      ],
+      [
+        "CAM 2 WATCH – Handykamera auf der Uhr ansehen",
+        "Prüfe den Bildausschnitt deiner Handykamera auf der Smartwatch. Wechsle zwischen Front- und Rückkamera und nutze Mikrofon- und Aufnahmebedienung. Die Steuerelemente lassen sich für mehr Platz automatisch ausblenden. Starte die Sitzung am Handy, erteile Berechtigungen und verwende eine passende lokale Verbindung; Android zeigt die aktive Kamera- oder Mikrofonnutzung an."
+      ],
+      [
+        "Dateien vom Handy zur Uhr und zurück senden",
+        "Mit dem Explorer überträgst du Musik, Videos, Bilder, PDFs und andere ausgewählte Dateien in beide Richtungen. Wähle einzelne oder mehrere Dateien oder verpacke einen Ordner als ZIP. Dateiname, Richtung, Prozentanzeige und Fortschrittsbalken bleiben nachvollziehbar; ein Transfer lässt sich abbrechen. Die Uhr kann Dateien speichern, auch wenn sie sie nicht selbst öffnen kann."
+      ],
+      [
+        "Browser Share – Dateien am PC ohne Empfänger-App laden",
+        "Teile ausgewählte Dateien über einen kompatiblen Browser mit einem PC, Tablet oder weiteren Handy im selben lokalen Netzwerk. Die Gegenseite braucht keine zusätzliche App. Halte die Browser-Share-Sitzung während des Downloads geöffnet."
+      ],
+      [
+        "Übertragungsfortschritt und lokale Offline-Bibliothek",
+        "Auf Wear OS bleibt ein globaler Transferbereich mit Dateiname, Richtung, Prozentzahl und Fortschritt beim Wechsel zwischen Bildschirmen sichtbar. Nach Erfolg erscheint kurz ein grüner Haken. Bereits gespeicherte kompatible Musik und Videos lassen sich auf der Uhr offline nutzen."
+      ],
+      [
+        "60 Minuten testen, einmal kaufen, keine Werbung",
+        "Der 60-Minuten-Test beginnt bei der Installation und läuft auch bei geschlossener App weiter. Die Vollversion wird einmalig über Google Play gekauft und kann wiederhergestellt werden – ohne Werbung oder Abo. Lokale Dateien brauchen weder Entwickler-Cloud noch App-Konto. Installation und Kaufprüfung können Internet erfordern. Die Oberfläche unterstützt 14 Sprachen."
+      ]
+    ],
+    "faqTitle": "Häufige Fragen zum Verbinden von Handy und Smartwatch",
+    "faq": [
+      [
+        "Wie bekomme ich Musik vom Android-Handy auf die Wear-OS-Uhr?",
+        "Installiere die App auf beiden kompatiblen Geräten, verbinde sie und wähle deine Audiodateien in MUSIC 2 WATCH. Unterstützte Titel können anschließend offline auf der Uhr laufen."
+      ],
+      [
+        "Kann ich Videos ohne Internet auf der Uhr abspielen?",
+        "Ja, sofern kompatible Videos bereits lokal gespeichert sind. Streaming vom Handy erfordert dasselbe lokale WLAN."
+      ],
+      [
+        "Kann ich die Handykamera auf der Smartwatch sehen?",
+        "CAM 2 WATCH zeigt eine Vorschau, wenn die Sitzung am Handy gestartet, die Berechtigung erteilt und eine geeignete lokale Verbindung hergestellt wurde."
+      ],
+      [
+        "Lassen sich Bilder und PDFs zurück ans Handy senden?",
+        "Ja. Explorer unterstützt die Übertragung in beide Richtungen. Zum Öffnen sind geeignete Dateiformate und Anwendungen auf dem Zielgerät erforderlich."
+      ],
+      [
+        "Funktioniert ARVION HUB mit jeder Smartwatch?",
+        "Nein. Die Uhren-App ist für kompatible Wear-OS-Modelle gedacht. Prüfe die Geräteunterstützung bei Google Play; Apple Watch und Uhren anderer Systeme sind nicht automatisch kompatibel."
+      ]
+    ],
+    "closingTitle": "Dein Media-Hub für Android-Handy und Wear OS",
+    "closing": "Musik offline hören, Videos ansehen, Dateien senden und die Handykamera prüfen – alles zusammen in ARVION HUB. Informiere dich über die Verfügbarkeit.",
+    "card": "Android-Handy mit Wear OS verbinden: Musik und Dateien übertragen, Videos offline abspielen und die Handykamera auf der Uhr ansehen."
+  },
+  "fr": {
+    "title": "Connecter Android à Wear OS : musique, fichiers et caméra | ARVION",
+    "desc": "Connectez votre téléphone Android à une montre Wear OS. Transférez des fichiers, écoutez hors ligne, regardez des vidéos et voyez la caméra du téléphone.",
+    "h1": "Connectez votre téléphone Android à une montre Wear OS avec ARVION HUB",
+    "lead": "Vous cherchez à connecter votre téléphone à une montre connectée, à transférer de la musique ou à envoyer des fichiers dans les deux sens ? ARVION Watch Media Hub réunit MUSIC 2 WATCH, VIDEO 2 WATCH, CAM 2 WATCH et un explorateur de fichiers sur Android et les montres Wear OS compatibles. Retrouvez vos vidéos, photos, documents et l'aperçu de la caméra du téléphone directement au poignet.",
+    "sections": [
+      [
+        "Connecter Android et Wear OS par Wi-Fi, Bluetooth ou QR",
+        "Installez l'application sur le téléphone et une montre Wear OS compatible, puis ouvrez les deux versions. Selon le matériel, l'appairage utilise Bluetooth, Wi-Fi, un code QR, le réseau local ou Wi-Fi Direct. Le QR sert à échanger les informations d'appairage, pas les médias. Le streaming musical et vidéo exige un même réseau Wi-Fi, éventuellement créé par le partage de connexion du téléphone."
+      ],
+      [
+        "MUSIC 2 WATCH : transférer de la musique et écouter hors ligne",
+        "Copiez vos chansons et enregistrements audio sur la montre. Organisez une bibliothèque locale et lisez les morceaux pris en charge sans connexion active au téléphone. La synchronisation détecte les titres manquants et les envoie. Vous pouvez aussi diffuser la musique du téléphone lorsque les deux appareils partagent le même Wi-Fi."
+      ],
+      [
+        "VIDEO 2 WATCH : envoyer des vidéos vers la montre",
+        "Transférez vos vidéos personnelles vers Wear OS pour une lecture locale ou diffusez-les depuis le téléphone sur le Wi-Fi local. WATCH OPTIMIZED peut créer une copie MP4 en 480p, vidéo H.264 et audio AAC. La conversion et la lecture dépendent des codecs, de l'espace disponible et des capacités de l'appareil."
+      ],
+      [
+        "CAM 2 WATCH : voir la caméra du téléphone au poignet",
+        "Contrôlez le cadrage de la caméra du téléphone sur votre montre. Passez de l'objectif avant à l'arrière et utilisez les commandes du microphone et d'enregistrement. Les commandes peuvent se masquer pour agrandir l'aperçu. Lancez la session depuis le téléphone, accordez les autorisations et établissez une connexion locale adaptée ; Android signale l'utilisation de la caméra et du micro."
+      ],
+      [
+        "Transférer des fichiers entre téléphone et montre dans les deux sens",
+        "L'explorateur permet l'envoi de photos, musique, vidéos, PDF et autres fichiers sélectionnés dans chaque direction. Sélectionnez plusieurs éléments ou compressez un dossier au format ZIP. Consultez le nom, le sens, le pourcentage et la barre de progression ; annulez si nécessaire. La montre peut stocker un fichier sans pouvoir ouvrir son format."
+      ],
+      [
+        "Browser Share : télécharger des fichiers sur PC ou tablette",
+        "Partagez des fichiers avec un navigateur compatible sur un autre téléphone, une tablette ou un ordinateur du même réseau local. Aucun logiciel de réception supplémentaire n'est nécessaire. Gardez la session Browser Share active pendant le téléchargement."
+      ],
+      [
+        "Progression visible et stockage multimédia local",
+        "Sur Wear OS, un panneau global affiche le fichier, le sens, le pourcentage et la progression même lorsque vous changez d'écran. Une coche verte confirme la réception réussie. Les médias compatibles déjà stockés sur la montre restent disponibles hors ligne."
+      ],
+      [
+        "Essai de 60 minutes, achat unique, sans publicité",
+        "L'essai de 60 minutes démarre à l'installation et continue lorsque l'application est fermée. La version complète s'active par un achat unique Google Play, restaurable si nécessaire, sans publicité ni abonnement. Les transferts locaux ne demandent ni compte ni stockage dans le cloud du développeur. Internet peut être nécessaire pour l'installation et la vérification d'achat. Interface en 14 langues."
+      ]
+    ],
+    "faqTitle": "Questions fréquentes sur la connexion Android et Wear OS",
+    "faq": [
+      [
+        "Comment transférer ma musique Android vers une montre Wear OS ?",
+        "Installez ARVION HUB sur les deux appareils compatibles, connectez-les et choisissez vos fichiers dans MUSIC 2 WATCH. Les morceaux pris en charge pourront être lus hors ligne."
+      ],
+      [
+        "Peut-on regarder des vidéos sans Internet sur la montre ?",
+        "Oui, si les fichiers compatibles sont déjà enregistrés sur la montre. La diffusion depuis le téléphone exige un même réseau Wi-Fi local."
+      ],
+      [
+        "Puis-je afficher la caméra du téléphone sur ma montre ?",
+        "CAM 2 WATCH fournit un aperçu lorsque la session est lancée sur le téléphone, les autorisations accordées et la connexion locale établie."
+      ],
+      [
+        "Puis-je renvoyer des photos et PDF de la montre vers le téléphone ?",
+        "Oui. Le transfert fonctionne dans les deux sens. L'ouverture des fichiers dépend des formats et applications installées sur l'appareil de destination."
+      ],
+      [
+        "ARVION HUB fonctionne-t-il avec toutes les montres ?",
+        "Non. L'application montre cible les modèles Wear OS compatibles. Vérifiez la compatibilité sur Google Play ; Apple Watch et les autres systèmes ne sont pas automatiquement pris en charge."
+      ]
+    ],
+    "closingTitle": "Un seul hub pour votre téléphone Android et votre montre",
+    "closing": "Musique hors ligne, vidéos, transferts de fichiers et aperçu de la caméra : découvrez ARVION HUB et vérifiez sa disponibilité pour vos appareils.",
+    "card": "Reliez Android à Wear OS : musique hors ligne, vidéos, fichiers dans les deux sens et aperçu de la caméra du téléphone sur la montre."
+  },
+  "es": {
+    "title": "Conectar Android con Wear OS: música, archivos y cámara | ARVION",
+    "desc": "Conecta tu móvil Android a un reloj Wear OS. Transfiere archivos en ambos sentidos, escucha música sin conexión, mira vídeos y visualiza la cámara del móvil.",
+    "h1": "Conecta tu móvil Android con un smartwatch Wear OS usando ARVION HUB",
+    "lead": "¿Buscas cómo conectar el móvil al reloj, pasar música al smartwatch o transferir archivos entre ambos? ARVION Watch Media Hub reúne MUSIC 2 WATCH, VIDEO 2 WATCH, CAM 2 WATCH y un explorador de archivos para Android y relojes Wear OS compatibles. Envía tus vídeos, fotos y documentos y consulta la vista previa de la cámara del teléfono desde tu muñeca.",
+    "sections": [
+      [
+        "Conectar Android y Wear OS por Wi-Fi, Bluetooth o QR",
+        "Instala la app en el móvil y el reloj Wear OS compatible, abre ambas versiones y vincula los dispositivos. Según el hardware, puedes usar Bluetooth, Wi-Fi, QR, red local o Wi-Fi Direct. El código QR comparte los datos de vinculación, no los archivos multimedia. La transmisión de música y vídeo necesita la misma red Wi-Fi; el punto de acceso del móvil puede proporcionarla."
+      ],
+      [
+        "MUSIC 2 WATCH: pasar música al reloj y escuchar sin conexión",
+        "Copia tus canciones y grabaciones de audio al smartwatch. Crea una biblioteca local o lista de reproducción y escucha archivos compatibles sin mantener el teléfono conectado. La sincronización detecta las canciones que faltan en el reloj y las envía. También puedes escuchar música transmitida desde el móvil en la misma red Wi-Fi."
+      ],
+      [
+        "VIDEO 2 WATCH: enviar y reproducir vídeos en Wear OS",
+        "Transfiere tus vídeos al reloj para reproducirlos localmente o transmite desde el móvil por Wi-Fi local. WATCH OPTIMIZED puede preparar una copia MP4 de 480p con vídeo H.264 y audio AAC. La conversión y reproducción dependen del dispositivo, los códecs y el almacenamiento."
+      ],
+      [
+        "CAM 2 WATCH: ver la cámara del teléfono en el smartwatch",
+        "Comprueba desde el reloj el encuadre de la cámara del móvil. Cambia entre cámara delantera y trasera y utiliza los controles de micrófono y grabación. Los controles pueden ocultarse automáticamente para ampliar la imagen. Inicia la sesión en el móvil, concede permisos y mantén una conexión local adecuada; Android indica cuando usa la cámara o el micrófono."
+      ],
+      [
+        "Transferencia de archivos del móvil al reloj y viceversa",
+        "Envía fotos, música, vídeos, PDF y otros archivos seleccionados en ambas direcciones con el explorador. Selecciona uno o varios elementos o comprime una carpeta en ZIP. Consulta el nombre, la dirección, el porcentaje y la barra de progreso, y cancela si lo necesitas. Un reloj puede guardar un archivo aunque no pueda abrir su formato."
+      ],
+      [
+        "Browser Share: compartir archivos con PC o tablet",
+        "Comparte archivos con un navegador compatible en otro teléfono, tablet u ordenador de la misma red local. El receptor puede descargarlos sin instalar otra aplicación. Mantén Browser Share activo durante la descarga."
+      ],
+      [
+        "Progreso de transferencias y archivos locales sin conexión",
+        "En Wear OS, un panel global muestra el archivo, la dirección, el porcentaje y el progreso incluso al cambiar de pantalla. Una marca verde confirma la entrega correcta. La música y los vídeos compatibles guardados en el reloj pueden reproducirse sin conexión."
+      ],
+      [
+        "Prueba de 60 minutos, pago único, sin anuncios",
+        "La prueba de 60 minutos comienza con la instalación y sigue corriendo mientras la aplicación está cerrada. Desbloquea la versión completa mediante una compra única de Google Play y restáurala cuando sea necesario. Sin anuncios ni suscripciones. Las transferencias locales no exigen cuenta ni nube del desarrollador. Puede hacer falta Internet para instalar o verificar la compra. Interfaz en 14 idiomas."
+      ]
+    ],
+    "faqTitle": "Preguntas frecuentes sobre Android y Wear OS",
+    "faq": [
+      [
+        "¿Cómo paso música del móvil Android al reloj Wear OS?",
+        "Instala ARVION HUB en ambos dispositivos compatibles, conéctalos y selecciona tus audios en MUSIC 2 WATCH. Las pistas compatibles almacenadas en el reloj funcionan sin conexión."
+      ],
+      [
+        "¿Se pueden ver vídeos sin Internet en el smartwatch?",
+        "Sí, si los archivos compatibles ya están guardados en el reloj. Para transmitir desde el móvil, ambos necesitan la misma red Wi-Fi local."
+      ],
+      [
+        "¿Puedo ver la cámara del móvil en el reloj?",
+        "CAM 2 WATCH muestra la vista previa cuando inicias la sesión en el teléfono, concedes permisos y estableces una conexión local adecuada."
+      ],
+      [
+        "¿Puedo pasar fotos y archivos PDF del reloj al teléfono?",
+        "Sí. El explorador permite transferencias en ambas direcciones. La apertura depende del formato y de las apps instaladas en el dispositivo receptor."
+      ],
+      [
+        "¿Funciona ARVION HUB con cualquier smartwatch?",
+        "No. La aplicación de reloj está diseñada para modelos Wear OS compatibles. Comprueba la compatibilidad en Google Play; otros sistemas no son compatibles automáticamente."
+      ]
+    ],
+    "closingTitle": "Un centro multimedia para Android y Wear OS",
+    "closing": "Lleva música, vídeos, archivos y la vista previa de la cámara del móvil a tu muñeca. Descubre ARVION HUB y consulta la disponibilidad.",
+    "card": "Conecta Android y Wear OS. Pasa música, vídeos, fotos y archivos en ambos sentidos, reproduce sin conexión y consulta la cámara del móvil."
+  },
+  "it": {
+    "title": "Collega Android a Wear OS: musica, file e fotocamera | ARVION",
+    "desc": "Collega smartphone Android e smartwatch Wear OS. Trasferisci file nei due sensi, ascolta musica offline, guarda video e visualizza la fotocamera del telefono.",
+    "h1": "Collega il telefono Android allo smartwatch Wear OS con ARVION HUB",
+    "lead": "Vuoi collegare il telefono all'orologio, inviare musica allo smartwatch o scambiare file tra i due dispositivi? ARVION Watch Media Hub riunisce MUSIC 2 WATCH, VIDEO 2 WATCH, CAM 2 WATCH e un file manager per Android e smartwatch Wear OS compatibili. Porta al polso musica, video, foto, documenti e l'anteprima della fotocamera del telefono.",
+    "sections": [
+      [
+        "Collegare Android e Wear OS con Wi-Fi, Bluetooth e QR",
+        "Installa l'app sul telefono e su uno smartwatch Wear OS compatibile, poi avvia entrambe le versioni. In base al dispositivo, l'associazione usa Bluetooth, Wi-Fi, codice QR, rete LAN o Wi-Fi Direct. Il QR scambia le informazioni di associazione, non i contenuti. Per lo streaming di musica e video serve la stessa rete Wi-Fi; va bene anche un hotspot del telefono."
+      ],
+      [
+        "MUSIC 2 WATCH: trasferire musica e ascoltare offline",
+        "Copia brani e registrazioni audio personali dall'Android allo smartwatch. Crea una libreria locale o una playlist e riproduci i file supportati senza un collegamento attivo al telefono. La sincronizzazione identifica e invia i brani mancanti. Puoi anche ascoltare in streaming dal telefono sulla stessa rete Wi-Fi."
+      ],
+      [
+        "VIDEO 2 WATCH: inviare e guardare video sull'orologio",
+        "Trasferisci i tuoi video su Wear OS per riprodurli dalla memoria oppure guardali in streaming dal telefono tramite Wi-Fi locale. WATCH OPTIMIZED può generare una copia MP4 a 480p con video H.264 e audio AAC. Conversione e riproduzione dipendono da codec, spazio e capacità del dispositivo."
+      ],
+      [
+        "CAM 2 WATCH: anteprima della fotocamera sullo smartwatch",
+        "Controlla dal polso l'inquadratura della fotocamera del telefono. Passa tra fotocamera anteriore e posteriore e usa i comandi di microfono e registrazione. I comandi possono nascondersi per lasciare spazio all'immagine. Avvia la sessione sul telefono, concedi i permessi e usa una connessione locale idonea; Android segnala quando fotocamera e microfono sono attivi."
+      ],
+      [
+        "Trasferimento bidirezionale dei file tra telefono e orologio",
+        "Con il file manager invia foto, musica, video, PDF e altri file selezionati in entrambe le direzioni. Scegli più elementi o crea un archivio ZIP da una cartella. Controlla nome, direzione, percentuale e barra di avanzamento; puoi annullare l'operazione. L'orologio può conservare un file anche se non supporta l'apertura del formato."
+      ],
+      [
+        "Browser Share: condividere file con PC e tablet",
+        "Metti a disposizione i file tramite un browser compatibile su un altro telefono, tablet o computer nella stessa rete locale. Chi riceve non deve installare un'altra app. Tieni attiva la sessione Browser Share durante il download."
+      ],
+      [
+        "Avanzamento sempre visibile e file offline",
+        "Su Wear OS un pannello globale mostra nome, direzione, percentuale e progresso anche cambiando schermata. Una spunta verde conferma la ricezione. Musica e video compatibili già salvati sull'orologio restano disponibili offline."
+      ],
+      [
+        "Prova di 60 minuti, acquisto una tantum, senza pubblicità",
+        "La prova di 60 minuti parte dall'installazione e prosegue anche ad app chiusa. Sblocca la versione completa con un solo acquisto su Google Play e ripristina l'acquisto se necessario. Nessuna pubblicità e nessun abbonamento. I trasferimenti locali non richiedono account né cloud dello sviluppatore. L'installazione e la verifica dell'acquisto possono richiedere Internet. Interfaccia in 14 lingue."
+      ]
+    ],
+    "faqTitle": "Domande frequenti sul collegamento Android e Wear OS",
+    "faq": [
+      [
+        "Come trasferisco musica dal telefono Android all'orologio?",
+        "Installa ARVION HUB sui dispositivi compatibili, collegali e seleziona i file in MUSIC 2 WATCH. I brani supportati copiati sull'orologio sono riproducibili offline."
+      ],
+      [
+        "Posso guardare video sull'orologio senza Internet?",
+        "Sì, se i video compatibili sono già nella memoria del dispositivo. Lo streaming dal telefono richiede una rete Wi-Fi locale condivisa."
+      ],
+      [
+        "Posso vedere la fotocamera del telefono sullo smartwatch?",
+        "CAM 2 WATCH offre l'anteprima dopo aver avviato una sessione sul telefono, concesso i permessi e attivato una connessione locale adatta."
+      ],
+      [
+        "Posso inviare foto e PDF dall'orologio al telefono?",
+        "Sì. Il file manager funziona nei due sensi. L'apertura dipende dal formato e dalle applicazioni installate sul dispositivo destinatario."
+      ],
+      [
+        "ARVION HUB funziona con tutti gli smartwatch?",
+        "No. L'app per orologio richiede un modello Wear OS compatibile. Controlla il supporto su Google Play; Apple Watch e altri sistemi non sono automaticamente compatibili."
+      ]
+    ],
+    "closingTitle": "Un solo hub per smartphone Android e Wear OS",
+    "closing": "Musica offline, video, invio di file e anteprima della fotocamera in un'unica app. Scopri ARVION HUB e verifica la disponibilità.",
+    "card": "Collega Android e Wear OS: trasferisci musica, video, foto e file nei due sensi, riproduci offline e controlla la fotocamera del telefono."
+  },
+  "pt-BR": {
+    "title": "Conectar Android ao Wear OS: músicas, arquivos e câmera | ARVION",
+    "desc": "Conecte seu celular Android ao smartwatch Wear OS. Transfira arquivos nos dois sentidos, ouça músicas offline, assista a vídeos e veja a câmera do celular.",
+    "h1": "Conecte o celular Android ao smartwatch Wear OS com ARVION HUB",
+    "lead": "Quer conectar o celular ao relógio, passar músicas para o smartwatch ou transferir arquivos entre os dois? O ARVION Watch Media Hub reúne MUSIC 2 WATCH, VIDEO 2 WATCH, CAM 2 WATCH e um explorador de arquivos no Android e em relógios Wear OS compatíveis. Leve músicas, vídeos, fotos, documentos e a visualização da câmera do celular para o pulso.",
+    "sections": [
+      [
+        "Conectar Android e Wear OS por Wi-Fi, Bluetooth e QR",
+        "Instale o app no celular e em um smartwatch Wear OS compatível e abra os dois. Conforme o dispositivo, use Bluetooth, Wi-Fi, pareamento por QR, rede local ou Wi-Fi Direct. O QR compartilha dados de pareamento, não os arquivos de mídia. O streaming de música e vídeo requer a mesma rede Wi-Fi, que pode ser fornecida pelo ponto de acesso do celular."
+      ],
+      [
+        "MUSIC 2 WATCH: passar músicas para o relógio e ouvir offline",
+        "Copie músicas e gravações de áudio suas para o smartwatch. Organize uma biblioteca ou playlist local e reproduza faixas compatíveis sem conexão ativa com o celular. A sincronização identifica e envia faixas ausentes no relógio. Também é possível transmitir músicas do celular quando os aparelhos usam o mesmo Wi-Fi."
+      ],
+      [
+        "VIDEO 2 WATCH: enviar e assistir a vídeos no Wear OS",
+        "Transfira vídeos pessoais para reprodução local no relógio ou faça streaming do celular pela rede Wi-Fi. O WATCH OPTIMIZED pode criar uma cópia MP4 em 480p com vídeo H.264 e áudio AAC. Conversão e reprodução dependem dos codecs, do espaço e dos recursos do dispositivo."
+      ],
+      [
+        "CAM 2 WATCH: imagem da câmera do celular no smartwatch",
+        "Confira pelo relógio o enquadramento da câmera do celular. Alterne entre câmeras frontal e traseira e use controles de microfone e gravação. Os controles podem sumir automaticamente para deixar a visualização maior. Inicie a sessão no celular, conceda permissões e mantenha uma conexão local adequada; o Android mostra indicadores de uso da câmera ou do microfone."
+      ],
+      [
+        "Transferência de arquivos entre celular e relógio nos dois sentidos",
+        "Use o explorador para enviar fotos, músicas, vídeos, PDFs e outros arquivos selecionados em ambas as direções. Selecione vários itens ou compacte uma pasta em ZIP. Acompanhe nome, direção, porcentagem e barra de progresso, e cancele quando necessário. O relógio pode armazenar arquivos mesmo sem conseguir abrir o formato."
+      ],
+      [
+        "Browser Share: compartilhar arquivos com PC e tablet",
+        "Compartilhe arquivos pelo navegador compatível de outro celular, tablet ou computador na mesma rede local. Quem recebe pode baixar sem instalar outro aplicativo. Mantenha o Browser Share ativo durante o download."
+      ],
+      [
+        "Progresso visível e mídia guardada offline",
+        "No Wear OS, um painel global mostra arquivo, sentido, porcentagem e andamento mesmo ao navegar entre telas. Uma marca verde confirma o envio concluído. Músicas e vídeos compatíveis já salvos no relógio podem ser usados offline."
+      ],
+      [
+        "Teste de 60 minutos, compra única, sem anúncios",
+        "O teste de 60 minutos começa na instalação e continua contando com o app fechado. Desbloqueie a versão completa com uma compra única no Google Play e restaure a compra quando necessário. Sem anúncios ou assinatura. As transferências locais dispensam conta e armazenamento na nuvem do desenvolvedor. Instalação e verificação da compra podem exigir Internet. Interface em 14 idiomas."
+      ]
+    ],
+    "faqTitle": "Perguntas frequentes sobre Android e Wear OS",
+    "faq": [
+      [
+        "Como passar música do Android para o relógio Wear OS?",
+        "Instale o ARVION HUB nos dois dispositivos compatíveis, conecte-os e escolha seus áudios no MUSIC 2 WATCH. As faixas compatíveis salvas no relógio tocam offline."
+      ],
+      [
+        "Posso assistir a vídeos no smartwatch sem Internet?",
+        "Sim, se os vídeos compatíveis já estiverem na memória do relógio. O streaming do celular exige a mesma rede Wi-Fi local."
+      ],
+      [
+        "Posso ver a câmera do celular no relógio?",
+        "O CAM 2 WATCH mostra a imagem após iniciar uma sessão no celular, conceder permissões e estabelecer uma conexão local adequada."
+      ],
+      [
+        "Posso transferir fotos e PDFs do relógio para o celular?",
+        "Sim. O explorador transfere nos dois sentidos. Abrir os arquivos depende dos formatos e aplicativos instalados no dispositivo receptor."
+      ],
+      [
+        "O ARVION HUB funciona em qualquer smartwatch?",
+        "Não. O aplicativo do relógio é destinado a modelos Wear OS compatíveis. Verifique o suporte no Google Play; outros sistemas não são automaticamente compatíveis."
+      ]
+    ],
+    "closingTitle": "Um hub para seu Android e smartwatch Wear OS",
+    "closing": "Músicas offline, vídeos, transferência de arquivos e visualização da câmera em um só lugar. Conheça o ARVION HUB e confira a disponibilidade.",
+    "card": "Conecte Android e Wear OS: transfira músicas, vídeos e arquivos nos dois sentidos, reproduza offline e visualize a câmera do celular."
+  }
+}
