@@ -37,7 +37,7 @@ def committed_date(relative):
         cwd=ROOT, capture_output=True, text=True, check=False,
     )
     date = result.stdout.strip()
-    return date if re.fullmatch(r"\\d{4}-\\d{2}-\\d{2}", date) else None
+    return date if re.fullmatch(r"\d{4}-\d{2}-\d{2}", date) else None
 
 for file in paths:
     relative = file.relative_to(ROOT).as_posix()
