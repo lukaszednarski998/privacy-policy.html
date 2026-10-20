@@ -1,0 +1,66 @@
+name: Notify IndexNow about ARVION HUB
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/arvion-watch-media-hub*.html'
+      - 'index*.html'
+      - 'apps/index*.html'
+      - 'sitemap.xml'
+      - 'scripts/refresh_sitemaps.py'
+      - '.github/workflows/arvion-indexnow.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: arvion-indexnow
+  cancel-in-progress: true
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for public IndexNow key and submit 14 localized URLs
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import time
+          import urllib.error
+          import urllib.request
+
+          base = "https://lukaszednarski998.github.io/privacy-policy.html/"
+          key = "61e5829e3ae42b1e330465ac91ba7238"
+          key_location = base + key + ".txt"
+          suffixes = ["", "-pl", "-de", "-fr", "-es", "-it", "-pt-br", "-ja", "-ko", "-zh-cn", "-tr", "-id", "-ru", "-uk"]
+          urls = [base + "apps/arvion-watch-media-hub" + suffix + ".html" for suffix in suffixes]
+          # Ensure GitHub Pages publishes the key before notifying search engines.
+          for attempt in range(12):
+              try:
+                  with urllib.request.urlopen(key_location, timeout=15) as response:
+                      if response.status == 200 and response.read().decode("utf-8").strip() == key:
+                          break
+              except (urllib.error.URLError, TimeoutError) as error:
+                  print("Key not public yet:", error, flush=True)
+              if attempt == 11:
+                  raise SystemExit("IndexNow key is not accessible at " + key_location)
+              time.sleep(20)
+          body = json.dumps({
+              "host": "lukaszednarski998.github.io",
+              "key": key,
+              "keyLocation": key_location,
+              "urlList": urls,
+          }).encode("utf-8")
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=body,
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+          try:
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  print("IndexNow HTTP status:", response.status)
+                  print("Submitted URLs:", len(urls))
+          except urllib.error.HTTPError as error:
+              print("IndexNow rejected submission:", error.code, error.read().decode("utf-8", "replace"))
+              raise
+          PY
