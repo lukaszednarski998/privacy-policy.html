@@ -1,0 +1,9 @@
+# PET EVOLUTION 3D — Privacy Policy / Polityka prywatności
+
+Effective: 2026-10-31. Publisher: APLIKACJE ANDROID. Package: `com.arvion.petevolution3d`.
+
+The game saves pet names, pet care, levels, progression, settings, trial and purchase state on the device. A separate account is not required. Where supported, progress can be synchronized between paired Android and Wear OS devices via Google services. One-time purchases are processed by Google Play Billing; the game does not collect card details. Android backups may contain game state depending on device settings. Notifications may remind players to care for their animals and can be disabled in Android settings. The reviewed project has no developer-operated analytics server or advertising SDK. Google Play and Android may process data under their own policies. Players can clear app data or uninstall the game, which may delete progress. Contact the publisher through the GitHub repository. Google privacy policy: https://policies.google.com/privacy.
+
+## Po polsku
+
+Gra przechowuje na urządzeniu nazwy zwierząt, stan opieki, poziomy, postępy, ustawienia, okres próbny i stan zakupów. Nie wymaga osobnego konta. Postępy można synchronizować między sparowanym telefonem Android i zegarkiem Wear OS przez usługi Google. Zakupy jednorazowe obsługuje Google Play; gra nie pobiera danych kart płatniczych. Dane mogą podlegać kopiom zapasowym Androida w zależności od ustawień urządzenia. Przypomnienia można wyłączyć w ustawieniach systemu. Sprawdzony projekt nie ma niezależnego serwera analitycznego ani SDK reklamowego. Google Play i Android działają na podstawie własnych polityk. Użytkownik może wyczyścić dane gry lub odinstalować aplikację, co może usunąć postępy. Kontakt z wydawcą: https://github.com/lukaszednarski998/privacy-policy.html.
