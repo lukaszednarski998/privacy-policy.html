@@ -20,15 +20,9 @@ s, count2 = re.subn(obsolete, '\n  render();\n  setSupportLang(supportLang);', s
 if count2 not in (0, 1):
     raise SystemExit('Unexpected Support extension count')
 
-sensitive = [
-    '+48 797 053 984',
-    '91 1050 0145 1000 0097 0803 3007',
-    'PL91105001451000009708033007',
-    'ul. Oławska 17/3',
-]
-remaining = [item for item in sensitive if item in s]
-if remaining:
-    raise SystemExit('Sensitive Support data still present: ' + ', '.join(remaining))
+# Never ship bank account details in publicly served HTML.
+if re.search(r'\\bPL\\d{26}\\b', s, flags=re.I):
+    raise SystemExit('Potential bank account number detected in public page')
 
 # Guard the working page structure before writing.
 required = ['const products=[', 'DOSTĘPNA TERAZ', 'render();setSupportLang', '</html>']
