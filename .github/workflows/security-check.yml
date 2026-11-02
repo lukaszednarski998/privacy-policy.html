@@ -38,11 +38,11 @@ jobs:
               if not p.is_file():
                   continue
               content = p.read_text(encoding="utf-8")
-              if re.search(r"\\bPL\\d{26}\\b|\\b\\d{2}(?:[ -]?\\d{4}){6}\\b", content):
+              if re.search(r"\bPL\d{26}\b|\b\d{2}(?:[ -]?\d{4}){6}\b", content):
                   bad.append(f"{p}: possible bank account number")
               if p.name == "support-captcha.js" and ("decodeDetails()" in content or "var PACK=" in content):
                   bad.append(f"{p}: reversible private data")
           if bad:
-              raise SystemExit("\\n".join(bad))
+              raise SystemExit("\n".join(bad))
           print("Public support details check passed.")
           PY
