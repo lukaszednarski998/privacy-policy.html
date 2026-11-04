@@ -4,10 +4,6 @@ https://lukaszednarski998.github.io/privacy-policy.html/AI-ACTIVE-EXHAUST-PRO-OB
 https://lukaszednarski998.github.io/privacy-policy.html/ARVION-FISHING-MASTER-PRIVACY.html
 https://lukaszednarski998.github.io/privacy-policy.html/ARVION-GOLF-MASTER-PRIVACY.html
 https://lukaszednarski998.github.io/privacy-policy.html/ARVION-GRAVITY-MAZE-PRIVACY.html
-https://lukaszednarski998.github.io/privacy-policy.html/ARVION-HUB-FGS-CAMERA-MICROPHONE.html
-https://lukaszednarski998.github.io/privacy-policy.html/ARVION-HUB-FGS-CONNECTED-DEVICE.html
-https://lukaszednarski998.github.io/privacy-policy.html/ARVION-HUB-FGS-DATA-SYNC.html
-https://lukaszednarski998.github.io/privacy-policy.html/ARVION-HUB-FGS-MEDIA-PLAYBACK.html
 https://lukaszednarski998.github.io/privacy-policy.html/ARVION-MINI-DOGFIGHT-3D-PRIVACY.html
 https://lukaszednarski998.github.io/privacy-policy.html/ARVION-MY-PET-3D-PRIVACY.html
 https://lukaszednarski998.github.io/privacy-policy.html/ARVION-NEON-DRIFT-PRIVACY.html
@@ -753,8 +749,6 @@ https://lukaszednarski998.github.io/privacy-policy.html/manifest-tr.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-uk.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest-zh-cn.html
 https://lukaszednarski998.github.io/privacy-policy.html/manifest.html
-https://lukaszednarski998.github.io/privacy-policy.html/media-pro-fgs-data-sync.html
 https://lukaszednarski998.github.io/privacy-policy.html/privacy-arvion-moto-speed.html
 https://lukaszednarski998.github.io/privacy-policy.html/privacy-policy-pet-evolution-3d.html
 https://lukaszednarski998.github.io/privacy-policy.html/site-privacy.html
-https://lukaszednarski998.github.io/privacy-policy.html/yandex_136f87a4ad00f4d8.html
