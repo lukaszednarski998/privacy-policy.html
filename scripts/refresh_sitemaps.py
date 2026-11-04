@@ -2,10 +2,11 @@
 """Regenerate canonical XML/text sitemaps from all public ARVION HTML pages.
 
 Maps index.html to / and apps/index.html to /apps/ so duplicate URLs
-are not advertised. Excludes Google's HTML ownership-verification files.
+are not advertised. Excludes ownership-verification files and pages with robots/googlebot noindex.
 Safe to run repeatedly, including after application/translation updates.
 """
 from html import escape
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import quote
 import re
@@ -13,7 +14,7 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://lukaszednarski998.github.io/privacy-policy.html/"
-EXCLUDED = re.compile(r"^google[a-z0-9]+\.html$", re.IGNORECASE)
+EXCLUDED = re.compile(r"^(?:google[a-z0-9]+|yandex_[a-z0-9]+)\.html$", re.IGNORECASE)
 
 paths = sorted(
     [*ROOT.glob("*.html"), *(ROOT / "apps").rglob("*.html")],
@@ -39,9 +40,30 @@ def committed_date(relative):
     date = result.stdout.strip()
     return date if re.fullmatch(r"\d{4}-\d{2}-\d{2}", date) else None
 
+
+class RobotsMetaParser(HTMLParser):
+    """Read robots directives without depending on HTML attribute order."""
+    def __init__(self):
+        super().__init__()
+        self.noindex = False
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() != "meta":
+            return
+        values = {key.lower(): (value or "") for key, value in attrs}
+        if values.get("name", "").lower() in ("robots", "googlebot"):
+            directives = re.split(r"[\s,]+", values.get("content", "").lower())
+            if "noindex" in directives or "none" in directives:
+                self.noindex = True
+
+def is_noindex(file):
+    parser = RobotsMetaParser()
+    parser.feed(file.read_text(encoding="utf-8-sig"))
+    return parser.noindex
+
 for file in paths:
     relative = file.relative_to(ROOT).as_posix()
-    if EXCLUDED.fullmatch(relative):
+    if EXCLUDED.fullmatch(relative) or is_noindex(file):
         continue
     if relative == "index.html":
         path = ""
