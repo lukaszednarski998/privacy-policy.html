@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b10">
+<title>ARVION SCREEN RECORDER PRO — film demonstracyjny</title>
+<meta name="description" content="ARVION SCREEN RECORDER PRO — film demonstracyjny. FOREGROUND_SERVICE_DATA_SYNC, FOREGROUND_SERVICE_MEDIA_PROJECTION, FOREGROUND_SERVICE_MICROPHONE.">
+<link rel="canonical" href="https://lukaszednarski998.github.io/privacy-policy.html/videos/arvion-screen-recorder-pro/">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#080b10;color:#f5f6f8;font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:920px;margin:auto;padding:28px 20px 40px}.brand{color:#ff8046;font-size:12px;font-weight:750;letter-spacing:.2em;margin:0 0 8px}h1{font-size:clamp(23px,5vw,34px);line-height:1.2;margin:0 0 24px;overflow-wrap:anywhere}.player{background:#000;border:1px solid #29303c;border-radius:16px;overflow:hidden;display:flex;justify-content:center}video{display:block;width:100%;max-height:76svh;aspect-ratio:480/854;object-fit:contain;background:#000}.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:16px 0 30px}button,.download{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 18px;border-radius:10px;font:inherit;font-weight:650;cursor:pointer}button{background:#ff8046;color:#15100c;border:0}.download{color:#f5f6f8;text-decoration:none;border:1px solid #343c49}button:focus-visible,a:focus-visible{outline:3px solid #ffd0b8;outline-offset:4px}h2{font-size:17px;margin:0 0 12px}.permissions{list-style:none;padding:0;margin:0}.permissions li{padding:12px 14px;margin:8px 0;border:1px solid #29303c;border-radius:10px;background:#111720}code{font-size:clamp(11px,2.8vw,14px);overflow-wrap:anywhere}.back{display:inline-block;margin-top:28px;color:#b6c0ce}p{color:#b6c0ce}
+</style>
+</head>
+<body>
+<main>
+<p class="brand">ARVION · ANDROID &amp; WEAR OS</p>
+<h1>ARVION SCREEN RECORDER PRO</h1>
+<div class="player">
+<video id="demo" controls autoplay muted playsinline preload="metadata" aria-label="ARVION SCREEN RECORDER PRO — film demonstracyjny">
+<source src="arvion-screen-recorder-pro.mp4" type="video/mp4">
+Twoja przeglądarka nie obsługuje odtwarzania filmu. <a href="arvion-screen-recorder-pro.mp4">Otwórz plik MP4</a>.
+</video>
+</div>
+<div class="tools">
+<button id="sound" type="button" aria-controls="demo" aria-pressed="false">Włącz dźwięk</button>
+<a class="download" href="arvion-screen-recorder-pro.mp4">Otwórz sam film MP4</a>
+</div>
+<h2>Film demonstracyjny — uprawnienia usług na pierwszym planie</h2>
+<ul class="permissions">
+<li><code>FOREGROUND_SERVICE_DATA_SYNC?</code></li>
+<li><code>FOREGROUND_SERVICE_MEDIA_PROJECTION?</code></li>
+<li><code>FOREGROUND_SERVICE_MICROPHONE?</code></li>
+</ul>
+<a class="back" href="../../">← Strona ARVION</a>
+</main>
+<script>
+const video=document.getElementById('demo'),button=document.getElementById('sound');
+function syncSound(){button.textContent=video.muted?'Włącz dźwięk':'Wycisz dźwięk';button.setAttribute('aria-pressed',String(!video.muted))}
+button.addEventListener('click',()=>{video.muted=!video.muted;syncSound();video.play().catch(()=>{})});
+video.addEventListener('volumechange',syncSound);
+video.play().catch(()=>{});
+</script>
+</body>
+</html>
