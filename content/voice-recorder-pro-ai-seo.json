@@ -652,6 +652,266 @@
       "ending": "一款兼顾手机与手表的录音应用：PCM16 WAV录制、重要时刻标记、音频编辑、录音传输以及兼容设备上的本地语音转文字。欢迎在Google Play查看VOICE RECORDER PRO AI。",
       "status": "现已在Google Play上架",
       "cta": "在Google Play中打开"
+    },
+    "tr": {
+      "flag": "🇹🇷",
+      "label": "Türkçe",
+      "language": "tr-TR",
+      "title": "VOICE RECORDER PRO AI – Android ve Wear OS ses kaydı",
+      "meta": "Android ve Wear OS ses kaydedici: PCM16 WAV, saatten kontrol, ses düzenleme, çevrimdışı konuşma dökümü ve ZIP yedekleme. 60 dakika deneme, reklamsız.",
+      "h1": "VOICE RECORDER PRO AI – Android ve Wear OS için ses kaydedici",
+      "lead": "VOICE RECORDER PRO AI; Android telefon ses kaydını, Wear OS saatte bağımsız kayıt yapmayı, ses düzenlemeyi ve cihaz içi konuşma tanımayı bir araya getirir. Sesli notları, toplantıları, röportajları, dersleri, fikirleri ve uzun kayıtları yakalayın. Dosyaları yerel olarak saklayın, düzenleyin ve dışa aktarın.",
+      "blocks": [
+        [
+          "Hangi amaçlarla kullanılır?",
+          "Fikirleri ve sesli notları yazı yazmadan hızlıca kaydedin.",
+          "Cihaz mikrofonuyla toplantı, röportaj, ders ve uzun ses oturumlarını kaydedin.",
+          "Kayıtları, zaman işaretlerini, dökümleri ve ses dosyalarını tek bir yerde yönetin."
+        ],
+        [
+          "Android telefon ve Wear OS saat",
+          "Eşleştirilmiş Wear OS akıllı saatten telefon kaydını başlatın ve uzaktan kontrol edin.",
+          "Telefonda kayıt başlatmadan saati bağımsız bir ses kaydedici olarak kullanın.",
+          "Saatte kayıt yapın, işaretler ekleyin ve saatin yerel kayıt arşivini görüntüleyin.",
+          "Seçtiğiniz saat kayıtlarını eşleştirilmiş Android telefona aktarın."
+        ],
+        [
+          "WAV kaydı ve ses kalitesi",
+          "PCM16 WAV biçiminde kaydedin; duraklatın, devam edin ve kayıt sırasında zaman işaretleri ekleyin.",
+          "Ses dalga biçimini ve gerçek giriş sinyali düzeyini izleyin.",
+          "Kalite profili seçin veya örnekleme hızını, kanal sayısını ve mevcut ses girişini elle ayarlayın.",
+          "Cihaz destekliyorsa sistem gürültü bastırma, yankı giderme ve otomatik kazanç kontrolünü kullanın.",
+          "Sessiz bölümleri atlayın ve uzun kayıtları parçalara ayırın.",
+          "PCM verileri kaydedildiyse kesintiye uğramış WAV oturumlarını kurtarın."
+        ],
+        [
+          "Kayıt arşivi ve oynatma",
+          "Dosya adı, klasör, etiket veya kayıtlı döküm metniyle arama yapın.",
+          "Klasörler, etiketler ve favorilerle kayıtları düzenleyin.",
+          "Kayıtları çöp kutusuna taşıyın ve kalıcı silmeden önce geri yükleyin.",
+          "İleri-geri sarma, işaretlere gitme ve ayarlanabilir oynatma hızını kullanın.",
+          "Uyumlu PCM16 WAV dosyalarını içe aktarın, diğer uygulamalarla paylaşın ve ZIP yedeklerini elle oluşturup geri yükleyin."
+        ],
+        [
+          "Ses düzenleme ve dışa aktarma",
+          "Seçilen ses bölümünü saklayın veya belirli aralığı kayıttan çıkarın.",
+          "Uyumlu kayıtları birleştirin ve ses düzeyini normalleştirin.",
+          "Cihazın desteklediği kodlayıcılara göre WAV, kayıpsız FLAC, M4A/AAC veya OPUS olarak dışa aktarın."
+        ],
+        [
+          "Konuşmayı yazıya çevirme ve yerel yapay zekâ",
+          "Uyumlu Android sürümlerinde cihaz içi konuşma tanıma ile kayıtlı sesleri yazıya dönüştürün.",
+          "İsteğe bağlı Vosk modeli içe aktararak özel ve çevrimdışı döküm oluşturun.",
+          "Dökümleri düzenleyin ve düzeltmeleri kalıcı olarak kaydedin.",
+          "Metinden kısa özetler ve açıkça belirtilmiş görevler çıkarın.",
+          "Dökümleri TXT dosyası olarak dışa aktarın ve paylaşın."
+        ],
+        [
+          "Gizlilik, deneme ve tek seferlik satın alma",
+          "Siz dışa aktarma, paylaşma, yedekleme veya aktarma yapmadıkça kayıtlar uygulamanın özel yerel depolama alanında kalır.",
+          "Reklam ve abonelik yoktur; 60 dakikalık deneme sunulur.",
+          "Deneme sonunda tam sürümü tek seferlik satın alma ile açabilirsiniz.",
+          "Gürültü işleme, konuşma tanıma ve dışa aktarma seçenekleri cihaz ile Android desteğine bağlıdır."
+        ]
+      ],
+      "ending": "Telefon ve saat için tek bir ses kaydedici: PCM16 WAV, zaman işaretleri, ses düzenleme, aktarım ve desteklenen cihazlarda yerel konuşmadan metne dönüştürme. VOICE RECORDER PRO AI'ı Google Play'de keşfedin.",
+      "status": "Google Play'de şimdi mevcut",
+      "cta": "Google Play'de aç"
+    },
+    "id": {
+      "flag": "🇮🇩",
+      "label": "Bahasa Indonesia",
+      "language": "id-ID",
+      "title": "VOICE RECORDER PRO AI – Perekam Android dan Wear OS",
+      "meta": "Perekam suara Android dan Wear OS: WAV PCM16, kendali jam tangan, edit audio, transkripsi offline, dan cadangan ZIP. Uji coba 60 menit tanpa iklan.",
+      "h1": "VOICE RECORDER PRO AI – perekam suara untuk Android dan Wear OS",
+      "lead": "VOICE RECORDER PRO AI menyatukan perekam suara di ponsel Android, perekaman mandiri pada jam Wear OS, penyuntingan audio, dan pengenalan ucapan di perangkat. Rekam catatan suara, rapat, wawancara, kuliah, ide, dan rekaman panjang. Simpan berkas secara lokal, atur perpustakaan audio, edit, lalu ekspor sesuai kebutuhan.",
+      "blocks": [
+        [
+          "Kapan aplikasi digunakan?",
+          "Catat ide dan memo suara dengan cepat tanpa mengetik.",
+          "Rekam rapat, wawancara, pelajaran, dan sesi audio panjang memakai mikrofon perangkat.",
+          "Kelola rekaman, penanda waktu, transkrip, dan berkas audio dalam satu tempat."
+        ],
+        [
+          "Ponsel Android dan jam Wear OS",
+          "Mulai dan kendalikan rekaman ponsel dari smartwatch Wear OS yang dipasangkan.",
+          "Gunakan jam sebagai perekam mandiri tanpa harus memulai sesi dari ponsel.",
+          "Rekam langsung di jam, tambahkan penanda, dan jelajahi perpustakaan rekaman lokalnya.",
+          "Pindahkan rekaman terpilih dari jam ke ponsel Android yang dipasangkan."
+        ],
+        [
+          "Rekaman WAV dan pengaturan kualitas",
+          "Simpan suara sebagai PCM16 WAV, jeda atau lanjutkan sesi, dan tambahkan penanda waktu saat merekam.",
+          "Lihat bentuk gelombang serta level sinyal audio masuk yang sebenarnya.",
+          "Pilih profil kualitas atau atur laju sampel, jumlah kanal, dan input audio yang tersedia secara manual.",
+          "Aktifkan peredam bising, pembatal gema, dan penguat otomatis sistem bila didukung perangkat.",
+          "Lewati bagian hening dan bagi rekaman panjang menjadi segmen.",
+          "Pulihkan sesi WAV yang terputus apabila data PCM sudah tersimpan."
+        ],
+        [
+          "Perpustakaan dan pemutaran",
+          "Cari rekaman berdasarkan nama, folder, tag, atau isi transkrip yang tersimpan.",
+          "Atur berkas dalam folder, gunakan tag, dan tandai favorit.",
+          "Pindahkan ke tempat sampah dan pulihkan sebelum penghapusan permanen.",
+          "Putar audio dengan pencarian posisi, penanda, serta kecepatan yang dapat diubah.",
+          "Impor PCM16 WAV yang kompatibel, bagikan rekaman ke aplikasi lain, serta buat dan pulihkan cadangan ZIP secara manual."
+        ],
+        [
+          "Edit dan ekspor audio",
+          "Simpan hanya bagian yang dipilih atau hapus rentang tertentu dari rekaman.",
+          "Gabungkan rekaman yang kompatibel dan normalkan level volume.",
+          "Ekspor ke WAV, FLAC tanpa kehilangan kualitas, M4A/AAC, atau OPUS sesuai encoder yang didukung perangkat."
+        ],
+        [
+          "Ucapan ke teks dan fitur AI lokal",
+          "Transkripsikan rekaman tersimpan memakai pengenalan ucapan di perangkat pada versi Android yang kompatibel.",
+          "Impor model Vosk secara opsional untuk transkripsi pribadi tanpa internet.",
+          "Edit transkrip dan simpan hasil koreksi secara permanen.",
+          "Ambil ringkasan singkat serta tugas yang disebutkan secara jelas di transkrip.",
+          "Ekspor dan bagikan transkrip sebagai berkas TXT."
+        ],
+        [
+          "Privasi, uji coba, dan pembelian sekali",
+          "Rekaman tetap berada di penyimpanan lokal privat aplikasi kecuali Anda memilih mengekspor, membagikan, mencadangkan, atau mengirimkannya.",
+          "Tanpa iklan dan langganan, dengan uji coba selama 60 menit.",
+          "Setelah uji coba, buka versi penuh melalui satu kali pembelian.",
+          "Pemrosesan bising, pengenalan ucapan, dan format ekspor bergantung pada dukungan perangkat serta Android."
+        ]
+      ],
+      "ending": "Satu perekam untuk ponsel dan jam: PCM16 WAV, penanda waktu, edit audio, transfer, dan transkripsi lokal pada perangkat yang mendukung. Temukan VOICE RECORDER PRO AI di Google Play.",
+      "status": "Tersedia sekarang di Google Play",
+      "cta": "Buka di Google Play"
+    },
+    "ru": {
+      "flag": "🇷🇺",
+      "label": "Русский",
+      "language": "ru-RU",
+      "title": "VOICE RECORDER PRO AI – диктофон Android и Wear OS",
+      "meta": "Диктофон для Android и Wear OS: запись PCM16 WAV, управление с часов, обработка аудио, офлайн-транскрипция и резервные копии ZIP. 60 минут пробного доступа.",
+      "h1": "VOICE RECORDER PRO AI – диктофон для Android и Wear OS",
+      "lead": "VOICE RECORDER PRO AI объединяет диктофон для Android, автономную запись на часах Wear OS, редактирование звука и распознавание речи на устройстве. Записывайте голосовые заметки, совещания, интервью, лекции, идеи и продолжительные аудиосеансы. Храните файлы локально, систематизируйте их, редактируйте и экспортируйте.",
+      "blocks": [
+        [
+          "Для чего подходит приложение?",
+          "Сохраняйте идеи и голосовые заметки без набора текста.",
+          "Записывайте встречи, интервью, занятия и длительные аудиосеансы через микрофон устройства.",
+          "Управляйте записями, временными метками, расшифровками и аудиофайлами в одном приложении."
+        ],
+        [
+          "Телефон Android и часы Wear OS",
+          "Запускайте запись на телефоне и управляйте ею дистанционно с сопряжённых часов Wear OS.",
+          "Используйте часы как самостоятельный диктофон без запуска записи на телефоне.",
+          "Записывайте звук на часах, добавляйте метки и просматривайте локальную библиотеку.",
+          "Передавайте выбранные записи с часов на сопряжённый телефон Android."
+        ],
+        [
+          "Запись WAV и управление качеством",
+          "Сохраняйте звук в PCM16 WAV, ставьте запись на паузу, продолжайте её и добавляйте временные метки.",
+          "Следите за формой звуковой волны и реальным уровнем входящего сигнала.",
+          "Выбирайте профили качества либо вручную задавайте частоту дискретизации, число каналов и доступный аудиовход.",
+          "При поддержке устройством включайте системное шумоподавление, эхоподавление и автоматическую регулировку усиления.",
+          "Пропускайте тишину и делите длительные записи на сегменты.",
+          "Восстанавливайте прерванные сеансы WAV, если данные PCM успели сохраниться."
+        ],
+        [
+          "Библиотека и воспроизведение",
+          "Ищите записи по названию, папке, тегу или тексту сохранённой расшифровки.",
+          "Распределяйте записи по папкам, добавляйте теги и отмечайте избранное.",
+          "Перемещайте записи в корзину и восстанавливайте до окончательного удаления.",
+          "Пользуйтесь перемоткой, метками и настройкой скорости воспроизведения.",
+          "Импортируйте совместимые файлы PCM16 WAV, делитесь записями и создавайте или восстанавливайте ручные резервные копии ZIP."
+        ],
+        [
+          "Редактирование и экспорт",
+          "Оставляйте выделенный фрагмент или удаляйте выбранный участок записи.",
+          "Объединяйте совместимые записи и нормализуйте громкость.",
+          "Экспортируйте WAV, FLAC без потерь, M4A/AAC или OPUS при наличии соответствующих кодировщиков на устройстве."
+        ],
+        [
+          "Речь в текст и локальные функции ИИ",
+          "Расшифровывайте сохранённые записи с помощью распознавания речи на устройстве в совместимых версиях Android.",
+          "При необходимости импортируйте модель Vosk для конфиденциальной офлайн-транскрипции.",
+          "Редактируйте расшифровки и сохраняйте исправления.",
+          "Получайте короткие резюме и явно сформулированные задачи из текста расшифровки.",
+          "Экспортируйте и отправляйте расшифровки в формате TXT."
+        ],
+        [
+          "Конфиденциальность, пробный период и покупка",
+          "Записи остаются в приватном локальном хранилище приложения, пока вы сами не решите экспортировать, передать, сохранить в копии или отправить их.",
+          "Без рекламы и подписки; предоставляется 60 минут пробного использования.",
+          "После пробного периода полную версию можно разблокировать разовой покупкой.",
+          "Шумоподавление, распознавание речи и доступные форматы экспорта зависят от устройства и версии Android."
+        ]
+      ],
+      "ending": "Один диктофон для телефона и часов: PCM16 WAV, временные метки, аудиоредактор, передача файлов и локальное преобразование речи в текст при наличии поддержки. VOICE RECORDER PRO AI доступен в Google Play.",
+      "status": "Уже доступно в Google Play",
+      "cta": "Открыть в Google Play"
+    },
+    "uk": {
+      "flag": "🇺🇦",
+      "label": "Українська",
+      "language": "uk-UA",
+      "title": "VOICE RECORDER PRO AI – диктофон Android та Wear OS",
+      "meta": "Диктофон для Android і Wear OS: PCM16 WAV, керування з годинника, редагування аудіо, офлайн-транскрипція і ZIP-копії. Пробний доступ 60 хвилин.",
+      "h1": "VOICE RECORDER PRO AI – диктофон для Android і Wear OS",
+      "lead": "VOICE RECORDER PRO AI поєднує диктофон для Android, автономний запис на годиннику Wear OS, редагування звуку та розпізнавання мовлення на пристрої. Записуйте голосові нотатки, зустрічі, інтерв’ю, лекції, ідеї та тривалі аудіосесії. Зберігайте файли локально, впорядковуйте, редагуйте й експортуйте їх.",
+      "blocks": [
+        [
+          "Коли стане в пригоді застосунок?",
+          "Швидко зберігайте ідеї та голосові нотатки без набору тексту.",
+          "Записуйте зустрічі, інтерв’ю, заняття й тривалі розмовні матеріали через мікрофон пристрою.",
+          "Керуйте записами, часовими позначками, транскрипціями й аудіофайлами в одному місці."
+        ],
+        [
+          "Телефон Android і годинник Wear OS",
+          "Запускайте запис на телефоні та керуйте ним дистанційно зі спареного годинника Wear OS.",
+          "Використовуйте годинник як окремий диктофон, не запускаючи запис на телефоні.",
+          "Записуйте звук на годиннику, додавайте позначки та переглядайте локальну бібліотеку.",
+          "Передавайте вибрані записи з годинника на спарений телефон Android."
+        ],
+        [
+          "Запис WAV і налаштування якості",
+          "Зберігайте звук у PCM16 WAV, призупиняйте й відновлюйте сеанси та додавайте часові позначки під час запису.",
+          "Переглядайте форму звукової хвилі та фактичний рівень вхідного сигналу.",
+          "Обирайте профілі якості або вручну встановлюйте частоту дискретизації, кількість каналів і доступний аудіовхід.",
+          "За підтримки пристроєм вмикайте системне шумозаглушення, усунення відлуння й автоматичне регулювання підсилення.",
+          "Пропускайте тишу та діліть довгі записи на окремі сегменти.",
+          "Відновлюйте перервані сеанси WAV, якщо дані PCM встигли зберегтися."
+        ],
+        [
+          "Бібліотека та відтворення",
+          "Шукайте записи за назвою, папкою, тегом або текстом збереженої транскрипції.",
+          "Сортуйте записи в папках, додавайте теги й позначайте вибране.",
+          "Переміщуйте файли до кошика та відновлюйте їх до остаточного видалення.",
+          "Відтворюйте аудіо з перемотуванням, позначками та регулюванням швидкості.",
+          "Імпортуйте сумісні PCM16 WAV, діліться записами з іншими застосунками, вручну створюйте й відновлюйте резервні копії ZIP."
+        ],
+        [
+          "Редагування та експорт аудіо",
+          "Залишайте вибраний фрагмент або видаляйте позначену частину запису.",
+          "Об’єднуйте сумісні записи та нормалізуйте гучність.",
+          "Експортуйте у WAV, FLAC без втрат, M4A/AAC або OPUS залежно від доступних кодерів пристрою."
+        ],
+        [
+          "Мовлення в текст і локальні інструменти ШІ",
+          "Транскрибуйте збережені записи за допомогою розпізнавання мовлення на пристрої в сумісних версіях Android.",
+          "За потреби імпортуйте модель Vosk для приватної офлайн-транскрипції.",
+          "Редагуйте транскрипції й зберігайте виправлення назавжди.",
+          "Отримуйте короткі підсумки та явно зазначені завдання з тексту транскрипції.",
+          "Експортуйте й поширюйте транскрипції як TXT-файли."
+        ],
+        [
+          "Приватність, пробна версія та разова оплата",
+          "Записи залишаються у приватному локальному сховищі застосунку, доки ви самі не вирішите експортувати, поширити, скопіювати чи передати їх.",
+          "Без реклами й підписок; доступне пробне використання протягом 60 хвилин.",
+          "Після пробного періоду повну версію можна відкрити разовою покупкою.",
+          "Шумозаглушення, розпізнавання мовлення та формати експорту залежать від підтримки пристроєм і Android."
+        ]
+      ],
+      "ending": "Один диктофон для телефона й годинника: PCM16 WAV, часові позначки, аудіоредактор, передавання файлів і локальна транскрипція там, де її підтримує пристрій. Знайдіть VOICE RECORDER PRO AI у Google Play.",
+      "status": "Уже доступно в Google Play",
+      "cta": "Відкрити в Google Play"
     }
   }
 }
