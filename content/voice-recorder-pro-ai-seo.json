@@ -392,6 +392,266 @@
       "ending": "Un registratore per telefono e orologio: WAV PCM16, marcatori, editing, trasferimento e trascrizione locale dove supportata. Scopri VOICE RECORDER PRO AI su Google Play.",
       "status": "Disponibile ora su Google Play",
       "cta": "Apri su Google Play"
+    },
+    "pt-BR": {
+      "flag": "🇧🇷",
+      "label": "Português (Brasil)",
+      "language": "pt-BR",
+      "title": "VOICE RECORDER PRO AI – gravador Android e Wear OS",
+      "meta": "Gravador para Android e Wear OS: WAV PCM16, controle pelo relógio, edição de áudio, transcrição offline e backup ZIP. Teste de 60 minutos, sem anúncios.",
+      "h1": "VOICE RECORDER PRO AI – gravador de voz para Android e Wear OS",
+      "lead": "VOICE RECORDER PRO AI reúne um gravador de voz para Android, gravação independente no Wear OS, edição de áudio e reconhecimento de fala local. Registre notas de voz, reuniões, entrevistas, aulas, ideias e gravações longas. Os arquivos são guardados localmente e podem ser organizados, editados e exportados.",
+      "blocks": [
+        [
+          "Para que usar o aplicativo?",
+          "Grave ideias e lembretes de voz rapidamente, sem precisar digitar.",
+          "Registre entrevistas, reuniões, palestras e sessões de áudio longas com o microfone do dispositivo.",
+          "Mantenha gravações, marcadores de tempo, transcrições e arquivos de áudio no mesmo lugar."
+        ],
+        [
+          "Celular Android e relógio Wear OS",
+          "Inicie e controle a gravação do celular usando um smartwatch Wear OS pareado.",
+          "Use o relógio como gravador independente, sem precisar iniciar a gravação no celular.",
+          "Grave diretamente no relógio, adicione marcadores e consulte sua biblioteca local.",
+          "Transfira gravações selecionadas do relógio para o celular Android pareado."
+        ],
+        [
+          "Gravação WAV e qualidade de áudio",
+          "Grave em PCM16 WAV, pause ou retome sessões e insira marcadores durante a gravação.",
+          "Acompanhe a forma de onda e o nível real do sinal de entrada.",
+          "Escolha perfis de qualidade ou configure manualmente taxa de amostragem, canais e entrada de áudio disponível.",
+          "Ative redução de ruído, cancelamento de eco e controle automático de ganho quando o dispositivo oferecer suporte.",
+          "Ignore trechos de silêncio e divida gravações extensas em segmentos.",
+          "Recupere sessões WAV interrompidas quando os dados PCM já tiverem sido salvos."
+        ],
+        [
+          "Biblioteca e reprodução",
+          "Pesquise arquivos por nome, pasta, tag ou texto de transcrições salvas.",
+          "Organize gravações em pastas, use tags e destaque favoritos.",
+          "Envie arquivos para a lixeira e restaure antes da exclusão definitiva.",
+          "Reproduza com avanço, retrocesso, marcadores e ajuste de velocidade.",
+          "Importe WAV PCM16 compatíveis, compartilhe com outros aplicativos e faça backup ou restauração manual em ZIP."
+        ],
+        [
+          "Edição e exportação de áudio",
+          "Mantenha apenas o trecho selecionado ou remova um intervalo da gravação.",
+          "Una gravações compatíveis e normalize o volume.",
+          "Exporte em WAV, FLAC sem perdas, M4A/AAC ou OPUS, conforme os codificadores disponíveis no aparelho."
+        ],
+        [
+          "Fala para texto e recursos locais de IA",
+          "Transcreva gravações salvas com reconhecimento de fala no dispositivo em versões compatíveis do Android.",
+          "Importe opcionalmente um modelo Vosk para transcrição privada sem internet.",
+          "Edite transcrições e salve permanentemente as correções.",
+          "Extraia resumos curtos e tarefas mencionadas explicitamente no texto.",
+          "Exporte e compartilhe transcrições em arquivos TXT."
+        ],
+        [
+          "Privacidade, teste e compra única",
+          "As gravações ficam no armazenamento local privado do aplicativo, a menos que você decida exportar, compartilhar, fazer backup ou transferir.",
+          "Sem anúncios nem assinaturas, com período de teste de 60 minutos.",
+          "Após o teste, desbloqueie a versão completa com uma compra única.",
+          "Redução de ruído, reconhecimento de fala e formatos de exportação dependem do suporte do dispositivo e do Android."
+        ]
+      ],
+      "ending": "Um gravador para celular e relógio: WAV PCM16, marcadores, edição, transferência e conversão local de fala em texto quando suportada. Conheça VOICE RECORDER PRO AI no Google Play.",
+      "status": "Disponível agora no Google Play",
+      "cta": "Abrir no Google Play"
+    },
+    "ja": {
+      "flag": "🇯🇵",
+      "label": "日本語",
+      "language": "ja-JP",
+      "title": "VOICE RECORDER PRO AI – Android・Wear OS録音アプリ",
+      "meta": "AndroidとWear OS対応の音声レコーダー。PCM16 WAV録音、腕時計からの操作、音声編集、オフライン文字起こし、ZIPバックアップに対応。60分の試用、広告なし。",
+      "h1": "VOICE RECORDER PRO AI – Android・Wear OS対応のボイスレコーダー",
+      "lead": "VOICE RECORDER PRO AIは、Androidスマートフォンのボイスレコーダー、Wear OSウォッチ単体での録音、音声編集、端末内音声認識を1つにまとめたアプリです。音声メモ、会議、インタビュー、授業、アイデア、長時間の録音に利用できます。音声ファイルを端末内に保存し、整理・編集・書き出しできます。",
+      "blocks": [
+        [
+          "どんな場面で使えますか",
+          "思いついたアイデアや音声メモを、文字入力せずにすばやく記録できます。",
+          "端末のマイクを使って会議、取材、講義、長めの音声を録音できます。",
+          "録音、タイムマーカー、文字起こし結果、音声ファイルを一か所で管理できます。"
+        ],
+        [
+          "AndroidスマートフォンとWear OSウォッチ",
+          "ペアリングしたWear OSウォッチからスマートフォンの録音を開始・操作できます。",
+          "スマートフォンで録音を始めなくても、ウォッチだけで独立したボイスレコーダーとして使用できます。",
+          "ウォッチで録音し、マーカーを追加し、ウォッチ内の録音ライブラリを確認できます。",
+          "選択した録音を、ペアリングしたAndroidスマートフォンに転送できます。"
+        ],
+        [
+          "WAV録音と音質設定",
+          "PCM16 WAV形式で保存し、一時停止・再開や録音中のタイムマーカー追加ができます。",
+          "波形表示（waveform）と実際の入力音声レベルを確認できます。",
+          "音質プリセットのほか、サンプリング周波数、チャンネル数、利用可能な音声入力を手動設定できます。",
+          "端末が対応している場合は、システムのノイズ抑制、エコーキャンセル、自動ゲイン調整を使用できます。",
+          "無音部分をスキップし、長時間録音をセグメントに分割できます。",
+          "PCMデータが保存済みの場合、中断したWAV録音の復旧を試みられます。"
+        ],
+        [
+          "録音ライブラリと再生",
+          "ファイル名、フォルダ、タグ、保存した文字起こし本文から検索できます。",
+          "フォルダ・タグ・お気に入りで録音を整理できます。",
+          "ゴミ箱に移した録音は、完全削除する前に復元できます。",
+          "シーク、マーカーへの移動、再生速度の調整に対応します。",
+          "互換性のあるPCM16 WAVを取り込み、他のアプリに共有でき、ZIP形式の手動バックアップと復元も利用できます。"
+        ],
+        [
+          "音声編集と書き出し",
+          "選択した部分だけを残す、または選択範囲を削除する編集ができます。",
+          "互換性のある録音を結合し、音量を正規化できます。",
+          "端末のエンコーダーが対応する場合、WAV、可逆FLAC、M4A/AAC、OPUS形式で書き出せます。"
+        ],
+        [
+          "音声の文字起こしと端末内AI機能",
+          "対応するAndroidバージョンでは、端末内音声認識で保存済み録音を文字起こしできます。",
+          "Voskモデルを読み込めば、プライベートなオフライン文字起こしも選択できます。",
+          "文字起こし結果を編集し、修正内容を保存できます。",
+          "文字起こしから短い要約と、明示されているタスクを抽出できます。",
+          "文字起こし結果をTXTファイルとして書き出し、共有できます。"
+        ],
+        [
+          "プライバシー・試用・買い切り",
+          "録音は、ユーザーが書き出し・共有・バックアップ・転送を選ばない限り、アプリ専用のローカル領域に保存されます。",
+          "広告もサブスクリプションもありません。60分間の試用が可能です。",
+          "試用終了後は、一度の購入で製品版を解除できます。",
+          "ノイズ処理、音声認識、出力形式は端末やAndroidの対応状況によって異なります。"
+        ]
+      ],
+      "ending": "スマートフォンとウォッチを1つの録音環境に。PCM16 WAV録音、マーカー、音声編集、ファイル転送、対応端末でのローカル文字起こしを活用できます。Google PlayでVOICE RECORDER PRO AIをご覧ください。",
+      "status": "Google Playで配信中",
+      "cta": "Google Playで開く"
+    },
+    "ko": {
+      "flag": "🇰🇷",
+      "label": "한국어",
+      "language": "ko-KR",
+      "title": "VOICE RECORDER PRO AI – Android·Wear OS 녹음기",
+      "meta": "Android 및 Wear OS 음성 녹음기. PCM16 WAV, 시계 원격 제어, 오디오 편집, 오프라인 음성 텍스트 변환, ZIP 백업. 60분 체험, 광고 없음.",
+      "h1": "VOICE RECORDER PRO AI – Android 및 Wear OS용 음성 녹음기",
+      "lead": "VOICE RECORDER PRO AI는 Android 휴대전화용 녹음기, Wear OS 시계의 독립 녹음, 오디오 편집 및 기기 내 음성 인식을 하나로 제공합니다. 음성 메모, 회의, 인터뷰, 강의, 아이디어와 긴 녹음을 기록하세요. 파일을 기기에 보관하고 분류, 편집, 내보내기할 수 있습니다.",
+      "blocks": [
+        [
+          "언제 사용할 수 있나요?",
+          "키보드 입력 없이 아이디어와 음성 메모를 빠르게 남길 수 있습니다.",
+          "기기 마이크로 회의, 인터뷰, 수업과 장시간 오디오를 녹음할 수 있습니다.",
+          "녹음 파일, 시간 마커, 전사 텍스트를 한곳에서 관리할 수 있습니다."
+        ],
+        [
+          "Android 휴대전화와 Wear OS 시계",
+          "페어링된 Wear OS 스마트워치에서 휴대전화 녹음을 원격으로 시작하고 제어할 수 있습니다.",
+          "휴대전화에서 시작하지 않아도 시계 자체를 독립적인 녹음기로 사용할 수 있습니다.",
+          "시계에서 녹음하고 마커를 추가하며 로컬 녹음 라이브러리를 확인할 수 있습니다.",
+          "선택한 시계 녹음을 페어링된 Android 휴대전화로 전송할 수 있습니다."
+        ],
+        [
+          "WAV 녹음과 음질 설정",
+          "PCM16 WAV로 저장하고 녹음을 일시 중지·재개하며 녹음 중 시간 마커를 넣을 수 있습니다.",
+          "파형과 실제 입력 신호 레벨을 실시간으로 확인할 수 있습니다.",
+          "음질 프로필을 선택하거나 샘플링 주파수, 채널 수, 사용 가능한 오디오 입력을 직접 설정할 수 있습니다.",
+          "기기 지원 시 시스템 소음 억제, 에코 제거, 자동 이득 조절 기능을 사용할 수 있습니다.",
+          "무음 구간을 건너뛰고 긴 녹음을 여러 구간으로 나눌 수 있습니다.",
+          "PCM 데이터가 저장된 경우 중단된 WAV 세션을 복구할 수 있습니다."
+        ],
+        [
+          "녹음 라이브러리와 재생",
+          "파일 이름, 폴더, 태그, 저장한 전사 텍스트로 녹음을 검색할 수 있습니다.",
+          "폴더와 태그로 정리하고 중요한 녹음을 즐겨찾기에 표시할 수 있습니다.",
+          "휴지통에 보낸 녹음은 영구 삭제 전에 복원할 수 있습니다.",
+          "구간 이동, 마커 이동, 재생 속도 조절을 지원합니다.",
+          "호환되는 PCM16 WAV 가져오기, 다른 앱으로 공유, ZIP 수동 백업 및 복원을 제공합니다."
+        ],
+        [
+          "오디오 편집과 내보내기",
+          "선택한 부분만 남기거나 선택 구간을 삭제할 수 있습니다.",
+          "호환되는 녹음 파일을 합치고 음량을 정규화할 수 있습니다.",
+          "기기 인코더 지원에 따라 WAV, 무손실 FLAC, M4A/AAC 또는 OPUS로 내보낼 수 있습니다."
+        ],
+        [
+          "음성 텍스트 변환과 로컬 AI",
+          "지원되는 Android 버전에서는 기기 내 음성 인식으로 저장된 녹음을 텍스트로 변환할 수 있습니다.",
+          "선택적으로 Vosk 모델을 가져와 개인정보를 보호하는 오프라인 전사를 할 수 있습니다.",
+          "전사 내용을 수정하고 변경 사항을 영구 저장할 수 있습니다.",
+          "전사 텍스트에서 짧은 요약과 명시된 할 일을 추출할 수 있습니다.",
+          "전사 결과를 TXT 파일로 내보내고 공유할 수 있습니다."
+        ],
+        [
+          "개인정보 보호, 체험 및 구매",
+          "사용자가 내보내기, 공유, 백업 또는 전송하지 않는 한 녹음은 앱의 비공개 로컬 저장 공간에 보관됩니다.",
+          "광고와 구독 없이 60분 체험을 제공합니다.",
+          "체험 후 일회성 구매로 전체 버전을 잠금 해제할 수 있습니다.",
+          "소음 처리, 음성 인식 및 내보내기 형식은 기기와 Android 지원 여부에 따라 달라집니다."
+        ]
+      ],
+      "ending": "휴대전화와 시계에서 PCM16 WAV 녹음, 시간 마커, 오디오 편집, 파일 전송 및 지원 기기의 로컬 음성 텍스트 변환을 활용하세요. VOICE RECORDER PRO AI를 Google Play에서 확인하세요.",
+      "status": "Google Play에서 이용 가능",
+      "cta": "Google Play에서 열기"
+    },
+    "zh-CN": {
+      "flag": "🇨🇳",
+      "label": "简体中文",
+      "language": "zh-CN",
+      "title": "VOICE RECORDER PRO AI – Android与Wear OS录音机",
+      "meta": "Android和Wear OS录音应用：PCM16 WAV、手表遥控、音频编辑、离线语音转文字、ZIP备份。60分钟试用，无广告和订阅。",
+      "h1": "VOICE RECORDER PRO AI – Android与Wear OS语音录音机",
+      "lead": "VOICE RECORDER PRO AI将Android手机录音、Wear OS手表独立录音、音频编辑和设备端语音识别整合到一个应用中。适合记录语音备忘录、会议、采访、讲座、灵感和长时间音频。录音保存在本地，方便整理、编辑和导出。",
+      "blocks": [
+        [
+          "适用场景",
+          "无需打字，即可快速记录语音便签与突发灵感。",
+          "使用设备麦克风录制会议、采访、课堂及长时间语音内容。",
+          "统一管理录音文件、时间标记、转写文字和音频素材。"
+        ],
+        [
+          "Android手机与Wear OS手表",
+          "可通过已配对的Wear OS智能手表远程启动和控制手机录音。",
+          "手表也可单独作为录音机使用，不必先在手机上开始录制。",
+          "在手表上直接录音、添加标记并浏览手表本地录音库。",
+          "可将选中的手表录音传输到已配对的Android手机。"
+        ],
+        [
+          "WAV录音与音质控制",
+          "采用PCM16 WAV格式保存，支持暂停、继续以及录音过程中的时间标记。",
+          "实时查看声音波形和实际输入电平。",
+          "可选择音质预设，或手动设置采样率、声道数和可用音频输入。",
+          "如设备支持，可启用系统降噪、回声消除和自动增益控制。",
+          "可跳过静音并将较长录音拆分为多个片段。",
+          "如果PCM数据已成功保存，可尝试恢复中断的WAV录音。"
+        ],
+        [
+          "录音库与播放",
+          "按文件名、文件夹、标签或保存的转写文本搜索。",
+          "使用文件夹、标签和收藏夹整理录音。",
+          "将录音移入回收站，在永久删除前可恢复。",
+          "支持拖动定位、按标记跳转以及调整播放速度。",
+          "支持导入兼容的PCM16 WAV、向其他应用分享、手动ZIP备份与恢复。"
+        ],
+        [
+          "音频编辑与导出",
+          "保留选中的音频片段，或删除指定区间。",
+          "合并兼容的录音并进行音量标准化。",
+          "根据设备编码器的支持情况，可导出WAV、无损FLAC、M4A/AAC或OPUS。"
+        ],
+        [
+          "语音转文字与本地AI功能",
+          "在兼容的Android版本中，使用设备端语音识别转写已保存的录音。",
+          "可选导入Vosk模型，实现更注重隐私的离线语音转文字。",
+          "编辑转写内容并永久保存修改。",
+          "从转写文本中提取简短摘要和明确提及的待办事项。",
+          "将转写结果导出或分享为TXT文件。"
+        ],
+        [
+          "隐私保护、试用与一次性购买",
+          "除非用户主动导出、分享、备份或传输，否则录音保存在应用专属的本地私有存储空间。",
+          "无广告、无订阅，提供60分钟试用。",
+          "试用结束后，可通过一次性购买解锁完整版本。",
+          "降噪、语音识别和导出格式取决于设备及Android系统支持情况。"
+        ]
+      ],
+      "ending": "一款兼顾手机与手表的录音应用：PCM16 WAV录制、重要时刻标记、音频编辑、录音传输以及兼容设备上的本地语音转文字。欢迎在Google Play查看VOICE RECORDER PRO AI。",
+      "status": "现已在Google Play上架",
+      "cta": "在Google Play中打开"
     }
   }
 }
