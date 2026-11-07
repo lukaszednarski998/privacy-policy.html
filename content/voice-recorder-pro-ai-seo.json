@@ -132,6 +132,266 @@
       "ending": "One voice recorder for phone and watch: record PCM16 WAV, mark important moments, edit audio, transfer selected files and turn speech into text locally when supported. Explore VOICE RECORDER PRO AI on Google Play.",
       "status": "Available now on Google Play",
       "cta": "Open in Google Play"
+    },
+    "de": {
+      "flag": "🇩🇪",
+      "label": "Deutsch",
+      "language": "de-DE",
+      "title": "VOICE RECORDER PRO AI – Diktiergerät für Android & Wear OS",
+      "meta": "Diktiergerät für Android und Wear OS: WAV-Aufnahmen, Smartwatch-Steuerung, Audioschnitt, Offline-Transkription und ZIP-Backup. 60 Minuten Testversion.",
+      "h1": "VOICE RECORDER PRO AI – Diktiergerät für Android und Wear OS",
+      "lead": "VOICE RECORDER PRO AI verbindet einen Sprachrekorder für Android-Smartphones mit eigenständigen Aufnahmen auf Wear OS, Audiobearbeitung und lokaler Spracherkennung. Halten Sie Sprachnotizen, Besprechungen, Interviews, Vorlesungen, Ideen und längere Aufnahmen fest. Dateien werden lokal gespeichert und lassen sich organisieren, bearbeiten und exportieren.",
+      "blocks": [
+        [
+          "Einsatzmöglichkeiten",
+          "Halten Sie spontane Ideen und Sprachnotizen fest, ohne eine Tastatur zu benutzen.",
+          "Zeichnen Sie Besprechungen, Interviews, Unterricht und längere Audiobeiträge über das Mikrofon Ihres Geräts auf.",
+          "Verwalten Sie Aufnahmen, Zeitmarken, Transkripte und Audiodateien an einem Ort."
+        ],
+        [
+          "Android-Smartphone und Wear OS-Smartwatch",
+          "Starten und steuern Sie die Aufnahme auf dem Smartphone über eine gekoppelte Wear OS-Uhr.",
+          "Verwenden Sie die Smartwatch auch unabhängig als Diktiergerät, ohne vorher eine Aufnahme am Telefon zu starten.",
+          "Nehmen Sie auf der Uhr auf, setzen Sie Markierungen und durchsuchen Sie ihre lokale Aufnahmebibliothek.",
+          "Übertragen Sie ausgewählte Aufnahmen von der Uhr auf das gekoppelte Android-Smartphone."
+        ],
+        [
+          "WAV-Aufnahmen und Klangqualität",
+          "Speichern Sie Audiodaten als PCM16 WAV, pausieren oder setzen Sie die Aufnahme fort und fügen Sie Zeitmarken ein.",
+          "Beobachten Sie die Wellenform und den tatsächlichen Pegel des Eingangssignals.",
+          "Wählen Sie Qualitätsprofile oder stellen Sie Abtastrate, Kanalanzahl und verfügbaren Audioeingang selbst ein.",
+          "Aktivieren Sie bei unterstützten Geräten systemseitige Rauschunterdrückung, Echounterdrückung und automatische Verstärkungsregelung.",
+          "Überspringen Sie Stille und teilen Sie lange Aufnahmen in einzelne Segmente auf.",
+          "Stellen Sie unterbrochene WAV-Sitzungen wieder her, sofern die PCM-Daten bereits gespeichert wurden."
+        ],
+        [
+          "Aufnahmebibliothek und Wiedergabe",
+          "Suchen Sie nach Namen, Ordnern, Tags oder dem Text gespeicherter Transkripte.",
+          "Sortieren Sie Dateien in Ordner, vergeben Sie Tags und kennzeichnen Sie Favoriten.",
+          "Verschieben Sie Aufnahmen in den Papierkorb und stellen Sie sie vor dem endgültigen Löschen wieder her.",
+          "Nutzen Sie Spulen, Zeitmarken und eine einstellbare Wiedergabegeschwindigkeit.",
+          "Importieren Sie kompatible PCM16-WAV-Dateien, teilen Sie Aufnahmen mit anderen Apps und sichern oder restaurieren Sie Daten manuell über ZIP."
+        ],
+        [
+          "Audioschnitt und Export",
+          "Behalten Sie einen markierten Ausschnitt bei oder entfernen Sie einen ausgewählten Abschnitt.",
+          "Fügen Sie kompatible Aufnahmen zusammen und normalisieren Sie die Lautstärke.",
+          "Exportieren Sie je nach Geräte-Encoder als WAV, verlustfreies FLAC, M4A/AAC oder OPUS."
+        ],
+        [
+          "Sprache zu Text und lokale KI-Werkzeuge",
+          "Transkribieren Sie gespeicherte Aufnahmen mit der Spracherkennung auf dem Gerät unter kompatiblen Android-Versionen.",
+          "Importieren Sie optional ein Vosk-Modell für private Offline-Transkription.",
+          "Bearbeiten und speichern Sie korrigierte Transkripte dauerhaft.",
+          "Erstellen Sie kurze Zusammenfassungen und extrahieren Sie ausdrücklich genannte Aufgaben aus Transkripttexten.",
+          "Exportieren oder teilen Sie Transkripte als TXT-Datei."
+        ],
+        [
+          "Datenschutz, Testphase und Kauf",
+          "Aufnahmen verbleiben im privaten lokalen App-Speicher, bis Sie sie selbst exportieren, teilen, sichern oder übertragen.",
+          "Keine Werbung und keine Abonnements: Die App bietet eine 60-minütige Testphase.",
+          "Anschließend lässt sich die Vollversion mit einem einmaligen Kauf freischalten.",
+          "Rauschfilter, Spracherkennung und Exportformate hängen von der Unterstützung durch Gerät und Android-Version ab."
+        ]
+      ],
+      "ending": "Ein Diktiergerät für Smartphone und Uhr: PCM16 WAV aufnehmen, wichtige Stellen markieren, Audio bearbeiten und Sprache bei unterstützten Geräten lokal in Text umwandeln. VOICE RECORDER PRO AI ist bei Google Play erhältlich.",
+      "status": "Jetzt bei Google Play verfügbar",
+      "cta": "Bei Google Play ansehen"
+    },
+    "fr": {
+      "flag": "🇫🇷",
+      "label": "Français",
+      "language": "fr-FR",
+      "title": "VOICE RECORDER PRO AI – dictaphone Android et Wear OS",
+      "meta": "Dictaphone Android et Wear OS : WAV PCM16, contrôle depuis la montre, montage audio, transcription hors ligne et sauvegarde ZIP. Essai de 60 minutes.",
+      "h1": "VOICE RECORDER PRO AI – dictaphone pour Android et Wear OS",
+      "lead": "VOICE RECORDER PRO AI réunit un enregistreur vocal Android, l’enregistrement autonome sur une montre Wear OS, l’édition audio et la reconnaissance vocale locale. Enregistrez des notes vocales, réunions, interviews, cours, idées et longues séances. Les fichiers restent en local et peuvent être classés, retouchés ou exportés.",
+      "blocks": [
+        [
+          "Quand utiliser le dictaphone ?",
+          "Capturez rapidement vos mémos et vos idées sans utiliser le clavier.",
+          "Enregistrez réunions, interviews, cours et séances longues avec le microphone de votre appareil.",
+          "Retrouvez au même endroit les enregistrements, repères temporels, transcriptions et fichiers audio."
+        ],
+        [
+          "Téléphone Android et montre Wear OS",
+          "Démarrez et contrôlez à distance l’enregistrement du téléphone depuis une montre Wear OS associée.",
+          "Utilisez également la montre seule comme dictaphone, sans devoir lancer d’enregistrement sur le téléphone.",
+          "Enregistrez sur la montre, ajoutez des marqueurs et consultez sa bibliothèque locale.",
+          "Transférez les enregistrements sélectionnés de la montre vers le téléphone Android associé."
+        ],
+        [
+          "Enregistrement WAV et réglages audio",
+          "Enregistrez en PCM16 WAV, mettez une session en pause, reprenez-la et posez des marqueurs temporels.",
+          "Visualisez la forme d’onde et le véritable niveau du signal entrant.",
+          "Choisissez un profil de qualité ou réglez la fréquence d’échantillonnage, le nombre de canaux et l’entrée audio disponible.",
+          "Activez la réduction de bruit, l’annulation d’écho et le contrôle automatique du gain lorsque le matériel les prend en charge.",
+          "Ignorez les silences et découpez les longues prises en segments.",
+          "Récupérez une session WAV interrompue si les données PCM avaient déjà été enregistrées."
+        ],
+        [
+          "Bibliothèque et lecture",
+          "Recherchez par nom, dossier, étiquette ou texte d’une transcription enregistrée.",
+          "Classez les fichiers dans des dossiers, ajoutez des étiquettes et marquez vos favoris.",
+          "Utilisez la corbeille pour restaurer un enregistrement avant sa suppression définitive.",
+          "Lisez et parcourez l’audio avec des marqueurs et une vitesse de lecture réglable.",
+          "Importez les WAV PCM16 compatibles, partagez vos prises avec d’autres applications et sauvegardez ou restaurez manuellement une archive ZIP."
+        ],
+        [
+          "Montage et export audio",
+          "Conservez uniquement le passage sélectionné ou supprimez une section de l’enregistrement.",
+          "Fusionnez les prises compatibles et normalisez les niveaux sonores.",
+          "Exportez au format WAV, FLAC sans perte, M4A/AAC ou OPUS selon les encodeurs disponibles sur l’appareil."
+        ],
+        [
+          "Transcription et outils d’IA locaux",
+          "Transcrivez les enregistrements sauvegardés grâce à la reconnaissance vocale intégrée à certaines versions compatibles d’Android.",
+          "Importez en option un modèle Vosk pour la transcription privée hors ligne.",
+          "Corrigez le texte reconnu et enregistrez définitivement vos modifications.",
+          "Produisez un court résumé et extrayez les tâches explicitement mentionnées dans la transcription.",
+          "Exportez et partagez le texte au format TXT."
+        ],
+        [
+          "Confidentialité et achat unique",
+          "Les fichiers restent dans le stockage privé local de l’application, sauf si vous choisissez de les exporter, partager, sauvegarder ou transférer.",
+          "Sans publicité ni abonnement, avec un essai de 60 minutes.",
+          "Débloquez ensuite la version complète par un achat unique.",
+          "Les traitements audio, la reconnaissance vocale et les formats d’export dépendent des capacités de l’appareil et d’Android."
+        ]
+      ],
+      "ending": "Un dictaphone pour téléphone et montre : enregistrez en PCM16 WAV, marquez les passages importants, montez l’audio et convertissez localement la parole en texte lorsque votre appareil le permet. Découvrez VOICE RECORDER PRO AI sur Google Play.",
+      "status": "Disponible sur Google Play",
+      "cta": "Voir sur Google Play"
+    },
+    "es": {
+      "flag": "🇪🇸",
+      "label": "Español",
+      "language": "es-ES",
+      "title": "VOICE RECORDER PRO AI – grabadora Android y Wear OS",
+      "meta": "Grabadora de voz para Android y Wear OS: WAV PCM16, control desde reloj, edición de audio, transcripción sin conexión y copia ZIP. Prueba de 60 minutos.",
+      "h1": "VOICE RECORDER PRO AI – grabadora de voz para Android y Wear OS",
+      "lead": "VOICE RECORDER PRO AI reúne una grabadora de voz para Android, grabación independiente en Wear OS, edición de audio y reconocimiento de voz local. Captura notas de voz, reuniones, entrevistas, clases, ideas y sesiones extensas. Organiza tus archivos en el dispositivo, edítalos y expórtalos cuando los necesites.",
+      "blocks": [
+        [
+          "¿Para qué sirve?",
+          "Guarda notas de voz e ideas al instante sin escribirlas.",
+          "Graba entrevistas, reuniones, clases y sesiones de audio prolongadas con el micrófono de tu dispositivo.",
+          "Organiza grabaciones, marcas de tiempo, transcripciones y archivos de sonido en una misma aplicación."
+        ],
+        [
+          "Teléfono Android y reloj Wear OS",
+          "Inicia y controla la grabación del teléfono desde un reloj Wear OS vinculado.",
+          "Usa el reloj como grabadora independiente sin tener que iniciar la sesión desde el móvil.",
+          "Graba desde el reloj, añade marcadores y consulta su biblioteca local de audio.",
+          "Transfiere las grabaciones que elijas del reloj al teléfono Android vinculado."
+        ],
+        [
+          "Grabación WAV y calidad de sonido",
+          "Graba en PCM16 WAV, pausa o reanuda sesiones e inserta marcadores de tiempo durante la captura.",
+          "Consulta la forma de onda y el nivel real de la señal de entrada.",
+          "Selecciona perfiles de calidad o ajusta manualmente la frecuencia de muestreo, los canales y la entrada de audio disponible.",
+          "Activa reducción de ruido, cancelación de eco y control automático de ganancia del sistema si tu equipo los admite.",
+          "Omite silencios y divide las grabaciones largas en segmentos.",
+          "Recupera sesiones WAV interrumpidas cuando los datos PCM llegaron a guardarse."
+        ],
+        [
+          "Biblioteca y reproducción",
+          "Busca por nombre, carpeta, etiqueta o texto de las transcripciones guardadas.",
+          "Ordena el audio en carpetas, aplica etiquetas y destaca favoritos.",
+          "Envía grabaciones a la papelera y restáuralas antes de eliminarlas definitivamente.",
+          "Reproduce con avance, retroceso, marcadores y velocidad ajustable.",
+          "Importa archivos PCM16 WAV compatibles, comparte grabaciones y crea o restaura copias manuales en ZIP."
+        ],
+        [
+          "Edición y exportación de audio",
+          "Conserva el fragmento seleccionado o elimina una parte de la grabación.",
+          "Une grabaciones compatibles y normaliza el nivel del sonido.",
+          "Exporta a WAV, FLAC sin pérdida, M4A/AAC u OPUS según los codificadores disponibles en el dispositivo."
+        ],
+        [
+          "Voz a texto y funciones de IA locales",
+          "Transcribe grabaciones guardadas con reconocimiento de voz en el dispositivo en versiones compatibles de Android.",
+          "Importa opcionalmente un modelo Vosk para transcribir en privado y sin conexión.",
+          "Edita y guarda permanentemente las transcripciones corregidas.",
+          "Extrae resúmenes breves y tareas mencionadas explícitamente en el texto.",
+          "Exporta y comparte las transcripciones como archivos TXT."
+        ],
+        [
+          "Privacidad, prueba y pago único",
+          "Las grabaciones permanecen en el almacenamiento privado local, salvo que decidas exportarlas, compartirlas, hacer una copia o transferirlas.",
+          "La aplicación no tiene anuncios ni suscripciones e incluye una prueba de 60 minutos.",
+          "Tras la prueba, desbloquea la versión completa mediante una compra única.",
+          "La reducción de ruido, la transcripción y los formatos de exportación dependen de la compatibilidad del dispositivo y de Android."
+        ]
+      ],
+      "ending": "Una grabadora para móvil y reloj: WAV PCM16, marcadores, edición de audio, transferencia de archivos y conversión local de voz a texto cuando el hardware lo permite. Encuentra VOICE RECORDER PRO AI en Google Play.",
+      "status": "Disponible ahora en Google Play",
+      "cta": "Ver en Google Play"
+    },
+    "it": {
+      "flag": "🇮🇹",
+      "label": "Italiano",
+      "language": "it-IT",
+      "title": "VOICE RECORDER PRO AI – registratore Android e Wear OS",
+      "meta": "Registratore vocale Android e Wear OS: WAV PCM16, controllo da smartwatch, editing audio, trascrizione offline e backup ZIP. Prova di 60 minuti.",
+      "h1": "VOICE RECORDER PRO AI – registratore vocale per Android e Wear OS",
+      "lead": "VOICE RECORDER PRO AI unisce un registratore vocale Android, la registrazione autonoma su Wear OS, l’editing audio e il riconoscimento vocale locale. Registra appunti vocali, riunioni, interviste, lezioni, idee e sessioni lunghe. Conserva i file in locale, organizza la libreria, modifica e condividi l’audio.",
+      "blocks": [
+        [
+          "A cosa serve l’app",
+          "Salva idee e promemoria vocali senza dover digitare.",
+          "Registra riunioni, interviste, lezioni e sessioni prolungate con il microfono del dispositivo.",
+          "Gestisci registrazioni, marcatori temporali, trascrizioni e file audio in un unico spazio."
+        ],
+        [
+          "Telefono Android e smartwatch Wear OS",
+          "Avvia e controlla da remoto la registrazione del telefono tramite uno smartwatch Wear OS associato.",
+          "Usa l’orologio anche da solo come registratore, senza avviare prima una sessione sul telefono.",
+          "Registra dall’orologio, aggiungi marcatori e consulta la sua libreria locale.",
+          "Trasferisci registrazioni selezionate dall’orologio al telefono Android associato."
+        ],
+        [
+          "Registrazione WAV e qualità audio",
+          "Registra in PCM16 WAV, metti in pausa, riprendi e inserisci marcatori durante la sessione.",
+          "Visualizza la forma d’onda e il livello reale del segnale in ingresso.",
+          "Scegli profili di qualità oppure configura frequenza di campionamento, numero di canali e ingresso audio disponibile.",
+          "Attiva riduzione del rumore, cancellazione dell’eco e controllo automatico del guadagno se supportati dal sistema.",
+          "Salta i silenzi e dividi le registrazioni lunghe in segmenti.",
+          "Recupera sessioni WAV interrotte se i dati PCM erano già stati salvati."
+        ],
+        [
+          "Archivio e riproduzione",
+          "Cerca registrazioni per nome, cartella, tag o testo delle trascrizioni salvate.",
+          "Organizza in cartelle, assegna tag e contrassegna i preferiti.",
+          "Sposta i file nel cestino e ripristinali prima dell’eliminazione definitiva.",
+          "Ascolta con ricerca temporale, marcatori e velocità di riproduzione regolabile.",
+          "Importa WAV PCM16 compatibili, condividi file con altre app ed esegui backup o ripristino manuale tramite ZIP."
+        ],
+        [
+          "Modifica ed esportazione audio",
+          "Conserva solo la parte selezionata oppure elimina un intervallo della registrazione.",
+          "Unisci registrazioni compatibili e normalizza il volume.",
+          "Esporta in WAV, FLAC senza perdita, M4A/AAC oppure OPUS in base ai codec supportati dal dispositivo."
+        ],
+        [
+          "Da voce a testo e strumenti IA locali",
+          "Trascrivi registrazioni salvate con il riconoscimento vocale sul dispositivo nelle versioni Android compatibili.",
+          "Importa facoltativamente un modello Vosk per trascrivere offline in modo privato.",
+          "Correggi le trascrizioni e salva le modifiche in modo permanente.",
+          "Ricava brevi riepiloghi e attività esplicitamente indicate nel testo.",
+          "Esporta e condividi le trascrizioni come file TXT."
+        ],
+        [
+          "Privacy, prova e acquisto unico",
+          "Le registrazioni restano nell’archivio privato locale dell’app a meno che tu scelga di esportarle, condividerle, salvarle in backup o trasferirle.",
+          "Nessuna pubblicità e nessun abbonamento: è inclusa una prova di 60 minuti.",
+          "Terminata la prova, sblocca la versione completa con un unico acquisto.",
+          "Elaborazione audio, riconoscimento vocale e formati di esportazione variano in base al dispositivo e alla versione Android."
+        ]
+      ],
+      "ending": "Un registratore per telefono e orologio: WAV PCM16, marcatori, editing, trasferimento e trascrizione locale dove supportata. Scopri VOICE RECORDER PRO AI su Google Play.",
+      "status": "Disponibile ora su Google Play",
+      "cta": "Apri su Google Play"
     }
   }
 }
