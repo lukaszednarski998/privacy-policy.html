@@ -18,7 +18,7 @@
     for (const l of Object.keys(source.descriptions)) {
       const d = source.descriptions[l];
       subtitle[l] = d.short;
-      copy[l] = '<h3>' + escape(source.name) + '</h3><p><strong>' + escape(data.soon[l]) + '</strong></p>' + description(d.full) + '<p><a href="apps/' + source.id + suffix(l) + '.html">' + escape(data.detail[l]) + '</a></p>';
+      copy[l] = '<h3>' + escape(source.name) + '</h3><p><strong>' + escape(source.id === 'arvion-golf-master' ? ({"en":"Available now","pl":"Dostępna teraz","de":"Jetzt verfügbar","fr":"Disponible maintenant","es":"Ya disponible","it":"Disponibile ora","pt-br":"Já disponível","ja":"配信中","ko":"지금 이용 가능","zh-cn":"现已上线","tr":"Şimdi mevcut","id":"Tersedia sekarang","ru":"Уже доступно","uk":"Вже доступно"})[l] : data.soon[l]) + '</strong></p>' + description(d.full) + (source.id === 'arvion-golf-master' ? '<p><a class="store-button" href="https://play.google.com/store/apps/details?id=com.arvion.golfmaster" target="_blank" rel="noopener">Google Play ↗</a></p>' : '') + '<p><a href="apps/' + source.id + suffix(l) + '.html">' + escape(data.detail[l]) + '</a></p>';
     }
     productData[card.id] = {title:card.name, icon:source.icon, subtitle, gallery:source.gallery, languages:data.languages, copy};
   }
